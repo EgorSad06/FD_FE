@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MainWindow
+namespace FD_MainWindow
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml

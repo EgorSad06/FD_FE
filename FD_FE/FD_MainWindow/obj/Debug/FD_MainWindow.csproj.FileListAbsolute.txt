@@ -1,0 +1,15 @@
+C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\bin\Debug\FD_MainWindow.exe.config
+C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\bin\Debug\FD_MainWindow.exe
+C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\bin\Debug\FD_MainWindow.pdb
+C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\FD_MainWindow.csproj.AssemblyReference.cache
+C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\MainWindow.g.cs
+C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\App.g.cs
+C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\FD_MainWindow_MarkupCompile.cache
+C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\FD_MainWindow_MarkupCompile.lref
+C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\MainWindow.baml
+C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\FD_MainWindow.g.resources
+C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\FD_MainWindow.Properties.Resources.resources
+C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\FD_MainWindow.csproj.GenerateResource.cache
+C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\FD_MainWindow.csproj.CoreCompileInputs.cache
+C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\FD_MainWindow.exe
+C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\FD_MainWindow.pdb

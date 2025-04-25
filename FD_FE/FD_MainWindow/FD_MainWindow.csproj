@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5AE86C8B-684B-4BA3-B009-8AE2C1A828D9}</ProjectGuid>
+    <ProjectGuid>{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>MainWindow</RootNamespace>
-    <AssemblyName>MainWindow</AssemblyName>
+    <RootNamespace>FD_MainWindow</RootNamespace>
+    <AssemblyName>FD_MainWindow</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MainWindow.Properties
+namespace FD_MainWindow.Properties
 {
 
 
