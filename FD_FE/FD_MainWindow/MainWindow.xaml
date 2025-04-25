@@ -5,8 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FD_MainWindow"
         mc:Ignorable="d"
-        Title="Fraction Destruction" Height="450" Width="800">
-    <Grid>
-        
+        Title="Fraction Destruction" MinHeight="450" Height="450"  MinWidth="800" Width="800">
+    <Grid Background="DarkGray">
+        <Frame x:Name="MainFrame" Content="Frame" Background="AliceBlue" HorizontalAlignment="Center" Height="389" Margin="0,35,0,0" VerticalAlignment="Top" Width="780"/>
+        <Button Content="Menu" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.833,-0.248" Click="Menu_Click"/>
+        <Button Content="Battle" HorizontalAlignment="Left" Margin="55,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.833,-0.248" Click="Battle_Click"/>
     </Grid>
 </Window>

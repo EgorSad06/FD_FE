@@ -13,3 +13,7 @@ C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\FD_MainWindo
 C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\FD_MainWindow.csproj.CoreCompileInputs.cache
 C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\FD_MainWindow.exe
 C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\FD_MainWindow.pdb
+C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\Battle.g.cs
+C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\MainMenu.g.cs
+C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\Battle.baml
+C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\MainMenu.baml

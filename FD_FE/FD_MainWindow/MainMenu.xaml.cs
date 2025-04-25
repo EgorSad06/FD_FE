@@ -16,24 +16,13 @@ using System.Windows.Shapes;
 namespace FD_MainWindow
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для MainMenu.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainMenu : Page
     {
-        public MainWindow()
+        public MainMenu()
         {
             InitializeComponent();
-
-        }
-
-        private void Menu_Click(object sender, RoutedEventArgs e)
-        {
-            MainFrame.Content = new MainMenu();
-        }
-
-        private void Battle_Click(object sender, RoutedEventArgs e)
-        {
-            MainFrame.Content = new Battle();
         }
     }
 }
