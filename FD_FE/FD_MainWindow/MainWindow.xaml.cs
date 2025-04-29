@@ -23,7 +23,7 @@ namespace FD_MainWindow
         public MainWindow()
         {
             InitializeComponent();
-
+            MainFrame.Content = new MainMenu();
         }
 
         private void Menu_Click(object sender, RoutedEventArgs e)
@@ -31,9 +31,9 @@ namespace FD_MainWindow
             MainFrame.Content = new MainMenu();
         }
 
-        private void Battle_Click(object sender, RoutedEventArgs e)
+        private void CardSelection_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Content = new Battle();
+            MainFrame.Content = new CardSelection();
         }
     }
 }

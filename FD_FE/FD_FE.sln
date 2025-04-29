@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35818.85 d17.13
+VisualStudioVersion = 17.13.35818.85
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FD_MainWindow", "FD_MainWindow\FD_MainWindow.csproj", "{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLib", "ClassLib\ClassLib.csproj", "{568F90C6-D348-4DBB-909F-951642D954FA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppClassLib", "ClassLib\AppClassLib.csproj", "{568F90C6-D348-4DBB-909F-951642D954FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgramData", "ProgramData\ProgramData.csproj", "{5C9BD10F-041A-4D91-915D-4B872784083C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{568F90C6-D348-4DBB-909F-951642D954FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{568F90C6-D348-4DBB-909F-951642D954FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{568F90C6-D348-4DBB-909F-951642D954FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C9BD10F-041A-4D91-915D-4B872784083C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C9BD10F-041A-4D91-915D-4B872784083C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C9BD10F-041A-4D91-915D-4B872784083C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C9BD10F-041A-4D91-915D-4B872784083C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

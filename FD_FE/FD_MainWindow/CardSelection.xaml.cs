@@ -16,18 +16,18 @@ using System.Windows.Shapes;
 namespace FD_MainWindow
 {
     /// <summary>
-    /// Логика взаимодействия для MainMenu.xaml
+    /// Логика взаимодействия для CardSelection.xaml
     /// </summary>
-    public partial class MainMenu : Page
+    public partial class CardSelection : Page
     {
-        public MainMenu()
+        public CardSelection()
         {
             InitializeComponent();
+            SetCards();
         }
-
-        private void CardSelection_Click(object sender, RoutedEventArgs e)
+        public void SetCards()
         {
-
+            CardSelectionGrid.Children.Add(new Border() { Width=40, Height=80, Background = new SolidColorBrush(Colors.DarkGray) });
         }
     }
 }
