@@ -40,7 +40,9 @@ namespace FD_MainWindow
         // Кнопка статистики, переход к просмотру статистики 
         private void StatisticsButtonSelection_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new Uri("Statistic.xaml", UriKind.Relative));
+            // Если нужно закрыть текущую страницу:
+            NavigationService.RemoveBackEntry();
         }
         //Кнопка Настройки, переход к настройкам игры
         private void SettingsButtonSelection_Click(object sender, RoutedEventArgs e)

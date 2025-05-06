@@ -1,0 +1,57 @@
+﻿<Page x:Class="FD_MainWindow.Statistic"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FD_MainWindow"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Statistic"
+      Background="Tan">
+    <!--Общий фон -->
+
+    <StackPanel Margin="20" >
+        <TextBlock FontSize="30" FontWeight="Bold" Text="Game Statistics"/>
+
+        <!--Фон таблицы -->
+        <Grid Margin="0,20,0,0" Background="AliceBlue">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0" FontSize="20" Text="Наигранно времени: "/>
+            <TextBlock x:Name="TotalTimeText" FontSize="20"  Grid.Row="0" Grid.Column="1" Text="00:00:00"/>
+
+            <TextBlock Grid.Row="1" Grid.Column="0" FontSize="20" Text="Игр сыгрнанно:"/>
+            <TextBlock x:Name="GamesPlayedText" FontSize="20" Grid.Row="1" Grid.Column="1" Text="0"/>
+
+            <TextBlock Grid.Row="2" Grid.Column="0" FontSize="20" Text="Побед:"/>
+            <TextBlock x:Name="WinsText" Grid.Row="2" FontSize="20" Grid.Column="1" Text="0"/>
+
+            <TextBlock Grid.Row="3" Grid.Column="0" FontSize="20" Text="Поражений:"/>
+            <TextBlock x:Name="LossesText" Grid.Row="3" FontSize="20" Grid.Column="1" Text="0"/>
+
+            <TextBlock Grid.Row="4" Grid.Column="0" FontSize="20" Text="Убито противников:"/>
+            <TextBlock x:Name="EnemiesKilledText" FontSize="20" Grid.Row="4" Grid.Column="1" Text="0"/>
+
+            <TextBlock Grid.Row="5" Grid.Column="0" FontSize="20" Text="Любимая карта:"/>
+            <TextBlock x:Name="Love" FontSize="20" Grid.Row="5" Grid.Column="1" Text="0"/>
+        </Grid>
+        <!-- Кнопки управления -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 20">
+            <Button Content="Назад" 
+           Command="{Binding BackCommand}"
+           Width="159"
+            Click="BackButton_Click" Height="42" FontSize="25"/>
+        </StackPanel>
+    </StackPanel>
+</Page>
