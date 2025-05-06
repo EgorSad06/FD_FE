@@ -28,7 +28,9 @@ namespace FD_MainWindow
         // кнопка играть, переход к созданию комнаты
         private void PlayButtonSelection_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new Uri("CardSelection.xaml", UriKind.Relative));
+            // Если нужно закрыть текущую страницу:
+            NavigationService.RemoveBackEntry();
         }
         //кнопка обучение, переход к обучению
         private void EducationButtonSelection_Click(object sender, RoutedEventArgs e)

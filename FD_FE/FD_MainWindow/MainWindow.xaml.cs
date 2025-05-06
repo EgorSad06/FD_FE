@@ -35,5 +35,11 @@ namespace FD_MainWindow
         {
             MainFrame.Content = new CardSelection();
         }
+
+        private void Setting_Click(object sender, RoutedEventArgs e)
+        {
+            InitializeComponent();
+            MainFrame.Content = new Setting();
+        }
     }
 }

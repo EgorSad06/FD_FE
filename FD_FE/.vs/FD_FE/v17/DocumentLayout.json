@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Huawei\\Documents\\GitHub\\FD_FE\\FD_FE\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|c:\\users\\huawei\\documents\\github\\fd_fe\\fd_fe\\fd_mainwindow\\setting.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|solutionrelative:fd_mainwindow\\setting.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|c:\\users\\huawei\\documents\\github\\fd_fe\\fd_fe\\fd_mainwindow\\setting.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|solutionrelative:fd_mainwindow\\setting.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|c:\\users\\huawei\\documents\\github\\fd_fe\\fd_fe\\fd_mainwindow\\mainmenu.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|solutionrelative:fd_mainwindow\\mainmenu.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|c:\\users\\huawei\\documents\\github\\fd_fe\\fd_fe\\fd_mainwindow\\mainmenu.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|solutionrelative:fd_mainwindow\\mainmenu.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|c:\\users\\huawei\\documents\\github\\fd_fe\\fd_fe\\fd_mainwindow\\mainmenu.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|solutionrelative:fd_mainwindow\\mainmenu.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|c:\\users\\huawei\\documents\\github\\fd_fe\\fd_fe\\fd_mainwindow\\setting.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|solutionrelative:fd_mainwindow\\setting.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|c:\\users\\huawei\\documents\\github\\fd_fe\\fd_fe\\fd_mainwindow\\setting.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|solutionrelative:fd_mainwindow\\setting.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,51 +31,51 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Setting.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Huawei\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\Setting.xaml.cs",
-              "RelativeDocumentMoniker": "FD_MainWindow\\Setting.xaml.cs",
-              "ToolTip": "C:\\Users\\Huawei\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\Setting.xaml.cs",
-              "RelativeToolTip": "FD_MainWindow\\Setting.xaml.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAmwDAAAAAAAAAAAAAAAA==",
+              "Title": "MainMenu.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Huawei\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\MainMenu.xaml.cs",
+              "RelativeDocumentMoniker": "FD_MainWindow\\MainMenu.xaml.cs",
+              "ToolTip": "C:\\Users\\Huawei\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\MainMenu.xaml.cs",
+              "RelativeToolTip": "FD_MainWindow\\MainMenu.xaml.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAYwBgAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T18:07:19.538Z",
+              "WhenOpened": "2025-05-06T08:26:20.074Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "MainMenu.xaml",
-              "DocumentMoniker": "C:\\Users\\Huawei\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\MainMenu.xaml",
-              "RelativeDocumentMoniker": "FD_MainWindow\\MainMenu.xaml",
-              "ToolTip": "C:\\Users\\Huawei\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\MainMenu.xaml",
-              "RelativeToolTip": "FD_MainWindow\\MainMenu.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-05-01T19:21:28.877Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "Setting.xaml",
               "DocumentMoniker": "C:\\Users\\Huawei\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\Setting.xaml",
               "RelativeDocumentMoniker": "FD_MainWindow\\Setting.xaml",
               "ToolTip": "C:\\Users\\Huawei\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\Setting.xaml",
               "RelativeToolTip": "FD_MainWindow\\Setting.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-05-01T18:07:05.552Z",
+              "WhenOpened": "2025-05-06T08:16:50.573Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "MainMenu.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Huawei\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\MainMenu.xaml.cs",
-              "RelativeDocumentMoniker": "FD_MainWindow\\MainMenu.xaml.cs",
-              "ToolTip": "C:\\Users\\Huawei\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\MainMenu.xaml.cs",
-              "RelativeToolTip": "FD_MainWindow\\MainMenu.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADAAAAAyAAAAAAAAAA==",
+              "Title": "Setting.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Huawei\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\Setting.xaml.cs",
+              "RelativeDocumentMoniker": "FD_MainWindow\\Setting.xaml.cs",
+              "ToolTip": "C:\\Users\\Huawei\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\Setting.xaml.cs",
+              "RelativeToolTip": "FD_MainWindow\\Setting.xaml.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABkAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T16:24:50.566Z",
+              "WhenOpened": "2025-05-06T07:55:53.759Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainMenu.xaml",
+              "DocumentMoniker": "C:\\Users\\Huawei\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\MainMenu.xaml",
+              "RelativeDocumentMoniker": "FD_MainWindow\\MainMenu.xaml",
+              "ToolTip": "C:\\Users\\Huawei\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\MainMenu.xaml",
+              "RelativeToolTip": "FD_MainWindow\\MainMenu.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-06T08:10:35.423Z",
               "EditorCaption": ""
             }
           ]

@@ -23,7 +23,8 @@ namespace FD_MainWindow
         {
             new Resolution(1920, 1080),
             new Resolution(1280, 720),
-            new Resolution(1600, 900)
+            new Resolution(1600, 900),
+            new Resolution(100,100)
         };
 
         // Текущие настройки
@@ -85,7 +86,10 @@ namespace FD_MainWindow
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             // Возврат на предыдущую страницу
-            NavigationService.GoBack();
+            if (NavigationService.CanGoBack)
+            {
+                NavigationService.GoBack();
+            }
         }
 
         // Класс для хранения разрешений
