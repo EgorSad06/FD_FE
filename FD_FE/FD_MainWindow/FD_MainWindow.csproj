@@ -55,25 +55,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="GameplayPages\StartGame.xaml.cs">
-      <DependentUpon>StartGame.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Setting.xaml.cs">
       <DependentUpon>Setting.xaml</DependentUpon>
     </Compile>
-    <Page Include="GameplayPages\Battle.xaml">
+    <Compile Include="Statistic.xaml.cs">
+      <DependentUpon>Statistic.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Battle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="GameplayPages\CardSelection.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="GameplayPages\Dictionary1.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="GameplayPages\StartGame.xaml">
+    <Page Include="CardSelection.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -89,10 +81,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="GameplayPages\Battle.xaml.cs">
+    <Compile Include="Battle.xaml.cs">
       <DependentUpon>Battle.xaml</DependentUpon>
     </Compile>
-    <Compile Include="GameplayPages\CardSelection.xaml.cs">
+    <Compile Include="CardSelection.xaml.cs">
       <DependentUpon>CardSelection.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainMenu.xaml.cs">
@@ -103,6 +95,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Setting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Statistic.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -134,11 +130,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ProgramData\ProgramData.csproj">
-      <Project>{5c9bd10f-041a-4d91-915d-4b872784083c}</Project>
-      <Name>ProgramData</Name>
-    </ProjectReference>
+    <Resource Include="main_meny_bg.jpg" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

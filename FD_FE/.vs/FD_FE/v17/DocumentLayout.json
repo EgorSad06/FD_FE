@@ -1,30 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\",
+  "WorkspaceRootPath": "C:\\Users\\Huawei\\Documents\\GitHub\\FD_FE\\FD_FE\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|c:\\users\\alekz\\documents\\github\\fd_fe\\fd_fe\\fd_mainwindow\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|solutionrelative:fd_mainwindow\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|c:\\users\\huawei\\documents\\github\\fd_fe\\fd_fe\\fd_mainwindow\\statistic.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|solutionrelative:fd_mainwindow\\statistic.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C9BD10F-041A-4D91-915D-4B872784083C}|ProgramData\\ProgramData.csproj|C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\programdata\\cardsdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5C9BD10F-041A-4D91-915D-4B872784083C}|ProgramData\\ProgramData.csproj|solutionrelative:programdata\\cardsdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|c:\\users\\huawei\\documents\\github\\fd_fe\\fd_fe\\fd_mainwindow\\setting.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|solutionrelative:fd_mainwindow\\setting.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\fd_mainwindow\\gameplaypages\\dictionary1.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|solutionrelative:fd_mainwindow\\gameplaypages\\dictionary1.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|c:\\users\\huawei\\documents\\github\\fd_fe\\fd_fe\\fd_mainwindow\\statistic.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|solutionrelative:fd_mainwindow\\statistic.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\fd_mainwindow\\gameplaypages\\cardselection.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|solutionrelative:fd_mainwindow\\gameplaypages\\cardselection.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\fd_mainwindow\\gameplaypages\\cardselection.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|solutionrelative:fd_mainwindow\\gameplaypages\\cardselection.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C9BD10F-041A-4D91-915D-4B872784083C}|ProgramData\\ProgramData.csproj|C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\programdata\\gameplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5C9BD10F-041A-4D91-915D-4B872784083C}|ProgramData\\ProgramData.csproj|solutionrelative:programdata\\gameplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|c:\\users\\huawei\\documents\\github\\fd_fe\\fd_fe\\fd_mainwindow\\setting.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|solutionrelative:fd_mainwindow\\setting.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,82 +26,65 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "FD_MainWindow\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\MainWindow.xaml.cs",
-              "RelativeToolTip": "FD_MainWindow\\MainWindow.xaml.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAgwCwAAAAsAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "Setting.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Huawei\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\Setting.xaml.cs",
+              "RelativeDocumentMoniker": "FD_MainWindow\\Setting.xaml.cs",
+              "ToolTip": "C:\\Users\\Huawei\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\Setting.xaml.cs",
+              "RelativeToolTip": "FD_MainWindow\\Setting.xaml.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAgwFUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T18:08:15.15Z",
+              "WhenOpened": "2025-05-06T09:15:03.081Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CardsData.cs",
-              "DocumentMoniker": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\ProgramData\\CardsData.cs",
-              "RelativeDocumentMoniker": "ProgramData\\CardsData.cs",
-              "ToolTip": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\ProgramData\\CardsData.cs",
-              "RelativeToolTip": "ProgramData\\CardsData.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T21:00:40.213Z"
+              "Title": "Setting.xaml",
+              "DocumentMoniker": "C:\\Users\\Huawei\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\Setting.xaml",
+              "RelativeDocumentMoniker": "FD_MainWindow\\Setting.xaml",
+              "ToolTip": "C:\\Users\\Huawei\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\Setting.xaml",
+              "RelativeToolTip": "FD_MainWindow\\Setting.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-06T09:11:13.609Z",
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Dictionary1.xaml",
-              "DocumentMoniker": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\GameplayPages\\Dictionary1.xaml",
-              "RelativeDocumentMoniker": "FD_MainWindow\\GameplayPages\\Dictionary1.xaml",
-              "ToolTip": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\GameplayPages\\Dictionary1.xaml",
-              "RelativeToolTip": "FD_MainWindow\\GameplayPages\\Dictionary1.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-05-07T19:53:43.513Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CardSelection.xaml",
-              "DocumentMoniker": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\GameplayPages\\CardSelection.xaml",
-              "RelativeDocumentMoniker": "FD_MainWindow\\GameplayPages\\CardSelection.xaml",
-              "ToolTip": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\GameplayPages\\CardSelection.xaml",
-              "RelativeToolTip": "FD_MainWindow\\GameplayPages\\CardSelection.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-05-07T16:48:14.657Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CardSelection.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\GameplayPages\\CardSelection.xaml.cs",
-              "RelativeDocumentMoniker": "FD_MainWindow\\GameplayPages\\CardSelection.xaml.cs",
-              "ToolTip": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\GameplayPages\\CardSelection.xaml.cs",
-              "RelativeToolTip": "FD_MainWindow\\GameplayPages\\CardSelection.xaml.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAAB8AAAANAAAAAAAAAA==",
+              "Title": "Statistic.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Huawei\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\Statistic.xaml.cs",
+              "RelativeDocumentMoniker": "FD_MainWindow\\Statistic.xaml.cs",
+              "ToolTip": "C:\\Users\\Huawei\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\Statistic.xaml.cs",
+              "RelativeToolTip": "FD_MainWindow\\Statistic.xaml.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAqwBkAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T16:47:28.581Z"
+              "WhenOpened": "2025-05-06T09:06:44.266Z",
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Gameplay.cs",
-              "DocumentMoniker": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\ProgramData\\Gameplay.cs",
-              "RelativeDocumentMoniker": "ProgramData\\Gameplay.cs",
-              "ToolTip": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\ProgramData\\Gameplay.cs",
-              "RelativeToolTip": "ProgramData\\Gameplay.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAADUAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T18:04:24.134Z"
+              "DocumentIndex": 0,
+              "Title": "Statistic.xaml",
+              "DocumentMoniker": "C:\\Users\\Huawei\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\Statistic.xaml",
+              "RelativeDocumentMoniker": "FD_MainWindow\\Statistic.xaml",
+              "ToolTip": "C:\\Users\\Huawei\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\Statistic.xaml",
+              "RelativeToolTip": "FD_MainWindow\\Statistic.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-06T09:22:26.431Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             }
           ]
         }
