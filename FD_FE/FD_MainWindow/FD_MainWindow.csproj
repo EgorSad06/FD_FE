@@ -55,19 +55,30 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="GameplayPages\StartGame.xaml.cs">
+      <DependentUpon>StartGame.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Setting.xaml.cs">
       <DependentUpon>Setting.xaml</DependentUpon>
     </Compile>
     <Compile Include="Statistic.xaml.cs">
       <DependentUpon>Statistic.xaml</DependentUpon>
     </Compile>
-    <Page Include="Battle.xaml">
+    <Page Include="GameplayPages\Battle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="CardSelection.xaml">
+    <Page Include="GameplayPages\CardSelection.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GameplayPages\Dictionary1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GameplayPages\StartGame.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="MainMenu.xaml">
       <SubType>Designer</SubType>
@@ -81,10 +92,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Battle.xaml.cs">
+    <Compile Include="GameplayPages\Battle.xaml.cs">
       <DependentUpon>Battle.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CardSelection.xaml.cs">
+    <Compile Include="GameplayPages\CardSelection.xaml.cs">
       <DependentUpon>CardSelection.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainMenu.xaml.cs">
@@ -130,7 +141,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="main_meny_bg.jpg" />
+    <ProjectReference Include="..\ProgramData\ProgramData.csproj">
+      <Project>{5c9bd10f-041a-4d91-915d-4b872784083c}</Project>
+      <Name>ProgramData</Name>
+    </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

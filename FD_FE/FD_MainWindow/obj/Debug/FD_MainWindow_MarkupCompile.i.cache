@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Huawei\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\
+C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\
 FD_MainWindow
 none
 false
 DEBUG;TRACE
-C:\Users\Huawei\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\App.xaml
-61634488997
+C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\App.xaml
+8203134306
 
-11-908125017
-13-1310406943
-Battle.xaml;CardSelection.xaml;MainMenu.xaml;MainWindow.xaml;Setting.xaml;Statistic.xaml;
+121047338703
+14546456723
+GameplayPages\Battle.xaml;GameplayPages\CardSelection.xaml;GameplayPages\Dictionary1.xaml;GameplayPages\StartGame.xaml;MainMenu.xaml;MainWindow.xaml;Setting.xaml;Statistic.xaml;
 
-True
+False
 
