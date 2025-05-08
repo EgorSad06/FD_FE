@@ -1,6 +1,0 @@
-C:\Users\Huawei\Documents\GitHub\FD_FE\FD_FE\ClassLib\bin\Debug\ClassLib.dll
-C:\Users\Huawei\Documents\GitHub\FD_FE\FD_FE\ClassLib\bin\Debug\ClassLib.pdb
-C:\Users\Huawei\Documents\GitHub\FD_FE\FD_FE\ClassLib\obj\Debug\AppClassLib.csproj.AssemblyReference.cache
-C:\Users\Huawei\Documents\GitHub\FD_FE\FD_FE\ClassLib\obj\Debug\AppClassLib.csproj.CoreCompileInputs.cache
-C:\Users\Huawei\Documents\GitHub\FD_FE\FD_FE\ClassLib\obj\Debug\ClassLib.dll
-C:\Users\Huawei\Documents\GitHub\FD_FE\FD_FE\ClassLib\obj\Debug\ClassLib.pdb

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using FD_FE;
 
 namespace FD_MainWindow
 {
@@ -28,7 +29,7 @@ namespace FD_MainWindow
         // кнопка играть, переход к созданию комнаты
         private void PlayButtonSelection_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("CardSelection.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("GameplayPages/StartGame.xaml", UriKind.Relative));
             // Если нужно закрыть текущую страницу:
             NavigationService.RemoveBackEntry();
         }

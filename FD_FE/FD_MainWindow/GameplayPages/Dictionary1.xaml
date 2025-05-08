@@ -1,0 +1,39 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--
+    <ControlTemplate>
+        <Border Width="100" Height="160">
+            <Border.Background>
+                <ImageBrush ImageSource="/ClassLib;component/Assets/Sprites/CardBasics/general_template.png" Stretch="UniformToFill"/>
+            </Border.Background>
+            <StackPanel Orientation="Vertical" >
+                <StackPanel Width="92" HorizontalAlignment="Center" Height="29" Margin="0,6,0,0" Orientation="Horizontal">
+                    <TextBlock Text="1" Style="{StaticResource CardValueT}" Foreground="Cyan"/>
+                    <StackPanel Width="44">
+
+                    </StackPanel>
+                    <TextBlock Text="2" Style="{StaticResource CardValueT}"  Foreground="WhiteSmoke"/>
+                </StackPanel>
+                <Image Source="/ClassLib;component/Assets/Sprites/Cards/railgun.png" Height="90" Width="90" Stretch="UniformToFill" HorizontalAlignment="Center" Margin="0,5,0,0"/>
+                <TextBlock Text="Рельсотрон" Style="{StaticResource CardNameT}"/>
+            </StackPanel>
+        </Border>
+    </ControlTemplate>
+    -->
+    <Style x:Key="CardValueT" TargetType="TextBlock">
+        <Setter Property="Width" Value="24"/>
+        <Setter Property="TextAlignment" Value="Center"/>
+        <Setter Property="FontFamily" Value="Bahnschrift"/>
+        <Setter Property="FontSize" Value="28"/>
+    </Style>
+    <Style x:Key="CardNameT" TargetType="TextBlock">
+        <Setter Property="Width" Value="94"/>
+        <Setter Property="Height" Value="18"/>
+        <Setter Property="Margin" Value="0,10,0,0"/>
+        <Setter Property="TextAlignment" Value="Center"/>
+        <Setter Property="FontFamily" Value="Calibri"/>
+        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="Foreground" Value="WhiteSmoke"/>
+    </Style>
+
+</ResourceDictionary>

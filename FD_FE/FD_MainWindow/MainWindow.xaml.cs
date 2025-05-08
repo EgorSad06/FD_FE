@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using FD_FE;
 
 namespace FD_MainWindow
 {
@@ -26,20 +27,33 @@ namespace FD_MainWindow
             MainFrame.Content = new MainMenu();
         }
 
-        private void Menu_Click(object sender, RoutedEventArgs e)
-        {
-            MainFrame.Content = new MainMenu();
-        }
+        static ImageSourceConverter converter = new ImageSourceConverter();
 
-        private void CardSelection_Click(object sender, RoutedEventArgs e)
+        static public void Draw(Grid grid, Board board)
         {
-            MainFrame.Content = new CardSelection();
+            for (int i=0; i<board.grid.Count; i++) if (board.grid[i]!=null) Draw(grid, board.grid[i]);
         }
-
-        private void Setting_Click(object sender, RoutedEventArgs e)
+        static public void Draw(Grid grid, BoardCard card)
         {
-            InitializeComponent();
-            MainFrame.Content = new Setting();
+            var new_card_header = new StackPanel()
+            {
+                Orientation = Orientation.Horizontal,
+                HorizontalAlignment = HorizontalAlignment.Center,
+                Width = 92, Height = 29,
+                Margin = new Thickness(0, 6, 0, 0)
+            };
+            var slctr = new StyleSelector();
+            //new_card_header.Children.Add(
+            //new TextBlock() { Style = slctr.SelectStyle() }
+            //);
+            var new_card = new StackPanel()
+            {
+                Orientation = Orientation.Vertical,
+                Width = 100,
+                Height = 160,
+                Background = new ImageBrush((ImageSource)converter.ConvertFrom("../../../ProgramData/Assets/Sprites/CardBasics/general_template.png")) { Stretch=Stretch.UniformToFill },
+            };
+            grid.Children.Add(new StackPanel() { });
         }
     }
 }

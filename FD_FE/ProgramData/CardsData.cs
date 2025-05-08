@@ -6,11 +6,17 @@ using System.Reflection;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace FD_FE
 {
-    static class CardsData
+    public static class CardsData
     {
+        static public List<Style> Styles = new List<Style> {
+            new Style() {
+
+            }
+        };
         static public List<Card> StartCards = new List<Card>
         {
             new Card()
