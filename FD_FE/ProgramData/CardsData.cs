@@ -12,9 +12,17 @@ namespace FD_FE
 {
     public static class CardsData
     {
-        static public List<Style> Styles = new List<Style> {
-            new Style() {
-
+        static private string _card_sprites_path = "/ClassLib;component/Assets/Sprites/Cards/";
+        static public List<Effect> FD_FE_Effects = new List<Effect>
+        {
+            new Effect()
+            {
+                id = 1,
+                name = "Charge",
+                function = delegate(BoardCard card)
+                {
+                    card.AV = (short)(card.AV*2);
+                }
             }
         };
         static public List<Card> StartCards = new List<Card>
@@ -23,6 +31,7 @@ namespace FD_FE
             {
                 id = 5,
                 name = "Railgun",
+                image = _card_sprites_path+"railgun.png",
                 function = delegate() {
 
                 }

@@ -12,11 +12,17 @@ using System.Threading.Tasks;
 namespace FD_FE
 {
     public delegate void Card_func();
-    public delegate void Efct_func();
-
+    public delegate void Efct_func(BoardCard card);
+    static public class IBoardAct
+    {
+        static public BoardCard SelectCard() {
+            return new BoardCard(new Card());
+        }
+    }
     public class Effect
     {
         public int id { get; set; }
+        public string name { get; set; }
         public Efct_func function { get; set; }
     }
 

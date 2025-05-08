@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\App.xaml
-8203134306
+9-105641658
 
-11-1165539975
+122004562645
 14546456723
-GameplayPages\Battle.xaml;GameplayPages\CardSelection.xaml;GameplayPages\Dictionary1.xaml;GameplayPages\StartGame.xaml;MainMenu.xaml;MainWindow.xaml;Setting.xaml;Statistic.xaml;
+GameplayResources\Battle.xaml;GameplayResources\CardSelection.xaml;GameplayResources\TempCardStyles.xaml;GameplayResources\StartGame.xaml;MainMenu.xaml;MainWindow.xaml;Setting.xaml;Statistic.xaml;GameplayResources\UCCard.xaml;
 
 False
 

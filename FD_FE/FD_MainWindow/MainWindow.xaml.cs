@@ -35,25 +35,25 @@ namespace FD_MainWindow
         }
         static public void Draw(Grid grid, BoardCard card)
         {
-            var new_card_header = new StackPanel()
-            {
-                Orientation = Orientation.Horizontal,
-                HorizontalAlignment = HorizontalAlignment.Center,
-                Width = 92, Height = 29,
-                Margin = new Thickness(0, 6, 0, 0)
-            };
-            var slctr = new StyleSelector();
-            //new_card_header.Children.Add(
-            //new TextBlock() { Style = slctr.SelectStyle() }
-            //);
-            var new_card = new StackPanel()
-            {
-                Orientation = Orientation.Vertical,
-                Width = 100,
-                Height = 160,
-                Background = new ImageBrush((ImageSource)converter.ConvertFrom("../../../ProgramData/Assets/Sprites/CardBasics/general_template.png")) { Stretch=Stretch.UniformToFill },
-            };
-            grid.Children.Add(new StackPanel() { });
+            //var new_card_header = new StackPanel()
+            //{
+            //    Orientation = Orientation.Horizontal,
+            //    HorizontalAlignment = HorizontalAlignment.Center,
+            //    Width = 92, Height = 29,
+            //    Margin = new Thickness(0, 6, 0, 0)
+            //};
+            //var slctr = new StyleSelector();
+            ////new_card_header.Children.Add(
+            ////new TextBlock() { Style = slctr.SelectStyle() }
+            ////);
+            //var new_card = new StackPanel()
+            //{
+            //    Orientation = Orientation.Vertical,
+            //    Width = 100,
+            //    Height = 160,
+            //    Background = new ImageBrush((ImageSource)converter.ConvertFrom("../../../ProgramData/Assets/Sprites/CardBasics/general_template.png")) { Stretch=Stretch.UniformToFill },
+            //};
+            grid.Children.Add(new UCCard() { BoardCard = card });
         }
     }
 }

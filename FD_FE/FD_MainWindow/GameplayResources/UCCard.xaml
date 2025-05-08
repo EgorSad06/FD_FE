@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="FD_MainWindow.UCCard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FD_MainWindow"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary Source="/GameplayResources/TempCardStyles.xaml"/>
+    </UserControl.Resources>
+    <Grid Width="100" Height="160">
+        <Grid.Background>
+            <ImageBrush ImageSource="/ClassLib;component/Assets/Sprites/CardBasics/general_template.png" Stretch="UniformToFill"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="95"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+            <StackPanel Width="92" HorizontalAlignment="Center" Height="29" Margin="0,6,0,0" Orientation="Horizontal" Grid.Row="0">
+                <TextBlock Text="{Binding BoardCard.AV, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:UCCard}}}"
+                           Style="{StaticResource CardValueT}" Foreground="Cyan"/>
+                <StackPanel Width="44">
+
+                </StackPanel>
+                <TextBlock Text="{Binding BoardCard.HP, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:UCCard}}}" 
+                           Style="{StaticResource CardValueT}"  Foreground="WhiteSmoke"/>
+            </StackPanel>
+            <Image Source="{Binding BoardCard.image, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:UCCard}}}"
+                   Height="90" Width="90" Stretch="UniformToFill" HorizontalAlignment="Center" Margin="0,5,0,0" Grid.Row="1"/>
+            <TextBlock Text="{Binding BoardCard.name, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:UCCard}}}"
+                       Style="{StaticResource CardNameT}" Grid.Row="2"/>
+    </Grid>
+</UserControl>

@@ -29,7 +29,7 @@ namespace FD_MainWindow
         // кнопка играть, переход к созданию комнаты
         private void PlayButtonSelection_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("GameplayPages/StartGame.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("GameplayResources/StartGame.xaml", UriKind.Relative));
             // Если нужно закрыть текущую страницу:
             NavigationService.RemoveBackEntry();
         }

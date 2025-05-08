@@ -55,7 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="GameplayPages\StartGame.xaml.cs">
+    <Compile Include="GameplayResources\StartGame.xaml.cs">
       <DependentUpon>StartGame.xaml</DependentUpon>
     </Compile>
     <Compile Include="Setting.xaml.cs">
@@ -64,19 +64,22 @@
     <Compile Include="Statistic.xaml.cs">
       <DependentUpon>Statistic.xaml</DependentUpon>
     </Compile>
-    <Page Include="GameplayPages\Battle.xaml">
+    <Compile Include="GameplayResources\UCCard.xaml.cs">
+      <DependentUpon>UCCard.xaml</DependentUpon>
+    </Compile>
+    <Page Include="GameplayResources\Battle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="GameplayPages\CardSelection.xaml">
+    <Page Include="GameplayResources\CardSelection.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="GameplayPages\Dictionary1.xaml">
+    <Page Include="GameplayResources\TempCardStyles.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="GameplayPages\StartGame.xaml">
+    <Page Include="GameplayResources\StartGame.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -92,10 +95,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="GameplayPages\Battle.xaml.cs">
+    <Compile Include="GameplayResources\Battle.xaml.cs">
       <DependentUpon>Battle.xaml</DependentUpon>
     </Compile>
-    <Compile Include="GameplayPages\CardSelection.xaml.cs">
+    <Compile Include="GameplayResources\CardSelection.xaml.cs">
       <DependentUpon>CardSelection.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainMenu.xaml.cs">
@@ -112,6 +115,10 @@
     <Page Include="Statistic.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GameplayResources\UCCard.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>

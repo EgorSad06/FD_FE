@@ -26,7 +26,7 @@ namespace FD_MainWindow.GameplayPages
         }
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("GameplayPages/CardSelection.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("GameplayResources/CardSelection.xaml", UriKind.Relative));
             // Если нужно закрыть текущую страницу:
             NavigationService.RemoveBackEntry();
         }
