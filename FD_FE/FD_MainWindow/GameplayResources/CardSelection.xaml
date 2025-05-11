@@ -7,7 +7,11 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="CardSelection">
-    <Grid x:Name="CardSelectionGrid" Background="Maroon">
-        
+    <Grid Background="Maroon">
+        <Border Width="830" Height="318" BorderBrush="White" BorderThickness="2" CornerRadius="10">
+            <Grid x:Name="CardSelectionGrid" Width="800" Height="288">
+
+            </Grid>
+        </Border>
     </Grid>
 </Page>

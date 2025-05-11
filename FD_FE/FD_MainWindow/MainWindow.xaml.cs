@@ -27,33 +27,24 @@ namespace FD_MainWindow
             MainFrame.Content = new MainMenu();
         }
 
-        static ImageSourceConverter converter = new ImageSourceConverter();
+        static public ImageSourceConverter converter = new ImageSourceConverter();
+        static public void Draw(Board board, Grid grid, short a, short b) // отрисовка поля карт
+        {
+            double dx = grid.Width / a, dy = grid.Height / b;
+            for (int j=0, i=0; j<b && i+j < board.grid.Count; j++)
+                for (i=0; i<a && i+j < board.grid.Count; i++)
+                    Draw(board.grid[i + j], grid, dx * i, dy * j);
+        }
+        static public UCCard Draw(BoardCard card, Grid grid, double x, double y) // отрисовка карты
+        {
+            if (card == null)return null;
+            else {
+                UCCard uc_card = new UCCard(card, x, y);
+                uc_card.HorizontalAlignment = HorizontalAlignment.Left; uc_card.VerticalAlignment = VerticalAlignment.Top;
+                grid.Children.Add(uc_card);
+                return uc_card;
+            }
+        }
 
-        static public void Draw(Grid grid, Board board)
-        {
-            for (int i=0; i<board.grid.Count; i++) if (board.grid[i]!=null) Draw(grid, board.grid[i]);
-        }
-        static public void Draw(Grid grid, BoardCard card)
-        {
-            //var new_card_header = new StackPanel()
-            //{
-            //    Orientation = Orientation.Horizontal,
-            //    HorizontalAlignment = HorizontalAlignment.Center,
-            //    Width = 92, Height = 29,
-            //    Margin = new Thickness(0, 6, 0, 0)
-            //};
-            //var slctr = new StyleSelector();
-            ////new_card_header.Children.Add(
-            ////new TextBlock() { Style = slctr.SelectStyle() }
-            ////);
-            //var new_card = new StackPanel()
-            //{
-            //    Orientation = Orientation.Vertical,
-            //    Width = 100,
-            //    Height = 160,
-            //    Background = new ImageBrush((ImageSource)converter.ConvertFrom("../../../ProgramData/Assets/Sprites/CardBasics/general_template.png")) { Stretch=Stretch.UniformToFill },
-            //};
-            grid.Children.Add(new UCCard() { BoardCard = card });
-        }
     }
 }

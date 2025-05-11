@@ -45,18 +45,32 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CardsData.cs" />
+    <Compile Include="GameplayData.cs" />
     <Compile Include="Gameplay.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Assets\Sprites\CardBasics\general_template.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Sprites\Cards\railgun.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Sprites\Menu\main_meny_bg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Sprites\Cards\biomachine.png" />
+    <Content Include="Assets\Sprites\Cards\brick_shooter.png" />
+    <Content Include="Assets\Sprites\Cards\calculator.png" />
+    <Content Include="Assets\Sprites\Cards\dreamer.png" />
+    <Content Include="Assets\Sprites\Cards\drone.png" />
+    <Content Include="Assets\Sprites\Cards\energy_shield.png" />
+    <Content Include="Assets\Sprites\Cards\engeneer.png" />
+    <Content Include="Assets\Sprites\Cards\hacker.png" />
+    <Content Include="Assets\Sprites\Cards\transformator.png" />
+    <Content Include="Assets\Sprites\CardTemplates\c_frame.png" />
+    <Content Include="Assets\Sprites\CardTemplates\e_frame.png" />
+    <Content Include="Assets\Sprites\CardTemplates\g_frame.png" />
+    <Content Include="Assets\Sprites\CardTemplates\g_template.png" />
+    <Content Include="Assets\Sprites\CardTemplates\m_template.png" />
+    <Content Include="Assets\Sprites\CardTemplates\t_template.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

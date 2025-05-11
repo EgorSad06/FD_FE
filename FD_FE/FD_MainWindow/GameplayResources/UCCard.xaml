@@ -7,29 +7,39 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
-        <ResourceDictionary Source="/GameplayResources/TempCardStyles.xaml"/>
+        <ResourceDictionary Source="/GameplayResources/CardStyles.xaml"/>
     </UserControl.Resources>
-    <Grid Width="100" Height="160">
-        <Grid.Background>
-            <ImageBrush ImageSource="/ClassLib;component/Assets/Sprites/CardBasics/general_template.png" Stretch="UniformToFill"/>
-        </Grid.Background>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="35"/>
-            <RowDefinition Height="95"/>
-            <RowDefinition Height="30"/>
-        </Grid.RowDefinitions>
-            <StackPanel Width="92" HorizontalAlignment="Center" Height="29" Margin="0,6,0,0" Orientation="Horizontal" Grid.Row="0">
-                <TextBlock Text="{Binding BoardCard.AV, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:UCCard}}}"
-                           Style="{StaticResource CardValueT}" Foreground="Cyan"/>
-                <StackPanel Width="44">
+    <Viewbox Width="180" Height="288" Stretch="UniformToFill">
+        <Grid x:Name="CardGrid" Width="100" Height="160">
+            <Grid.Background >
+                <ImageBrush x:Name="CardBackgound" Stretch="UniformToFill"/>
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="90"/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="29"/>
+                <ColumnDefinition Width="42"/>
+                <ColumnDefinition Width="29"/>
+            </Grid.ColumnDefinitions>
 
-                </StackPanel>
-                <TextBlock Text="{Binding BoardCard.HP, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:UCCard}}}" 
-                           Style="{StaticResource CardValueT}"  Foreground="WhiteSmoke"/>
-            </StackPanel>
-            <Image Source="{Binding BoardCard.image, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:UCCard}}}"
-                   Height="90" Width="90" Stretch="UniformToFill" HorizontalAlignment="Center" Margin="0,5,0,0" Grid.Row="1"/>
+            <Border Width="26" Height="32" HorizontalAlignment="Right" VerticalAlignment="Center">
+                <Border.Background>
+                    <ImageBrush x:Name="CardClassFrame" Stretch="UniformToFill"/>
+                </Border.Background>
+                <TextBlock Text="{Binding BoardCard.AV, RelativeSource={RelativeSource AncestorType={x:Type local:UCCard}, Mode=FindAncestor}}"
+                    Style="{StaticResource CardValueT}" Foreground="Cyan" Height="30" Width="26" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+            <StackPanel Grid.Column="1" />
+            <TextBlock Text="{Binding BoardCard.HP, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:UCCard}}}" 
+                        Style="{StaticResource CardValueT}"  Foreground="WhiteSmoke" Width="26" Height="30" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+            <Image x:Name="CardImage" Height="90" Width="90" Stretch="Uniform" Grid.Row="1" Grid.ColumnSpan="3" HorizontalAlignment="Center"/>
             <TextBlock Text="{Binding BoardCard.name, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:UCCard}}}"
-                       Style="{StaticResource CardNameT}" Grid.Row="2"/>
-    </Grid>
+                    Style="{StaticResource CardNameT}" Grid.Row="2" Grid.ColumnSpan="3"/>
+            <Button Width="100" Height="160" Grid.ColumnSpan="3" Grid.RowSpan="3" Click="Button_Click" BorderBrush="{x:Null}" Background="{x:Null}"/>
+        </Grid>
+    </Viewbox>
 </UserControl>

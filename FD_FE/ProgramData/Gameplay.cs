@@ -11,12 +11,25 @@ using System.Threading.Tasks;
 
 namespace FD_FE
 {
+    public class GameMode
+    {
+        public short id { get; set; }
+        public short fractions_count { get; set; }
+        public short board_width { get; set; }
+        public short board_length { get; set; }
+        public short start_cards_count { get; set; }
+        public short battles { get; set; }
+    }
+
     public delegate void Card_func();
     public delegate void Efct_func(BoardCard card);
-    static public class IBoardAct
+    public delegate short GetAV_func(BoardCard card);
+    static public class BoardAct
     {
+        static public BoardCard selected_card;
         static public BoardCard SelectCard() {
-            return new BoardCard(new Card());
+
+            return selected_card;
         }
     }
     public class Effect
@@ -30,6 +43,7 @@ namespace FD_FE
     {
         public int id { get; set; }
         public string name { get; set; }
+        public string description { get; set; }
         public char fraction { get; set; }
         public char card_class { get; set; }
         public short start_HP { get; set; }
@@ -38,9 +52,9 @@ namespace FD_FE
 
         public Card() { }
         public Card(Card card) // копия имеющейся карты
-        { id = card.id; name = card.name; fraction = card.fraction; card_class = card.card_class; start_HP = card.start_HP; function = card.function; image = card.image; }
+        { id = card.id; name = card.name; description = card.description; fraction = card.fraction; card_class = card.card_class; start_HP = card.start_HP; function = card.function; image = card.image; }
     }
-
+    
     public class BoardCard : Card
     {
         public char force { get; set; }
@@ -49,7 +63,7 @@ namespace FD_FE
         public List<Effect> effects { get; set; }
 
         public BoardCard(Card card) // копия имеющейся карты
-        { id = card.id; name = card.name; fraction = card.fraction; card_class = card.card_class; start_HP = card.start_HP; function = card.function; image = card.image; }
+        { id = card.id; name = card.name; description = card.description; fraction = card.fraction; card_class = card.card_class; start_HP = card.start_HP; function = card.function; image = card.image; }
 
         public void Act()
         {
@@ -69,9 +83,8 @@ namespace FD_FE
         {
             for (int i=0; i<cards.Count; i++) { deck_cards.Add(new Card(cards[i])); }
         }
-
-        public Card GetCard() { return (_slcti<_sequence.Count) ? _sequence[_slcti++] : null; }
-        public Card GetCard(int i) { return deck_cards[i]; }
+        public bool SqncEnd() => _slcti < _sequence.Count;
+        public Card GetCard() => _sequence[_slcti++];
         public void MoveToHand(Card card) { hand_cards.Add(card); }
         public void SetSqnc()
         {
@@ -86,6 +99,7 @@ namespace FD_FE
                 _sequence[k] = _sequence[n];
                 _sequence[n] = temp;
             }
+            _slcti = 0;
         }
     }
 
@@ -102,5 +116,13 @@ namespace FD_FE
             for (int j = grid.Count; j <= i; j++) { grid.Add(null); }
             grid[i] = new BoardCard(new_card);
         }
+    }
+
+    public class CardClass
+    {
+        public char id { get; set; }
+        public string name { get; set; }
+        public GetAV_func GetAV { get; set; }
+
     }
 }

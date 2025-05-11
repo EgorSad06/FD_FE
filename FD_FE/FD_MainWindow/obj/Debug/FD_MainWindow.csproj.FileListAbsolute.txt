@@ -48,7 +48,6 @@ C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\Setting.baml
 C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\Statistic.baml
 C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\FD_MainW.6D16EEB5.Up2Date
 C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\GeneratedInternalTypeHelper.g.cs
-C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\GameplayResources\TempCardStyles.baml
 C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\GameplayResources\Battle.g.cs
 C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\GameplayResources\CardSelection.g.cs
 C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\GameplayResources\StartGame.g.cs
@@ -57,3 +56,4 @@ C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\GameplayReso
 C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\GameplayResources\CardSelection.baml
 C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\GameplayResources\StartGame.baml
 C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\GameplayResources\UCCard.baml
+C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\GameplayResources\CardStyles.baml

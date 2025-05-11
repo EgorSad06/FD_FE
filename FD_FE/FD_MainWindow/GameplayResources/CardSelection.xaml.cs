@@ -24,21 +24,17 @@ namespace FD_MainWindow
         public CardSelection()
         {
             InitializeComponent();
-            Deck slct_cards = new Deck(CardsData.StartCards); // колода для выбора из неё карт
-            slct_cards.SetSqnc();
 
-            Board card_slct_board = new Board();
-            for (int i = 0; i < 2; i++) // отображение карт для выбора на поле
-            {
-                card_slct_board.SetBoardCard(new BoardCard(slct_cards.GetCard()));
-            }
-            MainWindow.Draw(CardSelectionGrid, card_slct_board);
+            Deck slct_cards = new Deck(GameplayData.StartCards); // колода карт для выбора
+            slct_cards.SetSqnc();
+            Board card_slct_board = new Board(); // поле карт для выбора
+
+            for (int i=0; i<Game.gamemode.start_cards_count && slct_cards.SqncEnd(); i++) card_slct_board.SetBoardCard(new BoardCard(slct_cards.GetCard()));
+
+            MainWindow.Draw(card_slct_board, CardSelectionGrid, Game.gamemode.start_cards_count, 1); // отображение карт для выбора на поле
 
 
         }
-        //public void SetCards()
-        //{
-        //    CardSelectionGrid.Children.Add(new Border() { Width=40, Height=80, Background = new SolidColorBrush(Colors.DarkGray) });
-        //}
+
     }
 }
