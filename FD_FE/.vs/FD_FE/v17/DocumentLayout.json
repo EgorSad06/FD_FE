@@ -3,24 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\fd_mainwindow\\gameplayresources\\cardselection.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|solutionrelative:fd_mainwindow\\gameplayresources\\cardselection.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|c:\\users\\alekz\\documents\\github\\fd_fe\\fd_fe\\fd_mainwindow\\gameplayresources\\uccard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|solutionrelative:fd_mainwindow\\gameplayresources\\uccard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\fd_mainwindow\\gameplayresources\\uccard.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|solutionrelative:fd_mainwindow\\gameplayresources\\uccard.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C9BD10F-041A-4D91-915D-4B872784083C}|ProgramData\\ProgramData.csproj|c:\\users\\alekz\\documents\\github\\fd_fe\\fd_fe\\programdata\\gameplaydata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5C9BD10F-041A-4D91-915D-4B872784083C}|ProgramData\\ProgramData.csproj|C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\programdata\\gameplaydata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5C9BD10F-041A-4D91-915D-4B872784083C}|ProgramData\\ProgramData.csproj|solutionrelative:programdata\\gameplaydata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\fd_mainwindow\\gameplayresources\\cardselection.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|solutionrelative:fd_mainwindow\\gameplayresources\\cardselection.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\fd_mainwindow\\gameplayresources\\uccard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|solutionrelative:fd_mainwindow\\gameplayresources\\uccard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5C9BD10F-041A-4D91-915D-4B872784083C}|ProgramData\\ProgramData.csproj|C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\programdata\\gameplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -31,15 +23,23 @@
       "RelativeMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|solutionrelative:fd_mainwindow\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|c:\\users\\alekz\\documents\\github\\fd_fe\\fd_fe\\fd_mainwindow\\gameplayresources\\startgame.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|c:\\users\\alekz\\documents\\github\\fd_fe\\fd_fe\\fd_mainwindow\\gameplayresources\\cardselection.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|solutionrelative:fd_mainwindow\\gameplayresources\\cardselection.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\fd_mainwindow\\gameplayresources\\cardselection.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|solutionrelative:fd_mainwindow\\gameplayresources\\cardselection.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\fd_mainwindow\\gameplayresources\\startgame.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|solutionrelative:fd_mainwindow\\gameplayresources\\startgame.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|c:\\users\\alekz\\documents\\github\\fd_fe\\fd_fe\\fd_mainwindow\\gameplayresources\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\fd_mainwindow\\gameplayresources\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|solutionrelative:fd_mainwindow\\gameplayresources\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|c:\\users\\alekz\\documents\\github\\fd_fe\\fd_fe\\fd_mainwindow\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\fd_mainwindow\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|solutionrelative:fd_mainwindow\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
@@ -50,11 +50,11 @@
       "DocumentGroups": [
         {
           "DockedHeight": 264,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "CardSelection.xaml.cs",
               "DocumentMoniker": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\GameplayResources\\CardSelection.xaml.cs",
               "RelativeDocumentMoniker": "FD_MainWindow\\GameplayResources\\CardSelection.xaml.cs",
@@ -63,7 +63,19 @@
               "ViewState": "AgIAAAkAAAAAAAAAAAAAABwAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-11T10:57:04.344Z",
-              "IsPinned": true,
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GameplayData.cs",
+              "DocumentMoniker": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\ProgramData\\GameplayData.cs",
+              "RelativeDocumentMoniker": "ProgramData\\GameplayData.cs",
+              "ToolTip": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\ProgramData\\GameplayData.cs",
+              "RelativeToolTip": "ProgramData\\GameplayData.cs",
+              "ViewState": "AgIAAH0AAAAAAAAAAAAYwJ4AAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T21:33:52.555Z",
               "EditorCaption": ""
             },
             {
@@ -80,15 +92,65 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "StartGame.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\GameplayResources\\StartGame.xaml.cs",
-              "RelativeDocumentMoniker": "FD_MainWindow\\GameplayResources\\StartGame.xaml.cs",
-              "ToolTip": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\GameplayResources\\StartGame.xaml.cs",
-              "RelativeToolTip": "FD_MainWindow\\GameplayResources\\StartGame.xaml.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAApwB0AAAA1AAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "Gameplay.cs",
+              "DocumentMoniker": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\ProgramData\\Gameplay.cs",
+              "RelativeDocumentMoniker": "ProgramData\\Gameplay.cs",
+              "ToolTip": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\ProgramData\\Gameplay.cs",
+              "RelativeToolTip": "ProgramData\\Gameplay.cs",
+              "ViewState": "AgIAAEkAAAAAAAAAAIA8wFkAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-11T17:16:48.29Z",
+              "WhenOpened": "2025-05-08T21:47:20.585Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "FD_MainWindow\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\MainWindow.xaml.cs",
+              "RelativeToolTip": "FD_MainWindow\\MainWindow.xaml.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAQwDIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-11T10:26:07.162Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CardSelection.xaml",
+              "DocumentMoniker": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\GameplayResources\\CardSelection.xaml",
+              "RelativeDocumentMoniker": "FD_MainWindow\\GameplayResources\\CardSelection.xaml",
+              "ToolTip": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\GameplayResources\\CardSelection.xaml",
+              "RelativeToolTip": "FD_MainWindow\\GameplayResources\\CardSelection.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-08T21:34:21.333Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UCCard.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\GameplayResources\\UCCard.xaml.cs",
+              "RelativeDocumentMoniker": "FD_MainWindow\\GameplayResources\\UCCard.xaml.cs",
+              "ToolTip": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\GameplayResources\\UCCard.xaml.cs",
+              "RelativeToolTip": "FD_MainWindow\\GameplayResources\\UCCard.xaml.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAswBsAAABtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T21:29:52.135Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UCCard.xaml",
+              "DocumentMoniker": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\GameplayResources\\UCCard.xaml",
+              "RelativeDocumentMoniker": "FD_MainWindow\\GameplayResources\\UCCard.xaml",
+              "ToolTip": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\GameplayResources\\UCCard.xaml",
+              "RelativeToolTip": "FD_MainWindow\\GameplayResources\\UCCard.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-11T15:32:52.36Z",
               "EditorCaption": ""
             },
             {
@@ -101,84 +163,19 @@
               "RelativeToolTip": "FD_MainWindow\\GameplayResources\\Game.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-11T16:15:52.825Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-11T16:15:52.825Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "GameplayData.cs",
-              "DocumentMoniker": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\ProgramData\\GameplayData.cs",
-              "RelativeDocumentMoniker": "ProgramData\\GameplayData.cs",
-              "ToolTip": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\ProgramData\\GameplayData.cs",
-              "RelativeToolTip": "ProgramData\\GameplayData.cs",
-              "ViewState": "AgIAAFgAAAAAAAAAAAAuwHEAAAAgAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "StartGame.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\GameplayResources\\StartGame.xaml.cs",
+              "RelativeDocumentMoniker": "FD_MainWindow\\GameplayResources\\StartGame.xaml.cs",
+              "ToolTip": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\GameplayResources\\StartGame.xaml.cs",
+              "RelativeToolTip": "FD_MainWindow\\GameplayResources\\StartGame.xaml.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAApwB0AAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-08T21:33:52.555Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Gameplay.cs",
-              "DocumentMoniker": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\ProgramData\\Gameplay.cs",
-              "RelativeDocumentMoniker": "ProgramData\\Gameplay.cs",
-              "ToolTip": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\ProgramData\\Gameplay.cs",
-              "RelativeToolTip": "ProgramData\\Gameplay.cs",
-              "ViewState": "AgIAAEkAAAAAAAAAAAAvwFkAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-08T21:47:20.585Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "FD_MainWindow\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\MainWindow.xaml.cs",
-              "RelativeToolTip": "FD_MainWindow\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAIAwwCEAAABCAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-11T10:26:07.162Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CardSelection.xaml",
-              "DocumentMoniker": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\GameplayResources\\CardSelection.xaml",
-              "RelativeDocumentMoniker": "FD_MainWindow\\GameplayResources\\CardSelection.xaml",
-              "ToolTip": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\GameplayResources\\CardSelection.xaml",
-              "RelativeToolTip": "FD_MainWindow\\GameplayResources\\CardSelection.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-05-08T21:34:21.333Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UCCard.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\GameplayResources\\UCCard.xaml.cs",
-              "RelativeDocumentMoniker": "FD_MainWindow\\GameplayResources\\UCCard.xaml.cs",
-              "ToolTip": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\GameplayResources\\UCCard.xaml.cs",
-              "RelativeToolTip": "FD_MainWindow\\GameplayResources\\UCCard.xaml.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAswB8AAAB2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-08T21:29:52.135Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UCCard.xaml",
-              "DocumentMoniker": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\GameplayResources\\UCCard.xaml",
-              "RelativeDocumentMoniker": "FD_MainWindow\\GameplayResources\\UCCard.xaml",
-              "ToolTip": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\GameplayResources\\UCCard.xaml",
-              "RelativeToolTip": "FD_MainWindow\\GameplayResources\\UCCard.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-05-11T15:32:52.36Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-11T17:16:48.29Z"
             }
           ]
         },

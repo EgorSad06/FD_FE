@@ -83,6 +83,7 @@ namespace FD_FE
             },
 
         };
+        // 5-24, 25-44, 45-64, 65-84
         static public List<Card> StartCards = new List<Card>
         {
             new Card()
@@ -115,6 +116,43 @@ namespace FD_FE
                 fraction = 't',
                 card_class = 'g',
                 image = "hacker.png",
+                function = delegate()
+                {
+
+                }
+            },
+            new Card()
+            {
+                id = 8,
+                name = "Drone",
+                fraction = 't',
+                card_class = 'g',
+                image = "drone.png",
+                function = delegate()
+                {
+
+                }
+            },
+            new Card()
+            {
+                id = 9,
+                name = "Energy shield",
+                fraction = 't',
+                card_class = 's',
+                image = "energy_shield",
+                function = delegate()
+                {
+
+                }
+            },
+            new Card()
+            {
+
+                id = 10,
+                name = "Engeneer",
+                fraction = 't',
+                card_class = 'g',
+                image = "drone.png",
                 function = delegate()
                 {
 
