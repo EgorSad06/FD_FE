@@ -11,8 +11,7 @@
         <Setter Property="Height" Value="18"/>
         <Setter Property="Margin" Value="0,10,0,0"/>
         <Setter Property="TextAlignment" Value="Center"/>
-        <Setter Property="FontFamily" Value="Berlin Sans FB"/>
-        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="FontFamily" Value="Corbel"/>
         <Setter Property="Foreground" Value="WhiteSmoke"/>
     </Style>
 

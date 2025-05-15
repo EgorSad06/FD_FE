@@ -21,13 +21,14 @@ namespace FD_MainWindow
     /// </summary>
     public partial class CardSelection : Page
     {
+        Deck slct_cards = new Deck(GameplayData.StartCards); // колода карт для выбора
+        Board card_slct_board = new Board(); // поле карт для выбора
+
         public CardSelection()
         {
             InitializeComponent();
 
-            Deck slct_cards = new Deck(GameplayData.StartCards); // колода карт для выбора
             slct_cards.SetSqnc();
-            Board card_slct_board = new Board(); // поле карт для выбора
 
             for (int i=0; i<Game.gamemode.start_cards_count && slct_cards.SqncEnd(); i++) card_slct_board.SetBoardCard(new BoardCard(slct_cards.GetCard()));
 
@@ -36,5 +37,10 @@ namespace FD_MainWindow
 
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            card_slct_board.grid[0].AV++;
+            But.Content = ((UCCard)CardSelectionGrid.Children[0]).BoardCard.AV;
+        }
     }
 }
