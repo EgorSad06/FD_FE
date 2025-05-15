@@ -25,6 +25,7 @@ namespace FD_MainWindow
         {
             this.BoardCard = card;
             InitializeComponent();
+            //if (card.fr) добавить отдельное оформление 
             string path = $"{GameplayData.sprites_path}CardTemplates/{this.BoardCard.fraction}_template.png";
             CardBackgound.ImageSource = (ImageSource)MainWindow.converter.ConvertFromString(path);
             path = $"{GameplayData.sprites_path}CardTemplates/{this.BoardCard.card_class}_frame.png";
