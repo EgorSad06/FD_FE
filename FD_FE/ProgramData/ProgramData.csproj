@@ -70,7 +70,6 @@
     <Content Include="Assets\Sprites\CardTemplates\g_frame.png" />
     <Content Include="Assets\Sprites\CardTemplates\g_template.png" />
     <Content Include="Assets\Sprites\CardTemplates\m_template.png" />
-    <Content Include="Assets\Sprites\CardTemplates\s_frame.png" />
     <Content Include="Assets\Sprites\CardTemplates\t_template.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
