@@ -36,7 +36,9 @@ namespace FD_MainWindow
         //кнопка обучение, переход к обучению
         private void EducationButtonSelection_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new Uri("TutorialPage.xaml", UriKind.Relative));
+            // Если нужно закрыть текущую страницу:
+            NavigationService.RemoveBackEntry();
         }
         // Кнопка статистики, переход к просмотру статистики 
         private void StatisticsButtonSelection_Click(object sender, RoutedEventArgs e)
