@@ -120,6 +120,19 @@ namespace FD_FE
 
                 }
             }
+            //new Card()
+            //{
+            //    id = 45,
+            //    name = "Knight",
+            //    fraction = 'f',
+            //    card_class = 'c',
+            //    image = "hacker.png",
+            //    function = delegate()
+            //    {
+
+            //    }
+            //}
+
         };
     }
 }
