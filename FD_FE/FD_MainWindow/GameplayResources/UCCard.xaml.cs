@@ -23,8 +23,10 @@ namespace FD_MainWindow
     {
         public UCCard(BoardCard card, double x, double y)
         {
-            BoardCard = card;
             InitializeComponent();
+            BoardCard = card;
+            BoardCard.CardChanged += Update;
+
             string path = $"{GameplayData.sprites_path}CardTemplates/{BoardCard.fraction}_template.png";
             CardBackgound.ImageSource = (ImageSource)MainWindow.converter.ConvertFromString(path);
             path = $"{GameplayData.sprites_path}CardTemplates/{BoardCard.card_class}_frame.png";
@@ -37,13 +39,19 @@ namespace FD_MainWindow
         public BoardCard BoardCard
         {
             get { return (BoardCard)GetValue(BoardCardProperty); }
-            set { SetValue(BoardCardProperty, value); }
+            set { SetValue(BoardCardProperty, value); Update(); }
         }
         static UCCard() { BoardCardProperty = DependencyProperty.Register("BoardCard", typeof(BoardCard), typeof(UCCard)); }
+
+        public void Update()
+        {
+            cardAV.Text = BoardCard.AV.ToString();
+            cardHP.Text = BoardCard.HP.ToString();
+        }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             BoardAct.selected_card = BoardCard;
-            BoardCard.AV++;
+            Update();
         }
     }
 }

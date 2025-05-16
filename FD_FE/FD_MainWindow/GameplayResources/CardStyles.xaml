@@ -15,4 +15,24 @@
         <Setter Property="Foreground" Value="WhiteSmoke"/>
     </Style>
 
+    <Style x:Key="CardButton" TargetType="Button">
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="border" 
+                Background="Transparent"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="4">
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="BorderBrush" Value="White"/>
+                <Setter Property="BorderThickness" Value="4"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
 </ResourceDictionary>

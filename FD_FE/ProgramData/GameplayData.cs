@@ -61,7 +61,7 @@ namespace FD_FE
                 name = "Charge",
                 function = delegate(BoardCard card)
                 {
-                    card.AV = (short)(card.AV*2);
+                    card.SetAV((short)(card.AV*2));
                 }
             }
         };

@@ -30,17 +30,15 @@
                 <Border.Background>
                     <ImageBrush x:Name="CardClassFrame" Stretch="UniformToFill"/>
                 </Border.Background>
-                <TextBlock Text="{Binding Path=BoardCard.AV, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:UCCard}}, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
-                    Style="{StaticResource CardValueT}" Foreground="Cyan" Height="30" Width="26" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock x:Name="cardAV" Style="{StaticResource CardValueT}" Foreground="Cyan" Height="30" Width="26" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </Border>
             <StackPanel Grid.Column="1" />
-            <TextBlock Text="{Binding Path=BoardCard.HP, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:UCCard}}}" 
-                        Style="{StaticResource CardValueT}"  Foreground="WhiteSmoke" Width="26" Height="30" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <TextBlock x:Name="cardHP" Style="{StaticResource CardValueT}"  Foreground="WhiteSmoke" Width="26" Height="30" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center"/>
 
             <Image x:Name="CardImage" Height="90" Width="90" Stretch="Uniform" Grid.Row="1" Grid.ColumnSpan="3" HorizontalAlignment="Center"/>
-            <TextBlock Text="{Binding BoardCard.name, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:UCCard}}}"
+            <TextBlock Text="{Binding ElementName=UCcard, Path=BoardCard.name}"
                     Style="{StaticResource CardNameT}" Grid.Row="2" Grid.ColumnSpan="3"/>
-            <Button Width="100" Height="100" Grid.ColumnSpan="3" Grid.RowSpan="3" Click="Button_Click" BorderBrush="{x:Null}" />
+            <Button Width="100" Height="160" Grid.ColumnSpan="3" Grid.RowSpan="3" Click="Button_Click" Style="{StaticResource CardButton}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
     </Viewbox>
 </UserControl>

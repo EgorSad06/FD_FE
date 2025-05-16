@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Linq;
 using System.Net.Mime;
@@ -24,6 +25,7 @@ namespace FD_FE
     public delegate void Card_func();
     public delegate void Efct_func(BoardCard card);
     public delegate short GetAV_func(BoardCard card);
+    
     static public class BoardAct
     {
         static public BoardCard selected_card;
@@ -58,9 +60,15 @@ namespace FD_FE
     public class BoardCard : Card
     {
         public char force { get; set; }
-        public short HP { get; set; }
-        public short AV { get; set; }
+        public short HP { get; protected set; }
+        public short AV { get; protected set; }
+        public void SetHP(short new_HP) { HP = new_HP; }
+        public void SetAV(short new_AV) { AV = new_AV; }
+
         public List<Effect> effects { get; set; }
+
+        public delegate void CardChangedEventHandler();
+        static public event CardChangedEventHandler CardChanged;
 
         public BoardCard(Card card) // копия имеющейся карты
         { id = card.id; name = card.name; description = card.description; fraction = card.fraction; card_class = card.card_class; start_HP = card.start_HP; function = card.function; image = card.image; }
