@@ -39,7 +39,6 @@ namespace FD_MainWindow
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            card_slct_board.grid[0].SetAV((short)(card_slct_board.grid[0].AV+1));
             But.Content = ((UCCard)CardSelectionGrid.Children[0]).BoardCard.AV;
         }
     }

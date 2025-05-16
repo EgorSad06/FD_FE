@@ -23,23 +23,15 @@ namespace FD_MainWindow
     {
         public UCCard(BoardCard card, double x, double y)
         {
-<<<<<<< HEAD
             InitializeComponent();
             BoardCard = card;
             BoardCard.CardChanged += Update;
 
-            string path = $"{GameplayData.sprites_path}CardTemplates/{BoardCard.fraction}_template.png";
-=======
-            this.BoardCard = card;
-            InitializeComponent();
-            //if (card.fr) добавить отдельное оформление 
-            string path = $"{GameplayData.sprites_path}CardTemplates/{this.BoardCard.fraction}_template.png";
->>>>>>> bf2cdb6bb29b9ea30813f3f810fd26e1970dfe93
-            CardBackgound.ImageSource = (ImageSource)MainWindow.converter.ConvertFromString(path);
-            path = $"{GameplayData.sprites_path}CardTemplates/{this.BoardCard.card_class}_frame.png";
-            CardClassFrame.ImageSource = (ImageSource)MainWindow.converter.ConvertFromString(path);
-            CardImage.Source = (ImageSource)MainWindow.converter.ConvertFromString($"{GameplayData.sprites_path}Cards/{this.BoardCard.image}");
-            this.Margin = new Thickness(x, y, 0,0);
+            //if (card.fr) добавить отдельное оформление
+            CardBackgound.ImageSource = (ImageSource)MainWindow.converter.ConvertFromString($"{GameplayData.sprites_path}CardTemplates/{BoardCard.fraction}_template.png");
+            CardClassFrame.ImageSource = (ImageSource)MainWindow.converter.ConvertFromString($"{GameplayData.sprites_path}CardTemplates/{BoardCard.card_class.id}_frame.png");
+            CardImage.Source = (ImageSource)MainWindow.converter.ConvertFromString($"{GameplayData.sprites_path}Cards/{BoardCard.image}");
+            Margin = new Thickness(x, y, 0,0);
         }
         
         public static DependencyProperty BoardCardProperty;
@@ -58,11 +50,7 @@ namespace FD_MainWindow
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             BoardAct.selected_card = BoardCard;
-<<<<<<< HEAD
-            Update();
-=======
-            BoardCard.AV += 1;
->>>>>>> bf2cdb6bb29b9ea30813f3f810fd26e1970dfe93
+            BoardCard.SetAV((short)(BoardCard.AV+1));
         }
     }
 }

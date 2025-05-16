@@ -12,9 +12,9 @@ using System.Threading.Tasks;
 
 namespace FD_FE
 {
+// режим
     public class GameMode
     {
-        public short id { get; set; }
         public short fractions_count { get; set; }
         public short board_width { get; set; }
         public short board_length { get; set; }
@@ -26,6 +26,7 @@ namespace FD_FE
     public delegate void Efct_func(BoardCard card);
     public delegate short GetAV_func(BoardCard card);
     
+// действия поля
     static public class BoardAct
     {
         static public BoardCard selected_card;
@@ -34,44 +35,65 @@ namespace FD_FE
             return selected_card;
         }
     }
+
+// эффект
     public class Effect
     {
-        public int id { get; set; }
         public string name { get; set; }
         public Efct_func function { get; set; }
     }
 
+// класс карты
+    public class CardClass
+    {
+        public char id { get; set; }
+        public string name { get; set; }
+        public GetAV_func GetAV { get; set; }
+
+    }
+
+// карта
     public class Card
     {
         public int id { get; set; }
         public string name { get; set; }
         public string description { get; set; }
         public char fraction { get; set; }
-        public char card_class { get; set; }
+        public CardClass card_class { get; set; }                           
         public short start_HP { get; set; }
         public Card_func function { get; set; }
         public string image { get; set; }
 
         public Card() { }
         public Card(Card card) // копия имеющейся карты
-        { id = card.id; name = card.name; description = card.description; fraction = card.fraction; card_class = card.card_class; start_HP = card.start_HP; function = card.function; image = card.image; }
+        {
+            id = card.id; name = card.name; description = card.description;
+            fraction = card.fraction; card_class = card.card_class;
+            start_HP = card.start_HP; function = card.function; image = card.image;
+        }
     }
     
+// карта поля
     public class BoardCard : Card
     {
         public char force { get; set; }
         public short HP { get; protected set; }
         public short AV { get; protected set; }
-        public void SetHP(short new_HP) { HP = new_HP; }
-        public void SetAV(short new_AV) { AV = new_AV; }
+        public void SetHP(short new_HP) { HP = new_HP; CardChanged?.Invoke(); }
+        public void SetAV() { AV = card_class.GetAV(this); CardChanged?.Invoke(); }
+        public void SetAV(short new_AV) { AV = new_AV; CardChanged?.Invoke(); }
 
         public List<Effect> effects { get; set; }
 
         public delegate void CardChangedEventHandler();
-        static public event CardChangedEventHandler CardChanged;
+        public event CardChangedEventHandler CardChanged;
 
         public BoardCard(Card card) // копия имеющейся карты
-        { id = card.id; name = card.name; description = card.description; fraction = card.fraction; card_class = card.card_class; start_HP = card.start_HP; function = card.function; image = card.image; }
+        {
+            id = card.id; name = card.name; description = card.description;
+            fraction = card.fraction; card_class = card.card_class;
+            start_HP = card.start_HP; function = card.function; image = card.image;
+        }
 
         public void Act()
         {
@@ -79,6 +101,8 @@ namespace FD_FE
         }
         public void SetAct() { }
     }
+
+// колода
     public class Deck
     {
         public List<Card> deck_cards = new List<Card>();
@@ -111,6 +135,7 @@ namespace FD_FE
         }
     }
 
+// поле
     public class Board
     {
         public List<BoardCard> grid = new List<BoardCard>();
@@ -124,13 +149,5 @@ namespace FD_FE
             for (int j = grid.Count; j <= i; j++) { grid.Add(null); }
             grid[i] = new BoardCard(new_card);
         }
-    }
-
-    public class CardClass
-    {
-        public char id { get; set; }
-        public string name { get; set; }
-        public GetAV_func GetAV { get; set; }
-
     }
 }

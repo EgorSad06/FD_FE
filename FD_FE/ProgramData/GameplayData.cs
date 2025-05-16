@@ -12,12 +12,12 @@ namespace FD_FE
 {
     public static class GameplayData
     {
-        static private string _card_sprites_path_xaml = "/ClassLib;component/Assets/Sprites/Cards/";
         static public string sprites_path = "../../../ProgramData/Assets/Sprites/";
-        static public List<GameMode> GameModes = new List<GameMode> {
+
+        // режимы
+        public static List<GameMode> GameModes = new List<GameMode> {
             new GameMode()
             {
-                id = 1,
                 fractions_count = 1,
                 board_width = 3,
                 board_length = 4,
@@ -26,7 +26,6 @@ namespace FD_FE
             },
             new GameMode()
             {
-                id = 2,
                 fractions_count = 2,
                 board_width = 3,
                 board_length = 4,
@@ -35,7 +34,6 @@ namespace FD_FE
             },
             new GameMode()
             {
-                id = 3,
                 fractions_count = 3,
                 board_width = 4,
                 board_length = 4,
@@ -44,53 +42,60 @@ namespace FD_FE
             },
             new GameMode()
             {
-                id = 4,
                 fractions_count = 4,
                 board_width = 4,
                 board_length = 4,
                 start_cards_count = 6,
                 battles = 5
             }
-
         };
+
+        // эффекты
         static public List<Effect> FD_FE_Effects = new List<Effect>
         {
             new Effect()
             {
-                id = 1,
-                name = "Charge",
+                name = "Заряд",
                 function = delegate(BoardCard card)
                 {
                     card.SetAV((short)(card.AV*2));
                 }
             }
         };
+
+        // классы сз=0 гс=1 цс=2 пк=3
         static public List<CardClass> CardClasses = new List<CardClass>
         {
-            new CardClass()
-            {
-                id = 'e',
-                name = "Static value",
+            new CardClass() {
+                id = 's',
+                name = "Статическое значение"
             },
-            new CardClass()
-            {
+            new CardClass() {
                 id = 'g',
-                name = "Group of teammates",
-                GetAV = delegate(BoardCard card)
-                {
-                    return 1;
-                }
+                name = "Группа союзников",
+                GetAV = delegate(BoardCard card) { return 1; }
             },
-
+            new CardClass() {
+                id = 'c',
+                name = "Цепь союзников",
+                GetAV = delegate(BoardCard card) { return 1; }
+            },
+            new CardClass() {
+                id = 'e',
+                name = "Пустые клетки",
+                GetAV = delegate(BoardCard card) { return 1; }
+            }
         };
+
+        // карты 5-24 25-44 45-64 65-84
         static public List<Card> StartCards = new List<Card>
         {
             new Card()
             {
                 id = 5,
-                name = "Railgun",
+                name = "Рельсотрон",
                 fraction = 't',
-                card_class = 'g',
+                card_class = CardClasses[1],
                 image = "railgun.png",
                 function = delegate() {
 
@@ -99,9 +104,9 @@ namespace FD_FE
             new Card()
             {
                 id = 6,
-                name = "Dreamer",
+                name = "Мечтатель",
                 fraction = 't',
-                card_class = 'e',
+                card_class = CardClasses[3],
                 image = "dreamer.png",
                 function = delegate()
                 {
@@ -111,9 +116,9 @@ namespace FD_FE
             new Card()
             {
                 id = 7,
-                name = "Hacker",
+                name = "Хакер",
                 fraction = 't',
-                card_class = 'g',
+                card_class = CardClasses[1],
                 image = "hacker.png",
                 function = delegate()
                 {

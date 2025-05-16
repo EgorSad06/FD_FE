@@ -26,6 +26,7 @@ namespace FD_MainWindow
         {
             InitializeComponent();
             MainFrame.Content = new MainMenu();
+
         }
 
         static public ImageSourceConverter converter = new ImageSourceConverter();
