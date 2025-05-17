@@ -10,49 +10,93 @@ using System.Windows.Media.Imaging;
 
 namespace FD_MainWindow
 {
+    public class RelayCommand : ICommand
+    {
+        private readonly Action _execute;
+
+        public RelayCommand(Action execute) => _execute = execute;
+
+        public bool CanExecute(object parameter) => true;
+        public void Execute(object parameter) => _execute();
+        public event EventHandler CanExecuteChanged;
+    }
     public partial class TutorialPage : Page, INotifyPropertyChanged
     {
         private int _currentIndex;
-        private List<Card> _cards = new List<Card>();
-        private Card _currentCard;
+        private List<Card> _cards;
+        private BitmapImage _currentCardImage;
 
-        public List<Card> Cards
+        public Card CurrentCard => _cards?[_currentIndex];
+        public BitmapImage CurrentCardImage
         {
-            get => _cards;
+            get => _currentCardImage;
             set
             {
-                _cards = value;
+                _currentCardImage = value;
                 OnPropertyChanged();
             }
         }
 
-        public Card CurrentCard
+        public TutorialPage()
         {
-            get => _currentCard;
-            set
-            {
-                // Сбрасываем выделение предыдущей карточки
-                if (_currentCard != null)
-                    _currentCard.IsSelected = false;
-
-                _currentCard = value;
-
-                // Устанавливаем выделение новой карточки
-                if (_currentCard != null)
-                    _currentCard.IsSelected = true;
-
-                OnPropertyChanged();
-                UpdateVisibility(); // Добавлено обновление видимости
-            }
+            InitializeComponent();
+            DataContext = this;
+            LoadCards();
+            UpdateImage();
         }
 
-        // Команды с явным обновлением CurrentCard
+        private void LoadCards()
+        {
+            // Загрузка карточек из источника
+            _cards = new List<Card>
+        {
+            new Card
+            {
+                name = "Здоровье",
+                description = "Текст с описанием 1",
+                image = "biomachine.png"
+            },
+            new Card
+            {
+                name = "Класс",
+                description = "Текст с описанием 2",
+                image = "brick_shooter.png"
+            },
+            new Card
+            {
+                name = "Особое значение",
+                description = "Текст с описанием 3",
+                image = "hacker.png"
+            }
+        };
+        }
+
+        private void UpdateImage()
+        {
+            try
+            {
+                
+                string uriPath = $"pack://application:,,,/FD_MainWindow;component/ProgramData/Assets/Sprites/Cards/{CurrentCard.image}";
+                CurrentCardImage = new BitmapImage(new Uri(uriPath, UriKind.Absolute));
+            }
+            catch (Exception ex)
+            {
+                // Обработка ошибок
+                Console.WriteLine($"Ошибка загрузки изображения: {ex.Message}");
+                CurrentCardImage = new BitmapImage(); // Пустое изображение при ошибке
+            }
+
+            OnPropertyChanged(nameof(CurrentCard));
+            OnPropertyChanged(nameof(ShowBackButton));
+            OnPropertyChanged(nameof(ShowNextButton));
+        }
+
         public ICommand NextCommand => new RelayCommand(() =>
         {
             if (_currentIndex < _cards.Count - 1)
             {
                 _currentIndex++;
-                CurrentCard = _cards[_currentIndex]; // Явное обновление
+                UpdateImage();
             }
         });
 
@@ -61,7 +105,7 @@ namespace FD_MainWindow
             if (_currentIndex > 0)
             {
                 _currentIndex--;
-                CurrentCard = _cards[_currentIndex]; // Явное обновление
+                UpdateImage();
             }
         });
 
@@ -70,122 +114,13 @@ namespace FD_MainWindow
             NavigationService.Navigate(new MainMenu());
         });
 
-        private void UpdateVisibility()
-        {
-            // Принудительное обновление свойств видимости
-            OnPropertyChanged(nameof(ShowBackButton));
-            OnPropertyChanged(nameof(ShowNextButton));
-            OnPropertyChanged(nameof(ShowReturnButton));
-        }
-
         public bool ShowBackButton => _currentIndex > 0;
         public bool ShowNextButton => _currentIndex < _cards.Count - 1;
-        public bool ShowReturnButton => _currentIndex == _cards.Count - 1;
 
         public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged([CallerMemberName] string prop = "") =>
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
-
-        public class Card : INotifyPropertyChanged
+        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            private bool _isSelected;
-            private BitmapImage _image;
-            private string _title;
-            private string _description;
-
-            public bool IsSelected
-            {
-                get => _isSelected;
-                set
-                {
-                    _isSelected = value;
-                    OnPropertyChanged();
-                }
-            }
-
-            public BitmapImage Image
-            {
-                get => _image;
-                set
-                {
-                    _image = value;
-                    OnPropertyChanged();
-                }
-            }
-
-            public string Title
-            {
-                get => _title;
-                set
-                {
-                    _title = value;
-                    OnPropertyChanged();
-                }
-            }
-
-            public string Description
-            {
-                get => _description;
-                set
-                {
-                    _description = value;
-                    OnPropertyChanged();
-                }
-            }
-
-            public Card(string title, string imageName, string desc)
-            {
-                Title = title;
-                Image = LoadImage(imageName);
-                Description = desc;
-                IsSelected = false; // Инициализация значения
-            }
-
-            private BitmapImage LoadImage(string filename)
-            {
-                try
-                {
-                    return new BitmapImage(new Uri(
-                        $"Assets/Sprites/Card/{filename}"));
-                }
-                catch
-                {
-                    return new BitmapImage();
-                }
-            }
-
-            public event PropertyChangedEventHandler PropertyChanged;
-            protected void OnPropertyChanged([CallerMemberName] string prop = "") =>
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
-        }
-
-        public TutorialPage()
-        {
-            InitializeComponent();
-            DataContext = this;
-
-            // Инициализация карточек с явным указанием IsSelected для первой
-            Cards = new List<Card>
-            {
-                new Card("Здоровье", "biomachine.png", "Тут, что-то будет") { IsSelected = true },
-                new Card("Класс", "brick_shooter.png", "Тут, что-то будет"),
-                new Card("Активное значение", "hacker.png", "Тут, что-то будет"),
-                new Card("Завершение", "transformator.png", "Тут, что-то будет")
-            };
-
-            _currentIndex = 0;
-            CurrentCard = Cards[0];
-        }
-
-        public class RelayCommand : ICommand
-        {
-            private readonly Action _execute;
-
-            public RelayCommand(Action execute) => _execute = execute;
-
-            public bool CanExecute(object parameter) => true;
-            public void Execute(object parameter) => _execute();
-            public event EventHandler CanExecuteChanged;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

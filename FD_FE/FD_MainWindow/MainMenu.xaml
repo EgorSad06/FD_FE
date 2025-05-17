@@ -4,13 +4,8 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:FD_MainWindow"
-      mc:Ignorable="d" 
-      d:DesignHeight="900" d:DesignWidth="1600"
-      Width="1600"
-      Height="900"
-      Title="MainMenu"
-      MinHeight="900"
-      MinWidth="1600">
+      
+      Title="MainMenu">
 
     <Grid Background="LightBlue">
 
