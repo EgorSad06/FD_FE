@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FD_FE;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -145,7 +146,7 @@ namespace FD_MainWindow
                 try
                 {
                     return new BitmapImage(new Uri(
-                        $"pack://application:,,,/FD_FE;component/ProgramData/Assets/Sprites/Cards/{filename}"));
+                        $"Assets/Sprites/Card/{filename}"));
                 }
                 catch
                 {

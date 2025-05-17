@@ -18,21 +18,8 @@
       "DocumentGroups": [
         {
           "DockedHeight": 264,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "TutorialPage.xaml",
-              "DocumentMoniker": "C:\\Users\\Huawei\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\TutorialPage.xaml",
-              "RelativeDocumentMoniker": "FD_MainWindow\\TutorialPage.xaml",
-              "ToolTip": "C:\\Users\\Huawei\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\TutorialPage.xaml",
-              "RelativeToolTip": "FD_MainWindow\\TutorialPage.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-05-15T06:40:09.808Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
@@ -45,9 +32,21 @@
               "RelativeDocumentMoniker": "FD_MainWindow\\TutorialPage.xaml.cs",
               "ToolTip": "C:\\Users\\Huawei\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\TutorialPage.xaml.cs",
               "RelativeToolTip": "FD_MainWindow\\TutorialPage.xaml.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAuwL0AAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAIgAAAAAAAAAAAAAAJQAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-15T17:05:20.907Z",
+              "WhenOpened": "2025-05-17T14:03:11.52Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TutorialPage.xaml",
+              "DocumentMoniker": "C:\\Users\\Huawei\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\TutorialPage.xaml",
+              "RelativeDocumentMoniker": "FD_MainWindow\\TutorialPage.xaml",
+              "ToolTip": "C:\\Users\\Huawei\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\TutorialPage.xaml",
+              "RelativeToolTip": "FD_MainWindow\\TutorialPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-17T14:03:07.788Z",
               "EditorCaption": ""
             }
           ]
