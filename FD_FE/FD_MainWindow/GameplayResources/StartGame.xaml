@@ -11,8 +11,5 @@
     <Grid Background="Maroon">
         <TextBlock TextBlock.TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"><Run Text="StartGame"/><LineBreak/><Run Text="Страница запуска игры (режим игры, подключение и т.п.)"/></TextBlock>
         <Button Width="100" Height="50" Click="StartButton_Click" VerticalAlignment="Top" >Start</Button>
-        <RadioButton Height="30" Margin="10,372,686,48" HorizontalAlignment="Left" VerticalAlignment="Bottom" Content="Подключиться"/>
-        <Button Width="100" Height="30" HorizontalAlignment="Left" VerticalAlignment="Bottom" Click="Button_Click" Content="Готово" Margin="119,0,0,15"></Button>
-        <RadioButton Height="30" Margin="10,410,686,10" HorizontalAlignment="Left" VerticalAlignment="Bottom" Content="Создать сервер"/>
     </Grid>
 </Page>

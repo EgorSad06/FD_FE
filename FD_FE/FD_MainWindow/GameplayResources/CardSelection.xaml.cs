@@ -36,8 +36,8 @@ namespace FD_MainWindow
                     card_slct_board.SetBoardCard(new BoardCard(temp));
                     Game.p_deck.deck_cards.Add(temp);
                 }
+                foreach (UIElement uc_card in CardSelectionGrid.Children) uc_card.IsEnabled = false;
                 Game.Draw(card_slct_board, CardSelectionGrid, Game.Mode.start_cards_count, 1);
-                foreach (UCCard uc_card in CardSelectionGrid.Children) uc_card.IsEnabled = false;
             }
             else
             { // игра (карты выбираются)
