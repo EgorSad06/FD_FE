@@ -6,7 +6,12 @@
       xmlns:local="clr-namespace:FD_MainWindow"
       Loaded="Page_Loaded"
       Opacity="0"
-      Title="MainMenu">
+      Title="MainMenu"
+      Background="DarkBlue"
+>
+
+    
+
     <Page.Resources>
         <Storyboard x:Key="FadeInAnimation">
             <!-- Указываем анимацию для самой страницы -->
@@ -14,15 +19,16 @@
                 Storyboard.TargetProperty="Opacity"
                 From="0" 
                 To="1"
-                Duration="0:0:0.5"/>
+                Duration="0:0:0.5"
+                />
         </Storyboard>
     </Page.Resources>
+    
     <Grid Background="LightBlue">
 
         <!-- Картинка фона -->
         <Image Source="/ClassLib;component/Assets/Sprites/Menu/main_meny_bg.jpg" Stretch="UniformToFill"/>
-        <!--  Я не понимаю что это за строка снизу, думаю оно тут лишнее, удали, если это так
-        <Image Margin="1456,530,400,494" Source="/main_meny_bg.jpg" Stretch="Fill"/> -->
+
 
         <!-- Кнопки -->
         <Button 
