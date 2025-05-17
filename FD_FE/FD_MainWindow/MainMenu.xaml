@@ -4,112 +4,249 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:FD_MainWindow"
-      Title="MainMenu"
-      Loaded="Page_Loaded"
-      Opacity="0">
-
-    <Page.Resources>
-        <!-- Общий стиль для всех кнопок -->
-        <Style x:Key="MenuButtonStyle" TargetType="Button">
-            <Setter Property="FontFamily" Value="Lucida Handwriting"/>
-            <Setter Property="FontSize" Value="75"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="BorderBrush" Value="Transparent"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="HorizontalAlignment" Value="Left"/>
-            <Setter Property="VerticalAlignment" Value="Top"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border x:Name="border" 
-                                Background="{TemplateBinding Background}"
-                                BorderBrush="{TemplateBinding BorderBrush}"
-                                BorderThickness="{TemplateBinding BorderThickness}">
-                            <ContentPresenter HorizontalAlignment="Center"
-                                              VerticalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="FontWeight" Value="Bold"/>
-                </Trigger>
-            </Style.Triggers>
-        </Style>
-
-        <!-- Анимация плавного появления -->
-        <Storyboard x:Key="FadeInAnimation">
-            <!-- Указываем анимацию для самой страницы -->
-            <DoubleAnimation
-                Storyboard.TargetProperty="Opacity"
-                From="0" 
-                To="1"
-                Duration="0:0:0.5"/>
-        </Storyboard>
-    </Page.Resources>
+      
+      Title="MainMenu">
 
     <Grid Background="LightBlue">
 
         <!-- Картинка фона -->
-        <Image Source="/ClassLib;component/Assets/Sprites/Menu/main_meny_bg.jpg" Stretch="Fill"/>
+        <Image Source="/ClassLib;component/Assets/Sprites/Menu/main_meny_bg.jpg" Stretch="UniformToFill"/>
         <!--  Я не понимаю что это за строка снизу, думаю оно тут лишнее, удали, если это так
         <Image Margin="1456,530,400,494" Source="/main_meny_bg.jpg" Stretch="Fill"/> -->
 
-        <!-- Кнопки, надо сделать панелью -->
-        <!-- Контейнер для кнопок -->
-        <StackPanel Margin="53,184,0,0" VerticalAlignment="Top">
-            <Button 
-                x:Name="PlayButton" 
-                Content="Play" 
-                Height="119"
-                Width="318"
-                Click="PlayButtonSelection_Click"
-                Style="{StaticResource MenuButtonStyle}"/>
+        <!-- Кнопки -->
+        <Button 
+        Name="PlayButton" 
+        Content="Play" 
+        HorizontalAlignment="Left"
+        VerticalAlignment="Top"
+        Height="119"
+        Width="318"
+        Margin="53,184,0,0"
+        Click="PlayButtonSelection_Click"
+        Background="Transparent"
+        Foreground="White"
+        FontSize="75"
+        FontFamily="Lucida Handwriting"
+        BorderBrush="Transparent"
+        BorderThickness="0">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <!-- Базовые свойства -->
+                    <Setter Property="FontWeight" Value="Normal"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <!-- Кастомный шаблон без состояний по умолчанию -->
+                                <Border x:Name="border" 
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}">
+                                    <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
 
-            <Button 
-                x:Name="EducationButton" 
-                Content="Education" 
-                Height="119"
-                Width="598"
-                Margin="0,20,0,0"
-                Click="EducationButtonSelection_Click"
-                Style="{StaticResource MenuButtonStyle}"/>
+                    <!-- Триггеры -->
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="FontWeight" Value="Bold"/>
+                            <!-- Явно отключаем любые изменения границы -->
+                            <Setter Property="BorderBrush" Value="Transparent"/>
+                            <Setter Property="BorderThickness" Value="0"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button 
+            x:Name="EducationButton" 
+            Content="Education" 
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Height="119"
+            Width="598"
+            Margin="53,308,0,0"
+            Click="EducationButtonSelection_Click"
+            Background="Transparent"
+            Foreground="White"
+            FontSize="75"
+            FontFamily="Lucida Handwriting"
+            BorderBrush="Transparent"
+            BorderThickness="0">
+            <Button.Style>
+            <Style TargetType="Button">
+                <!-- Базовые свойства -->
+                <Setter Property="FontWeight" Value="Normal"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <!-- Кастомный шаблон без состояний по умолчанию -->
+                            <Border x:Name="border" 
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}">
+                                <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
 
-            <Button 
-                x:Name="StatisticsButton" 
-                Content="Statistics" 
-                Height="119"
-                Width="508"
-                Margin="0,20,0,0"
-                Click="StatisticsButtonSelection_Click"
-                Style="{StaticResource MenuButtonStyle}"/>
+                <!-- Триггеры -->
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="FontWeight" Value="Bold"/>
+                        <!-- Явно отключаем любые изменения границы -->
+                        <Setter Property="BorderBrush" Value="Transparent"/>
+                        <Setter Property="BorderThickness" Value="0"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+            </Button.Style>
+        </Button>
+        <Button 
+            x:Name="StatisticsButton" 
+            Content="Statistics" 
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Height="119"
+            Width="508"
+            Margin="53,432,0,0"
+            Click="StatisticsButtonSelection_Click"
+            Background="Transparent"
+            Foreground="White"
+            FontSize="75"
+            FontFamily="Lucida Handwriting"
+            BorderBrush="Transparent"
+            BorderThickness="0" RenderTransformOrigin="0.464,0.607">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <!-- Базовые свойства -->
+                    <Setter Property="FontWeight" Value="Normal"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <!-- Кастомный шаблон без состояний по умолчанию -->
+                                <Border x:Name="border" 
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
+                                    <ContentPresenter HorizontalAlignment="Center"
+                                      VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
 
-            <Button 
-                x:Name="SettingsButton" 
-                Content="Settings" 
-                Height="118"
-                Width="440"
-                Margin="0,20,0,0"
-                Click="SettingsButtonSelection_Click"
-                Style="{StaticResource MenuButtonStyle}"/>
+                    <!-- Триггеры -->
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="FontWeight" Value="Bold"/>
+                            <!-- Явно отключаем любые изменения границы -->
+                            <Setter Property="BorderBrush" Value="Transparent"/>
+                            <Setter Property="BorderThickness" Value="0"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button 
+            x:Name="SettingsButton" 
+            Content="Settings" 
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Height="118"
+            Width="440"
+            Margin="53,582,0,0"
+            Click="SettingsButtonSelection_Click"
+            Background="Transparent"
+            Foreground="White"
+            FontSize="75"
+            FontFamily="Lucida Handwriting"
+            BorderBrush="Transparent"
+            BorderThickness="0">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <!-- Базовые свойства -->
+                    <Setter Property="FontWeight" Value="Normal"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <!-- Кастомный шаблон без состояний по умолчанию -->
+                                <Border x:Name="border" 
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
+                                    <ContentPresenter HorizontalAlignment="Center"
+                                      VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
 
-            <Button 
-                x:Name="ExitButton" 
-                Content="Exit" 
-                Height="119"
-                Width="220"
-                Margin="34,20,0,0"
-                Click="ExitButtonSelection_Click"
-                Style="{StaticResource MenuButtonStyle}"/>
-        </StackPanel>
+                    <!-- Триггеры -->
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="FontWeight" Value="Bold"/>
+                            <!-- Явно отключаем любые изменения границы -->
+                            <Setter Property="BorderBrush" Value="Transparent"/>
+                            <Setter Property="BorderThickness" Value="0"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button 
+            x:Name="ExitButton" 
+            Content="Exit" 
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Height="119"
+            Width="220"
+            Margin="87,706,0,0"
+            Click="ExitButtonSelection_Click"
+            Background="Transparent"
+            Foreground="White"
+            FontSize="75"
+            FontFamily="Lucida Handwriting"
+            BorderBrush="Transparent"
+            BorderThickness="0">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <!-- Базовые свойства -->
+                    <Setter Property="FontWeight" Value="Normal"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <!-- Кастомный шаблон без состояний по умолчанию -->
+                                <Border x:Name="border" 
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
+                                    <ContentPresenter HorizontalAlignment="Center"
+                                      VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+
+                    <!-- Триггеры -->
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="FontWeight" Value="Bold"/>
+                            <!-- Явно отключаем любые изменения границы -->
+                            <Setter Property="BorderBrush" Value="Transparent"/>
+                            <Setter Property="BorderThickness" Value="0"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
         <!-- Спрятанная рамка для других окн -->
-        <!--   <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/> -->
-        
-        
         
         
     </Grid>
-    
 </Page>
