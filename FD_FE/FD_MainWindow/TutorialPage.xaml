@@ -8,7 +8,7 @@
         <BooleanToVisibilityConverter x:Key="BoolToVisibility"/>
     </Page.Resources>
 
-    <Grid>
+    <Grid x:Name="TutorialGrid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="Auto"/>

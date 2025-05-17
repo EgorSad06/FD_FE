@@ -26,20 +26,6 @@ namespace FD_FE
     public delegate void Efct_func(BoardCard card);
     public delegate short GetAV_func(BoardCard card);
     
-// действия поля
-    //static public class BoardAct
-    //{
-    //    static public BoardCard selected_card;
-    //    static public BoardCard SelectCard()
-    //    {
-    //        selected_card = null;
-    //        SelectCardAsync();
-    //        return selected_card;
-    //    }
-    //    static public async void SelectCardAsync() {
-    //        await Task.Run(() => { while (selected_card == null) Thread.Sleep(250); });
-    //    }
-    //}
 
 // эффект
     public class Effect
@@ -94,6 +80,7 @@ namespace FD_FE
         public delegate void CardChangedEventHandler();
         public event CardChangedEventHandler CardChanged;
 
+        public BoardCard() { }
         public BoardCard(Card card) // копия имеющейся карты
         {
             id = card.id; name = card.name; description = card.description;

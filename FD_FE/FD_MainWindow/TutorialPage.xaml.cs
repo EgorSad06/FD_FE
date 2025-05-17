@@ -23,10 +23,10 @@ namespace FD_MainWindow
     public partial class TutorialPage : Page, INotifyPropertyChanged
     {
         private int _currentIndex;
-        private List<Card> _cards;
+        private List<BoardCard> _cards;
         private BitmapImage _currentCardImage;
 
-        public Card CurrentCard => _cards?[_currentIndex];
+        public BoardCard CurrentCard => _cards?[_currentIndex];
         public BitmapImage CurrentCardImage
         {
             get => _currentCardImage;
@@ -48,43 +48,43 @@ namespace FD_MainWindow
         private void LoadCards()
         {
             // Загрузка карточек из источника
-            _cards = new List<Card>
+            _cards = new List<BoardCard>
         {
-            new Card
+            new BoardCard
             {
                 name = "Здоровье",
                 description = "Текст с описанием 1",
-                image = "biomachine.png"
+                image = "biomachine.png",
+                fraction = 'g',
+                card_class = GameplayData.CardClasses[0]
             },
-            new Card
+            new BoardCard
             {
                 name = "Класс",
                 description = "Текст с описанием 2",
-                image = "brick_shooter.png"
+                image = "brick_shooter.png",
+                fraction = 'g',
+                card_class = GameplayData.CardClasses[0]
             },
-            new Card
+            new BoardCard
             {
                 name = "Особое значение",
                 description = "Текст с описанием 3",
-                image = "hacker.png"
+                image = "hacker.png",
+                fraction = 'g',
+                card_class = GameplayData.CardClasses[0]
             }
         };
         }
 
         private void UpdateImage()
         {
-            try
-            {
-                
-                string uriPath = $"pack://application:,,,/FD_MainWindow;component/ProgramData/Assets/Sprites/Cards/{CurrentCard.image}";
-                CurrentCardImage = new BitmapImage(new Uri(uriPath, UriKind.Absolute));
-            }
-            catch (Exception ex)
-            {
-                // Обработка ошибок
-                Console.WriteLine($"Ошибка загрузки изображения: {ex.Message}");
-                CurrentCardImage = new BitmapImage(); // Пустое изображение при ошибке
-            }
+            UCCard uc_card = Game.Draw(CurrentCard, TutorialGrid, 0, 0);
+            uc_card.HorizontalAlignment = HorizontalAlignment.Right;
+            uc_card.VerticalAlignment = VerticalAlignment.Center;
+            uc_card.cardVB.Height *= 3;
+            uc_card.cardVB.Width *= 3;
+            uc_card.IsEnabled = false; // чтобы карта не нажималась
 
             OnPropertyChanged(nameof(CurrentCard));
             OnPropertyChanged(nameof(ShowBackButton));
