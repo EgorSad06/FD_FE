@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FD_FE;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,10 +10,11 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using FD_FE;
+
 
 namespace FD_MainWindow
 {
@@ -26,36 +28,92 @@ namespace FD_MainWindow
         {
             InitializeComponent();
         }
-        // кнопка играть, переход к созданию комнаты
+        //старт
         private void PlayButtonSelection_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("GameplayResources/StartGame.xaml", UriKind.Relative));
-            // Если нужно закрыть текущую страницу:
-            NavigationService.RemoveBackEntry();
+            // Анимация исчезновения текущей страницы (0.5 секунд)
+            DoubleAnimation fadeOut = new DoubleAnimation
+            {
+                From = 1.0,
+                To = 0.0,
+                Duration = TimeSpan.FromSeconds(0.5)
+            };
+
+            fadeOut.Completed += (s, _) =>
+            {
+                NavigationService.RemoveBackEntry();
+                // Переход на новую страницу через URI
+                NavigationService.Navigate(new Uri("GameplayResources/StartGame.xaml", UriKind.Relative));
+            };
+
+            // Запуск анимации
+            this.BeginAnimation(UIElement.OpacityProperty, fadeOut);
         }
-        //кнопка обучение, переход к обучению
+        //обучение
         private void EducationButtonSelection_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("TutorialPage.xaml", UriKind.Relative));
-            // Если нужно закрыть текущую страницу:
-            NavigationService.RemoveBackEntry();
+            // Анимация исчезновения текущей страницы (0.5 секунд)
+            DoubleAnimation fadeOut = new DoubleAnimation
+            {
+                From = 1.0,
+                To = 0.0,
+                Duration = TimeSpan.FromSeconds(0.5)
+            };
+
+            fadeOut.Completed += (s, _) =>
+            {
+                NavigationService.RemoveBackEntry();
+                // Переход на новую страницу через URI
+                NavigationService.Navigate(new Uri("TutorialPage.xaml", UriKind.Relative));
+            };
+
+            // Запуск анимации
+            this.BeginAnimation(UIElement.OpacityProperty, fadeOut);
         }
-        // Кнопка статистики, переход к просмотру статистики 
+        //статистика
         private void StatisticsButtonSelection_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("Statistic.xaml", UriKind.Relative));
-            // Если нужно закрыть текущую страницу:
-            NavigationService.RemoveBackEntry();
+            // Анимация исчезновения текущей страницы (0.5 секунд)
+            DoubleAnimation fadeOut = new DoubleAnimation
+            {
+                From = 1.0,
+                To = 0.0,
+                Duration = TimeSpan.FromSeconds(0.5)
+            };
+
+            fadeOut.Completed += (s, _) =>
+            {
+                NavigationService.RemoveBackEntry();
+                // Переход на новую страницу через URI
+                NavigationService.Navigate(new Uri("Statistic.xaml", UriKind.Relative));
+            };
+
+            // Запуск анимации
+            this.BeginAnimation(UIElement.OpacityProperty, fadeOut);
         }
-        //Кнопка Настройки, переход к настройкам игры
+        //Настройки
         private void SettingsButtonSelection_Click(object sender, RoutedEventArgs e)
         {
-            // Переход на страницу настроек
-            NavigationService.Navigate(new Uri("Setting.xaml", UriKind.Relative));
+            // Анимация исчезновения текущей страницы (0.5 секунд)
+            DoubleAnimation fadeOut = new DoubleAnimation
+            {
+                From = 1.0,
+                To = 0.0,
+                Duration = TimeSpan.FromSeconds(0.5)
+            };
 
-            // Если нужно закрыть текущую страницу:
-            NavigationService.RemoveBackEntry();
+            fadeOut.Completed += (s, _) =>
+            {
+                NavigationService.RemoveBackEntry();
+                // Переход на новую страницу через URI
+                NavigationService.Navigate(new Uri("Setting.xaml", UriKind.Relative));
+            };
+
+            // Запуск анимации
+            this.BeginAnimation(UIElement.OpacityProperty, fadeOut);
         }
+
+
         //выход из игры
         private void ExitButtonSelection_Click(object sender, RoutedEventArgs e)
         {
@@ -70,10 +128,18 @@ namespace FD_MainWindow
             }
 
         }
-
-
-
-
-
+        //Загрузка страниц для анимации
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Storyboard fadeIn = (Storyboard)FindResource("FadeInAnimation");
+                fadeIn.Begin(this); // Указываем целевой объект (саму страницу)
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка анимации: {ex.Message}");
+            }
+        }
     }
 }

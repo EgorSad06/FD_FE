@@ -1,20 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Huawei\\Documents\\GitHub\\FD_FE\\FD_FE\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|c:\\users\\huawei\\documents\\github\\fd_fe\\fd_fe\\fd_mainwindow\\setting.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|solutionrelative:fd_mainwindow\\setting.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|c:\\users\\huawei\\documents\\github\\fd_fe\\fd_fe\\fd_mainwindow\\setting.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|solutionrelative:fd_mainwindow\\setting.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|c:\\users\\huawei\\documents\\github\\fd_fe\\fd_fe\\fd_mainwindow\\tutorialpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|solutionrelative:fd_mainwindow\\tutorialpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -22,47 +9,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": -1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "TutorialPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Huawei\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\TutorialPage.xaml.cs",
-              "RelativeDocumentMoniker": "FD_MainWindow\\TutorialPage.xaml.cs",
-              "ToolTip": "C:\\Users\\Huawei\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\TutorialPage.xaml.cs",
-              "RelativeToolTip": "FD_MainWindow\\TutorialPage.xaml.cs",
-              "ViewState": "AgIAADoAAAAAAAAAAAAcwEAAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T18:12:37.325Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Setting.xaml",
-              "DocumentMoniker": "C:\\Users\\Huawei\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\Setting.xaml",
-              "RelativeDocumentMoniker": "FD_MainWindow\\Setting.xaml",
-              "ToolTip": "C:\\Users\\Huawei\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\Setting.xaml",
-              "RelativeToolTip": "FD_MainWindow\\Setting.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-05-17T20:06:40.404Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Setting.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Huawei\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\Setting.xaml.cs",
-              "RelativeDocumentMoniker": "FD_MainWindow\\Setting.xaml.cs",
-              "ToolTip": "C:\\Users\\Huawei\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\Setting.xaml.cs",
-              "RelativeToolTip": "FD_MainWindow\\Setting.xaml.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAACIAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T20:06:20.747Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
