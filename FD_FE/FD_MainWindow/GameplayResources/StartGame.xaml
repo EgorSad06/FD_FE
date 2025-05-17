@@ -10,6 +10,10 @@
 
     <Grid Background="Maroon">
         <TextBlock TextBlock.TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"><Run Text="StartGame"/><LineBreak/><Run Text="Страница запуска игры (режим игры, подключение и т.п.)"/></TextBlock>
-        <Button Width="100" Height="50" Click="StartButton_Click" VerticalAlignment="Top" >Start</Button>
+        <RadioButton x:Name="RB_server" Width="100" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10,0,0,10" Content="Создать сервер"/>
+        <RadioButton Width="100" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10,0,0,45" Content="Подключиться"/>
+        <TextBox x:Name="TB_IP" Width="100" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="115,0,0,45"/>
+        <Button  Width="100" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="115,0,0,10" Content="Готово" Click="Button_Click"/>
+        <Button Width="100" Height="50" Click="StartButton_Click" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,10,10" >Start</Button>
     </Grid>
 </Page>

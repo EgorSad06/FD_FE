@@ -10,7 +10,7 @@
     <Grid Background="LightBlue">
 
         <!-- Картинка фона -->
-        <Image Source="/ClassLib;component/Assets/Sprites/Menu/main_meny_bg.jpg" Stretch="Fill"/>
+        <Image Source="/ClassLib;component/Assets/Sprites/Menu/main_meny_bg.jpg" Stretch="UniformToFill"/>
         <!--  Я не понимаю что это за строка снизу, думаю оно тут лишнее, удали, если это так
         <Image Margin="1456,530,400,494" Source="/main_meny_bg.jpg" Stretch="Fill"/> -->
 
@@ -246,7 +246,7 @@
             </Button.Style>
         </Button>
         <!-- Спрятанная рамка для других окн -->
-        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
+        
         
     </Grid>
 </Page>

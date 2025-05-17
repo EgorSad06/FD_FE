@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Net;
+using System.Net.Sockets;
 using FD_FE;
 
 namespace FD_MainWindow.GameplayPages
@@ -24,7 +27,34 @@ namespace FD_MainWindow.GameplayPages
         public StartGame()
         {
             InitializeComponent();
+            Game.DataReceiver.DoWork += DataReceiver_DoWork;
+        }
+        private void DataReceiver_DoWork(object sender, DoWorkEventArgs e)
+        {
 
+        }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if ((bool)RB_server.IsChecked)
+            {
+                Game.server = new TcpListener(IPAddress.Any, 1111);
+                Game.server.Start();
+                Game.socket = Game.server.AcceptSocket();
+            }
+            else
+            {
+                try
+                {
+                    Game.client = new TcpClient(TB_IP.Text, 1111);
+                    Game.socket = Game.client.Client;
+                    Game.DataReceiver.RunWorkerAsync();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    Game.client.Close();
+                }
+            }
         }
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {

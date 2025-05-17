@@ -38,7 +38,7 @@ namespace FD_MainWindow
 
             // Инициализация элементов управления
             //ResolutionComboBox.ItemsSource = Resolutions;
-            ResolutionComboBox.SelectedIndex = 0;
+            //ResolutionComboBox.SelectedIndex = 0;
 
             //В будующем можно добавить звуки эффектов, музыку 
 
@@ -76,7 +76,7 @@ namespace FD_MainWindow
         private void ResetButton_Click(object sender, RoutedEventArgs e)
         {
             // Сброс к значениям по умолчанию
-            ResolutionComboBox.SelectedIndex = 0;
+            //ResolutionComboBox.SelectedIndex = 0;
             WindowedRadioButton.IsChecked = true;
             //BrightnessSlider.Value = 80;
             //MasterVolumeSlider.Value = 100;
