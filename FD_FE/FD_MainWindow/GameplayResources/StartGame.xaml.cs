@@ -24,11 +24,12 @@ namespace FD_MainWindow.GameplayPages
         public StartGame()
         {
             InitializeComponent();
+
         }
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
             List<GameMode> gameModes = GameplayData.GameModes;
-            Game.gamemode = gameModes[0];
+            Game.SetMode(0);
             NavigationService.Navigate(new Uri("GameplayResources/CardSelection.xaml", UriKind.Relative));
             // Если нужно закрыть текущую страницу:
             NavigationService.RemoveBackEntry();

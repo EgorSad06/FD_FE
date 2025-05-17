@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,25 +22,39 @@ namespace FD_MainWindow
     /// </summary>
     public partial class CardSelection : Page
     {
-        Deck slct_cards = new Deck(GameplayData.StartCards); // колода карт для выбора
-        Board card_slct_board = new Board(); // поле карт для выбора
-
+        public static Board card_slct_board = new Board(); // поле карт для выбора
         public CardSelection()
         {
             InitializeComponent();
 
-            slct_cards.SetSqnc();
-
-            for (int i=0; i<Game.gamemode.start_cards_count && slct_cards.SqncEnd(); i++) card_slct_board.SetBoardCard(new BoardCard(slct_cards.GetCard()));
-
-            MainWindow.Draw(card_slct_board, CardSelectionGrid, Game.gamemode.start_cards_count, 1); // отображение карт для выбора на поле
-
-
+            if (Game.game_started)
+            { // начало игры (карты не выбираются)
+                Game.slct_cards.SetSqnc();
+                Game.game_started = false;
+                for (int i = 0; i < Game.Mode.start_cards_count && Game.slct_cards.SqncEnd(); i++) {
+                    Card temp = Game.slct_cards.GetCard();
+                    card_slct_board.SetBoardCard(new BoardCard(temp));
+                    Game.p_deck.deck_cards.Add(temp);
+                }
+                foreach (UIElement uc_card in CardSelectionGrid.Children) uc_card.IsEnabled = false;
+                Game.Draw(card_slct_board, CardSelectionGrid, Game.Mode.start_cards_count, 1);
+            }
+            else
+            { // игра (карты выбираются)
+                UCCard.CardSelected += AddCardToDeck;
+                for (int i = 0; i < Game.Mode.start_cards_count && Game.slct_cards.SqncEnd(); i++) card_slct_board.SetBoardCard(new BoardCard(Game.slct_cards.GetCard()));
+                Game.Draw(card_slct_board, CardSelectionGrid, Game.Mode.start_cards_count, 1);
+            }
+        }
+        private void AddCardToDeck(UCCard sender, BoardCard card)
+        {
+            Game.p_deck.deck_cards.Add(card.source);
+            sender.IsEnabled = false;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            But.Content = ((UCCard)CardSelectionGrid.Children[0]).BoardCard.AV;
+            But.Content = Game.p_deck.deck_cards.Count;
         }
     }
 }

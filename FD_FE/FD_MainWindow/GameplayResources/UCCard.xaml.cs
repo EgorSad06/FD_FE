@@ -28,9 +28,9 @@ namespace FD_MainWindow
             BoardCard.CardChanged += Update;
 
             //if (card.fr) добавить отдельное оформление
-            CardBackgound.ImageSource = (ImageSource)MainWindow.converter.ConvertFromString($"{GameplayData.sprites_path}CardTemplates/{BoardCard.fraction}_template.png");
-            CardClassFrame.ImageSource = (ImageSource)MainWindow.converter.ConvertFromString($"{GameplayData.sprites_path}CardTemplates/{BoardCard.card_class.id}_frame.png");
-            CardImage.Source = (ImageSource)MainWindow.converter.ConvertFromString($"{GameplayData.sprites_path}Cards/{BoardCard.image}");
+            CardBackgound.ImageSource = (ImageSource)Game.converter.ConvertFromString($"{GameplayData.sprites_path}CardTemplates/{BoardCard.fraction}_template.png");
+            CardClassFrame.ImageSource = (ImageSource)Game.converter.ConvertFromString($"{GameplayData.sprites_path}CardTemplates/{BoardCard.card_class.id}_frame.png");
+            CardImage.Source = (ImageSource)Game.converter.ConvertFromString($"{GameplayData.sprites_path}Cards/{BoardCard.image}");
             Margin = new Thickness(x, y, 0,0);
         }
         
@@ -47,10 +47,13 @@ namespace FD_MainWindow
             cardAV.Text = BoardCard.AV.ToString();
             cardHP.Text = BoardCard.HP.ToString();
         }
+
+        public delegate void CardSelectedEventHandler(UCCard sender, BoardCard selected_card);
+        static public event CardSelectedEventHandler CardSelected;
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            BoardAct.selected_card = BoardCard;
-            BoardCard.SetAV((short)(BoardCard.AV+1));
+            CardSelected?.Invoke(UCcard, UCcard.BoardCard);
         }
     }
 }

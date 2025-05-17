@@ -27,14 +27,19 @@ namespace FD_FE
     public delegate short GetAV_func(BoardCard card);
     
 // действия поля
-    static public class BoardAct
-    {
-        static public BoardCard selected_card;
-        static public BoardCard SelectCard() {
-
-            return selected_card;
-        }
-    }
+    //static public class BoardAct
+    //{
+    //    static public BoardCard selected_card;
+    //    static public BoardCard SelectCard()
+    //    {
+    //        selected_card = null;
+    //        SelectCardAsync();
+    //        return selected_card;
+    //    }
+    //    static public async void SelectCardAsync() {
+    //        await Task.Run(() => { while (selected_card == null) Thread.Sleep(250); });
+    //    }
+    //}
 
 // эффект
     public class Effect
@@ -55,7 +60,7 @@ namespace FD_FE
 // карта
     public class Card
     {
-        public int id { get; set; }
+        public virtual int id { get; set; }
         public string name { get; set; }
         public string description { get; set; }
         public char fraction { get; set; }
@@ -76,6 +81,7 @@ namespace FD_FE
 // карта поля
     public class BoardCard : Card
     {
+        public Card source { get; set; }
         public char force { get; set; }
         public short HP { get; protected set; }
         public short AV { get; protected set; }
@@ -93,6 +99,7 @@ namespace FD_FE
             id = card.id; name = card.name; description = card.description;
             fraction = card.fraction; card_class = card.card_class;
             start_HP = card.start_HP; function = card.function; image = card.image;
+            source = card;
         }
 
         public void Act()
