@@ -16,9 +16,6 @@ using FD_FE;
 
 namespace FD_MainWindow
 {
-    /// <summary>
-    /// Логика взаимодействия для UCCard.xaml
-    /// </summary>
     public partial class UCCard : UserControl
     {
         public UCCard(BoardCard card, double x, double y)
