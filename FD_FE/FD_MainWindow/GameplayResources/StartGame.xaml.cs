@@ -27,7 +27,7 @@ namespace FD_MainWindow.GameplayPages
         public StartGame()
         {
             InitializeComponent();
-            Game.DataReceiver.DoWork += DataReceiver_DoWork;
+            
         }
         private void DataReceiver_DoWork(object sender, DoWorkEventArgs e)
         {
@@ -35,9 +35,11 @@ namespace FD_MainWindow.GameplayPages
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            Game.DataReceiver.DoWork += DataReceiver_DoWork;
+            
             if ((bool)RB_server.IsChecked)
             {
-                Game.server = new TcpListener(IPAddress.Any, 1111);
+                Game.server = new TcpListener(IPAddress.Any, 5732);
                 Game.server.Start();
                 Game.socket = Game.server.AcceptSocket();
             }
@@ -45,7 +47,7 @@ namespace FD_MainWindow.GameplayPages
             {
                 try
                 {
-                    Game.client = new TcpClient(TB_IP.Text, 1111);
+                    Game.client = new TcpClient(TB_IP.Text, 5732);
                     Game.socket = Game.client.Client;
                     Game.DataReceiver.RunWorkerAsync();
                 }
@@ -55,6 +57,7 @@ namespace FD_MainWindow.GameplayPages
                     Game.client.Close();
                 }
             }
+            ((Button)sender).IsEnabled = false;
         }
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {

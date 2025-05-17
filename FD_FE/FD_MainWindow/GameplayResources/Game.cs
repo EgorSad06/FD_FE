@@ -24,6 +24,8 @@ namespace FD_MainWindow
         public static bool game_started = true;
         
         public static Socket socket { get; set; }
+        public static string ip = null;
+        public static bool is_host { get; set; }
         public static BackgroundWorker DataReceiver = new BackgroundWorker();
         public static TcpListener server = null;
         public static TcpClient client = null;
