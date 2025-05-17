@@ -11,12 +11,7 @@
     <Grid  Background="Tan">
         <StackPanel Margin="0,23,0,-23">
             <!-- Настройка разрешения -->
-            <GroupBox Header="Разрешение экрана" Margin="0 0 0 10">
-                <ComboBox x:Name="ResolutionComboBox" 
-                        ItemsSource="{Binding Resolutions}"
-                        SelectedItem="{Binding SelectedResolution}"
-                        DisplayMemberPath="DisplayName"/>
-            </GroupBox>
+           
 
             <!-- Режим окна -->
             <GroupBox Header="Режим отображения" Margin="0 0 0 10" Width="682">

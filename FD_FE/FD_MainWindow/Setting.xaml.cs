@@ -19,13 +19,13 @@ namespace FD_MainWindow
     public partial class Setting : Page
     {
         // Коллекция доступных разрешений
-        public ObservableCollection<Resolution> Resolutions { get; } = new ObservableCollection<Resolution>()
-        {
-            new Resolution(1920, 1080),
-            new Resolution(1280, 720),
-            new Resolution(1600, 900),
-            new Resolution(100,100)
-        };
+        //public ObservableCollection<Resolution> Resolutions { get; } = new ObservableCollection<Resolution>()
+        //{
+        //    new Resolution(1920, 1080),
+        //    new Resolution(1280, 720),
+        //    new Resolution(1600, 900),
+        //    new Resolution(100,100)
+        //};
 
         // Текущие настройки
         private int _brightness = 80;
@@ -37,7 +37,7 @@ namespace FD_MainWindow
             InitializeComponent();
 
             // Инициализация элементов управления
-            ResolutionComboBox.ItemsSource = Resolutions;
+            //ResolutionComboBox.ItemsSource = Resolutions;
             ResolutionComboBox.SelectedIndex = 0;
 
             //В будующем можно добавить звуки эффектов, музыку 
