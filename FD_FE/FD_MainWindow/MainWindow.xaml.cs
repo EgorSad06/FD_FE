@@ -25,7 +25,6 @@ namespace FD_MainWindow
         public MainWindow()
         {
             InitializeComponent();
-            // Game.State = 0;
             MainFrame.Content = new MainMenu();
 
         }

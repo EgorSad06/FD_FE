@@ -34,5 +34,10 @@ namespace FD_MainWindow.GameplayPages
             // Если нужно закрыть текущую страницу:
             NavigationService.RemoveBackEntry();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -7,6 +7,8 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows;
 using FD_FE;
+using System.Net.Sockets;
+using System.ComponentModel;
 
 namespace FD_MainWindow
 {
@@ -18,13 +20,18 @@ namespace FD_MainWindow
 
         public static Deck slct_cards = new Deck(GameplayData.StartCards); // колода карт для выбора
         public static Deck p_deck = new Deck();
+        public static Deck o_deck = new Deck();
 
         public static bool game_started = true;
 
+        public static Socket socket {  get; set; }
+        public static BackgroundWorker DataReciever = new BackgroundWorker();
+        public static TcpListener server = null;
+        public static TcpClient client = null;
 
         // отрисовка
         static public ImageSourceConverter converter = new ImageSourceConverter();
-        static public void Draw(Board board, Grid grid, short a, short b) 
+        static public void Draw(Board board, Grid grid, short a, short b)
         {
             double dx = grid.Width / a, dy = grid.Height / b;
             for (int j = 0, i = 0; j < b && i + j < board.grid.Count; j++)
@@ -41,6 +48,12 @@ namespace FD_MainWindow
                 grid.Children.Add(uc_card);
                 return uc_card;
             }
+        }
+        public static byte[] GetData(int size)
+        {
+            byte[] data = new byte[size];
+            socket.Receive(data);
+            return data;
         }
     }
 }
