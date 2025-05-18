@@ -49,32 +49,32 @@ namespace FD_MainWindow
         {
             // Загрузка карточек из источника
             _cards = new List<BoardCard>
-        {
-            new BoardCard
             {
-                name = "Здоровье",
-                description = "Текст с описанием 1",
-                image = "biomachine.png",
-                fraction = 'g',
-                card_class = GameplayData.CardClasses[0]
-            },
-            new BoardCard
-            {
-                name = "Класс",
-                description = "Текст с описанием 2",
-                image = "brick_shooter.png",
-                fraction = 'g',
-                card_class = GameplayData.CardClasses[0]
-            },
-            new BoardCard
-            {
-                name = "Особое значение",
-                description = "Текст с описанием 3",
-                image = "hacker.png",
-                fraction = 'g',
-                card_class = GameplayData.CardClasses[0]
-            }
-        };
+                new BoardCard
+                {
+                    name = "Здоровье",
+                    description = "Текст с описанием 1",
+                    image = "biomachine.png",
+                    fraction = 'g',
+                    card_class = GameplayData.CardClasses[0]
+                },
+                new BoardCard
+                {
+                    name = "Класс",
+                    description = "Текст с описанием 2",
+                    image = "brick_shooter.png",
+                    fraction = 'g',
+                    card_class = GameplayData.CardClasses[0]
+                },
+                new BoardCard
+                {
+                    name = "Особое значение",
+                    description = "Текст с описанием 3",
+                    image = "hacker.png",
+                    fraction = 'g',
+                    card_class = GameplayData.CardClasses[0]
+                }
+            };
         }
 
         private void UpdateImage()
