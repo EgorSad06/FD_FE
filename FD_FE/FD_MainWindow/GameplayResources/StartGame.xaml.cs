@@ -29,34 +29,23 @@ namespace FD_MainWindow.GameplayPages
             InitializeComponent();
             
         }
-        private void DataReceiver_DoWork(object sender, DoWorkEventArgs e)
+        private void BGworker_DoWork(object sender, DoWorkEventArgs e)
         {
 
         }
+        private void Receive_Click(object sender, RoutedEventArgs e)
+        {
+            Message.Text = Encoding.Unicode.GetString(Game.ReceiveData(100));
+        }
+        private void Send_Click(object sender, RoutedEventArgs e)
+        {
+            Game.SendData(Encoding.Unicode.GetBytes(Message.Text));
+        }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Game.DataReceiver.DoWork += DataReceiver_DoWork;
-            
-            if ((bool)RB_server.IsChecked)
-            {
-                Game.server = new TcpListener(IPAddress.Any, 5732);
-                Game.server.Start();
-                Game.socket = Game.server.AcceptSocket();
-            }
-            else
-            {
-                try
-                {
-                    Game.client = new TcpClient(TB_IP.Text, 5732);
-                    Game.socket = Game.client.Client;
-                    Game.DataReceiver.RunWorkerAsync();
-                }
-                catch(Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                    Game.client.Close();
-                }
-            }
+            Game.BGworker.DoWork += BGworker_DoWork;
+
+            TB_IP.Text = Game.Connect((bool)RB_server.IsChecked, TB_IP.Text);
             ((Button)sender).IsEnabled = false;
         }
         private void StartButton_Click(object sender, RoutedEventArgs e)

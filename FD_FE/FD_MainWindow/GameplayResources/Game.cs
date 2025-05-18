@@ -9,12 +9,13 @@ using System.Windows;
 using FD_FE;
 using System.Net.Sockets;
 using System.ComponentModel;
+using System.Net;
 
 namespace FD_MainWindow
 {
     public static class Game
     {
-        // режим игры
+        // данные игры
         public static GameMode Mode { get; private set; }
         public static void SetMode(short mode) { Mode = GameplayData.GameModes[mode]; }
 
@@ -23,13 +24,6 @@ namespace FD_MainWindow
 
         public static bool game_started = true;
         
-        public static Socket socket { get; set; }
-        public static string ip = null;
-        public static bool is_host { get; set; }
-        public static BackgroundWorker DataReceiver = new BackgroundWorker();
-        public static TcpListener server = null;
-        public static TcpClient client = null;
-
         // отрисовка
         static public ImageSourceConverter converter = new ImageSourceConverter();
         static public void Draw(Board board, Grid grid, short a, short b) 
@@ -50,11 +44,63 @@ namespace FD_MainWindow
                 return uc_card;
             }
         }
-        public static byte[] RecieveData(int size)
+
+        // подключение
+        public static Socket socket { get; set; }
+        public static string ip { get; private set; } = null;
+        public static bool is_host { get; set; }
+        public static BackgroundWorker BGworker = new BackgroundWorker();
+        public static TcpListener server = null;
+        public static TcpClient client = null;
+
+         public static void StartBackgroundWork()
+        {
+
+        }
+        public static byte[] ReceiveData(int size)
         {
             byte[] data = new byte[size];
             socket.Receive(data);
             return data;
+        }
+        public static void SendData(byte[] data)
+        {
+            socket.Send(data);
+            BGworker.RunWorkerAsync();
+        }
+        
+        public static string Connect(bool is_host = true, string ip = null)
+        {
+            Game.is_host = is_host;
+            if (is_host)
+            {
+                IPAddress new_ip = IPAddress.Any;
+                server = new TcpListener(new_ip, 4013);
+                server.Start();
+                socket = server.AcceptSocket();
+                return new_ip.ToString();
+            }
+            else
+            {
+                try
+                {
+                    client = new TcpClient(ip, 4013);
+                    socket = client.Client;
+                    BGworker.RunWorkerAsync();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    client.Close();
+                }
+                return ip;
+            }
+        }
+        public static void Disconnect()
+        {
+            BGworker.WorkerSupportsCancellation = true;
+            BGworker.CancelAsync();
+            server?.Stop();
         }
     }
 }
