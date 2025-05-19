@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Huawei\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\App.xaml
-10-1567394297
+11-1352899344
 
-15-634952223
+161896822176
 141853374053
-TutorialPage.xaml;GameplayResources\Battle.xaml;GameplayResources\CardSelection.xaml;GameplayResources\CardStyles.xaml;GameplayResources\StartGame.xaml;MainMenu.xaml;MainWindow.xaml;Setting.xaml;Statistic.xaml;GameplayResources\UCCard.xaml;
+TutorialPage.xaml;GameplayResources\Battle.xaml;GameplayResources\CardSelection.xaml;GameplayResources\CardStyles.xaml;GameplayResources\StartGame.xaml;MainMenu.xaml;MainWindow.xaml;Setting.xaml;Statistic.xaml;GameplayResources\UCCard.xaml;TutorialPages\CardDetailFolk.xaml;
 
 True
 

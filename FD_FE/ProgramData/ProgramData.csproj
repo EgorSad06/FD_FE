@@ -74,5 +74,8 @@
     <Resource Include="Assets\Sprites\Menu\backgroundstar.png" />
     <Resource Include="SettingBG.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets\Sprites\CardsForTutor\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
