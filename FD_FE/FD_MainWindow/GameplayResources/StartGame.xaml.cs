@@ -27,12 +27,13 @@ namespace FD_MainWindow.GameplayPages
         public StartGame()
         {
             InitializeComponent();
-            //Game.AddBGWork(BGConnect);
         }
         
-        private void Receive_Click(object sender, RoutedEventArgs e)
+        private async void Receive_Click(object sender, RoutedEventArgs e)
         {
-            Message.Text = Encoding.Unicode.GetString(Game.ReceiveData(100));
+            ((Button)sender).IsEnabled = false;
+            Message.Text = Encoding.Unicode.GetString( await Game.ReceiveData(100));
+            ((Button)sender).IsEnabled = true;
         }
         private void Send_Click(object sender, RoutedEventArgs e)
         {
@@ -41,9 +42,9 @@ namespace FD_MainWindow.GameplayPages
 
         private async void Connect_Click(object sender, RoutedEventArgs e)
         {
-            if ((bool)RB_server.IsChecked) TB_IP.Text = (Game.SetIP()).ToString();
-            else Game.SetIP(TB_IP.Text);
-            B_connect.IsEnabled = !(B_receive.IsEnabled = B_send.IsEnabled = await Game.Connect((bool)(RB_server.IsChecked)));
+            Game.is_host = (bool)(RB_server.IsChecked);
+            Game.SetIP(TB_IP.Text);
+            B_connect.IsEnabled = !(B_receive.IsEnabled = B_send.IsEnabled = await Game.Connect());
         }
 
         private void StartButton_Click(object sender, RoutedEventArgs e)

@@ -46,35 +46,40 @@ namespace FD_MainWindow
         }
 
         // подключение
-        public static bool connected { get; set; }
-        public static Socket socket { get; set; }
-        public static IPAddress ip { get; private set; } = null;
-        public static IPAddress SetIP() { ip = IPAddress.Any; return ip; }
-        public static IPAddress SetIP(IPAddress new_ip) { ip = new_ip; return ip; }
-        public static IPAddress SetIP(string new_ip) { ip = IPAddress.Parse(new_ip); return ip; }
-        public static bool is_host { get; private set; }
-        //public static BackgroundWorker BGworker = new BackgroundWorker();
+        public static bool is_host = true;
+        private static IPAddress ip = IPAddress.Any;
+        public static IPAddress GetIP() => ip;
+        public static bool SetIP(IPAddress IP) { ip = (is_host) ? IPAddress.Any : IP; return true; }
+        public static bool SetIP(string IP) {
+            if (is_host) { ip = IPAddress.Any; return true; }
+            else return IPAddress.TryParse(IP, out ip);
+        }
+
+
         public static TcpListener server = null;
         public static TcpClient client = null;
+        public static Socket socket = null;
 
-        //public static void StartBGWork() { BGworker.RunWorkerAsync(); }
-        //public static void AddBGWork(DoWorkEventHandler func) { BGworker.DoWork += new DoWorkEventHandler( func); }
-        //public static void RemBGWork(DoWorkEventHandler func) { BGworker.DoWork -= func; }
-
-        public static byte[] ReceiveData(int size)
+        public static async Task<byte[]> ReceiveData(int size)
         {
             byte[] data = new byte[size];
-            socket.Receive(data);
-            return data;
+            try {
+                await Task.Run(() => socket.Receive(data));
+                return data;
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message);
+                return null; 
+            }
         }
         public static void SendData(byte[] data)
         {
-            socket.Send(data);
+            try { socket.Send(data); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
         
-        public static async Task<bool> Connect(bool is_host_param = true)
+        public static async Task<bool> Connect()
         {
-            is_host = is_host_param;
             if (is_host)
             {
                 server = new TcpListener(ip, 4013);
@@ -100,8 +105,8 @@ namespace FD_MainWindow
         }
         public static void Disconnect()
         {
-            //BGworker.WorkerSupportsCancellation = true;
-            //BGworker.CancelAsync();
+            ip = IPAddress.Any;
+            socket?.Close();
             server?.Stop();
             client?.Close();
         }

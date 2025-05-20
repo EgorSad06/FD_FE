@@ -15,7 +15,7 @@
         <TextBox x:Name="Message" Width="300" Height="50" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,259,0,0" />
         <Button x:Name="B_send" Content="Отправить" Width="100" Height="30" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="200,314,0,0" IsEnabled="False" Click="Send_Click"/>
         <Button x:Name="B_receive" Content="Получить" Width="100" Height="30" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="-200,314,0,0" IsEnabled="False" Click="Receive_Click"/>
-
+        
         <RadioButton x:Name="RB_server" Foreground="White" Width="100" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10,0,0,10" Content="Создать сервер"/>
         <RadioButton  Foreground="White" Width="100" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10,0,0,45" Content="Подключиться"/>
         <TextBox x:Name="TB_IP" Width="100" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="115,0,0,45"/>

@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\fd_mainwindow\\gameplayresources\\startgame.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|solutionrelative:fd_mainwindow\\gameplayresources\\startgame.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\fd_mainwindow\\gameplayresources\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|solutionrelative:fd_mainwindow\\gameplayresources\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|c:\\users\\alekz\\documents\\github\\fd_fe\\fd_fe\\fd_mainwindow\\gameplayresources\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|solutionrelative:fd_mainwindow\\gameplayresources\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\fd_mainwindow\\gameplayresources\\startgame.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|solutionrelative:fd_mainwindow\\gameplayresources\\startgame.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5C9BD10F-041A-4D91-915D-4B872784083C}|ProgramData\\ProgramData.csproj|C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\programdata\\gameplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,6 +17,18 @@
     {
       "AbsoluteMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\fd_mainwindow\\gameplayresources\\startgame.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|solutionrelative:fd_mainwindow\\gameplayresources\\startgame.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|c:\\users\\alekz\\documents\\github\\fd_fe\\fd_fe\\fd_mainwindow\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|solutionrelative:fd_mainwindow\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C9BD10F-041A-4D91-915D-4B872784083C}|ProgramData\\ProgramData.csproj|c:\\users\\alekz\\documents\\github\\fd_fe\\fd_fe\\programdata\\gameplaydata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C9BD10F-041A-4D91-915D-4B872784083C}|ProgramData\\ProgramData.csproj|solutionrelative:programdata\\gameplaydata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|c:\\users\\alekz\\documents\\github\\fd_fe\\fd_fe\\fd_mainwindow\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|solutionrelative:fd_mainwindow\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,8 +38,46 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "FD_MainWindow\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\MainWindow.xaml.cs",
+              "RelativeToolTip": "FD_MainWindow\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T20:18:49.659Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "FD_MainWindow\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\MainWindow.xaml",
+              "RelativeToolTip": "FD_MainWindow\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-20T20:13:05.179Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GameplayData.cs",
+              "DocumentMoniker": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\ProgramData\\GameplayData.cs",
+              "RelativeDocumentMoniker": "ProgramData\\GameplayData.cs",
+              "ToolTip": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\ProgramData\\GameplayData.cs",
+              "RelativeToolTip": "ProgramData\\GameplayData.cs",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAAwGMAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T19:58:28.341Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 2,
@@ -36,33 +86,33 @@
               "RelativeDocumentMoniker": "ProgramData\\Gameplay.cs",
               "ToolTip": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\ProgramData\\Gameplay.cs",
               "RelativeToolTip": "ProgramData\\Gameplay.cs",
-              "ViewState": "AgIAADsAAAAAAAAAAAAswEwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAA1wEMAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-18T10:22:48.013Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Game.cs",
               "DocumentMoniker": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\GameplayResources\\Game.cs",
               "RelativeDocumentMoniker": "FD_MainWindow\\GameplayResources\\Game.cs",
               "ToolTip": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\GameplayResources\\Game.cs",
               "RelativeToolTip": "FD_MainWindow\\GameplayResources\\Game.cs",
-              "ViewState": "AgIAAD8AAAAAAAAAAAA8wE4AAAANAAAAAAAAAA==",
+              "ViewState": "AgIAACMAAAAAAAAAAAAgwC8AAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-18T10:45:02.048Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "StartGame.xaml.cs",
               "DocumentMoniker": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\GameplayResources\\StartGame.xaml.cs",
               "RelativeDocumentMoniker": "FD_MainWindow\\GameplayResources\\StartGame.xaml.cs",
               "ToolTip": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\GameplayResources\\StartGame.xaml.cs",
               "RelativeToolTip": "FD_MainWindow\\GameplayResources\\StartGame.xaml.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAiwC8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAAUwC0AAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-18T10:30:21.082Z",
               "EditorCaption": ""
@@ -76,7 +126,8 @@
               "ToolTip": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\GameplayResources\\StartGame.xaml",
               "RelativeToolTip": "FD_MainWindow\\GameplayResources\\StartGame.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-05-18T10:57:33.897Z"
+              "WhenOpened": "2025-05-18T10:57:33.897Z",
+              "EditorCaption": ""
             }
           ]
         },
