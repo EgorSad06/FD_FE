@@ -6,9 +6,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FD_MainWindow"
         mc:Ignorable="d"
-        WindowState="Maximized"
-        WindowStyle="None"
-        ResizeMode="NoResize"
-        Title="Fraction Destruction" MinHeight="450" Height="450" MinWidth="800" Width="800">
+        WindowState="Normal"
+        WindowStyle="SingleBorderWindow"
+        ResizeMode="CanResize"
+        Title="Fraction Destruction" MinHeight="450" Height="600" MinWidth="800" Width="800">
         <Frame x:Name="MainFrame" Background="Black" MinHeight="450" MinWidth="800" NavigationUIVisibility="Hidden"/>
 </Window>

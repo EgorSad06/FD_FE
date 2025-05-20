@@ -27,7 +27,7 @@ namespace FD_MainWindow.GameplayPages
         public StartGame()
         {
             InitializeComponent();
-            Game.AddBGWork(BGConnect);
+            //Game.AddBGWork(BGConnect);
         }
         
         private void Receive_Click(object sender, RoutedEventArgs e)
@@ -39,21 +39,21 @@ namespace FD_MainWindow.GameplayPages
             Game.SendData(Encoding.Unicode.GetBytes(Message.Text));
         }
 
-        private void BGConnect(object sender, DoWorkEventArgs e)
+        private bool BGConnect(/*object sender, DoWorkEventArgs e*/)
         {
-            ((Button)sender).IsEnabled = Game.Connect((bool)RB_server.IsChecked);
-            MessageBox.Show("Connect finished");
+            return Game.Connect((bool)(RB_server.IsChecked));
         }
-        private void Connect_Click(object sender, RoutedEventArgs e)
+        private async void Connect_Click(object sender, RoutedEventArgs e)
         {
             if ((bool)RB_server.IsChecked) TB_IP.Text = (Game.SetIP()).ToString();
             else Game.SetIP(TB_IP.Text);
-            Game.StartBGWork();
+            //Game.BGworker.RunWorkerAsync();
+            B_connect.IsEnabled = !(B_receive.IsEnabled = B_send.IsEnabled = await Task.Run(BGConnect));
         }
 
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
-            Game.RemBGWork(BGConnect);
+            //Game.RemBGWork(BGConnect);
             Game.SetMode(0);
             NavigationService.Navigate(new Uri("GameplayResources/CardSelection.xaml", UriKind.Relative));
             // Если нужно закрыть текущую страницу:

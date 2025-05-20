@@ -46,6 +46,7 @@ namespace FD_MainWindow
         }
 
         // подключение
+        public static bool connected { get; set; }
         public static Socket socket { get; set; }
         public static IPAddress ip { get; private set; } = null;
         public static IPAddress SetIP() { ip = IPAddress.Any; return ip; }
@@ -57,7 +58,7 @@ namespace FD_MainWindow
         public static TcpClient client = null;
 
         public static void StartBGWork() { BGworker.RunWorkerAsync(); }
-        public static void AddBGWork(DoWorkEventHandler func) { BGworker.DoWork += func; }
+        public static void AddBGWork(DoWorkEventHandler func) { BGworker.DoWork += new DoWorkEventHandler( func); }
         public static void RemBGWork(DoWorkEventHandler func) { BGworker.DoWork -= func; }
 
         public static byte[] ReceiveData(int size)
@@ -71,7 +72,7 @@ namespace FD_MainWindow
             socket.Send(data);
         }
         
-        public static bool Connect(bool is_host_param = true)
+        public static async Task<bool>Connect(bool is_host_param = true)
         {
             is_host = is_host_param;
             if (is_host)
