@@ -47,16 +47,19 @@ namespace FD_MainWindow
 
         // подключение
         public static Socket socket { get; set; }
-        public static string ip { get; private set; } = null;
-        public static bool is_host { get; set; }
+        public static IPAddress ip { get; private set; } = null;
+        public static IPAddress SetIP() { ip = IPAddress.Any; return ip; }
+        public static IPAddress SetIP(IPAddress new_ip) { ip = new_ip; return ip; }
+        public static IPAddress SetIP(string new_ip) { ip = IPAddress.Parse(new_ip); return ip; }
+        public static bool is_host { get; private set; }
         public static BackgroundWorker BGworker = new BackgroundWorker();
         public static TcpListener server = null;
         public static TcpClient client = null;
 
-         public static void StartBackgroundWork()
-        {
+        public static void StartBGWork() { BGworker.RunWorkerAsync(); }
+        public static void AddBGWork(DoWorkEventHandler func) { BGworker.DoWork += func; }
+        public static void RemBGWork(DoWorkEventHandler func) { BGworker.DoWork -= func; }
 
-        }
         public static byte[] ReceiveData(int size)
         {
             byte[] data = new byte[size];
@@ -66,34 +69,32 @@ namespace FD_MainWindow
         public static void SendData(byte[] data)
         {
             socket.Send(data);
-            BGworker.RunWorkerAsync();
         }
         
-        public static string Connect(bool is_host = true, string ip = null)
+        public static bool Connect(bool is_host_param = true)
         {
-            Game.is_host = is_host;
+            is_host = is_host_param;
             if (is_host)
             {
-                IPAddress new_ip = IPAddress.Any;
-                server = new TcpListener(new_ip, 4013);
+                server = new TcpListener(ip, 4013);
                 server.Start();
                 socket = server.AcceptSocket();
-                return new_ip.ToString();
+                return true;
             }
             else
             {
                 try
                 {
-                    client = new TcpClient(ip, 4013);
+                    client = new TcpClient(ip.ToString(), 4013);
                     socket = client.Client;
-                    BGworker.RunWorkerAsync();
+                    return true;
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
-                    client.Close();
+                    client?.Close();
+                    return false;
                 }
-                return ip;
             }
         }
         public static void Disconnect()
