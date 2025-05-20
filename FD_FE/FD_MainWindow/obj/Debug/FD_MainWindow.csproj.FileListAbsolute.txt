@@ -39,7 +39,6 @@ C:\Users\Huawei\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\bin\Debug\FD_MainWind
 C:\Users\Huawei\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\bin\Debug\ClassLib.dll
 C:\Users\Huawei\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\bin\Debug\ClassLib.pdb
 C:\Users\Huawei\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\FD_MainWindow.csproj.AssemblyReference.cache
-C:\Users\Huawei\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\FD_MainWindow.exe.config
 C:\Users\Huawei\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\GameplayResources\CardStyles.baml
 C:\Users\Huawei\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\TutorialPage.g.cs
 C:\Users\Huawei\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\GameplayResources\Battle.g.cs
@@ -69,3 +68,6 @@ C:\Users\Huawei\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\FD_MainWind
 C:\Users\Huawei\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\FD_MainW.6D16EEB5.Up2Date
 C:\Users\Huawei\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\FD_MainWindow.exe
 C:\Users\Huawei\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\FD_MainWindow.pdb
+C:\Users\Huawei\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\FD_MainWindow.exe.config
+C:\Users\Huawei\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\TutorialPages\CardDetailFolk.g.cs
+C:\Users\Huawei\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\TutorialPages\CardDetailFolk.baml

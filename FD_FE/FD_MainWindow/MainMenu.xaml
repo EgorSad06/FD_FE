@@ -10,7 +10,7 @@
       Background="DarkBlue"
 >
 
-    
+
 
     <Page.Resources>
         <Storyboard x:Key="FadeInAnimation">
@@ -23,7 +23,7 @@
                 />
         </Storyboard>
     </Page.Resources>
-    
+
     <Grid Background="LightBlue">
 
         <!-- Картинка фона -->
@@ -33,17 +33,17 @@
         <!-- Кнопки -->
         <Button 
         Name="PlayButton" 
-        Content="Play" 
+        Content="Играть" 
         HorizontalAlignment="Left"
         VerticalAlignment="Top"
         Height="119"
-        Width="318"
+        Width="440"
         Margin="53,184,0,0"
         Click="PlayButtonSelection_Click"
         Background="Transparent"
         Foreground="White"
         FontSize="75"
-        FontFamily="Lucida Handwriting"
+        FontFamily="Segoe Print"
         BorderBrush="Transparent"
         BorderThickness="0">
             <Button.Style>
@@ -79,63 +79,64 @@
         </Button>
         <Button 
             x:Name="EducationButton" 
-            Content="Education" 
+            Content="Обучение" 
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Height="119"
-            Width="598"
+            Width="440"
             Margin="53,308,0,0"
             Click="EducationButtonSelection_Click"
             Background="Transparent"
             Foreground="White"
             FontSize="75"
-            FontFamily="Lucida Handwriting"
+            FontFamily="Segoe Print"
             BorderBrush="Transparent"
+           
             BorderThickness="0">
             <Button.Style>
-            <Style TargetType="Button">
-                <!-- Базовые свойства -->
-                <Setter Property="FontWeight" Value="Normal"/>
-                <Setter Property="Template">
-                    <Setter.Value>
-                        <ControlTemplate TargetType="Button">
-                            <!-- Кастомный шаблон без состояний по умолчанию -->
-                            <Border x:Name="border" 
+                <Style TargetType="Button">
+                    <!-- Базовые свойства -->
+                    <Setter Property="FontWeight" Value="Normal"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <!-- Кастомный шаблон без состояний по умолчанию -->
+                                <Border x:Name="border" 
                                 Background="{TemplateBinding Background}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}">
-                                <ContentPresenter HorizontalAlignment="Center"
+                                    <ContentPresenter HorizontalAlignment="Center"
                                               VerticalAlignment="Center"/>
-                            </Border>
-                        </ControlTemplate>
-                    </Setter.Value>
-                </Setter>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
 
-                <!-- Триггеры -->
-                <Style.Triggers>
-                    <Trigger Property="IsMouseOver" Value="True">
-                        <Setter Property="FontWeight" Value="Bold"/>
-                        <!-- Явно отключаем любые изменения границы -->
-                        <Setter Property="BorderBrush" Value="Transparent"/>
-                        <Setter Property="BorderThickness" Value="0"/>
-                    </Trigger>
-                </Style.Triggers>
-            </Style>
+                    <!-- Триггеры -->
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="FontWeight" Value="Bold"/>
+                            <!-- Явно отключаем любые изменения границы -->
+                            <Setter Property="BorderBrush" Value="Transparent"/>
+                            <Setter Property="BorderThickness" Value="0"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
             </Button.Style>
         </Button>
         <Button 
             x:Name="StatisticsButton" 
-            Content="Statistics" 
+            Content="Достижения" 
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Height="119"
-            Width="508"
-            Margin="53,432,0,0"
+            Width="539"
+            Margin="10,427,0,0"
             Click="StatisticsButtonSelection_Click"
             Background="Transparent"
             Foreground="White"
             FontSize="75"
-            FontFamily="Lucida Handwriting"
+            FontFamily="Segoe Print"
             BorderBrush="Transparent"
             BorderThickness="0" RenderTransformOrigin="0.464,0.607">
             <Button.Style>
@@ -171,17 +172,17 @@
         </Button>
         <Button 
             x:Name="SettingsButton" 
-            Content="Settings" 
+            Content="Настройки" 
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Height="118"
+            Height="119"
             Width="440"
-            Margin="53,582,0,0"
+            Margin="53,551,0,0"
             Click="SettingsButtonSelection_Click"
             Background="Transparent"
             Foreground="White"
             FontSize="75"
-            FontFamily="Lucida Handwriting"
+            FontFamily="Segoe Print"
             BorderBrush="Transparent"
             BorderThickness="0">
             <Button.Style>
@@ -217,19 +218,20 @@
         </Button>
         <Button 
             x:Name="ExitButton" 
-            Content="Exit" 
+            Content="Выйти" 
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Height="119"
-            Width="220"
-            Margin="87,706,0,0"
+            Width="440"
+            Margin="53,670,0,0"
             Click="ExitButtonSelection_Click"
             Background="Transparent"
             Foreground="White"
             FontSize="75"
-            FontFamily="Lucida Handwriting"
+            FontFamily="Segoe Print"
             BorderBrush="Transparent"
-            BorderThickness="0">
+            BorderThickness="0"
+            TextBlock.TextAlignment="Left">
             <Button.Style>
                 <Style TargetType="Button">
                     <!-- Базовые свойства -->
@@ -262,7 +264,7 @@
             </Button.Style>
         </Button>
         <!-- Спрятанная рамка для других окн -->
-        
-        
+
+
     </Grid>
 </Page>

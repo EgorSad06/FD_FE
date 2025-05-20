@@ -9,24 +9,33 @@
       Title="Setting"
       Background="DarkBlue">
 
-    <Grid  Background="Tan">
-        <StackPanel Margin="0,23,0,-23">
+    <Grid>
+        <!-- <Grid.Background>
+            <ImageBrush ImageSource="/ClassLib;component/Assets/Sprites/Menu/backgroundstar.png" Stretch="UniformToFill"/>
+        </Grid.Background>
+        <Image Source="/ClassLib;component/Assets/Sprites/Menu/BackGroundStar.png" /> -->
+
+        <Image Source="/ClassLib;component/Assets/Sprites/Menu/backgroundstar.png" Stretch="UniformToFill"/>
+
+        <StackPanel Orientation="Vertical" Margin="0,53,0,29">
             <!-- Настройка разрешения -->
-           
+
 
             <!-- Режим окна -->
-            <GroupBox Header="Режим отображения" Margin="0 0 0 10" Width="682">
+            <GroupBox Header="Режим отображения" FontSize="20" Foreground="White"  Margin="0 0 0 10" Width="682">
                 <StackPanel>
                     <RadioButton x:Name="WindowedRadioButton" 
                    Content="Оконный режим" 
-                   IsChecked="True"/>
+                   IsChecked="True"
+                                 Foreground="White"/>
                     <RadioButton x:Name="FullScreenRadioButton" 
-                   Content="Полный экран"/>
+                   Content="Полный экран"
+                                 Foreground="White"/>
                 </StackPanel>
             </GroupBox>
 
             <!-- Настройки яркости -->
-            <GroupBox Header="Яркость экрана" Margin="0 0 0 10" Width="681">
+            <GroupBox Header="Яркость экрана" Foreground="White" FontSize="20"  Margin="0 0 0 10" Width="681">
                 <Slider Value="{Binding Brightness}" 
                       Minimum="0" Maximum="100"
                       TickFrequency="10"
@@ -34,7 +43,7 @@
             </GroupBox>
 
             <!-- Настройки звука -->
-            <GroupBox Header="Настройки звука" RenderTransformOrigin="0.5,0.5" Width="686">
+            <GroupBox Header="Настройки звука" Foreground="White" FontSize="20" RenderTransformOrigin="0.5,0.5" Width="686">
                 <GroupBox.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -44,35 +53,39 @@
                     </TransformGroup>
                 </GroupBox.RenderTransform>
                 <StackPanel>
-                    <Label Content="Общая громкость:"/>
+                    <Label Content="Общая громкость:" Foreground="White"/>
                     <Slider Value="{Binding MasterVolume}" 
                           Minimum="0" Maximum="100" Width="672"/>
 
-                    <Label Content="Громкость эффектов:"/>
+                    <Label Content="Громкость эффектов:" Foreground="White"/>
                     <Slider Value="{Binding EffectsVolume}" 
                           Minimum="0" Maximum="100" Width="672"/>
                 </StackPanel>
             </GroupBox>
 
             <!-- Кнопки управления -->
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 20">
+            <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center" Margin="0 20">
                 <Button Content="Применить"
-                      Background="LawnGreen"
+                      Background="White"
                       Command="{Binding ApplyCommand}"
                       Width="120" Margin="0 0 10 0"
-                        Click="ApplyButton_Click"/>
+                        Click="ApplyButton_Click"
+                        FontSize="20" />
 
                 <Button Content="Сбросить"
-                        Background="OrangeRed"
+                        Background="White"
                       Command="{Binding ResetCommand}"
                       Width="120" Margin="0 0 10 0"
-                        Click="ResetButton_Click"/>
+                        Click="ResetButton_Click"
+                        FontSize="20" />
 
                 <Button Content="Назад" 
                       Command="{Binding BackCommand}"
                       Width="120"
-                       Click="BackButton_Click"/>
+                       Click="BackButton_Click"
+                        FontSize="20" />
             </StackPanel>
+            <Image Height="832" Source="/SettingBG.png" Stretch="Fill" Width="1472"/>
         </StackPanel>
     </Grid>
 </Page>

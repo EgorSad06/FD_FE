@@ -71,6 +71,9 @@
     <Compile Include="GameplayResources\UCCard.xaml.cs">
       <DependentUpon>UCCard.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TutorialPages\CardDetailFolk.xaml.cs">
+      <DependentUpon>CardDetailFolk.xaml</DependentUpon>
+    </Compile>
     <Page Include="TutorialPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -128,6 +131,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="TutorialPages\CardDetailFolk.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -161,6 +168,5 @@
       <Name>ProgramData</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

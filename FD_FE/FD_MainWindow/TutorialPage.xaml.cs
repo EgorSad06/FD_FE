@@ -1,126 +1,53 @@
-﻿using FD_FE;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
 
 namespace FD_MainWindow
 {
-    public class RelayCommand : ICommand
+    public partial class TutorialPage : Page
     {
-        private readonly Action _execute;
-
-        public RelayCommand(Action execute) => _execute = execute;
-
-        public bool CanExecute(object parameter) => true;
-        public void Execute(object parameter) => _execute();
-        public event EventHandler CanExecuteChanged;
-    }
-    public partial class TutorialPage : Page, INotifyPropertyChanged
-    {
-        private int _currentIndex;
-        private List<BoardCard> _cards;
-        private BitmapImage _currentCardImage;
-
-        public BoardCard CurrentCard => _cards?[_currentIndex];
-        public BitmapImage CurrentCardImage
-        {
-            get => _currentCardImage;
-            set
-            {
-                _currentCardImage = value;
-                OnPropertyChanged();
-            }
-        }
 
         public TutorialPage()
         {
             InitializeComponent();
-            DataContext = this;
-            LoadCards();
-            UpdateImage();
+
         }
 
-        private void LoadCards()
+        private void Card1_Click(object sender, RoutedEventArgs e)
         {
-            // Загрузка карточек из источника
-            _cards = new List<BoardCard>
-            {
-                new BoardCard
-                {
-                    name = "Здоровье",
-                    description = "Текст с описанием 1",
-                    image = "biomachine.png",
-                    fraction = 'g',
-                    card_class = GameplayData.CardClasses[0]
-                },
-                new BoardCard
-                {
-                    name = "Класс",
-                    description = "Текст с описанием 2",
-                    image = "brick_shooter.png",
-                    fraction = 'g',
-                    card_class = GameplayData.CardClasses[0]
-                },
-                new BoardCard
-                {
-                    name = "Особое значение",
-                    description = "Текст с описанием 3",
-                    image = "hacker.png",
-                    fraction = 'g',
-                    card_class = GameplayData.CardClasses[0]
-                }
-            };
+            NavigationService.Navigate(new Uri("TutorialPages/CardDetailFolk.xaml", UriKind.Relative));
         }
 
-        private void UpdateImage()
+        private void Card2_Click(object sender, RoutedEventArgs e)
         {
-            UCCard uc_card = Game.Draw(CurrentCard, TutorialGrid, 0, 0);
-            uc_card.HorizontalAlignment = HorizontalAlignment.Right;
-            uc_card.VerticalAlignment = VerticalAlignment.Center;
-            uc_card.cardVB.Height *= 3;
-            uc_card.cardVB.Width *= 3;
-            uc_card.IsEnabled = false; // чтобы карта не нажималась
-
-            OnPropertyChanged(nameof(CurrentCard));
-            OnPropertyChanged(nameof(ShowBackButton));
-            OnPropertyChanged(nameof(ShowNextButton));
+            //NavigationService.Navigate(new CardDetail2());
         }
 
-        public ICommand NextCommand => new RelayCommand(() =>
+        private void Card3_Click(object sender, RoutedEventArgs e)
         {
-            if (_currentIndex < _cards.Count - 1)
-            {
-                _currentIndex++;
-                UpdateImage();
-            }
-        });
+            //NavigationService.Navigate(new CardDetail3());
+        }
 
-        public ICommand PreviousCommand => new RelayCommand(() =>
+        private void Card4_Click(object sender, RoutedEventArgs e)
         {
-            if (_currentIndex > 0)
-            {
-                _currentIndex--;
-                UpdateImage();
-            }
-        });
+            //NavigationService.Navigate(new CardDetail4());
+        }
 
-        public ICommand ReturnCommand => new RelayCommand(() =>
+        private void GoToMenu_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new MainMenu());
-        });
-
-        public bool ShowBackButton => _currentIndex > 0;
-        public bool ShowNextButton => _currentIndex < _cards.Count - 1;
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+        
     }
 }
