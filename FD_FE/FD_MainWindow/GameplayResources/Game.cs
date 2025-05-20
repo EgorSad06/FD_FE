@@ -53,13 +53,13 @@ namespace FD_MainWindow
         public static IPAddress SetIP(IPAddress new_ip) { ip = new_ip; return ip; }
         public static IPAddress SetIP(string new_ip) { ip = IPAddress.Parse(new_ip); return ip; }
         public static bool is_host { get; private set; }
-        public static BackgroundWorker BGworker = new BackgroundWorker();
+        //public static BackgroundWorker BGworker = new BackgroundWorker();
         public static TcpListener server = null;
         public static TcpClient client = null;
 
-        public static void StartBGWork() { BGworker.RunWorkerAsync(); }
-        public static void AddBGWork(DoWorkEventHandler func) { BGworker.DoWork += new DoWorkEventHandler( func); }
-        public static void RemBGWork(DoWorkEventHandler func) { BGworker.DoWork -= func; }
+        //public static void StartBGWork() { BGworker.RunWorkerAsync(); }
+        //public static void AddBGWork(DoWorkEventHandler func) { BGworker.DoWork += new DoWorkEventHandler( func); }
+        //public static void RemBGWork(DoWorkEventHandler func) { BGworker.DoWork -= func; }
 
         public static byte[] ReceiveData(int size)
         {
@@ -72,21 +72,21 @@ namespace FD_MainWindow
             socket.Send(data);
         }
         
-        public static async Task<bool>Connect(bool is_host_param = true)
+        public static async Task<bool> Connect(bool is_host_param = true)
         {
             is_host = is_host_param;
             if (is_host)
             {
                 server = new TcpListener(ip, 4013);
                 server.Start();
-                socket = server.AcceptSocket();
+                await Task.Run(()=>socket = server.AcceptSocket());
                 return true;
             }
             else
             {
                 try
                 {
-                    client = new TcpClient(ip.ToString(), 4013);
+                    await Task.Run(()=>client = new TcpClient(ip.ToString(), 4013));
                     socket = client.Client;
                     return true;
                 }
@@ -100,9 +100,10 @@ namespace FD_MainWindow
         }
         public static void Disconnect()
         {
-            BGworker.WorkerSupportsCancellation = true;
-            BGworker.CancelAsync();
+            //BGworker.WorkerSupportsCancellation = true;
+            //BGworker.CancelAsync();
             server?.Stop();
+            client?.Close();
         }
     }
 }
