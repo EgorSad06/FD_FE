@@ -88,58 +88,48 @@ namespace FD_FE
         };
 
         // карты 5-24 25-44 45-64 65-84
-        static public List<Card> StartCards = new List<Card>
+        static public Dictionary<char, List<Card>> StartCards = new Dictionary<char, List<Card>>
         {
-            new Card()
-            {
-                id = 5,
-                name = "Рельсотрон",
-                fraction = 't',
-                card_class = CardClasses[1],
-                image = "railgun.png",
-                select_n = 1,
-                function = (BoardCard card)=> {
-
-                }
-            },
-            new Card()
-            {
-                id = 6,
-                name = "Мечтатель",
-                fraction = 't',
-                card_class = CardClasses[3],
-                image = "dreamer.png",
-                select_n = 1,
-                function = (BoardCard card)=>
+            { 't', new List<Card> {
+                new Card()
                 {
+                    id = 5,
+                    name = "Рельсотрон",
+                    card_class = CardClasses[1],
+                    image = "railgun.png",
+                    select_n = 1,
+                    function = (BoardCard card)=> {
 
-                }
-            },
-            new Card()
-            {
-                id = 7,
-                name = "Хакер",
-                fraction = 't',
-                card_class = CardClasses[1],
-                image = "hacker.png",
-                function = (BoardCard card)=>
+                    }
+                },
+                new Card()
                 {
-                    card.select_n++;
+                    id = 6,
+                    name = "Мечтатель",
+                    card_class = CardClasses[3],
+                    image = "dreamer.png",
+                    select_n = 1,
+                    function = (BoardCard card)=>
+                    {
+
+                    }
+                },
+                new Card()
+                {
+                    id = 7,
+                    name = "Хакер",
+                    card_class = CardClasses[1],
+                    image = "hacker.png",
+                    function = (BoardCard card)=>
+                    {
+                        card.select_n++;
+                    }
                 }
-            }
-            //new Card()
-            //{
-            //    id = 45,
-            //    name = "Knight",
-            //    fraction = 'f',
-            //    card_class = 'c',
-            //    image = "hacker.png",
-            //    function = delegate()
-            //    {
+            } },
 
-            //    }
-            //}
+            { 'f', new List<Card> {
 
+            } }
         };
     }
 }

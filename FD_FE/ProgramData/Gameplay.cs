@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data;
 using System.Linq;
@@ -48,7 +49,6 @@ namespace FD_FE
         public int id { get; set; }
         public string name { get; set; }
         public string description { get; set; }
-        public char fraction { get; set; }
         public CardClass card_class { get; set; }
         public short start_HP { get; set; }
         public short select_n { get; set; }
@@ -58,10 +58,11 @@ namespace FD_FE
         public Card() { }
         public Card(Card card) // копия имеющейся карты
         {
-            id = card.id; name = card.name; description = card.description;
-            fraction = card.fraction; card_class = card.card_class;
+            id = card.id; name = card.name; description = card.description; card_class = card.card_class;
             start_HP = card.start_HP; function = card.function; image = card.image;
         }
+        public char GetFraction() => GameplayData.StartCards.Keys.ElementAt( (id - GameplayData.StartCards.Values.ElementAt(0)[0].id) / 20 );
+        static public char GetFraction(int id) => GameplayData.StartCards.Keys.ElementAt((id - GameplayData.StartCards.Values.ElementAt(0)[0].id) / 20);
     }
     
 // карта поля
@@ -84,8 +85,7 @@ namespace FD_FE
         public BoardCard() { }
         public BoardCard(Card card, int board_index = 0) // копия имеющейся карты
         {
-            id = card.id; name = card.name; description = card.description;
-            fraction = card.fraction; card_class = card.card_class;
+            id = card.id; name = card.name; description = card.description; card_class = card.card_class;
             start_HP = card.start_HP; function = card.function; image = card.image;
             source = card;
             board_i = board_index;

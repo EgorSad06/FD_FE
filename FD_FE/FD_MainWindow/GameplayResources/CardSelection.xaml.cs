@@ -41,6 +41,7 @@ namespace FD_MainWindow
                     Card temp = Game.slct_cards.GetCard();
                     card_slct_board.SetBoardCard(new BoardCard(temp, i));
                     Game.p_deck.deck_cards.Add(temp);
+                    p_slctd_card_i[p_slctd_card_n] = (short)temp.id;
                 }
                 Game.Draw(card_slct_board, CardSelectionGrid, Game.Mode.start_cards_count, 1);
                 foreach (UCCard uc_card in CardSelectionGrid.Children) uc_card.IsEnabled = false;
@@ -68,13 +69,29 @@ namespace FD_MainWindow
         {
             if (Game.is_host)
             {
-                byte[] o_slctd_card_i = Game.ReceiveData(2 * Game.Mode.start_cards_count).Result;
-                foreach (short i in o_slctd_card_i) { Game.o_deck.deck_cards.Add(Game.StartCardByID(i)); }
-                Game.SendData()
+                byte[] slctd_card_i = await Game.ReceiveData(2 * Game.Mode.start_cards_count);
+                for (int i=0; i<2*Game.Mode.start_cards_count; i++) Game.o_deck.deck_cards.Add(Game.StartCardByID( slctd_card_i[i]<<8 + slctd_card_i[++i]) );
+
+                slctd_card_i = new byte[2 * Game.Mode.start_cards_count];
+                for (int i = 0; i < Game.Mode.start_cards_count; i+=2)
+                {
+                    slctd_card_i[i] = (byte)(p_slctd_card_i[i] >> 8);
+                    slctd_card_i[i+1] = (byte)(p_slctd_card_i[i]);
+                }
+                Game.SendData(slctd_card_i);
             }
             else
             {
+                byte[] slctd_card_i = new byte[2 * Game.Mode.start_cards_count];
+                for (int i = 0; i < Game.Mode.start_cards_count; i += 2)
+                {
+                    slctd_card_i[i] = (byte)(p_slctd_card_i[i] >> 8);
+                    slctd_card_i[i + 1] = (byte)(p_slctd_card_i[i]);
+                }
+                Game.SendData(slctd_card_i);
 
+                slctd_card_i = await Game.ReceiveData(2 * Game.Mode.start_cards_count);
+                for (int i = 0; i < 2 * Game.Mode.start_cards_count; i++) Game.o_deck.deck_cards.Add(Game.StartCardByID(slctd_card_i[i] << 8 + slctd_card_i[++i]));
             }
             NavigationService.Navigate(new Uri("GameplayResources/Battle.xaml", UriKind.Relative));
             NavigationService.RemoveBackEntry();

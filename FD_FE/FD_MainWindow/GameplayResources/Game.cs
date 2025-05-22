@@ -10,6 +10,7 @@ using FD_FE;
 using System.Net.Sockets;
 using System.ComponentModel;
 using System.Net;
+using System.Threading;
 
 namespace FD_MainWindow
 {
@@ -22,11 +23,11 @@ namespace FD_MainWindow
         public static bool game_start = true;
 
         public static byte[] act_sqnc = null;
-        public static Deck slct_cards = new Deck(GameplayData.StartCards); // колода карт для выбора
+        public static Deck slct_cards = new Deck();
         public static Deck p_deck = new Deck();
         public static Deck o_deck = new Deck();
 
-        public static Card StartCardByID(int card_id) => GameplayData.StartCards.Find((Card card) => card.id == card_id);
+        public static Card StartCardByID(int card_id) => GameplayData.StartCards[Card.GetFraction(card_id)].Find((Card card) => card.id == card_id);
 
         // отрисовка
         static public ImageSourceConverter converter = new ImageSourceConverter();
@@ -49,6 +50,7 @@ namespace FD_MainWindow
             }
         }
 
+
         // подключение
         public static bool is_host = true;
         private static IPAddress ip = IPAddress.Any;
@@ -59,7 +61,6 @@ namespace FD_MainWindow
             else return IPAddress.TryParse(IP, out ip);
         }
 
-
         public static TcpListener server = null;
         public static TcpClient client = null;
         public static Socket socket = null;
@@ -67,14 +68,19 @@ namespace FD_MainWindow
         public static async Task<byte[]> ReceiveData(int size)
         {
             byte[] data = new byte[size];
-            try {
-                await Task.Run(() => socket.Receive(data));
-                return data;
-            }
-            catch (Exception ex) {
-                MessageBox.Show(ex.Message);
-                return null; 
-            }
+            return await Task<byte[]>.Run(()=>
+            {
+                try
+                {
+                    socket.Receive(data);
+                    return data;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    return null;
+                }
+            }); 
         }
         public static void SendData(byte[] data)
         {
@@ -93,18 +99,20 @@ namespace FD_MainWindow
             }
             else
             {
-                try
+                return await Task<bool>.Run(()=>
                 {
-                    await Task.Run(()=>client = new TcpClient(ip.ToString(), 4013));
-                    socket = client.Client;
-                    return true;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                    client?.Close();
-                    return false;
-                }
+                    try {
+                        client = new TcpClient(ip.ToString(), 4013);
+                        socket = client.Client;
+                        return true;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                        client?.Close();
+                        return false;
+                    }
+                });
             }
         }
         public static void Disconnect()
