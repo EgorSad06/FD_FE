@@ -97,7 +97,8 @@ namespace FD_FE
                 fraction = 't',
                 card_class = CardClasses[1],
                 image = "railgun.png",
-                function = delegate() {
+                select_n = 1,
+                function = (BoardCard card)=> {
 
                 }
             },
@@ -108,7 +109,8 @@ namespace FD_FE
                 fraction = 't',
                 card_class = CardClasses[3],
                 image = "dreamer.png",
-                function = delegate()
+                select_n = 1,
+                function = (BoardCard card)=>
                 {
 
                 }
@@ -120,9 +122,9 @@ namespace FD_FE
                 fraction = 't',
                 card_class = CardClasses[1],
                 image = "hacker.png",
-                function = delegate()
+                function = (BoardCard card)=>
                 {
-
+                    card.select_n++;
                 }
             }
             //new Card()

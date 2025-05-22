@@ -14,5 +14,6 @@
 
             </Grid>
         </Border>
+        <Button Content="Готов" Width="100" Height="50" Click="Start_Click"/>
     </Grid>
 </Page>

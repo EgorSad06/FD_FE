@@ -19,11 +19,15 @@ namespace FD_MainWindow
         public static GameMode Mode { get; private set; }
         public static void SetMode(short mode) { Mode = GameplayData.GameModes[mode]; }
 
+        public static bool game_start = true;
+
+        public static byte[] act_sqnc = null;
         public static Deck slct_cards = new Deck(GameplayData.StartCards); // колода карт для выбора
         public static Deck p_deck = new Deck();
+        public static Deck o_deck = new Deck();
 
-        public static bool game_started = true;
-        
+        public static Card StartCardByID(int card_id) => GameplayData.StartCards.Find((Card card) => card.id == card_id);
+
         // отрисовка
         static public ImageSourceConverter converter = new ImageSourceConverter();
         static public void Draw(Board board, Grid grid, short a, short b) 
