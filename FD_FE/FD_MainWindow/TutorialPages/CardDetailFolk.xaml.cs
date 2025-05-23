@@ -24,5 +24,14 @@ namespace FD_MainWindow.TutorialPages
         {
             InitializeComponent();
         }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Возврат на предыдущую страницу
+            if (NavigationService.CanGoBack)
+            {
+                NavigationService.GoBack();
+            }
+        }
     }
 }

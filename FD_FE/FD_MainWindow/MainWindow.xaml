@@ -11,4 +11,8 @@
         ResizeMode="NoResize"
         Title="Fraction Destruction" MinHeight="450" Height="450" MinWidth="800" Width="800">
         <Frame x:Name="MainFrame" Background="Black" MinHeight="450" MinWidth="800" NavigationUIVisibility="Hidden"/>
+    
+    
+    
 </Window>
+    

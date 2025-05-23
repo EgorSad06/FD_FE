@@ -56,6 +56,8 @@
     <Resource Include="Assets\Sprites\Menu\main_meny_bg.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Assets\Sprites\CardsForTutor\TurtorCardTechno.png" />
+    <Resource Include="Assets\Sprites\CardsForTutor\TurtorCardFolk.png" />
     <Content Include="Assets\Sprites\Cards\biomachine.png" />
     <Content Include="Assets\Sprites\Cards\brick_shooter.png" />
     <Content Include="Assets\Sprites\Cards\calculator.png" />
@@ -74,8 +76,6 @@
     <Resource Include="Assets\Sprites\Menu\backgroundstar.png" />
     <Resource Include="SettingBG.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Assets\Sprites\CardsForTutor\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
