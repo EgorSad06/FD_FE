@@ -23,7 +23,7 @@
                     <Border x:Name="border" 
                 Background="{TemplateBinding Background}"
                 BorderBrush="{TemplateBinding BorderBrush}"
-                BorderThickness="4">
+                BorderThickness="{TemplateBinding BorderThickness}">
                     </Border>
                 </ControlTemplate>
             </Setter.Value>
@@ -31,7 +31,7 @@
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="BorderBrush" Value="White"/>
-                <Setter Property="BorderThickness" Value="2"/>
+                <Setter Property="BorderThickness" Value="4"/>
             </Trigger>
         </Style.Triggers>
     </Style>

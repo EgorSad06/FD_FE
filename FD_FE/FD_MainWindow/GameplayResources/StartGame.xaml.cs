@@ -50,35 +50,47 @@ namespace FD_MainWindow.GameplayPages
 
         private void Mode_Click(object sender, RoutedEventArgs e)
         {
-            ((Button)sender).Tag = (((Button)sender).Tag.ToString()[0]=='1') ? "0"+((Button)sender).Tag.ToString()[1] : "1" + ((Button)sender).Tag.ToString()[1];
+            for (int i=0; i<GameplayData.StartCards.Count; i++)
+            {
+                if (GameplayData.StartCards.Keys.ElementAt(i) == ((Button)sender).Tag.ToString()[0]) {
+                    slct_f[i] = ! slct_f[i];
+                    ((Button)sender).BorderThickness = new Thickness( slct_f[i] ? 2 : 4 );
+                }
+            }
         }
 
         private async void StartButton_Click(object sender, RoutedEventArgs e)
         {
-            short i = -1;
-            foreach (Button button in SP_modes.Children) {
-                if (button.Tag.ToString()[0] == '1')
+            short i = 0;
+            for (int j=0; j< GameplayData.StartCards.Count; j++) i += (short) (slct_f[j] ? 1:0);
+            if (i != 0)
+            {
+                B_start.IsEnabled = false;
+                Message.Text = i.ToString();
+                if (Game.is_host)
                 {
-                    Game.slct_cards.deck_cards.AddRange(GameplayData.StartCards[ button.Tag.ToString()[1] ]);
-                    i++;
+                    i = (await Game.ReceiveData(1))[0]==i ? i : (short)0;
+                    Game.SendData(new byte[1] { (byte)i });
                 }
-            }
-            if (Game.is_host)
-            {
-                i = ((await Game.ReceiveData(1))[0]==i) ? i : (short)-1;
-                Game.SendData(new byte[1] { (byte)(i << 8) });
-            }
-            else
-            {
-                Game.SendData( new byte[1] { (byte)(i<<8) } );
-                i = ((await Game.ReceiveData(1))[0] == i) ? i : (short)-1;
-            }
-            if (i != -1)
-            {
-                Game.SetMode(i);
-                NavigationService.Navigate(new Uri("GameplayResources/CardSelection.xaml", UriKind.Relative));
-                // Если нужно закрыть текущую страницу:
-                NavigationService.RemoveBackEntry();
+                else
+                {
+                    Game.SendData( new byte[1] { (byte)i } );
+                    i = (await Game.ReceiveData(1))[0]==i ? i : (short)0;
+                }
+                
+                if (i != 0)
+                {
+                    foreach (Button button in SP_modes.Children) if (slct_f[i])
+                        {
+                            Game.slct_cards.deck_cards.AddRange(GameplayData.StartCards[button.Tag.ToString()[0]]);
+                            i++;
+                        }
+                    Game.SetMode(i);
+                    NavigationService.Navigate(new Uri("GameplayResources/CardSelection.xaml", UriKind.Relative));
+                    // Если нужно закрыть текущую страницу:
+                    NavigationService.RemoveBackEntry();
+                }
+                else B_start.IsEnabled = true;
             }
         }
 

@@ -18,6 +18,8 @@ namespace FD_MainWindow
 {
     public partial class UCCard : UserControl
     {
+        public UCCard() { InitializeComponent(); }
+
         public UCCard(BoardCard card, double x, double y)
         {
             InitializeComponent();

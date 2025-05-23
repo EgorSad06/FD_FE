@@ -127,8 +127,13 @@ namespace FD_FE
                 }
             } },
 
-            { 'f', new List<Card> {
-
+            { 'm', new List<Card> {
+                new Card()
+                {
+                    id = 25,
+                    name = "Тест",
+                    card_class = CardClasses[0]
+                }
             } }
         };
     }
