@@ -9,6 +9,11 @@
       Title="CardDetailFolk">
 
     <Grid Background="White">
-        
+        <Button Content="Назад" 
+        Command="{Binding BackCommand}"
+        Width="159"
+        Click="BackButton_Click" 
+        Height="42" 
+        FontSize="25" Margin="631,398,10,10"/>
     </Grid>
 </Page>

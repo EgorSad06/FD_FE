@@ -9,45 +9,73 @@
       Background="Tan" d:DesignWidth="1600" d:DesignHeight="900"
       >
 
-    <Grid>
-        <!--  Width="330" Height="582 -->
-        <StackPanel Margin="1128,159,133,159" Height="582">
-            <Button Click="Card1_Click">
-                <StackPanel>
-                    <Rectangle  Width="340" Height="550" Fill="LimeGreen"/>
-                    <TextBlock Text="Name 1" FontSize="25" HorizontalAlignment="Center"/>
+    <Grid Background="White">
+
+
+        <!-- Левая часть: карточки -->
+        <Viewbox Stretch="Uniform" Grid.Column="0" Margin="20">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" >
+
+                <!-- Карточка 1 -->
+                <StackPanel Margin="20" Width="180">
+                    <Button Click="Card1_Click" Height="260">
+                        <StackPanel>
+                            <Image Height="200"
+                                   Stretch="Fill"
+                                   Source="/ClassLib;component/Assets/Sprites/CardsForTutor/TurtorCardFolk.png"/>
+                            <TextBlock Text="Name 1" HorizontalAlignment="Center" Margin="5"/>
+                        </StackPanel>
+                    </Button>
                 </StackPanel>
-            </Button>
-        </StackPanel>
 
-        <StackPanel Margin="764,159,497,159" Height="582">
-            <Button Click="Card2_Click">
-                <StackPanel>
-                    <Rectangle  Width="340" Height="550" Fill="DeepSkyBlue"/>
-                    <TextBlock Text="Name 2" FontSize="25" HorizontalAlignment="Center"/>
+                <!-- Карточка 2 -->
+                <StackPanel Margin="20" Width="180">
+                    <Button Click="Card2_Click" Height="260">
+                        <StackPanel>
+                            <Image Height="200"
+                                   Stretch="Fill"
+                                   Source="/ClassLib;component/Assets/Sprites/CardsForTutor/TurtorCardFolk.png"/>
+                            <TextBlock Text="Name 2" HorizontalAlignment="Center" Margin="5"/>
+                        </StackPanel>
+                    </Button>
                 </StackPanel>
-            </Button>
-        </StackPanel>
 
-        <StackPanel Margin="410,159,854,159" Height="582">
-            <Button Click="Card3_Click">
-                <StackPanel>
-                    <Rectangle  Width="340" Height="550" Fill="Red"/>
-                    <TextBlock Text="Name 3" FontSize="25" HorizontalAlignment="Center"/>
+                <!-- Карточка 3 -->
+                <StackPanel Margin="20" Width="180">
+                    <Button Click="Card3_Click" Height="260">
+                        <StackPanel>
+                            <Image Height="200"
+                                   Stretch="Fill"
+                                   Source="/ClassLib;component/Assets/Sprites/CardsForTutor/TurtorCardFolk.png"/>
+                            <TextBlock Text="Name 3" HorizontalAlignment="Center" Margin="5"/>
+                        </StackPanel>
+                    </Button>
                 </StackPanel>
-            </Button>
-        </StackPanel>
 
-        <StackPanel Margin="57,159,1208,159" Height="582">
-            <Button Click="Card4_Click">
-                <StackPanel>
-                    <Rectangle Width="340" Height="550" Fill="Gray"/>
-                    <TextBlock Text="Name 4" FontSize="25" HorizontalAlignment="Center"/>
+                <!-- Карточка 4 -->
+                <StackPanel Margin="20" Width="180">
+                    <Button Click="Card4_Click" Height="260">
+                        <StackPanel>
+                            <Image Height="200"
+                                   Stretch="Fill"
+                                   Source="/ClassLib;component/Assets/Sprites/CardsForTutor/TurtorCardFolk.png"/>
+                            <TextBlock Text="Name 4" HorizontalAlignment="Center" Margin="5"/>
+                        </StackPanel>
+                    </Button>
                 </StackPanel>
-            </Button>
-        </StackPanel>
+            </StackPanel>
+        </Viewbox>
 
+        <!-- Правая часть: декоративная большая картинка -->
 
-        <Button Content="В меню" HorizontalAlignment="Right" VerticalAlignment="Bottom" FontSize="25" Margin="0,0,87,39" Click="GoToMenu_Click" RenderTransformOrigin="0.504,1.333" Height="52" Width="164"/>
+        <!-- Кнопка "В меню" -->
+        <Button Content="Go to menu"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Bottom"
+                Margin="20"
+                Width="120"
+                Height="40"
+                Click="GoToMenu_Click"
+                Grid.ColumnSpan="2"/>
     </Grid>
 </Page>

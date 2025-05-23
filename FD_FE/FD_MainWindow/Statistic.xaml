@@ -15,6 +15,7 @@
         <!-- Фоновое изображение -->
         <Image Source="/ClassLib;component/Assets/Sprites/Menu/backgroundstar.png" 
                Stretch="UniformToFill"/>
+
         <!-- Растягиваем изображение на весь экран -->
 
         <!-- Остальной интерфейс (как было, но теперь внутри Grid) -->
