@@ -8,8 +8,12 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Battle">
 
-    <Grid Background="Bisque">
-        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20">Battle</TextBlock>
-        
+    <Grid Background="Maroon">
+        <Border Width="830" Height="318" BorderBrush="White" BorderThickness="2" CornerRadius="10">
+            <Grid x:Name="MainBoardGrid" Width="800" Height="288">
+
+            </Grid>
+        </Border>
+        <Button Width="100" Height="40" VerticalAlignment="Top" Click="Button_Click"/>
     </Grid>
 </Page>

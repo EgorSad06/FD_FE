@@ -15,7 +15,7 @@ namespace FD_FE
         static public string sprites_path = "../../../ProgramData/Assets/Sprites/";
 
         // режимы
-        public static List<GameMode> GameModes = new List<GameMode> {
+        public static readonly List<GameMode> GameModes = new List<GameMode> {
             new GameMode()
             {
                 fractions_count = 1,
@@ -51,7 +51,7 @@ namespace FD_FE
         };
 
         // эффекты
-        static public List<Effect> FD_FE_Effects = new List<Effect>
+        public static readonly List<Effect> FD_FE_Effects = new List<Effect>
         {
             new Effect()
             {
@@ -64,7 +64,7 @@ namespace FD_FE
         };
 
         // классы сз=0 гс=1 цс=2 пк=3
-        static public List<CardClass> CardClasses = new List<CardClass>
+        public static readonly List<CardClass> CardClasses = new List<CardClass>
         {
             new CardClass() {
                 id = 's',
@@ -88,7 +88,7 @@ namespace FD_FE
         };
 
         // карты 5-24 25-44 45-64 65-84
-        static public Dictionary<char, List<Card>> StartCards = new Dictionary<char, List<Card>>
+        public static readonly Dictionary<char, List<Card>> StartCards = new Dictionary<char, List<Card>>
         {
             { 't', new List<Card> {
                 new Card()
@@ -132,7 +132,8 @@ namespace FD_FE
                 {
                     id = 25,
                     name = "Тест",
-                    card_class = CardClasses[0]
+                    card_class = CardClasses[0],
+                    image = "transformator.png"
                 }
             } }
         };
