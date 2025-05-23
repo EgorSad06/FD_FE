@@ -27,35 +27,65 @@ namespace FD_MainWindow.GameplayPages
         public StartGame()
         {
             InitializeComponent();
-            Game.AddBGWork(BGConnect);
         }
-        
-        private void Receive_Click(object sender, RoutedEventArgs e)
+        private bool[] slct_f = new bool[GameplayData.StartCards.Count];
+        private async void Receive_Click(object sender, RoutedEventArgs e)
         {
-            Message.Text = Encoding.Unicode.GetString(Game.ReceiveData(100));
+            ((Button)sender).IsEnabled = false;
+            Message.Text = Encoding.Unicode.GetString( await Game.ReceiveData(100));
+            ((Button)sender).IsEnabled = true;
         }
         private void Send_Click(object sender, RoutedEventArgs e)
         {
             Game.SendData(Encoding.Unicode.GetBytes(Message.Text));
         }
 
-        private void BGConnect(object sender, DoWorkEventArgs e)
+        private async void Connect_Click(object sender, RoutedEventArgs e)
         {
-            ((Button)sender).IsEnabled = Game.Connect((bool)RB_server.IsChecked);
-            MessageBox.Show("Connect finished");
-        }
-        private void Connect_Click(object sender, RoutedEventArgs e)
-        {
-            if ((bool)RB_server.IsChecked) TB_IP.Text = (Game.SetIP()).ToString();
-            else Game.SetIP(TB_IP.Text);
-            Game.StartBGWork();
+            Game.is_host = (bool)(RB_server.IsChecked);
+            Game.SetIP(TB_IP.Text);
+            B_connect.IsEnabled = false;
+            B_connect.IsEnabled = !(B_start.IsEnabled = B_receive.IsEnabled = B_send.IsEnabled = await Game.Connect());
         }
 
-        private void StartButton_Click(object sender, RoutedEventArgs e)
+        private void Mode_Click(object sender, RoutedEventArgs e)
         {
-            Game.RemBGWork(BGConnect);
-            Game.SetMode(0);
-            NavigationService.Navigate(new Uri("GameplayResources/CardSelection.xaml", UriKind.Relative));
+            ((Button)sender).Tag = (((Button)sender).Tag.ToString()[0]=='1') ? "0"+((Button)sender).Tag.ToString()[1] : "1" + ((Button)sender).Tag.ToString()[1];
+        }
+
+        private async void StartButton_Click(object sender, RoutedEventArgs e)
+        {
+            short i = -1;
+            foreach (Button button in SP_modes.Children) {
+                if (button.Tag.ToString()[0] == '1')
+                {
+                    Game.slct_cards.deck_cards.AddRange(GameplayData.StartCards[ button.Tag.ToString()[1] ]);
+                    i++;
+                }
+            }
+            if (Game.is_host)
+            {
+                i = ((await Game.ReceiveData(1))[0]==i) ? i : (short)-1;
+                Game.SendData(new byte[1] { (byte)(i << 8) });
+            }
+            else
+            {
+                Game.SendData( new byte[1] { (byte)(i<<8) } );
+                i = ((await Game.ReceiveData(1))[0] == i) ? i : (short)-1;
+            }
+            if (i != -1)
+            {
+                Game.SetMode(i);
+                NavigationService.Navigate(new Uri("GameplayResources/CardSelection.xaml", UriKind.Relative));
+                // Если нужно закрыть текущую страницу:
+                NavigationService.RemoveBackEntry();
+            }
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            Game.Disconnect();
+            NavigationService.Navigate(new Uri("MainMenu.xaml", UriKind.Relative));
             // Если нужно закрыть текущую страницу:
             NavigationService.RemoveBackEntry();
         }

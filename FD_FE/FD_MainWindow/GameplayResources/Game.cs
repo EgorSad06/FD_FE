@@ -10,6 +10,7 @@ using FD_FE;
 using System.Net.Sockets;
 using System.ComponentModel;
 using System.Net;
+using System.Threading;
 
 namespace FD_MainWindow
 {
@@ -19,11 +20,15 @@ namespace FD_MainWindow
         public static GameMode Mode { get; private set; }
         public static void SetMode(short mode) { Mode = GameplayData.GameModes[mode]; }
 
-        public static Deck slct_cards = new Deck(GameplayData.StartCards); // колода карт для выбора
-        public static Deck p_deck = new Deck();
+        public static bool game_start = true;
 
-        public static bool game_started = true;
-        
+        public static byte[] act_sqnc = null;
+        public static Deck slct_cards = new Deck();
+        public static Deck p_deck = new Deck();
+        public static Deck o_deck = new Deck();
+
+        public static Card StartCardByID(int card_id) => GameplayData.StartCards[Card.GetFraction(card_id)].Find((Card card) => card.id == card_id);
+
         // отрисовка
         static public ImageSourceConverter converter = new ImageSourceConverter();
         static public void Draw(Board board, Grid grid, short a, short b) 
@@ -45,63 +50,77 @@ namespace FD_MainWindow
             }
         }
 
+
         // подключение
-        public static Socket socket { get; set; }
-        public static IPAddress ip { get; private set; } = null;
-        public static IPAddress SetIP() { ip = IPAddress.Any; return ip; }
-        public static IPAddress SetIP(IPAddress new_ip) { ip = new_ip; return ip; }
-        public static IPAddress SetIP(string new_ip) { ip = IPAddress.Parse(new_ip); return ip; }
-        public static bool is_host { get; private set; }
-        public static BackgroundWorker BGworker = new BackgroundWorker();
+        public static bool is_host = true;
+        private static IPAddress ip = IPAddress.Any;
+        public static IPAddress GetIP() => ip;
+        public static bool SetIP(IPAddress IP) { ip = (is_host) ? IPAddress.Any : IP; return true; }
+        public static bool SetIP(string IP) {
+            if (is_host) { ip = IPAddress.Any; return true; }
+            else return IPAddress.TryParse(IP, out ip);
+        }
+
         public static TcpListener server = null;
         public static TcpClient client = null;
+        public static Socket socket = null;
 
-        public static void StartBGWork() { BGworker.RunWorkerAsync(); }
-        public static void AddBGWork(DoWorkEventHandler func) { BGworker.DoWork += func; }
-        public static void RemBGWork(DoWorkEventHandler func) { BGworker.DoWork -= func; }
-
-        public static byte[] ReceiveData(int size)
+        public static async Task<byte[]> ReceiveData(int size)
         {
             byte[] data = new byte[size];
-            socket.Receive(data);
-            return data;
-        }
-        public static void SendData(byte[] data)
-        {
-            socket.Send(data);
-        }
-        
-        public static bool Connect(bool is_host_param = true)
-        {
-            is_host = is_host_param;
-            if (is_host)
-            {
-                server = new TcpListener(ip, 4013);
-                server.Start();
-                socket = server.AcceptSocket();
-                return true;
-            }
-            else
+            return await Task<byte[]>.Run(()=>
             {
                 try
                 {
-                    client = new TcpClient(ip.ToString(), 4013);
-                    socket = client.Client;
-                    return true;
+                    socket.Receive(data);
+                    return data;
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
-                    client?.Close();
-                    return false;
+                    return null;
                 }
+            }); 
+        }
+        public static void SendData(byte[] data)
+        {
+            try { socket.Send(data); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+        
+        public static async Task<bool> Connect()
+        {
+            if (is_host)
+            {
+                server = new TcpListener(ip, 4013);
+                server.Start();
+                await Task.Run(()=>socket = server.AcceptSocket());
+                return true;
+            }
+            else
+            {
+                return await Task<bool>.Run(()=>
+                {
+                    try {
+                        client = new TcpClient(ip.ToString(), 4013);
+                        socket = client.Client;
+                        return true;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                        client?.Close();
+                        return false;
+                    }
+                });
             }
         }
         public static void Disconnect()
         {
-            BGworker.WorkerSupportsCancellation = true;
-            BGworker.CancelAsync();
+            ip = IPAddress.Any;
+            socket?.Close();
             server?.Stop();
+            client?.Close();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data;
 using System.Linq;
@@ -22,8 +23,7 @@ namespace FD_FE
         public short battles { get; set; }
     }
 
-    public delegate void Card_func();
-    public delegate void Efct_func(BoardCard card);
+    public delegate void Card_func(BoardCard card);
     public delegate short GetAV_func(BoardCard card);
     
 
@@ -31,7 +31,7 @@ namespace FD_FE
     public class Effect
     {
         public string name { get; set; }
-        public Efct_func function { get; set; }
+        public Card_func function { get; set; }
     }
 
 // класс карты
@@ -49,24 +49,26 @@ namespace FD_FE
         public int id { get; set; }
         public string name { get; set; }
         public string description { get; set; }
-        public char fraction { get; set; }
-        public CardClass card_class { get; set; }                           
+        public CardClass card_class { get; set; }
         public short start_HP { get; set; }
+        public short select_n { get; set; }
         public Card_func function { get; set; }
         public string image { get; set; }
 
         public Card() { }
         public Card(Card card) // копия имеющейся карты
         {
-            id = card.id; name = card.name; description = card.description;
-            fraction = card.fraction; card_class = card.card_class;
+            id = card.id; name = card.name; description = card.description; card_class = card.card_class;
             start_HP = card.start_HP; function = card.function; image = card.image;
         }
+        public char GetFraction() => GameplayData.StartCards.Keys.ElementAt( (id - GameplayData.StartCards.Values.ElementAt(0)[0].id) / 20 );
+        static public char GetFraction(int id) => GameplayData.StartCards.Keys.ElementAt((id - GameplayData.StartCards.Values.ElementAt(0)[0].id) / 20);
     }
     
 // карта поля
     public class BoardCard : Card
     {
+        public int board_i { get; set; }
         public Card source { get; set; }
         public char force { get; set; }
         public short HP { get; protected set; }
@@ -81,17 +83,17 @@ namespace FD_FE
         public event CardChangedEventHandler CardChanged;
 
         public BoardCard() { }
-        public BoardCard(Card card) // копия имеющейся карты
+        public BoardCard(Card card, int board_index = 0) // копия имеющейся карты
         {
-            id = card.id; name = card.name; description = card.description;
-            fraction = card.fraction; card_class = card.card_class;
+            id = card.id; name = card.name; description = card.description; card_class = card.card_class;
             start_HP = card.start_HP; function = card.function; image = card.image;
             source = card;
+            board_i = board_index;
         }
 
         public void Act()
         {
-
+            function(this);
         }
         public void SetAct() { }
     }

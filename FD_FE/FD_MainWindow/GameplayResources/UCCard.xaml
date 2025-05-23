@@ -38,7 +38,7 @@
             <Image x:Name="CardImage" Height="90" Width="90" Stretch="Uniform" Grid.Row="1" Grid.ColumnSpan="3" HorizontalAlignment="Center"/>
             <TextBlock Text="{Binding ElementName=UCcard, Path=BoardCard.name}"
                     Style="{StaticResource CardNameT}" Grid.Row="2" Grid.ColumnSpan="3"/>
-            <Button Width="100" Height="160" Grid.ColumnSpan="3" Grid.RowSpan="3" Click="Button_Click" Style="{StaticResource CardButton}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Button Width="100" Height="160" Grid.ColumnSpan="3" Grid.RowSpan="3" Click="Button_Click" Background="Transparent" Style="{StaticResource CardButton}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
     </Viewbox>
 </UserControl>

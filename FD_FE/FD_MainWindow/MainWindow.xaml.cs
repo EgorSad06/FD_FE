@@ -28,5 +28,10 @@ namespace FD_MainWindow
             MainFrame.Content = new MainMenu();
 
         }
+
+        private void FD_window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Game.Disconnect();
+        }
     }
 }

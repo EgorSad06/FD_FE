@@ -8,18 +8,37 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="StartGame">
-
+    <Page.Resources>
+        <ResourceDictionary Source="/GameplayResources/CardStyles.xaml"/>
+    </Page.Resources>
     <Grid Background="Maroon">
-        <TextBlock TextBlock.TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="White" Margin="0,222,0,0"><Run Text="StartGame"/><LineBreak/><Run Text="Страница запуска игры (режим игры, подключение и т.п.)"/></TextBlock>
+        <StackPanel x:Name="SP_modes" Orientation="Horizontal" Width="800" Height="300" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,100">
+            <Button Tag="t" Width="180" Height="288" Style="{StaticResource CardButton}" Click="Mode_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/GameplayResources/t_template.png" Stretch="UniformToFill"/>
+                </Button.Background>
+            </Button>
+            <Button Tag="m" Width="180" Height="288" Margin="20,0,0,0" Style="{StaticResource CardButton}" Click="Mode_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/GameplayResources/m_template.png" Stretch="UniformToFill"/>
+                </Button.Background>
+            </Button>
+        </StackPanel>
 
-        <TextBox x:Name="Message" Width="300" Height="50" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,259,0,0" />
-        <Button Content="Отправить" Width="100" Height="30" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="200,314,0,0" Click="Send_Click"/>
-        <Button Content="Получить" Width="100" Height="30" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="-200,314,0,0" Click="Receive_Click"/>
+        <Grid Width="320" Height="100" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,10">
+            <TextBox x:Name="Message" Width="320" Height="50" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Button x:Name="B_send" Content="Отправить" Width="100" Height="30" HorizontalAlignment="Left" VerticalAlignment="Bottom" IsEnabled="False" Click="Send_Click"/>
+            <Button x:Name="B_receive" Content="Получить" Width="100" Height="30" HorizontalAlignment="Right" VerticalAlignment="Bottom" IsEnabled="False" Click="Receive_Click"/>
+        </Grid>
 
-        <RadioButton x:Name="RB_server" Foreground="White" Width="100" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10,0,0,10" Content="Создать сервер"/>
-        <RadioButton  Foreground="White" Width="100" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10,0,0,45" Content="Подключиться"/>
-        <TextBox x:Name="TB_IP" Width="100" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="115,0,0,45"/>
-        <Button  Width="100" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="115,0,0,10" Content="Готово" Click="Connect_Click"/>
-        <Button Width="100" Height="50" Click="StartButton_Click" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,10,10" >Start</Button>
+        <Grid Width="200" Height="80" Margin="10,0,0,10" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+            <RadioButton  Foreground="White" Width="100" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Content="Клиент"/>
+            <RadioButton x:Name="RB_server" Foreground="White" Width="100" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Content="Сервер"/>
+            <TextBox x:Name="TB_IP" Width="100" Height="30" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+            <Button x:Name="B_connect" Width="100" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Right" Content="Подключиться" Click="Connect_Click"/>
+        </Grid>
+
+        <Button x:Name="B_start" Content="Начать" Width="100" Height="50" Click="StartButton_Click" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,10,10" IsEnabled="False"/>
+        <Button Content="Выход" Width="100" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Exit_Click"/>
     </Grid>
 </Page>
