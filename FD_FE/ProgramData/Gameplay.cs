@@ -86,7 +86,7 @@ namespace FD_FE
         public BoardCard(Card card, int board_index = 0) // копия имеющейся карты
         {
             id = card.id; name = card.name; description = card.description; card_class = card.card_class;
-            start_HP = card.start_HP; function = card.function; image = card.image;
+            start_HP = card.start_HP; function = card.function; image = card.image; AV = 1;
             source = card;
             board_i = board_index;
         }

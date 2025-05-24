@@ -18,7 +18,9 @@ namespace FD_MainWindow
 {
     public partial class UCCard : UserControl
     {
-        public UCCard(BoardCard card, double x, double y)
+        public UCCard() { InitializeComponent(); }
+
+        public UCCard(BoardCard card)
         {
             InitializeComponent();
             BoardCard = card;
@@ -28,7 +30,6 @@ namespace FD_MainWindow
             CardBackgound.ImageSource = (ImageSource)Game.converter.ConvertFromString($"{GameplayData.sprites_path}CardTemplates/{BoardCard.GetFraction()}_template.png");
             CardClassFrame.ImageSource = (ImageSource)Game.converter.ConvertFromString($"{GameplayData.sprites_path}CardTemplates/{BoardCard.card_class.id}_frame.png");
             CardImage.Source = (ImageSource)Game.converter.ConvertFromString($"{GameplayData.sprites_path}Cards/{BoardCard.image}");
-            Margin = new Thickness(x, y, 0,0);
         }
         
         public static DependencyProperty BoardCardProperty;

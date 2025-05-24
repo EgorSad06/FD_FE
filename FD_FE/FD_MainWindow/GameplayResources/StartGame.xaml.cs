@@ -28,18 +28,8 @@ namespace FD_MainWindow.GameplayPages
         {
             InitializeComponent();
         }
-        private bool[] slct_f = new bool[GameplayData.StartCards.Count];
-        private async void Receive_Click(object sender, RoutedEventArgs e)
-        {
-            ((Button)sender).IsEnabled = false;
-            Message.Text = Encoding.Unicode.GetString( await Game.ReceiveData(100));
-            ((Button)sender).IsEnabled = true;
-        }
-        private void Send_Click(object sender, RoutedEventArgs e)
-        {
-            Game.SendData(Encoding.Unicode.GetBytes(Message.Text));
-        }
 
+        // подключение
         private async void Connect_Click(object sender, RoutedEventArgs e)
         {
             Game.is_host = (bool)(RB_server.IsChecked);
@@ -48,40 +38,63 @@ namespace FD_MainWindow.GameplayPages
             B_connect.IsEnabled = !(B_start.IsEnabled = B_receive.IsEnabled = B_send.IsEnabled = await Game.Connect());
         }
 
+        // чат
+        private async void Receive_Click(object sender, RoutedEventArgs e)
+        {
+            ((Button)sender).IsEnabled = false;
+            Message.Text = Encoding.Unicode.GetString(await Game.ReceiveData(100));
+            ((Button)sender).IsEnabled = true;
+        }
+        private void Send_Click(object sender, RoutedEventArgs e)
+        {
+            Game.SendData(Encoding.Unicode.GetBytes(Message.Text+'\n'));
+        }
+
+        // режим игры
+        private bool[] slct_f = new bool[GameplayData.StartCards.Count];
         private void Mode_Click(object sender, RoutedEventArgs e)
         {
-            ((Button)sender).Tag = (((Button)sender).Tag.ToString()[0]=='1') ? "0"+((Button)sender).Tag.ToString()[1] : "1" + ((Button)sender).Tag.ToString()[1];
-        }
-
-        private async void StartButton_Click(object sender, RoutedEventArgs e)
-        {
-            short i = -1;
-            foreach (Button button in SP_modes.Children) {
-                if (button.Tag.ToString()[0] == '1')
-                {
-                    Game.slct_cards.deck_cards.AddRange(GameplayData.StartCards[ button.Tag.ToString()[1] ]);
-                    i++;
+            for (int i=0; i<GameplayData.StartCards.Count; i++)
+            {
+                if (GameplayData.StartCards.Keys.ElementAt(i) == ((Button)sender).Tag.ToString()[0]) {
+                    slct_f[i] = ! slct_f[i];
+                    ((Button)sender).BorderThickness = new Thickness( slct_f[i] ? 2 : 4 );
                 }
             }
-            if (Game.is_host)
+        }
+
+        // игра
+        private async void StartButton_Click(object sender, RoutedEventArgs e)
+        {
+            short i = 0;
+            for (int j=0; j< GameplayData.StartCards.Count; j++) i += (short) (slct_f[j] ? 1:0);
+            if (i != 0)
             {
-                i = ((await Game.ReceiveData(1))[0]==i) ? i : (short)-1;
-                Game.SendData(new byte[1] { (byte)(i << 8) });
-            }
-            else
-            {
-                Game.SendData( new byte[1] { (byte)(i<<8) } );
-                i = ((await Game.ReceiveData(1))[0] == i) ? i : (short)-1;
-            }
-            if (i != -1)
-            {
-                Game.SetMode(i);
-                NavigationService.Navigate(new Uri("GameplayResources/CardSelection.xaml", UriKind.Relative));
-                // Если нужно закрыть текущую страницу:
-                NavigationService.RemoveBackEntry();
+                B_start.IsEnabled = false;
+                if (Game.is_host)
+                {
+                    i = ((await Game.ReceiveDataS(1))[0] == i ? i : (short)0);
+                    Game.SendData(new byte[1] { (byte)i });
+                }
+                else
+                {
+                    Game.SendData( new byte[1] { (byte)i });
+                    i = ((await Game.ReceiveDataS(1))[0] == i ? i : (short)0);
+                }
+                
+                if (i != 0)
+                {
+                    for (int j=0; j<GameplayData.StartCards.Count; j++) if (slct_f[j]) Game.slct_cards.deck_cards.AddRange(GameplayData.StartCards.ElementAt(j).Value);
+                    Game.SetMode((short)(i-1));
+                    NavigationService.Navigate(new Uri("GameplayResources/CardSelection.xaml", UriKind.Relative));
+                    // Если нужно закрыть текущую страницу:
+                    NavigationService.RemoveBackEntry();
+                }
+                else B_start.IsEnabled = true;
             }
         }
 
+        // выход
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
             Game.Disconnect();

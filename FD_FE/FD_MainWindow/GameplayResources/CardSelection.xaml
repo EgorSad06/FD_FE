@@ -5,10 +5,9 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:FD_MainWindow"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="450" d:DesignWidth="1000"
       Title="CardSelection">
     <Grid Background="Maroon">
-        <Button x:Name="But" Width="100" Height="40" HorizontalAlignment="Center" VerticalAlignment="Top" Click="Button_Click"/>
         <Border Width="830" Height="318" BorderBrush="White" BorderThickness="2" CornerRadius="10">
             <Grid x:Name="CardSelectionGrid" Width="800" Height="288">
 

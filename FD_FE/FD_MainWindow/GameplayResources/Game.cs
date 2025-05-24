@@ -27,7 +27,10 @@ namespace FD_MainWindow
         public static Deck p_deck = new Deck();
         public static Deck o_deck = new Deck();
 
-        public static Card StartCardByID(int card_id) => GameplayData.StartCards[Card.GetFraction(card_id)].Find((Card card) => card.id == card_id);
+        public static Card StartCardByID(int card_id) {
+            foreach (List<Card> f_list in GameplayData.StartCards.Values) foreach (Card card in f_list) if (card.id == card_id) return card;
+            return null;
+        }
 
         // отрисовка
         static public ImageSourceConverter converter = new ImageSourceConverter();
@@ -43,8 +46,9 @@ namespace FD_MainWindow
             if (card == null) return null;
             else
             {
-                UCCard uc_card = new UCCard(card, x, y);
+                UCCard uc_card = new UCCard(card);
                 uc_card.HorizontalAlignment = HorizontalAlignment.Left; uc_card.VerticalAlignment = VerticalAlignment.Top;
+                uc_card.Margin = new Thickness(x, y, 0, 0);
                 grid.Children.Add(uc_card);
                 return uc_card;
             }
@@ -64,38 +68,115 @@ namespace FD_MainWindow
         public static TcpListener server = null;
         public static TcpClient client = null;
         public static Socket socket = null;
-
-        public static async Task<byte[]> ReceiveData(int size)
+        public static async Task<byte[]> ReceiveData(int n) => await Task<byte[]>.Run(() =>
         {
-            byte[] data = new byte[size];
-            return await Task<byte[]>.Run(()=>
+            try
             {
-                try
+                byte[] data = new byte[n];
+                socket.Receive(data);
+                return data;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+        });
+        public static async Task<short[]> ReceiveDataS(int n) => await Task<short[]>.Run(() =>
+        {
+            try
+            {
+                byte[] data = new byte[2 * n];
+                short[] res = new short[n];
+                socket.Receive(data);
+                for (int i = 0; i < n; i++)
                 {
-                    socket.Receive(data);
-                    return data;
+                    res[i] = (short)(( (data[i * 2+1]) << 8) + data[i * 2]);
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                    return null;
-                }
-            }); 
-        }
+                return res;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+        });
+        //public static async Task<object[]> ReceiveData(int n, int size) => await Task<object[]>.Run(()=>
+        //{
+        //    try
+        //    {
+        //        byte[] data = new byte[size*n];
+        //        object[] res = new object[n];
+        //        socket.Receive(data);
+        //        long e = 0;
+        //        for (int i=0; i<n; i++)
+        //        {
+        //            for (int j=0;  j<size; j++)
+        //            {
+        //                e = e << 8 + data[i*size + j];
+        //            }
+        //            res[i] = e;
+        //        }
+        //        return res;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message);
+        //        return null;
+        //    }
+        //});
+        //public static void SendData(object[] data, int n, int size=2)
+        //{
+        //    byte[] res = new byte[size * n];
+        //    for (int i = 0; i < n; i++)
+        //    {
+        //        long e = (long)data[i];
+        //        for (int j = 0; j < size; j++)
+        //        {
+        //            res[i*size + j] = (byte)e;
+        //            e = e >> 8;
+        //        }
+        //    }
+        //    try { socket.Send(res); }
+        //    catch (Exception ex) { MessageBox.Show(ex.Message); }
+        //}
         public static void SendData(byte[] data)
         {
             try { socket.Send(data); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
-        
+        public static void SendData(short[] data, int n)
+        {
+            byte[] res = new byte[2 * n];
+            for (int i = 0; i < n; i++)
+            {
+                res[i * 2] = (byte)data[i];
+                res[i * 2 + 1] = (byte)(data[i]>>8);
+                short e = data[i];
+            }
+            try { socket.Send(res); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
         public static async Task<bool> Connect()
         {
             if (is_host)
             {
                 server = new TcpListener(ip, 4013);
                 server.Start();
-                await Task.Run(()=>socket = server.AcceptSocket());
-                return true;
+                return await Task<bool>.Run(()=> {
+                    try
+                    {
+                        socket = server.AcceptSocket();
+                        return true;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                        client?.Close();
+                        return false;
+                    }
+                });
             }
             else
             {
