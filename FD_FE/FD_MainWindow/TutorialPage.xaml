@@ -9,7 +9,7 @@
       Background="Tan" d:DesignWidth="1600" d:DesignHeight="900"
       >
 
-    <Grid Background="White">
+    <Grid Background="Tan">
 
 
         <!-- Левая часть: карточки -->
@@ -18,37 +18,47 @@
 
                 <!-- Карточка 1 -->
                 <StackPanel Margin="20" Width="180">
-                    <Button Click="Card1_Click" Height="260">
+                    <Button Click="Card1_Click" Height="268" Background="Transparent">
                         <StackPanel>
-                            <Image Height="200"
-                                   Stretch="Fill"
-                                   Source="/ClassLib;component/Assets/Sprites/CardsForTutor/TurtorCardFolk.png"/>
-                            <TextBlock Text="Name 1" HorizontalAlignment="Center" Margin="5"/>
+                            <Image Height="230"
+                                   Stretch="UniformToFill"
+                                   Source="/ClassLib;component/Assets/Sprites/CardsForTutor/TurtorCardFolk.png" Width="153"/>
+                            <TextBlock Text="Лесные" FontSize="20" HorizontalAlignment="Center" Margin="5"/>
                         </StackPanel>
                     </Button>
                 </StackPanel>
 
                 <!-- Карточка 2 -->
                 <StackPanel Margin="20" Width="180">
-                    <Button Click="Card2_Click" Height="260">
+                    <Button Click="Card2_Click" Height="265" Background="Transparent">
                         <StackPanel>
-                            <Image Height="200"
-                                   Stretch="Fill"
-                                   Source="/ClassLib;component/Assets/Sprites/CardsForTutor/TurtorCardFolk.png"/>
-                            <TextBlock Text="Name 2" HorizontalAlignment="Center" Margin="5"/>
+                            <Image Height="208"
+                                   Stretch="UniformToFill"
+                                   Source="/ClassLib;component/Assets/Sprites/CardsForTutor/TurtorCardTechno.png" Width="158"/>
+                            <TextBlock Text="Технари" FontSize="20" HorizontalAlignment="Center" Margin="5"/>
                         </StackPanel>
                     </Button>
                 </StackPanel>
 
+        <StackPanel Margin="20" Width="180">
+            <Button Click="Card3_Click" Height="260">
+                <StackPanel>
+                    <Image Height="200"
+                                   Stretch="UniformToFill"
+                                   Source="/ClassLib;component/Assets/Sprites/CardsForTutor/TurtorCardFolk.png"/>
+                    <TextBlock Text="Name 3" HorizontalAlignment="Center" Margin="5"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
 
 
             </StackPanel>
         </Viewbox>
 
-       
+
 
         <!-- Кнопка "В меню" -->
-        <Button Content="Go to menu"
+        <Button Content="В меню"
                 HorizontalAlignment="Right"
                 VerticalAlignment="Bottom"
                 Margin="20"

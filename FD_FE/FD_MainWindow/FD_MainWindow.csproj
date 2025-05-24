@@ -71,6 +71,9 @@
     <Compile Include="GameplayResources\UCCard.xaml.cs">
       <DependentUpon>UCCard.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TutorialPages\CardDetailTechno.xaml.cs">
+      <DependentUpon>CardDetailTechno.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TutorialPages\CardDetailFolk.xaml.cs">
       <DependentUpon>CardDetailFolk.xaml</DependentUpon>
     </Compile>
@@ -128,6 +131,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="GameplayResources\UCCard.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TutorialPages\CardDetailTechno.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

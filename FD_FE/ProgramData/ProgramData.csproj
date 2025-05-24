@@ -67,9 +67,10 @@
     <Content Include="Assets\Sprites\Cards\engeneer.png" />
     <Content Include="Assets\Sprites\Cards\hacker.png" />
     <Content Include="Assets\Sprites\Cards\transformator.png" />
-    <Content Include="Assets\Sprites\CardTemplates\c_frame.png" />
-    <Content Include="Assets\Sprites\CardTemplates\e_frame.png" />
-    <Content Include="Assets\Sprites\CardTemplates\g_frame.png" />
+    <Resource Include="Assets\Sprites\CardTemplates\c_frame.png" />
+    <Resource Include="Assets\Sprites\CardTemplates\e_frame.png" />
+    <Resource Include="Assets\Sprites\CardTemplates\g_frame.png" />
+    <Content Include="Assets\Sprites\Cards\kitty.png" />
     <Content Include="Assets\Sprites\CardTemplates\g_template.png" />
     <Content Include="Assets\Sprites\CardTemplates\m_template.png" />
     <Content Include="Assets\Sprites\CardTemplates\t_template.png" />

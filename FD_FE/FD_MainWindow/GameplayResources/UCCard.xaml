@@ -11,8 +11,10 @@
         <ResourceDictionary Source="/GameplayResources/CardStyles.xaml"/>
     </UserControl.Resources>
     <Viewbox x:Name="cardVB" Width="180" Height="288" Stretch="UniformToFill">
+        
         <Grid x:Name="CardGrid" Width="100" Height="160">
             <Grid.Background >
+         
                 <ImageBrush x:Name="CardBackgound" Stretch="UniformToFill"/>
             </Grid.Background>
             <Grid.RowDefinitions>

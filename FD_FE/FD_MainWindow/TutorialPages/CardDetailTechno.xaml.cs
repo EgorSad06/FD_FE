@@ -18,9 +18,9 @@ namespace FD_MainWindow.TutorialPages
     /// <summary>
     /// Логика взаимодействия для CardDetailFolk.xaml
     /// </summary>
-    public partial class CardDetailTechno : Page
+    public partial class CardDetailFolk : Page
     {
-        public CardDetailTechno()
+        public CardDetailFolk()
         {
             InitializeComponent();
         }

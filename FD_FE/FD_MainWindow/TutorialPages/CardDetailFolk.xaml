@@ -5,15 +5,30 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:FD_MainWindow.TutorialPages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      Background="Tan" d:DesignWidth="1600" d:DesignHeight="900"
       Title="CardDetailFolk">
 
-    <Grid Background="White">
+    <Grid Background="Tan">
         <Button Content="Назад" 
         Command="{Binding BackCommand}"
-        Width="159"
         Click="BackButton_Click" 
-        Height="42" 
-        FontSize="25" Margin="631,398,10,10"/>
+        FontSize="40" Margin="1223,751,65,40" RenderTransformOrigin="2.215,4.31"/>
+
+        <Label Content="Активное значение,&#xD;&#xA;он же урон" FontSize="25" HorizontalAlignment="Left" Height="199" Margin="169,52,0,0" VerticalAlignment="Top" Width="410" RenderTransformOrigin="0.59,-0.779"/>
+
+        <Label Content="Класс карточки, от него&#xA;зависит АЗ :&#xA;#гс - количество союзников этого&#xD;&#xA; же класса вокруг карты&#xA;#цс - количество союзников этого&#xD;&#xA; же класса в данной цепи&#xA;#пк - количество пустых клеток&#xD;&#xA; вокруг карты&#xA;#сз - статическое значение" FontSize="25" HorizontalAlignment="Left" Height="452" Margin="104,480,0,0" VerticalAlignment="Top" Width="417" RenderTransformOrigin="0.59,-0.779">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="0.647"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="2.819"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Image
+                                   Stretch="UniformToFill"
+                                   Source="/ClassLib;component/Assets/Sprites/CardsForTutor/TurtorCardFolk.png" Margin="491,0,497,40"/>
+        <Label Content="ОЗ - очки здоровья" FontSize="25" HorizontalAlignment="Left" Height="235" Margin="1128,52,0,0" VerticalAlignment="Top" Width="563" RenderTransformOrigin="0.59,-0.779"/>
     </Grid>
 </Page>

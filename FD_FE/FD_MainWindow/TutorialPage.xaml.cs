@@ -31,9 +31,13 @@ namespace FD_MainWindow
 
         private void Card2_Click(object sender, RoutedEventArgs e)
         {
-            //NavigationService.Navigate(new CardDetail2());
+            NavigationService.Navigate(new Uri("TutorialPages/CardDetailTechno.xaml", UriKind.Relative));
         }
 
+        private void Card3_Click(object sender, RoutedEventArgs e)
+        {
+            //NavigationService.Navigate(new CardDetail2());
+        }
         private void GoToMenu_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new MainMenu());

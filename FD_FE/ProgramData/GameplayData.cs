@@ -63,7 +63,7 @@ namespace FD_FE
             }
         };
 
-        // классы сз=0 гс=1 цс=2 пк=3
+        // классы сз=0 гс=1 цс=2 пк=3 самоуничтожающийся=4
         public static readonly List<CardClass> CardClasses = new List<CardClass>
         {
             new CardClass() {
@@ -84,6 +84,12 @@ namespace FD_FE
                 id = 'e',
                 name = "Пустые клетки",
                 GetAV = delegate(BoardCard card) { return 1; }
+            },
+            new CardClass()
+            {
+                id='d',
+                name= "самоуничтожающийся",
+                GetAV = delegate(BoardCard card) {return 1;  }
             }
         };
 
@@ -126,7 +132,6 @@ namespace FD_FE
                     }
                 }
             } },
-
             { 'm', new List<Card> {
                 new Card()
                 {
@@ -134,6 +139,15 @@ namespace FD_FE
                     name = "Тест",
                     card_class = CardClasses[0],
                     image = "transformator.png"
+                }
+            } },
+            { 'f', new List<Card>{
+                new Card()
+                {
+                    id = 45,
+                    name = "котёнок",
+                    card_class = CardClasses[4],
+                    image = "kitty.png"
                 }
             } }
         };
