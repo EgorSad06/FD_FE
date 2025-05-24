@@ -34,16 +34,6 @@ namespace FD_MainWindow
             //NavigationService.Navigate(new CardDetail2());
         }
 
-        private void Card3_Click(object sender, RoutedEventArgs e)
-        {
-            //NavigationService.Navigate(new CardDetail3());
-        }
-
-        private void Card4_Click(object sender, RoutedEventArgs e)
-        {
-            //NavigationService.Navigate(new CardDetail4());
-        }
-
         private void GoToMenu_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new MainMenu());

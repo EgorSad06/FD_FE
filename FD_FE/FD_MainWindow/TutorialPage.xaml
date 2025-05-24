@@ -40,33 +40,12 @@
                     </Button>
                 </StackPanel>
 
-                <!-- Карточка 3 -->
-                <StackPanel Margin="20" Width="180">
-                    <Button Click="Card3_Click" Height="260">
-                        <StackPanel>
-                            <Image Height="200"
-                                   Stretch="Fill"
-                                   Source="/ClassLib;component/Assets/Sprites/CardsForTutor/TurtorCardFolk.png"/>
-                            <TextBlock Text="Name 3" HorizontalAlignment="Center" Margin="5"/>
-                        </StackPanel>
-                    </Button>
-                </StackPanel>
 
-                <!-- Карточка 4 -->
-                <StackPanel Margin="20" Width="180">
-                    <Button Click="Card4_Click" Height="260">
-                        <StackPanel>
-                            <Image Height="200"
-                                   Stretch="Fill"
-                                   Source="/ClassLib;component/Assets/Sprites/CardsForTutor/TurtorCardFolk.png"/>
-                            <TextBlock Text="Name 4" HorizontalAlignment="Center" Margin="5"/>
-                        </StackPanel>
-                    </Button>
-                </StackPanel>
+
             </StackPanel>
         </Viewbox>
 
-        <!-- Правая часть: декоративная большая картинка -->
+       
 
         <!-- Кнопка "В меню" -->
         <Button Content="Go to menu"
