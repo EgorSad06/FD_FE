@@ -88,7 +88,12 @@ namespace FD_MainWindow
             // Возврат на предыдущую страницу
             if (NavigationService.CanGoBack)
             {
-                NavigationService.GoBack();
+                NavigationService.GoBack();            
+                //звук
+                MediaPlayer mediaPlayer = new MediaPlayer();
+                string basePath = AppDomain.CurrentDomain.BaseDirectory;
+                mediaPlayer.Open(new Uri("Assets/sound/listscroll.mp3", UriKind.RelativeOrAbsolute));
+                mediaPlayer.Play();
             }
         }
 

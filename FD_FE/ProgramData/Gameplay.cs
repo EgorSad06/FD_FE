@@ -95,7 +95,6 @@ namespace FD_FE
         {
             function(this);
         }
-        public void SetAct() { }
     }
 
 // колода
@@ -113,10 +112,17 @@ namespace FD_FE
         }
         public bool SqncEnd() => _slcti < _sequence.Count;
         public Card GetCard() => _sequence[_slcti++];
-        public void MoveToHand(Card card) { hand_cards.Add(card); }
-        public void SetSqnc()
+        public Card MoveToHand() { Card card = GetCard(); hand_cards.Add(card); return card; }
+        public Card MoveToHand(Card card) { hand_cards.Add(card); return card; }
+        public int SetSqnc(int seed=0)
         {
-            Random rnd = new Random();
+            Random rnd;
+            if (seed == 0)
+            {
+                rnd = new Random();
+                seed = rnd.Next();
+            }
+            rnd = new Random(seed);
             int n = deck_cards.Count;
             _sequence.AddRange(deck_cards);
             while (n > 1)
@@ -128,21 +134,34 @@ namespace FD_FE
                 _sequence[n] = temp;
             }
             _slcti = 0;
+            return seed;
         }
     }
 
 // поле
     public class Board
     {
-        public List<BoardCard> grid = new List<BoardCard>();
-
-        public void SetBoardCard(Card new_card)
+        public BoardCard[] grid = null;
+        //public List<BoardCard> = new List<BoardCard>;
+        public short width;
+        public short height;
+        public readonly short count;
+        
+        public Board() { }
+        public Board(short width, short height)
         {
-            grid.Add(new BoardCard(new_card));
+            this.width = width;
+            this.height = height;
+            count = (short)(width*height);
         }
+
+        //public void SetBoardCard(Card new_card)
+        //{
+        //    grid.Add(new_card!=null ? new BoardCard(new_card):null);
+        //}
         public void SetBoardCard(Card new_card, int i)
         {
-            for (int j = grid.Count; j <= i; j++) { grid.Add(null); }
+            for (int j = count; j <= i; j++) { grid[j]=null; }
             grid[i] = new BoardCard(new_card);
         }
     }

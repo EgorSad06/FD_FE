@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="GameplayResources\UCSlot.xaml.cs">
+      <DependentUpon>UCSlot.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TutorialPage.xaml.cs">
       <DependentUpon>TutorialPage.xaml</DependentUpon>
     </Compile>
@@ -77,6 +80,10 @@
     <Compile Include="TutorialPages\CardDetailFolk.xaml.cs">
       <DependentUpon>CardDetailFolk.xaml</DependentUpon>
     </Compile>
+    <Page Include="GameplayResources\UCSlot.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="TutorialPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

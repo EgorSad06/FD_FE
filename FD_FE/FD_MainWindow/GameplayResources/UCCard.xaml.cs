@@ -28,8 +28,8 @@ namespace FD_MainWindow
             InitializeComponent();
             BoardCard = card;
             BoardCard.CardChanged += Update;
-            cardVB.Width *= scale; cardVB.Height *= scale;
-
+            Width = cardVB.Width *= scale; Height = cardVB.Height *= scale;
+            cardB.IsMouseDirectlyOverChanged += (object sender, DependencyPropertyChangedEventArgs e) => Panel.SetZIndex(UCcard, ((Button)sender).IsMouseDirectlyOver ? 1 : 0);
             //if (card.fr) добавить отдельное оформление
             if (BoardCard.GetFraction() == 'f')
             {
@@ -37,12 +37,17 @@ namespace FD_MainWindow
                 CardImage.Source = (ImageSource)Game.converter.ConvertFromString($"{GameplayData.sprites_path}Cards/{BoardCard.image}");
             }
           
-                CardBackgound.ImageSource = (ImageSource)Game.converter.ConvertFromString($"{GameplayData.sprites_path}CardTemplates/{BoardCard.GetFraction()}_template.png");
-                CardClassFrame.ImageSource = (ImageSource)Game.converter.ConvertFromString($"{GameplayData.sprites_path}CardTemplates/{BoardCard.card_class.id}_frame.png");
-                CardImage.Source = (ImageSource)Game.converter.ConvertFromString($"{GameplayData.sprites_path}Cards/{BoardCard.image}");
+            CardBackgound.ImageSource = (ImageSource)Game.converter.ConvertFromString($"{GameplayData.sprites_path}CardTemplates/{BoardCard.GetFraction()}_template.png");
+            CardClassFrame.ImageSource = (ImageSource)Game.converter.ConvertFromString($"{GameplayData.sprites_path}CardTemplates/{BoardCard.card_class.id}_frame.png");
+            CardImage.Source = (ImageSource)Game.converter.ConvertFromString($"{GameplayData.sprites_path}Cards/{BoardCard.image}");
             
         }
-        
+
+        private void CardB_IsMouseDirectlyOverChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
         public static DependencyProperty BoardCardProperty;
         public BoardCard BoardCard
         {

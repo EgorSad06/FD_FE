@@ -23,7 +23,7 @@ namespace FD_MainWindow
     /// </summary>
     public partial class CardSelection : Page
     {
-        public static Board card_slct_board = new Board(); // поле карт для выбора
+        public static Board card_slct_board = new Board(Game.Mode.board_width, 1); // поле карт для выбора
         private static short[] p_slctd_card_i; // массив индексов выбранных карт для отправки
         private static short p_slctd_card_n;
         public CardSelection()
@@ -33,24 +33,23 @@ namespace FD_MainWindow
             p_slctd_card_i = new short[Game.Mode.start_cards_count];
             p_slctd_card_n = 0;
 
-            if (Game.game_start)
+            if (Game.battle==0)
             { // начало игры (карты не выбираются)
                 Game.slct_cards.SetSqnc();
-                Game.game_start = false;
                 for (int i = 0; i < Game.Mode.start_cards_count && Game.slct_cards.SqncEnd(); i++) {
                     Card temp = Game.slct_cards.GetCard();
-                    card_slct_board.SetBoardCard(new BoardCard(temp, i));
+                    card_slct_board.SetBoardCard(new BoardCard(temp, i), i);
                     Game.p_deck.deck_cards.Add(temp);
                     p_slctd_card_i[p_slctd_card_n++] = (short)temp.id;
                 }
-                Game.Draw(card_slct_board, CardSelectionGrid, 6, 1);
-                //foreach (UCCard uc_card in CardSelectionGrid.Children) uc_card.IsEnabled = false;
+                Game.Draw(card_slct_board, CardSelectionGrid);
+                foreach (UCCard uc_card in CardSelectionGrid.Children) uc_card.IsEnabled = false;
             }
             else
             { // игра (карты выбираются)
                 UCCard.CardSelected += AddCardToDeck;
-                for (int i = 0; i < Game.Mode.start_cards_count && Game.slct_cards.SqncEnd(); i++) card_slct_board.SetBoardCard(new BoardCard(Game.slct_cards.GetCard()));
-                Game.Draw(card_slct_board, CardSelectionGrid, Game.Mode.start_cards_count, 1);
+                for (int i = 0; i < Game.Mode.start_cards_count && Game.slct_cards.SqncEnd(); i++) card_slct_board.SetBoardCard(new BoardCard(Game.slct_cards.GetCard()), i);
+                Game.Draw(card_slct_board, CardSelectionGrid);
             }
         }
         private void AddCardToDeck(UCCard sender, BoardCard card)

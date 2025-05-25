@@ -11,6 +11,7 @@ using System.Net.Sockets;
 using System.ComponentModel;
 using System.Net;
 using System.Threading;
+using System.Windows.Shapes;
 
 namespace FD_MainWindow
 {
@@ -18,14 +19,17 @@ namespace FD_MainWindow
     {
         // данные игры
         public static GameMode Mode { get; private set; }
-        public static void SetMode(short mode) { Mode = GameplayData.GameModes[mode]; }
+        public static void SetMode(short mode) { Mode = GameplayData.GameModes[mode-1]; }
 
-        public static bool game_start = true;
+        public static short battle = 0;
 
-        public static byte[] act_sqnc = null;
         public static Deck slct_cards = new Deck();
         public static Deck p_deck = new Deck();
         public static Deck o_deck = new Deck();
+
+        public static bool start_turn;
+        public static short p_global_score = 0;
+        public static short o_global_score = 0;
 
         public static Card StartCardByID(int card_id) {
             foreach (List<Card> f_list in GameplayData.StartCards.Values) foreach (Card card in f_list) if (card.id == card_id) return card;
@@ -34,26 +38,53 @@ namespace FD_MainWindow
 
         // отрисовка
         static public ImageSourceConverter converter = new ImageSourceConverter();
-        static public void Draw(Board board, Grid grid, short a, short b) 
+        static public void Draw(Board board, Grid grid) // для поля
         {
-            double dx = grid.Width / a, dy = grid.Height / b;
-            for (int j = 0, i = 0; j < b && i + j < board.grid.Count; j++)
-                for (i = 0; i < a && i + j < board.grid.Count; i++)
-                    Draw(board.grid[i + j], grid, dx * i, dy * j);
+            double dx = grid.Width / board.width, dy = grid.Height / board.height;
+            for (int i = 0; i < board.count; i++)
+                if (board.grid[i] != null)
+                    Draw(board.grid[i], grid, dx * (i % board.width + 0.5), dy * (i / board.width + 0.5));
         }
-        static public UCCard Draw(BoardCard card, Grid grid, double x, double y)
+        static public void Draw(Board board, Grid grid, float scale) // для поля с доп слотами
         {
-            if (card == null) return null;
-            else
+            double dx = grid.Width / board.width, dy = grid.Height / board.height;
+            for (int i=0; i<board.count; i++)
             {
-                UCCard uc_card = new UCCard(card);
-                uc_card.HorizontalAlignment = HorizontalAlignment.Left; uc_card.VerticalAlignment = VerticalAlignment.Top;
-                uc_card.Margin = new Thickness(x, y, 0, 0);
-                grid.Children.Add(uc_card);
-                return uc_card;
+                if (board.grid[i] != null) Draw(board.grid[i], grid, dx * (i %board.width +0.5), dy * (i/board.width +0.5), scale);
+                else Draw((short)i, grid, dx * (i % board.width + 0.5), dy * (i / board.width + 0.5), scale);
             }
         }
-
+        static public UCCard Draw(BoardCard card, Grid grid, double x, double y, float scale =(float)1.8) // для карточки
+        {
+            UCCard uc_card = new UCCard(card, scale);
+            uc_card.HorizontalAlignment = HorizontalAlignment.Left; uc_card.VerticalAlignment = VerticalAlignment.Top;
+            x -= uc_card.Width * 0.5; y -= uc_card.Height * 0.5;
+            uc_card.Margin = new Thickness(x, y, 0, 0);
+            grid.Children.Add(uc_card);
+            return uc_card;
+        }
+        static public UCSlot Draw(short i, Grid grid, double x, double y, float scale = (float)1.8) // для слота
+        {
+            UCSlot uc_slot = new UCSlot(i, scale);
+            uc_slot.HorizontalAlignment = HorizontalAlignment.Left; uc_slot.VerticalAlignment = VerticalAlignment.Top;
+            uc_slot.Margin = new Thickness(x-uc_slot.Width*0.5, y-uc_slot.Height*0.5, 0, 0);
+            grid.Children.Add(uc_slot);
+            return uc_slot;
+        }
+        static public void Update(Board board, Grid grid)
+        {
+            for (int i = 0; i < board.count; i++)
+            {
+                if (board.grid[i] != ((UCCard)grid.Children[i])?.BoardCard)
+                {
+                    grid.Children.Remove(grid.Children[i]);
+                    grid.Children[i] = Draw(board.grid[i], grid,
+                        (float)( grid.Width / board.width * (i % board.width + 0.5) ),
+                        (float)(grid.Height / board.height * (i % board.height + 0.5))
+                    );
+                }
+            }
+        }
 
         // подключение
         public static bool is_host = true;

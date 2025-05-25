@@ -145,9 +145,65 @@ namespace FD_FE
                 new Card()
                 {
                     id = 45,
-                    name = "котёнок",
+                    name = "Рыцарь",
                     card_class = CardClasses[4],
-                    image = "kitty.png"
+                    image = "knight.png"
+                },
+                new Card()
+                {
+                    id = 46,
+                    name = "Ворон",
+                    card_class = CardClasses[0],
+                    image = "crow.png"
+                },
+                new Card()
+                {
+                     id=47,
+                     name = "Ква-Мяу",
+                     card_class = CardClasses[1],
+                     image = "team.png"
+                },
+                new Card()
+                {
+                     id=48,
+                     name = "Болтник",
+                     card_class = CardClasses[1],
+                     image = "frogmaster.png"
+                },
+                new Card()
+                {
+                     id=49,
+                     name = "Маг",
+                     card_class = CardClasses[0],
+                     image = "wizard.png"
+                },
+                new Card()
+                {
+                     id=50,
+                     name = "Рояль",
+                     card_class = CardClasses[1],
+                     image = "piano.png"
+                },
+                new Card()
+                {
+                     id=51,
+                     name = "Жаб",
+                     card_class = CardClasses[1],
+                     image = "ftog.png"
+                },
+                new Card()
+                {
+                     id=52,
+                     name = "Водяной",
+                     card_class = CardClasses[3],
+                     image = "WaterMan.png"
+                },
+                new Card()
+                {
+                     id=53,
+                     name = "Лучник",
+                     card_class = CardClasses[2],
+                     image = "archers.png"
                 }
             } }
         };

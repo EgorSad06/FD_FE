@@ -68,7 +68,7 @@ namespace FD_MainWindow.GameplayPages
         private async void StartButton_Click(object sender, RoutedEventArgs e)
         {
             short i = 0;
-            for (int j=0; j< GameplayData.StartCards.Count; j++) i += (short) (slct_f[j] ? 1:0);
+            for (int j=0; j< GameplayData.StartCards.Count; j++) if (slct_f[j]) i++;
             if (i != 0)
             {
                 B_start.IsEnabled = false;
@@ -86,7 +86,8 @@ namespace FD_MainWindow.GameplayPages
                 if (i != 0)
                 {
                     for (int j=0; j<GameplayData.StartCards.Count; j++) if (slct_f[j]) Game.slct_cards.deck_cards.AddRange(GameplayData.StartCards.ElementAt(j).Value);
-                    Game.SetMode((short)(i-1));
+                    Game.start_turn = Game.is_host;
+                    Game.SetMode(i);
                     NavigationService.Navigate(new Uri("GameplayResources/CardSelection.xaml", UriKind.Relative));
                     // Если нужно закрыть текущую страницу:
                     NavigationService.RemoveBackEntry();
@@ -101,6 +102,19 @@ namespace FD_MainWindow.GameplayPages
             Game.Disconnect();
             NavigationService.Navigate(new Uri("MainMenu.xaml", UriKind.Relative));
             // Если нужно закрыть текущую страницу:
+            NavigationService.RemoveBackEntry();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            for (int j = 0; j < 2; j++) Game.slct_cards.deck_cards.AddRange(GameplayData.StartCards.ElementAt(j).Value);
+            Game.slct_cards.SetSqnc();
+            for (int j = 0; Game.slct_cards.SqncEnd(); j++) {
+                Card temp = Game.slct_cards.GetCard();
+                Game.p_deck.deck_cards.Add(temp);
+                Game.o_deck.deck_cards.Add(temp); }
+            Game.SetMode(3);
+            NavigationService.Navigate(new Uri("GameplayResources/Battle.xaml", UriKind.Relative));
             NavigationService.RemoveBackEntry();
         }
     }
