@@ -14,10 +14,13 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Linq;
+
 
 
 namespace FD_MainWindow
 {
+
     /// <summary>
     /// Логика взаимодействия для MainMenu.xaml
     /// файл настройки кнопок и функций Меню.
@@ -36,7 +39,7 @@ namespace FD_MainWindow
             {
                 From = 1.0,
                 To = 0.0,
-                Duration = TimeSpan.FromSeconds(0.5)
+                Duration = TimeSpan.FromSeconds(1)
             };
 
             fadeOut.Completed += (s, _) =>
@@ -48,6 +51,13 @@ namespace FD_MainWindow
 
             // Запуск анимации
             this.BeginAnimation(UIElement.OpacityProperty, fadeOut);
+
+            //звук
+            MediaPlayer mediaPlayer = new MediaPlayer();
+            string basePath = AppDomain.CurrentDomain.BaseDirectory;
+            mediaPlayer.Open(new Uri("Assets/sound/listscroll.mp3", UriKind.RelativeOrAbsolute));
+            mediaPlayer.Play();
+          //  mediaPlayer.Close();
         }
         //обучение
         private void EducationButtonSelection_Click(object sender, RoutedEventArgs e)
@@ -69,6 +79,11 @@ namespace FD_MainWindow
 
             // Запуск анимации
             this.BeginAnimation(UIElement.OpacityProperty, fadeOut);
+            //звук
+            MediaPlayer mediaPlayer = new MediaPlayer();
+            string basePath = AppDomain.CurrentDomain.BaseDirectory;
+            mediaPlayer.Open(new Uri("Assets/sound/listscroll.mp3", UriKind.RelativeOrAbsolute));
+            mediaPlayer.Play();
         }
         //статистика
         private void StatisticsButtonSelection_Click(object sender, RoutedEventArgs e)
@@ -90,6 +105,11 @@ namespace FD_MainWindow
 
             // Запуск анимации
             this.BeginAnimation(UIElement.OpacityProperty, fadeOut);
+            //звук
+            MediaPlayer mediaPlayer = new MediaPlayer();
+            string basePath = AppDomain.CurrentDomain.BaseDirectory;
+            mediaPlayer.Open(new Uri("Assets/sound/listscroll.mp3", UriKind.RelativeOrAbsolute));
+            mediaPlayer.Play();
         }
         //Настройки
         private void SettingsButtonSelection_Click(object sender, RoutedEventArgs e)
@@ -111,6 +131,11 @@ namespace FD_MainWindow
 
             // Запуск анимации
             this.BeginAnimation(UIElement.OpacityProperty, fadeOut);
+            //звук
+            MediaPlayer mediaPlayer = new MediaPlayer();
+            string basePath = AppDomain.CurrentDomain.BaseDirectory;
+            mediaPlayer.Open(new Uri("Assets/sound/listscroll.mp3", UriKind.RelativeOrAbsolute));
+            mediaPlayer.Play();
         }
 
 

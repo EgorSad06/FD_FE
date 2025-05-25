@@ -22,15 +22,29 @@ namespace FD_MainWindow
     /// </summary>
     public partial class MainWindow : Window
     {
+        private MediaPlayer _mediaPlayer = new MediaPlayer();
+
         public MainWindow()
         {
             InitializeComponent();
             MainFrame.Content = new MainMenu();
 
+            // Настройка пути и воспроизведение
+            _mediaPlayer.Open(new Uri("Assets/sound/BGsound.mp3", UriKind.RelativeOrAbsolute)); ;
+            _mediaPlayer.MediaEnded += MediaPlayer_Loop; // Цикличное воспроизведение
+            _mediaPlayer.Volume = 1; // можно настроить громкость
+            _mediaPlayer.Play();
+        }
+
+        private void MediaPlayer_Loop(object sender, EventArgs e)
+        {
+            _mediaPlayer.Position = TimeSpan.Zero;
+            _mediaPlayer.Play();
         }
 
         private void FD_window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
+            _mediaPlayer.Stop();
             Game.Disconnect();
         }
     }

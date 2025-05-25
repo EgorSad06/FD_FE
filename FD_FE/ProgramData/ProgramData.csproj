@@ -58,6 +58,12 @@
   <ItemGroup>
     <Resource Include="Assets\Sprites\CardsForTutor\TurtorCardTechno.png" />
     <Resource Include="Assets\Sprites\CardsForTutor\TurtorCardFolk.png" />
+    <Content Include="Assets\sound\BGsound.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\sound\listscroll.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Assets\Sprites\Cards\biomachine.png" />
     <Content Include="Assets\Sprites\Cards\brick_shooter.png" />
     <Content Include="Assets\Sprites\Cards\calculator.png" />
