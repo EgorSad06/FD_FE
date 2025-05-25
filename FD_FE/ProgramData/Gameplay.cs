@@ -18,7 +18,7 @@ namespace FD_FE
     {
         public short fractions_count { get; set; }
         public short board_width { get; set; }
-        public short board_length { get; set; }
+        public short board_height { get; set; }
         public short start_cards_count { get; set; }
         public short battles { get; set; }
     }

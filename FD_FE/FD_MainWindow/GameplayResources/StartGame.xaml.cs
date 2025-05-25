@@ -35,20 +35,21 @@ namespace FD_MainWindow.GameplayPages
             Game.is_host = (bool)(RB_server.IsChecked);
             Game.SetIP(TB_IP.Text);
             B_connect.IsEnabled = false;
-            B_connect.IsEnabled = !(B_start.IsEnabled = B_receive.IsEnabled = B_send.IsEnabled = await Game.Connect());
+            B_connect.IsEnabled = !(B_start.IsEnabled = /*B_receive.IsEnabled = B_send.IsEnabled =*/ await Game.Connect());
         }
 
-        // чат
-        private async void Receive_Click(object sender, RoutedEventArgs e)
-        {
-            ((Button)sender).IsEnabled = false;
-            Message.Text = Encoding.Unicode.GetString(await Game.ReceiveData(100));
-            ((Button)sender).IsEnabled = true;
-        }
-        private void Send_Click(object sender, RoutedEventArgs e)
-        {
-            Game.SendData(Encoding.Unicode.GetBytes(Message.Text+'\n'));
-        }
+        // чат - закрыт до лучших времён
+        //private static Socket _chat_skt;
+        //private async void Receive_Click(object sender, RoutedEventArgs e)
+        //{
+        //    ((Button)sender).IsEnabled = false;
+        //    Message.Text = Encoding.Unicode.GetString(await Game.ReceiveData(100));
+        //    ((Button)sender).IsEnabled = true;
+        //}
+        //private void Send_Click(object sender, RoutedEventArgs e)
+        //{
+        //    Game.SendData(Encoding.Unicode.GetBytes(Message.Text+'\n'));
+        //}
 
         // режим игры
         private bool[] slct_f = new bool[GameplayData.StartCards.Count];

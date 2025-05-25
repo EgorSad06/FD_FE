@@ -2,6 +2,7 @@
 using FD_MainWindow.GameplayPages;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,19 +23,18 @@ namespace FD_MainWindow
     {
         public UCCard() { InitializeComponent(); }
 
-        public UCCard(BoardCard card)
+        public UCCard(BoardCard card, float scale=(float)1.8)
         {
             InitializeComponent();
             BoardCard = card;
             BoardCard.CardChanged += Update;
+            cardVB.Width *= scale; cardVB.Height *= scale;
 
             //if (card.fr) добавить отдельное оформление
             if (BoardCard.GetFraction() == 'f')
             {
                 // Пример: замени фон на "листики"
                 CardImage.Source = (ImageSource)Game.converter.ConvertFromString($"{GameplayData.sprites_path}Cards/{BoardCard.image}");
-
-
             }
           
                 CardBackgound.ImageSource = (ImageSource)Game.converter.ConvertFromString($"{GameplayData.sprites_path}CardTemplates/{BoardCard.GetFraction()}_template.png");

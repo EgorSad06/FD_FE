@@ -26,12 +26,16 @@ namespace FD_MainWindow
         {
             InitializeComponent();
 
+            MainBoardBorder.Width = 40 + (MainBoardGrid.Width = Game.Mode.board_width*200);
+            MainBoardBorder.Height = 40 + (MainBoardGrid.Height = 4 * 260);
             foreach (Card card in Game.o_deck.deck_cards) Main_board.SetBoardCard(card);
-            Game.Draw(Main_board, MainBoardGrid, Game.Mode.board_length, Game.Mode.board_width);
+            Game.Draw(Main_board, MainBoardGrid, Game.Mode.board_width, Game.Mode.board_width);
         }
+
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+
         }
     }
 }

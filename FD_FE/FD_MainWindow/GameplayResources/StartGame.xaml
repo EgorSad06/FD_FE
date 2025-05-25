@@ -25,11 +25,11 @@
             </Button>
         </StackPanel>
 
-        <Grid Width="320" Height="100" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,10">
+        <!--Grid Width="320" Height="100" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,10">
             <TextBox x:Name="Message" Width="320" Height="50" HorizontalAlignment="Center" VerticalAlignment="Top"/>
             <Button x:Name="B_send" Content="Отправить" Width="100" Height="30" HorizontalAlignment="Left" VerticalAlignment="Bottom" IsEnabled="False" Click="Send_Click"/>
             <Button x:Name="B_receive" Content="Получить" Width="100" Height="30" HorizontalAlignment="Right" VerticalAlignment="Bottom" IsEnabled="False" Click="Receive_Click"/>
-        </Grid>
+        </Grid-->
 
         <Grid Width="200" Height="80" Margin="10,0,0,10" HorizontalAlignment="Left" VerticalAlignment="Bottom">
             <RadioButton  Foreground="White" Width="100" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Content="Клиент"/>

@@ -10,8 +10,7 @@
     <UserControl.Resources>
         <ResourceDictionary Source="/GameplayResources/CardStyles.xaml"/>
     </UserControl.Resources>
-    <Viewbox x:Name="cardVB" Width="180" Height="288" Stretch="UniformToFill">
-        
+        <Viewbox x:Name="cardVB" Width="100" Height="160" Stretch="UniformToFill">
         <Grid x:Name="CardGrid" Width="100" Height="160">
             <Grid.Background >
          

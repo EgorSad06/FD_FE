@@ -68,8 +68,9 @@ namespace FD_MainWindow
         public static TcpListener server = null;
         public static TcpClient client = null;
         public static Socket socket = null;
-        public static async Task<byte[]> ReceiveData(int n) => await Task<byte[]>.Run(() =>
+        public static async Task<byte[]> ReceiveData(int n, Socket skt = null) => await Task<byte[]>.Run(() =>
         {
+            if (skt == null) skt = socket;
             try
             {
                 byte[] data = new byte[n];
@@ -82,8 +83,9 @@ namespace FD_MainWindow
                 return null;
             }
         });
-        public static async Task<short[]> ReceiveDataS(int n) => await Task<short[]>.Run(() =>
+        public static async Task<short[]> ReceiveDataS(int n, Socket skt = null) => await Task<short[]>.Run(() =>
         {
+            if (skt == null) skt = socket;
             try
             {
                 byte[] data = new byte[2 * n];
@@ -140,13 +142,15 @@ namespace FD_MainWindow
         //    try { socket.Send(res); }
         //    catch (Exception ex) { MessageBox.Show(ex.Message); }
         //}
-        public static void SendData(byte[] data)
+        public static void SendData(byte[] data, Socket skt = null)
         {
+            if (skt == null) skt = socket;
             try { socket.Send(data); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
-        public static void SendData(short[] data, int n)
+        public static void SendData(short[] data, int n, Socket skt = null)
         {
+            if (skt == null) skt = socket;
             byte[] res = new byte[2 * n];
             for (int i = 0; i < n; i++)
             {
@@ -173,7 +177,7 @@ namespace FD_MainWindow
                     catch (Exception ex)
                     {
                         MessageBox.Show(ex.Message);
-                        client?.Close();
+                        server?.Stop();
                         return false;
                     }
                 });

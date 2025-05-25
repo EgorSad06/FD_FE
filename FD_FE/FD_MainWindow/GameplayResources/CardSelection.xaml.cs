@@ -43,8 +43,8 @@ namespace FD_MainWindow
                     Game.p_deck.deck_cards.Add(temp);
                     p_slctd_card_i[p_slctd_card_n++] = (short)temp.id;
                 }
-                Game.Draw(card_slct_board, CardSelectionGrid, Game.Mode.start_cards_count, 1);
-                foreach (UCCard uc_card in CardSelectionGrid.Children) uc_card.IsEnabled = false;
+                Game.Draw(card_slct_board, CardSelectionGrid, 6, 1);
+                //foreach (UCCard uc_card in CardSelectionGrid.Children) uc_card.IsEnabled = false;
             }
             else
             { // игра (карты выбираются)
