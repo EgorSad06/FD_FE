@@ -153,6 +153,7 @@ namespace FD_FE
             this.width = width;
             this.height = height;
             count = (short)(width*height);
+            grid = new BoardCard[count];
         }
 
         //public void SetBoardCard(Card new_card)
@@ -162,7 +163,7 @@ namespace FD_FE
         public void SetBoardCard(Card new_card, int i)
         {
             for (int j = count; j <= i; j++) { grid[j]=null; }
-            grid[i] = new BoardCard(new_card);
+            grid[i] = (new_card != null) ? new BoardCard(new_card) : null;
         }
     }
 }
