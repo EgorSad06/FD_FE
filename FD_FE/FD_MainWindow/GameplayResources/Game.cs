@@ -60,8 +60,7 @@ namespace FD_MainWindow
         {
             UCCard uc_card = new UCCard(card, scale);
             uc_card.HorizontalAlignment = HorizontalAlignment.Left; uc_card.VerticalAlignment = VerticalAlignment.Top;
-            x -= uc_card.Width * 0.5; y -= uc_card.Height * 0.5;
-            uc_card.Margin = new Thickness(x, y, 0, 0);
+            uc_card.Margin = new Thickness(x-uc_card.Width * 0.5, y-uc_card.Height * 0.5, 0, 0);
             grid.Children.Add(uc_card);
             return uc_card;
         }
@@ -73,48 +72,74 @@ namespace FD_MainWindow
             grid.Children.Add(uc_slot);
             return uc_slot;
         }
-        static public void Update(Board board, Grid grid)
+        
+        static public void Update(Board board, int i, Grid grid) // для поля (может иметь пустые указатели)
         {
-            for (int i=0; i<grid.Children.Count; i++)
+            UCCard uc_card = null;
+            foreach (UCCard e in grid.Children) if (e.BoardCard.board_i == i) { uc_card = e; break; }
+            if (uc_card == null)
             {
-                UCCard e = (UCCard)grid.Children[i];
-                if (e.BoardCard != board.grid[e.BoardCard.board_i])
+                if (board.grid[i] != null)
+                    Draw(board.grid[i], grid,
+                        (grid.Width / board.width * (i % board.width + 0.5)),
+                        grid.Height / board.height * (i / board.width + 0.5)
+                    );
+            }
+            else
+            {
+                if (board.grid[i] != null)
                 {
-                    grid.Children.RemoveAt(i);
-                    grid.Children.Add(Draw(
-                        board.grid[e.BoardCard.board_i], grid,
-                        (float)(grid.Width / board.width * (i % board.width + 0.5)),
-                        (float)(grid.Height / board.height * (i % board.height + 0.5))
-                    ));
+                    uc_card.Margin = new Thickness(
+                        (grid.Width / board.width * (i % board.width + 0.5)) - uc_card.Width * 0.5,
+                        (grid.Height / board.height * (i / board.width + 0.5)) - uc_card.Height * 0.5,
+                        0, 0);
                 }
+                else grid.Children.Remove(uc_card);
             }
         }
-        static public void Update(Board board, Grid grid, float scale)
+        static public void Update(Board board, int i, Grid grid, float scale) // для поля (пустые указатели - слоты)
         {
-            for (int i = 0; i < grid.Children.Count; i++)
+            foreach (UIElement e in grid.Children)
             {
                 try
                 {
-                    UCCard e = (UCCard)grid.Children[i];
-                    if (e.BoardCard != board.grid[e.BoardCard.board_i])
+                    if ( ((UCCard)e).BoardCard.board_i == i )
                     {
-                        grid.Children.RemoveAt(i);
-                        Draw(board.grid[e.BoardCard.board_i], grid,
-                            (float)(grid.Width / board.width * (i % board.width + 0.5)),
-                            (float)(grid.Height / board.height * (i % board.height + 0.5))
-                        );
-                    }
+                        if (board.grid[i]==null)
+                        {
+                            grid.Children.Remove((UCCard)e);
+                            Draw((short)i, grid,
+                                grid.Width / board.width * (i % board.width + 0.5),
+                                grid.Height / board.height * (i / board.width + 0.5),
+                                scale
+                            );
+                        }
+                        else if ( board.grid[i] != ((UCCard)e).BoardCard )
+                        {
+                            grid.Children.Remove((UCCard)e);
+                            Draw(board.grid[i], grid,
+                                grid.Width / board.width * (i % board.width + 0.5),
+                                grid.Height / board.height * (i / board.width + 0.5),
+                                scale
+                            );
+                        }
+                        break;
+                    } 
                 }
                 catch
                 {
-                    UCSlot e = (UCSlot)grid.Children[i];
-                    if (board.grid[e.board_i] != null)
+                    if ( ((UCSlot)e).board_i == i )
                     {
-                        grid.Children.RemoveAt(i);
-                        Draw(e.board_i, grid,
-                            (float)(grid.Width / board.width * (i % board.width + 0.5)),
-                            (float)(grid.Height / board.height * (i % board.height + 0.5))
-                        );
+                        if (board.grid[i]!=null)
+                        {
+                            grid.Children.Remove((UCSlot)e);
+                            Draw(board.grid[i], grid,
+                                grid.Width / board.width * (i % board.width + 0.5),
+                                grid.Height / board.height * (i / board.width + 0.5),
+                                scale
+                            );
+                        }
+                        break;
                     }
                 }
             }

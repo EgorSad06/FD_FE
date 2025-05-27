@@ -101,6 +101,7 @@ namespace FD_FE
                 {
                     id = 5,
                     name = "Рельсотрон",
+                    start_HP = 1,
                     card_class = CardClasses[1],
                     image = "railgun.png",
                     select_n = 1,
@@ -112,6 +113,7 @@ namespace FD_FE
                 {
                     id = 6,
                     name = "Мечтатель",
+                    start_HP = 1,
                     card_class = CardClasses[3],
                     image = "dreamer.png",
                     select_n = 1,
@@ -124,6 +126,7 @@ namespace FD_FE
                 {
                     id = 7,
                     name = "Хакер",
+                    start_HP = 1,
                     card_class = CardClasses[1],
                     image = "hacker.png",
                     function = (BoardCard card)=>
@@ -137,6 +140,7 @@ namespace FD_FE
                 {
                     id = 25,
                     name = "Тест",
+                    start_HP = 1,
                     card_class = CardClasses[0],
                     image = "transformator.png"
                 }

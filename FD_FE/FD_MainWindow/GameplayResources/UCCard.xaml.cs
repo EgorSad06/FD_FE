@@ -28,8 +28,9 @@ namespace FD_MainWindow
             InitializeComponent();
             BoardCard = card;
             BoardCard.CardChanged += Update;
+            BoardCard.CardMoved += Update;
             Width = cardVB.Width *= scale; Height = cardVB.Height *= scale;
-            cardB.IsMouseDirectlyOverChanged += (object sender, DependencyPropertyChangedEventArgs e) => Panel.SetZIndex(UCcard, ((Button)sender).IsMouseDirectlyOver ? 1 : 0);
+            cardB.IsMouseDirectlyOverChanged += (object sender, DependencyPropertyChangedEventArgs e) => Panel.SetZIndex(UCcard, ((Button)sender).IsMouseDirectlyOver ? 1 : -BoardCard.board_i);
             //if (card.fr) добавить отдельное оформление
             if (BoardCard.GetFraction() == 'f')
             {
@@ -43,23 +44,22 @@ namespace FD_MainWindow
             
         }
 
-        private void CardB_IsMouseDirectlyOverChanged(object sender, DependencyPropertyChangedEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
         public static DependencyProperty BoardCardProperty;
         public BoardCard BoardCard
         {
             get { return (BoardCard)GetValue(BoardCardProperty); }
-            set { SetValue(BoardCardProperty, value); Update(); }
+            set { SetValue(BoardCardProperty, value); Update(); Update(BoardCard, BoardCard.board_i); }
         }
         static UCCard() { BoardCardProperty = DependencyProperty.Register("BoardCard", typeof(BoardCard), typeof(UCCard)); }
 
-        public void Update()
+        public void Update(BoardCard sender=null)
         {
             cardAV.Text = BoardCard.AV.ToString();
             cardHP.Text = BoardCard.HP.ToString();
+        }
+        public void Update(BoardCard sender, int i)
+        {
+            Panel.SetZIndex(UCcard, -BoardCard.board_i);
         }
 
         public delegate void CardSelectedEventHandler(UCCard sender, BoardCard selected_card);

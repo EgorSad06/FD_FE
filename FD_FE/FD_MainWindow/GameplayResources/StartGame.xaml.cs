@@ -33,9 +33,11 @@ namespace FD_MainWindow.GameplayPages
         private async void Connect_Click(object sender, RoutedEventArgs e)
         {
             Game.is_host = (bool)(RB_server.IsChecked);
-            Game.SetIP(TB_IP.Text);
-            B_connect.IsEnabled = false;
-            B_connect.IsEnabled = !(B_start.IsEnabled = /*B_receive.IsEnabled = B_send.IsEnabled =*/ await Game.Connect());
+            if (Game.SetIP(TB_IP.Text))
+            {
+                B_connect.IsEnabled = false;
+                B_connect.IsEnabled = !(B_start.IsEnabled = /*B_receive.IsEnabled = B_send.IsEnabled =*/ await Game.Connect());
+            }
         }
 
         // чат - закрыт до лучших времён

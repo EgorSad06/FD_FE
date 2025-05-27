@@ -64,14 +64,19 @@ namespace FD_MainWindow
             Game.Draw(Hand_board, HandBoardGrid);
             Game.Draw(Main_board, MainBoardGrid, (float) ((Game.Mode.board_height == 3) ? 1.8 : 1.6));
 
+            Main_board.BoardChanged += (Board sender, int i) => { Game.Update(sender, i, MainBoardGrid, (float)((Game.Mode.board_height == 3) ? 1.8 : 1.6)); };
+            Hand_board.BoardChanged += (Board sender, int i) => { Game.Update(sender, i, HandBoardGrid); };
+
+            B_ready.IsEnabled = Game.start_turn;
             if (Game.start_turn) Turn();
             else Wait();
         }
 
 // события хода
-        private void OnCardSelected(UCCard UCcard, BoardCard card)
+        private void OnCardSelected(UCCard sender, BoardCard card)
         {
-            if (HandBoardGrid.Children.Contains(UCcard))
+            slct_card = sender.BoardCard;
+            if (HandBoardGrid.Children.Contains(sender))
             {
                 UCSlot.SlotSelected += OnSlotSelected;
             }
@@ -83,14 +88,14 @@ namespace FD_MainWindow
         }
         private void OnSlotSelected(short i)
         {
-            Main_board.SetBoardCard(slct_card, i);
+            Main_board.SetBoardCard(Hand_board.RemBoardCard(slct_card.board_i), i);
+            UCSlot.SlotSelected -= OnSlotSelected;
         }
 
 // управление этапами игры
         private void Turn()
         {
-            if (Game.p_deck.hand_cards.Count<7 && Game.p_deck.SqncEnd()) Hand_board.grid[0] = new BoardCard(Game.p_deck.MoveToHand());
-            Game.Update(Hand_board, HandBoardGrid);
+            if (Game.p_deck.hand_cards.Count<7 && Game.p_deck.SqncEnd()) Hand_board.AddBoardCard(Game.p_deck.MoveToHand());
             UCCard.CardSelected += OnCardSelected;
             
 
