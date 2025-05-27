@@ -85,7 +85,9 @@ namespace FD_MainWindow.GameplayPages
                 
                 if (i != 0)
                 {
-                    for (int j=0; j<GameplayData.StartCards.Count; j++) if (slct_f[j]) Game.slct_cards.deck_cards.AddRange(GameplayData.StartCards.ElementAt(j).Value);
+                    if (Game.is_host) Game.p_seed = Game.o_seed = BitConverter.ToInt32(await Game.ReceiveData(4),0);
+                    else Game.SendData(BitConverter.GetBytes( Game.p_seed = Game.o_seed = Game.p_deck.SetSqnc() ));
+                    for (int j = 0; j < GameplayData.StartCards.Count; j++) if (slct_f[j]) Game.slct_cards.deck_cards.AddRange(GameplayData.StartCards.ElementAt(j).Value);
                     Game.start_turn = Game.is_host;
                     Game.SetMode(i);
                     NavigationService.Navigate(new Uri("GameplayResources/CardSelection.xaml", UriKind.Relative));

@@ -24,18 +24,18 @@ namespace FD_MainWindow
         public UCSlot(short board_grid_i, float scale = (float)1.8)
         {
             InitializeComponent();
-            BoardGridI = board_grid_i;
+            board_i = board_grid_i;
             Width = slotVB.Width *= scale; Height = slotVB.Height *= scale;
         }
 
-        public short BoardGridI;
+        public short board_i;
 
         public delegate void SlotSelectedEventHandler(short selected_slotI);
         static public event SlotSelectedEventHandler SlotSelected;
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            SlotSelected?.Invoke(BoardGridI);
+            SlotSelected?.Invoke(board_i);
         }
     }
 }

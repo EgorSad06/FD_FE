@@ -27,7 +27,9 @@ namespace FD_MainWindow
         public static Deck p_deck = new Deck();
         public static Deck o_deck = new Deck();
 
-        public static bool start_turn;
+        public static bool start_turn = false;
+        public static int p_seed;
+        public static int o_seed;
         public static short p_global_score = 0;
         public static short o_global_score = 0;
 
@@ -73,15 +75,47 @@ namespace FD_MainWindow
         }
         static public void Update(Board board, Grid grid)
         {
-            for (int i = 0; i < board.count; i++)
+            for (int i=0; i<grid.Children.Count; i++)
             {
-                if (board.grid[i] != ((UCCard)grid.Children[i])?.BoardCard)
+                UCCard e = (UCCard)grid.Children[i];
+                if (e.BoardCard != board.grid[e.BoardCard.board_i])
                 {
-                    grid.Children.Remove(grid.Children[i]);
-                    grid.Children[i] = Draw(board.grid[i], grid,
-                        (float)( grid.Width / board.width * (i % board.width + 0.5) ),
+                    grid.Children.RemoveAt(i);
+                    grid.Children.Add(Draw(
+                        board.grid[e.BoardCard.board_i], grid,
+                        (float)(grid.Width / board.width * (i % board.width + 0.5)),
                         (float)(grid.Height / board.height * (i % board.height + 0.5))
-                    );
+                    ));
+                }
+            }
+        }
+        static public void Update(Board board, Grid grid, float scale)
+        {
+            for (int i = 0; i < grid.Children.Count; i++)
+            {
+                try
+                {
+                    UCCard e = (UCCard)grid.Children[i];
+                    if (e.BoardCard != board.grid[e.BoardCard.board_i])
+                    {
+                        grid.Children.RemoveAt(i);
+                        Draw(board.grid[e.BoardCard.board_i], grid,
+                            (float)(grid.Width / board.width * (i % board.width + 0.5)),
+                            (float)(grid.Height / board.height * (i % board.height + 0.5))
+                        );
+                    }
+                }
+                catch
+                {
+                    UCSlot e = (UCSlot)grid.Children[i];
+                    if (board.grid[e.board_i] != null)
+                    {
+                        grid.Children.RemoveAt(i);
+                        Draw(e.board_i, grid,
+                            (float)(grid.Width / board.width * (i % board.width + 0.5)),
+                            (float)(grid.Height / board.height * (i % board.height + 0.5))
+                        );
+                    }
                 }
             }
         }

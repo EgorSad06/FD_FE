@@ -110,11 +110,16 @@ namespace FD_FE
         {
             for (int i=0; i<cards.Count; i++) { deck_cards.Add(new Card(cards[i])); }
         }
-        public bool SqncEnd() => _slcti < _sequence.Count;
         public Card GetCard() => _sequence[_slcti++];
-        public Card MoveToHand() { Card card = GetCard(); hand_cards.Add(card); return card; }
         public Card MoveToHand(Card card) { hand_cards.Add(card); return card; }
-        public int SetSqnc(int seed=0)
+        public Card MoveToHand()
+        {
+            Card card = GetCard();
+            hand_cards.Add(card);
+            return card;
+        }
+        public bool SqncEnd() => _slcti < _sequence.Count;
+        public int SetSqnc(int seed=0) // установка очереди
         {
             Random rnd;
             if (seed == 0)
@@ -156,14 +161,16 @@ namespace FD_FE
             grid = new BoardCard[count];
         }
 
-        //public void SetBoardCard(Card new_card)
-        //{
-        //    grid.Add(new_card!=null ? new BoardCard(new_card):null);
-        //}
+        public void SetBoardCard(Card new_card)
+        {
+            int i = 0;
+            while (i < count && grid[i] != null) i++;
+            grid[i] = (new_card != null ? new BoardCard(new_card) : null);
+        }
         public void SetBoardCard(Card new_card, int i)
         {
             for (int j = count; j <= i; j++) { grid[j]=null; }
-            grid[i] = (new_card != null) ? new BoardCard(new_card) : null;
+            grid[i] = (new_card != null) ? new BoardCard(new_card, i) : null;
         }
     }
 }

@@ -35,19 +35,21 @@ namespace FD_MainWindow
         public static short p_score = 0;
         public static short o_score = 0;
 // начало игры
-        private async void Start()
+        private void Start()
         {
             if (Game.is_host) // перемешивание колоды
             {
-                int seed = Game.p_deck.SetSqnc();
-                Game.SendData(BitConverter.GetBytes(seed));
-                Game.o_deck.SetSqnc(seed+4013);
+                Game.p_seed += 4013;
+                Game.o_seed -= 4013;
+                Game.p_deck.SetSqnc(Game.p_seed);
+                Game.o_deck.SetSqnc(Game.o_seed);
             }
             else
             {
-                int seed = BitConverter.ToInt32(await Game.ReceiveData(4), 0);
-                Game.p_deck.SetSqnc(seed+4013);
-                Game.o_deck.SetSqnc(seed);
+                Game.p_seed -= 4013;
+                Game.o_seed += 4013;
+                Game.p_deck.SetSqnc(Game.p_seed);
+                Game.o_deck.SetSqnc(Game.o_seed);
             }
 
             for (int i = 0; i < 3 && Game.p_deck.SqncEnd(); i++) // помещение в колоду 4 стартовых карт
@@ -67,19 +69,19 @@ namespace FD_MainWindow
         }
 
 // события хода
-        private void OnCardClicked(UCCard UCcard, BoardCard card)
+        private void OnCardSelected(UCCard UCcard, BoardCard card)
         {
             if (HandBoardGrid.Children.Contains(UCcard))
             {
-                UCSlot.SlotSelected += OnSlotClicked;
+                UCSlot.SlotSelected += OnSlotSelected;
             }
             else
             {
-                UCSlot.SlotSelected -= OnSlotClicked;
+                UCSlot.SlotSelected -= OnSlotSelected;
             }
 
         }
-        private void OnSlotClicked(short i)
+        private void OnSlotSelected(short i)
         {
             Main_board.SetBoardCard(slct_card, i);
         }
@@ -87,16 +89,17 @@ namespace FD_MainWindow
 // управление этапами игры
         private void Turn()
         {
-            Game.p_deck.MoveToHand();
-            UCCard.CardSelected += OnCardClicked;
+            if (Game.p_deck.hand_cards.Count<7 && Game.p_deck.SqncEnd()) Hand_board.grid[0] = new BoardCard(Game.p_deck.MoveToHand());
+            Game.Update(Hand_board, HandBoardGrid);
+            UCCard.CardSelected += OnCardSelected;
             
 
         }
         private async void Wait()
         {
-            UCCard.CardSelected -= OnCardClicked;
-            Game.p_deck.MoveToHand();
-
+            UCCard.CardSelected -= OnCardSelected;
+            if (Game.o_deck.hand_cards.Count<7 && Game.p_deck.SqncEnd()) Game.p_deck.MoveToHand();
+            
         }
 
 
