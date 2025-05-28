@@ -14,3 +14,5 @@ C:\Users\Huawei\Documents\GitHub\FD_FE\FD_FE\ProgramData\obj\Debug\ClassLib.dll
 C:\Users\Huawei\Documents\GitHub\FD_FE\FD_FE\ProgramData\obj\Debug\ClassLib.pdb
 C:\Users\Huawei\Documents\GitHub\FD_FE\FD_FE\ProgramData\bin\Debug\Assets\sound\listscroll.mp3
 C:\Users\Huawei\Documents\GitHub\FD_FE\FD_FE\ProgramData\bin\Debug\Assets\sound\BGsound.mp3
+C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\ProgramData\bin\Debug\Assets\sound\BGsound.mp3
+C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\ProgramData\bin\Debug\Assets\sound\listscroll.mp3

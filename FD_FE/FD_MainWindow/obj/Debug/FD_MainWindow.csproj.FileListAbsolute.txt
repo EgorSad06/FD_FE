@@ -77,3 +77,9 @@ C:\Users\Huawei\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\TutorialPag
 C:\Users\Huawei\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\bin\Debug\Assets\sound\listscroll.mp3
 C:\Users\Huawei\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\bin\Debug\Assets\sound\BGsound.mp3
 C:\Users\Huawei\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\FD_MainWindow.exe.config
+C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\TutorialPages\CardDetailTechno.g.cs
+C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\bin\Debug\Assets\sound\BGsound.mp3
+C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\bin\Debug\Assets\sound\listscroll.mp3
+C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\TutorialPages\CardDetailTechno.baml
+C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\GameplayResources\UCSlot.g.cs
+C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\GameplayResources\UCSlot.baml

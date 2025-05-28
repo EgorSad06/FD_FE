@@ -32,7 +32,7 @@ namespace FD_MainWindow
             // Настройка пути и воспроизведение
             _mediaPlayer.Open(new Uri("Assets/sound/BGsound.mp3", UriKind.RelativeOrAbsolute)); ;
             _mediaPlayer.MediaEnded += MediaPlayer_Loop; // Цикличное воспроизведение
-            _mediaPlayer.Volume = 1; // можно настроить громкость
+            _mediaPlayer.Volume = 0; // можно настроить громкость
             _mediaPlayer.Play();
         }
 

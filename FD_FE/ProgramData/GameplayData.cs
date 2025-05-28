@@ -19,16 +19,16 @@ namespace FD_FE
             new GameMode()
             {
                 fractions_count = 1,
-                board_width = 3,
-                board_length = 4,
+                board_width = 4,
+                board_height = 3,
                 start_cards_count = 4,
                 battles = 3
             },
             new GameMode()
             {
                 fractions_count = 2,
-                board_width = 3,
-                board_length = 4,
+                board_width = 4,
+                board_height = 3,
                 start_cards_count = 5,
                 battles = 4
             },
@@ -36,7 +36,7 @@ namespace FD_FE
             {
                 fractions_count = 3,
                 board_width = 4,
-                board_length = 4,
+                board_height = 4,
                 start_cards_count = 6,
                 battles = 5
             },
@@ -44,7 +44,7 @@ namespace FD_FE
             {
                 fractions_count = 4,
                 board_width = 4,
-                board_length = 4,
+                board_height = 4,
                 start_cards_count = 6,
                 battles = 5
             }
@@ -101,6 +101,7 @@ namespace FD_FE
                 {
                     id = 5,
                     name = "Рельсотрон",
+                    start_HP = 1,
                     card_class = CardClasses[1],
                     image = "railgun.png",
                     select_n = 1,
@@ -112,6 +113,7 @@ namespace FD_FE
                 {
                     id = 6,
                     name = "Мечтатель",
+                    start_HP = 1,
                     card_class = CardClasses[3],
                     image = "dreamer.png",
                     select_n = 1,
@@ -124,6 +126,7 @@ namespace FD_FE
                 {
                     id = 7,
                     name = "Хакер",
+                    start_HP = 1,
                     card_class = CardClasses[1],
                     image = "hacker.png",
                     function = (BoardCard card)=>
@@ -137,6 +140,7 @@ namespace FD_FE
                 {
                     id = 25,
                     name = "Тест",
+                    start_HP = 1,
                     card_class = CardClasses[0],
                     image = "transformator.png"
                 }

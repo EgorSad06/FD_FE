@@ -33,22 +33,25 @@ namespace FD_MainWindow.GameplayPages
         private async void Connect_Click(object sender, RoutedEventArgs e)
         {
             Game.is_host = (bool)(RB_server.IsChecked);
-            Game.SetIP(TB_IP.Text);
-            B_connect.IsEnabled = false;
-            B_connect.IsEnabled = !(B_start.IsEnabled = B_receive.IsEnabled = B_send.IsEnabled = await Game.Connect());
+            if (Game.SetIP(TB_IP.Text))
+            {
+                B_connect.IsEnabled = false;
+                B_connect.IsEnabled = !(B_start.IsEnabled = /*B_receive.IsEnabled = B_send.IsEnabled =*/ await Game.Connect());
+            }
         }
 
-        // чат
-        private async void Receive_Click(object sender, RoutedEventArgs e)
-        {
-            ((Button)sender).IsEnabled = false;
-            Message.Text = Encoding.Unicode.GetString(await Game.ReceiveData(100));
-            ((Button)sender).IsEnabled = true;
-        }
-        private void Send_Click(object sender, RoutedEventArgs e)
-        {
-            Game.SendData(Encoding.Unicode.GetBytes(Message.Text+'\n'));
-        }
+        // чат - закрыт до лучших времён
+        //private static Socket _chat_skt;
+        //private async void Receive_Click(object sender, RoutedEventArgs e)
+        //{
+        //    ((Button)sender).IsEnabled = false;
+        //    Message.Text = Encoding.Unicode.GetString(await Game.ReceiveData(100));
+        //    ((Button)sender).IsEnabled = true;
+        //}
+        //private void Send_Click(object sender, RoutedEventArgs e)
+        //{
+        //    Game.SendData(Encoding.Unicode.GetBytes(Message.Text+'\n'));
+        //}
 
         // режим игры
         private bool[] slct_f = new bool[GameplayData.StartCards.Count];
@@ -67,7 +70,7 @@ namespace FD_MainWindow.GameplayPages
         private async void StartButton_Click(object sender, RoutedEventArgs e)
         {
             short i = 0;
-            for (int j=0; j< GameplayData.StartCards.Count; j++) i += (short) (slct_f[j] ? 1:0);
+            for (int j=0; j< GameplayData.StartCards.Count; j++) if (slct_f[j]) i++;
             if (i != 0)
             {
                 B_start.IsEnabled = false;
@@ -84,8 +87,11 @@ namespace FD_MainWindow.GameplayPages
                 
                 if (i != 0)
                 {
-                    for (int j=0; j<GameplayData.StartCards.Count; j++) if (slct_f[j]) Game.slct_cards.deck_cards.AddRange(GameplayData.StartCards.ElementAt(j).Value);
-                    Game.SetMode((short)(i-1));
+                    if (Game.is_host) Game.p_seed = Game.o_seed = BitConverter.ToInt32(await Game.ReceiveData(4),0);
+                    else Game.SendData(BitConverter.GetBytes( Game.p_seed = Game.o_seed = Game.p_deck.SetSqnc() ));
+                    for (int j = 0; j < GameplayData.StartCards.Count; j++) if (slct_f[j]) Game.slct_cards.deck_cards.AddRange(GameplayData.StartCards.ElementAt(j).Value);
+                    Game.start_turn = Game.is_host;
+                    Game.SetMode(i);
                     NavigationService.Navigate(new Uri("GameplayResources/CardSelection.xaml", UriKind.Relative));
                     // Если нужно закрыть текущую страницу:
                     NavigationService.RemoveBackEntry();
@@ -100,6 +106,19 @@ namespace FD_MainWindow.GameplayPages
             Game.Disconnect();
             NavigationService.Navigate(new Uri("MainMenu.xaml", UriKind.Relative));
             // Если нужно закрыть текущую страницу:
+            NavigationService.RemoveBackEntry();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            for (int j = 0; j < 2; j++) Game.slct_cards.deck_cards.AddRange(GameplayData.StartCards.ElementAt(j).Value);
+            Game.slct_cards.SetSqnc();
+            for (int j = 0; Game.slct_cards.SqncEnd(); j++) {
+                Card temp = Game.slct_cards.GetCard();
+                Game.p_deck.deck_cards.Add(temp);
+                Game.o_deck.deck_cards.Add(temp); }
+            Game.SetMode(3);
+            NavigationService.Navigate(new Uri("GameplayResources/Battle.xaml", UriKind.Relative));
             NavigationService.RemoveBackEntry();
         }
     }

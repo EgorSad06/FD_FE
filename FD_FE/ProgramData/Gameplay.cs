@@ -18,7 +18,7 @@ namespace FD_FE
     {
         public short fractions_count { get; set; }
         public short board_width { get; set; }
-        public short board_length { get; set; }
+        public short board_height { get; set; }
         public short start_cards_count { get; set; }
         public short battles { get; set; }
     }
@@ -68,19 +68,26 @@ namespace FD_FE
 // карта поля
     public class BoardCard : Card
     {
-        public int board_i { get; set; }
+        public int board_i { get; protected set; }
         public Card source { get; set; }
         public char force { get; set; }
         public short HP { get; protected set; }
         public short AV { get; protected set; }
-        public void SetHP(short new_HP) { HP = new_HP; CardChanged?.Invoke(); }
-        public void SetAV() { AV = card_class.GetAV(this); CardChanged?.Invoke(); }
-        public void SetAV(short new_AV) { AV = new_AV; CardChanged?.Invoke(); }
+        public void SetBI(int new_board_i) {
+            int prev_i = board_i;
+            board_i = new_board_i;
+            CardMoved?.Invoke(this, prev_i);
+        }
+        public void SetHP(short new_HP) { HP = new_HP; CardChanged?.Invoke(this); }
+        public void SetAV() { AV = card_class.GetAV(this); CardChanged?.Invoke(this); }
+        public void SetAV(short new_AV) { AV = new_AV; CardChanged?.Invoke(this); }
 
         public List<Effect> effects { get; set; }
 
-        public delegate void CardChangedEventHandler();
+        public delegate void CardChangedEventHandler(BoardCard sender);
+        public delegate void CardMovedEventHandler(BoardCard sender, int prev_i);
         public event CardChangedEventHandler CardChanged;
+        public event CardMovedEventHandler CardMoved;
 
         public BoardCard() { }
         public BoardCard(Card card, int board_index = 0) // копия имеющейся карты
@@ -95,14 +102,13 @@ namespace FD_FE
         {
             function(this);
         }
-        public void SetAct() { }
     }
 
 // колода
     public class Deck
     {
         public List<Card> deck_cards = new List<Card>();
-        public List<Card> hand_cards = new List<Card>();
+        public List<Card> hand_cards = new List<Card>() { null };
         private List<Card> _sequence = new List<Card>();
         private int _slcti = 0;
 
@@ -111,12 +117,24 @@ namespace FD_FE
         {
             for (int i=0; i<cards.Count; i++) { deck_cards.Add(new Card(cards[i])); }
         }
-        public bool SqncEnd() => _slcti < _sequence.Count;
         public Card GetCard() => _sequence[_slcti++];
-        public void MoveToHand(Card card) { hand_cards.Add(card); }
-        public void SetSqnc()
+        public Card MoveToHand(Card card) { hand_cards.Add(card); return card; }
+        public Card MoveToHand()
         {
-            Random rnd = new Random();
+            Card card = GetCard();
+            hand_cards.Add(card);
+            return card;
+        }
+        public bool SqncEnd() => _slcti < _sequence.Count;
+        public int SetSqnc(int seed=0) // установка очереди
+        {
+            Random rnd;
+            if (seed == 0)
+            {
+                rnd = new Random();
+                seed = rnd.Next();
+            }
+            rnd = new Random(seed);
             int n = deck_cards.Count;
             _sequence.AddRange(deck_cards);
             while (n > 1)
@@ -128,22 +146,69 @@ namespace FD_FE
                 _sequence[n] = temp;
             }
             _slcti = 0;
+            return seed;
         }
     }
 
-// поле
+    // поле
     public class Board
     {
-        public List<BoardCard> grid = new List<BoardCard>();
+        public BoardCard[] grid { get; private set; } = null;
+        //public List<BoardCard> = new List<BoardCard>;
+        public short width;
+        public short height;
+        public readonly short count;
+        public void set_grid(int i, BoardCard new_card) { grid[i] = new_card; BoardChanged?.Invoke(this, i); }
 
-        public void SetBoardCard(Card new_card)
+        public delegate void BoardChangedEventHandler(Board sender, int grid_i);
+        public BoardChangedEventHandler BoardChanged;
+
+        public Board() { }
+        public Board(short width, short height)
         {
-            grid.Add(new BoardCard(new_card));
+            this.width = width;
+            this.height = height;
+            count = (short)(width*height);
+            grid = new BoardCard[count];
+        }
+
+        public void AddBoardCard(Card new_card)
+        {
+            BoardCard new_bcard = null;
+            int i = 0;
+            while (i < count && grid[i] != null) i++;
+            if (new_card != null && i != count) {
+                set_grid(i, new_bcard = new BoardCard(new_card, i));
+                new_bcard.CardChanged += BoardCardChanged;
+                new_bcard.CardMoved += BoardCardMoved;
+            }
         }
         public void SetBoardCard(Card new_card, int i)
         {
-            for (int j = grid.Count; j <= i; j++) { grid.Add(null); }
-            grid[i] = new BoardCard(new_card);
+            set_grid(i, (new_card != null) ? new BoardCard(new_card, i) : null);
+        }
+        public void SetBoardCard(BoardCard new_card, int i)
+        {
+            set_grid(i, new_card);
+        }
+        public BoardCard RemBoardCard(int i)
+        {
+            BoardCard t = grid[i];
+            set_grid(i, null);
+            t.CardChanged -= BoardCardChanged;
+            t.CardMoved -= BoardCardMoved;
+            t.SetBI(-1);
+            return t;
+        }
+
+        public void BoardCardChanged(BoardCard sender)
+        {
+            if (sender.HP == 0) RemBoardCard(sender.board_i);
+        }
+        public void BoardCardMoved(BoardCard sender, int prev_i)
+        {
+            set_grid(sender.board_i, sender);
+            set_grid(prev_i, null);
         }
     }
 }
