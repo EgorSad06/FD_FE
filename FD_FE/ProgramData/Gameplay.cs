@@ -108,7 +108,7 @@ namespace FD_FE
     public class Deck
     {
         public List<Card> deck_cards = new List<Card>();
-        public List<Card> hand_cards = new List<Card>() { null };
+        public List<Card> hand_cards = new List<Card>();
         private List<Card> _sequence = new List<Card>();
         private int _slcti = 0;
 
@@ -126,7 +126,25 @@ namespace FD_FE
             return card;
         }
         public bool SqncEnd() => _slcti < _sequence.Count;
-        public int SetSqnc(int seed=0) // установка очереди
+        public int SetSqnc() // установка очереди
+        {
+            Random rnd = new Random();
+            int seed = rnd.Next();
+            rnd = new Random(seed);
+            int n = deck_cards.Count;
+            _sequence.AddRange(deck_cards);
+            while (n > 1)
+            {
+                n--;
+                int k = rnd.Next(n);
+                Card temp = _sequence[k];
+                _sequence[k] = _sequence[n];
+                _sequence[n] = temp;
+            }
+            _slcti = 0;
+            return seed;
+        }
+        public int SetSqnc(int seed) // установка очереди
         {
             Random rnd;
             if (seed == 0)
@@ -158,7 +176,11 @@ namespace FD_FE
         public short width;
         public short height;
         public readonly short count;
-        public void set_grid(int i, BoardCard new_card) { grid[i] = new_card; BoardChanged?.Invoke(this, i); }
+        public void set_grid(int i, BoardCard new_card) {
+            grid[i] = new_card;
+            grid[i]?.SetBI(i);
+            BoardChanged?.Invoke(this, i);
+        }
 
         public delegate void BoardChangedEventHandler(Board sender, int grid_i);
         public BoardChangedEventHandler BoardChanged;
@@ -193,6 +215,7 @@ namespace FD_FE
         }
         public BoardCard RemBoardCard(int i)
         {
+            if (i >= count) return null;
             BoardCard t = grid[i];
             set_grid(i, null);
             t.CardChanged -= BoardCardChanged;

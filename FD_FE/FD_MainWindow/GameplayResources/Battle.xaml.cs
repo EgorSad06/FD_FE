@@ -30,11 +30,29 @@ namespace FD_MainWindow
         public static Board Main_board = new Board(Game.Mode.board_width, Game.Mode.board_height);
         public static Board Hand_board = new Board(1, 7);
 
+        public static bool p_turn;
         public static BoardCard slct_card = null;
-        public static byte[] act_sqnc = null;
-        public static short p_score = 0;
-        public static short o_score = 0;
-// начало игры
+        public static short[] card_act_sqnc = null;
+        public static short card_act_sqnc_i = 0;
+
+        public static short[] act_sqnc = null; // последовательность выбранных карт
+        public static short act_sqnc_i = 0;
+
+        public static short[] slct_cards = null; // последовательность выставленных карт
+        public static short slct_cards_i = 0;
+        public static short turns { get; private set; } // удвоенное кол-во ходов (завершённые ходы и игрока и противника уменьшают это число)
+        public static void Dec_turns() { turns--; ScoreChanged?.Invoke(); }
+
+        private delegate void ScoreChangedEventHandler();
+        private static ScoreChangedEventHandler ScoreChanged;
+        public static short p_score { get; private set; } = 0;
+        public static short o_score { get; private set; } = 0;
+        public static void Set_p_score(short new_score) { p_score = new_score; ScoreChanged?.Invoke(); }
+        public static void Set_o_score(short new_score) { p_score = new_score; ScoreChanged?.Invoke(); }
+        private bool Check_End() => Math.Abs(p_score - o_score) == 5 || turns == 0;
+
+
+        // начало игры
         private void Start()
         {
             if (Game.is_host) // перемешивание колоды
@@ -61,14 +79,22 @@ namespace FD_MainWindow
                 Game.o_deck.MoveToHand();
             }
 
+            ScoreChanged += () => {
+                TB_o_score.Text = o_score.ToString();
+                TB_p_score.Text = p_score.ToString();
+                TB_turns.Text = ((turns + 1)/2).ToString();
+            };
+            TB_turns.Text = ( (( turns=(short)(4+(Game.o_deck.deck_cards.Count+Game.p_deck.deck_cards.Count)/2*2) )+1)/2 ).ToString();
+
             Game.Draw(Hand_board, HandBoardGrid);
             Game.Draw(Main_board, MainBoardGrid, (float) ((Game.Mode.board_height == 3) ? 1.8 : 1.6));
 
             Main_board.BoardChanged += (Board sender, int i) => { Game.Update(sender, i, MainBoardGrid, (float)((Game.Mode.board_height == 3) ? 1.8 : 1.6)); };
             Hand_board.BoardChanged += (Board sender, int i) => { Game.Update(sender, i, HandBoardGrid); };
 
+            UCCard.CardSelected += OnCardSelected;
             B_ready.IsEnabled = Game.start_turn;
-            if (Game.start_turn) Turn();
+            if (p_turn = Game.start_turn) Turn();
             else Wait();
         }
 
@@ -76,46 +102,109 @@ namespace FD_MainWindow
         private void OnCardSelected(UCCard sender, BoardCard card)
         {
             slct_card = sender.BoardCard;
-            if (HandBoardGrid.Children.Contains(sender))
+            if (p_turn)
             {
-                UCSlot.SlotSelected += OnSlotSelected;
+                if (sender.Parent == MainBoardGrid) // если выбирается действие карты
+                {
+                    if (card_act_sqnc == null)
+                    {
+                        card_act_sqnc = new short[card.select_n + 1];
+                        card_act_sqnc[0] = (short)card.board_i;
+                        card_act_sqnc_i++;
+                    }
+                    else
+                    {
+                        if (card == Main_board.grid[card_act_sqnc[0]]) // при досрочном завершении выбора действия
+                            card_act_sqnc_i = card.select_n;
+                        else
+                        {
+                            card_act_sqnc[card_act_sqnc_i] = (short)card.board_i;
+                            card_act_sqnc_i++;
+                        }
+                        if (card_act_sqnc_i >= card.select_n) // если выбор действия карты закончен
+                        {
+                            for (int i = 0; i <= Main_board.grid[card_act_sqnc[0]].select_n; i++) act_sqnc[act_sqnc_i++] = card_act_sqnc[i];
+                            act_sqnc[act_sqnc_i++] = card_act_sqnc[0];
+                        }
+                    }
+                }
+                else
+                {
+                    card_act_sqnc = null;
+                    card_act_sqnc_i = 0;
+                }
             }
-            else
-            {
-                UCSlot.SlotSelected -= OnSlotSelected;
-            }
-
         }
         private void OnSlotSelected(short i)
         {
-            Main_board.SetBoardCard(Hand_board.RemBoardCard(slct_card.board_i), i);
-            UCSlot.SlotSelected -= OnSlotSelected;
+            if (Hand_board.grid.Contains(slct_card))
+            {
+                slct_cards[slct_cards_i++] = (short)slct_card.board_i;
+                Main_board.SetBoardCard(Hand_board.RemBoardCard(slct_card.board_i), i);
+                slct_cards[slct_cards_i++] = i;
+            }
         }
 
 // управление этапами игры
         private void Turn()
         {
+            B_ready.IsEnabled = true;
+            if (Check_End()) End_Battle();
+            slct_cards = new short[14];
+            slct_cards_i = 0;
+            act_sqnc = new short[Game.p_deck.deck_cards.Count * 5] ;
+            act_sqnc_i = 0;
+            UCSlot.SlotSelected += OnSlotSelected;
             if (Game.p_deck.hand_cards.Count<7 && Game.p_deck.SqncEnd()) Hand_board.AddBoardCard(Game.p_deck.MoveToHand());
-            UCCard.CardSelected += OnCardSelected;
+
             
 
         }
         private async void Wait()
         {
-            UCCard.CardSelected -= OnCardSelected;
-            if (Game.o_deck.hand_cards.Count<7 && Game.p_deck.SqncEnd()) Game.p_deck.MoveToHand();
-            
+            if (Check_End()) End_Battle();
+            UCSlot.SlotSelected -= OnSlotSelected;
+            if (Game.o_deck.hand_cards.Count < 7 && Game.o_deck.SqncEnd()) Game.o_deck.MoveToHand();
+
+            slct_cards = await Game.ReceiveDataS(14);
+
+            if (Game.o_deck.SqncEnd()) Game.o_deck.MoveToHand();
+            for (int i = 0; slct_cards[i]!=-1; i++)
+            {
+                Main_board.SetBoardCard(Game.o_deck.hand_cards[slct_cards[i]], Main_board.count-1-slct_cards[++i]);
+            }
+
+            act_sqnc = await Game.ReceiveDataS(Game.o_deck.deck_cards.Count * 5);
+            for (int i = 0; act_sqnc[i]!=-1; i++)
+            {
+                act_sqnc[i] = (short)(Main_board.count - act_sqnc[i] - 1);
+            }
+
+            // ACT
+
+            Dec_turns();
+
+            Turn();
         }
 
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        //private void Button_Click(object sender, RoutedEventArgs e)
+        //{
+
+        //}
+
+        private void Ready_Click(object sender, RoutedEventArgs e)
         {
+            B_ready.IsEnabled = false;
+            slct_cards[slct_cards_i] = -1;
+            Game.SendData(slct_cards, 14);
+            act_sqnc[act_sqnc_i] = -1;
+            Game.SendData(act_sqnc, Game.p_deck.deck_cards.Count * 5);
 
-        }
+            // ACT
 
-        private async void Ready_Click(object sender, RoutedEventArgs e)
-        {
-
+            Dec_turns();
+            Wait();
         }
 
         private void End_Battle()
@@ -148,10 +237,9 @@ namespace FD_MainWindow
                 Game.slct_cards = new Deck();
                 Game.p_deck = new Deck();
                 Game.o_deck = new Deck();
-                act_sqnc = null;
                 p_score = 0;
                 o_score = 0;
-        NavigationService.Navigate(new Uri("GameplayResources/GameStart.xaml", UriKind.Relative));
+                NavigationService.Navigate(new Uri("GameplayResources/GameStart.xaml", UriKind.Relative));
                 NavigationService.RemoveBackEntry();
             }
         }

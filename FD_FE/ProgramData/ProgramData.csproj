@@ -79,6 +79,7 @@
     <Content Include="Assets\Sprites\Cards\kitty.png" />
     <Content Include="Assets\Sprites\CardTemplates\g_template.png" />
     <Content Include="Assets\Sprites\CardTemplates\m_template.png" />
+    <Content Include="Assets\Sprites\CardTemplates\s_frame.png" />
     <Content Include="Assets\Sprites\CardTemplates\t_template.png" />
     <Resource Include="Assets\Sprites\Menu\backgroundstar.png" />
     <Resource Include="SettingBG.png" />
