@@ -90,6 +90,7 @@ namespace FD_FE
 
         public delegate void CardChangedEventHandler(BoardCard sender);
         public delegate void CardMovedEventHandler(BoardCard sender, int prev_i);
+        public static event CardChangedEventHandler GlobalCardChanged;
         public event CardChangedEventHandler CardChanged;
         public event CardMovedEventHandler CardMoved;
 
