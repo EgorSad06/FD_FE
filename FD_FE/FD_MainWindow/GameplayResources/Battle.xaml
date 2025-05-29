@@ -24,7 +24,7 @@
         
         <Border Background="DimGray" BorderBrush="Transparent" Grid.Column="1"/>
         <TextBlock x:Name="TB_o_score" Text="0" Width="80" Style="{StaticResource CardValueT}" FontSize="80" VerticalAlignment="Center" Margin="0,0,0,350" Grid.Column="1"/>
-        <TextBlock x:Name="TB_d_score" Text="0" Width="80" Style="{StaticResource CardValueT}" FontSize="80" VerticalAlignment="Center" Grid.Column="1"/>
+        <TextBlock x:Name="TB_turns" Text="0" Width="80" Style="{StaticResource CardValueT}" FontSize="80" VerticalAlignment="Center" Grid.Column="1"/>
         <TextBlock x:Name="TB_p_score" Text="0" Width="80" Style="{StaticResource CardValueT}" FontSize="80" VerticalAlignment="Center" Margin="0,0,0,-350" Grid.Column="1"/>
         
         <Border x:Name="MainBoardBorder" Width="840" Height="1040" BorderBrush="White" BorderThickness="2" CornerRadius="10" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2">
@@ -36,8 +36,10 @@
         </Border>
 
         <Border Background="DimGray" BorderBrush="Transparent" Grid.Column="4"/>
-        <Button Content="Готов" Width="200" Height="100" FontSize="40" VerticalAlignment="Bottom" Margin="0,0,0,50" Grid.Column="4" Click="Ready_Click"/>
-
-        <Button x:Name="B_ready" Width="100" Height="40" VerticalAlignment="Top" Click="Button_Click" Grid.Column="2"/>
+        
+        <Button Content="Сбросить" Width="200" Height="120" FontSize="40" VerticalAlignment="Bottom" Margin="0,0,0,200" Grid.Column="4" Click="Ready_Click"/>
+        <Button x:Name="B_ready" Content="Готово" Width="200" Height="120" FontSize="40" VerticalAlignment="Bottom" Margin="0,0,0,50" Grid.Column="4" Click="Ready_Click"/>
+        <TextBlock x:Name="State" Text="Состояние" Width="200" Height="180"/>
+        <!--Button Width="100" Height="40" VerticalAlignment="Top" Click="Button_Click" Grid.Column="2"/-->
     </Grid>
 </Page>
