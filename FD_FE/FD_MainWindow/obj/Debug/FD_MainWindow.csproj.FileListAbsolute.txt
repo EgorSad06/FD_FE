@@ -88,3 +88,4 @@ C:\Users\Huawei\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\FD_MainWind
 C:\Users\Huawei\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\FD_MainWindow.pdb
 C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\bin\Debug\Newtonsoft.Json.dll
 C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Huawei\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\FD_MainWindow.exe.config

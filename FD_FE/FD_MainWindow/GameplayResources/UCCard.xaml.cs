@@ -34,13 +34,22 @@ namespace FD_MainWindow
             cardB.IsMouseDirectlyOverChanged += (object sender, DependencyPropertyChangedEventArgs e) => Panel.SetZIndex(UCcard, ((Button)sender).IsMouseDirectlyOver ? 1 : -BoardCard.board_i);
             if (BoardCard.GetFraction() == 'f')
             {
-                // Пример: замени фон на "листики"
+                // Изменить фон и удалить имя
                 CardBackgound.ImageSource = (ImageSource)Game.converter.ConvertFromString($"{GameplayData.sprites_path}Cards/{BoardCard.image}");
                 CardGrid.Children.Remove(cardName);
+
+                // AV справа сверху
                 cardBorderAV.VerticalAlignment = VerticalAlignment.Top;
-                cardAV.VerticalAlignment = VerticalAlignment.Top;
-                cardAV.Foreground = new SolidColorBrush( Colors.WhiteSmoke);
+                cardBorderAV.HorizontalAlignment = HorizontalAlignment.Right;
+                cardBorderAV.Margin = new Thickness(0, 10, 10, 0); // сверху и справа
+
+                cardAV.VerticalAlignment = VerticalAlignment.Center;
+                cardAV.Foreground = new SolidColorBrush(Colors.WhiteSmoke);
+
+                // HP слева сверху
                 cardHP.VerticalAlignment = VerticalAlignment.Top;
+                cardHP.HorizontalAlignment = HorizontalAlignment.Left;
+                cardHP.Margin = new Thickness(10, 10, 0, 0); // сверху и слева
                 cardHP.Foreground = new SolidColorBrush(Colors.Black);
 
             }
