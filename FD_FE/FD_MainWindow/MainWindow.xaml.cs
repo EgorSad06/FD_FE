@@ -47,5 +47,26 @@ namespace FD_MainWindow
             _mediaPlayer.Stop();
             Game.Disconnect();
         }
+
+        //сбор статистики
+        private DateTime _sessionStart;
+        private GameStats _currentStats;
+
+        public void StartGame()
+        {
+            _sessionStart = DateTime.Now;
+            _currentStats = StatsManager.LoadStats();
+        }
+
+        public void EndGame(int wins, int losses, int kills)
+        {
+            TimeSpan playTime = DateTime.Now - _sessionStart;
+            _currentStats.AddPlayTime(playTime);
+            _currentStats.Wins += wins;
+            _currentStats.Losses += losses;
+            _currentStats.EnemiesKilled += kills;
+
+            StatsManager.SaveStats(_currentStats);
+        }
     }
 }

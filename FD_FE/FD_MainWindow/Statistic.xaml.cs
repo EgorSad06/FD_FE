@@ -1,17 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace FD_MainWindow
 {
@@ -20,21 +10,40 @@ namespace FD_MainWindow
     /// </summary>
     public partial class Statistic : Page
     {
-
         public Statistic()
         {
             InitializeComponent();
+            this.Loaded += Page_Loaded;
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+
+                // Обновление интерфейса
+                GameStats stats = App.CurrentStats;
+
+                TotalTimeText.Text = stats.TotalPlayTime.ToString(@"hh\:mm\:ss");
+                GamesPlayedText.Text = (stats.Wins + stats.Losses).ToString();
+                WinsText.Text = stats.Wins.ToString();
+                LossesText.Text = stats.Losses.ToString();
+                EnemiesKilledText.Text = stats.EnemiesKilled.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка при загрузке статистики: " + ex.Message);
+            }
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            // Возврат на предыдущую страницу
             if (NavigationService.CanGoBack)
             {
                 NavigationService.GoBack();
-                //звук
+
+                // Воспроизведение звука при возврате
                 MediaPlayer mediaPlayer = new MediaPlayer();
-                string basePath = AppDomain.CurrentDomain.BaseDirectory;
                 mediaPlayer.Open(new Uri("Assets/sound/listscroll.mp3", UriKind.RelativeOrAbsolute));
                 mediaPlayer.Play();
             }
