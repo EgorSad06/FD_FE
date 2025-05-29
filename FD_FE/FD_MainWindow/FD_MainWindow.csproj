@@ -58,6 +58,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AudioManager.cs" />
     <Compile Include="StatsManager.cs" />
     <Compile Include="GameStats.cs" />
     <Compile Include="GameplayResources\UCSlot.xaml.cs">

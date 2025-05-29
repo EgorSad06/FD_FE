@@ -42,10 +42,8 @@ namespace FD_MainWindow
             {
                 NavigationService.GoBack();
 
-                // Воспроизведение звука при возврате
-                MediaPlayer mediaPlayer = new MediaPlayer();
-                mediaPlayer.Open(new Uri("Assets/sound/listscroll.mp3", UriKind.RelativeOrAbsolute));
-                mediaPlayer.Play();
+                //звук
+                AudioManager.PlayEffect("Assets/sound/listscroll.mp3");
             }
         }
     }

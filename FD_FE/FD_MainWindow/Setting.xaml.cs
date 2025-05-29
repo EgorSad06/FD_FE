@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,18 +36,34 @@ namespace FD_MainWindow
         public Setting()
         {
             InitializeComponent();
-
-            // Инициализация элементов управления
-            //ResolutionComboBox.ItemsSource = Resolutions;
-            //ResolutionComboBox.SelectedIndex = 0;
-
-            //В будующем можно добавить звуки эффектов, музыку 
+            this.DataContext = this;
 
             WindowedRadioButton.IsChecked = false;
-            //BrightnessSlider.Value = _brightness;
-            //MasterVolumeSlider.Value = _masterVolume;
-            //EffectsVolumeSlider.Value = _effectsVolume;
         }
+
+        //громкость
+        public double MasterVolume
+        {
+            get => AudioManager.MusicVolume * 100;
+            set
+            {
+                AudioManager.MusicVolume = value / 100;
+                OnPropertyChanged(nameof(MasterVolume));
+            }
+        }
+
+        public double EffectsVolume
+        {
+            get => AudioManager.EffectsVolume * 100;
+            set
+            {
+                AudioManager.EffectsVolume = value / 100;
+                OnPropertyChanged(nameof(EffectsVolume));
+            }
+        }
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged(string name) =>
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
 
         // Обработчики событий
         private void ApplyButton_Click(object sender, RoutedEventArgs e)
@@ -88,12 +105,9 @@ namespace FD_MainWindow
             // Возврат на предыдущую страницу
             if (NavigationService.CanGoBack)
             {
-                NavigationService.GoBack();            
+                NavigationService.GoBack();
                 //звук
-                MediaPlayer mediaPlayer = new MediaPlayer();
-                string basePath = AppDomain.CurrentDomain.BaseDirectory;
-                mediaPlayer.Open(new Uri("Assets/sound/listscroll.mp3", UriKind.RelativeOrAbsolute));
-                mediaPlayer.Play();
+                AudioManager.PlayEffect("Assets/sound/listscroll.mp3");
             }
         }
 
@@ -110,5 +124,7 @@ namespace FD_MainWindow
                 Height = height;
             }
         }
+
+
     }
 }

@@ -53,11 +53,8 @@ namespace FD_MainWindow
             this.BeginAnimation(UIElement.OpacityProperty, fadeOut);
 
             //звук
-            MediaPlayer mediaPlayer = new MediaPlayer();
-            string basePath = AppDomain.CurrentDomain.BaseDirectory;
-            mediaPlayer.Open(new Uri("Assets/sound/listscroll.mp3", UriKind.RelativeOrAbsolute));
-            mediaPlayer.Play();
-          //  mediaPlayer.Close();
+            AudioManager.PlayEffect("Assets/sound/listscroll.mp3");
+
         }
         //обучение
         private void EducationButtonSelection_Click(object sender, RoutedEventArgs e)
@@ -80,10 +77,7 @@ namespace FD_MainWindow
             // Запуск анимации
             this.BeginAnimation(UIElement.OpacityProperty, fadeOut);
             //звук
-            MediaPlayer mediaPlayer = new MediaPlayer();
-            string basePath = AppDomain.CurrentDomain.BaseDirectory;
-            mediaPlayer.Open(new Uri("Assets/sound/listscroll.mp3", UriKind.RelativeOrAbsolute));
-            mediaPlayer.Play();
+            AudioManager.PlayEffect("Assets/sound/listscroll.mp3");
         }
         //статистика
         private void StatisticsButtonSelection_Click(object sender, RoutedEventArgs e)
@@ -106,10 +100,7 @@ namespace FD_MainWindow
             // Запуск анимации
             this.BeginAnimation(UIElement.OpacityProperty, fadeOut);
             //звук
-            MediaPlayer mediaPlayer = new MediaPlayer();
-            string basePath = AppDomain.CurrentDomain.BaseDirectory;
-            mediaPlayer.Open(new Uri("Assets/sound/listscroll.mp3", UriKind.RelativeOrAbsolute));
-            mediaPlayer.Play();
+            AudioManager.PlayEffect("Assets/sound/listscroll.mp3");
         }
         //Настройки
         private void SettingsButtonSelection_Click(object sender, RoutedEventArgs e)
@@ -132,10 +123,7 @@ namespace FD_MainWindow
             // Запуск анимации
             this.BeginAnimation(UIElement.OpacityProperty, fadeOut);
             //звук
-            MediaPlayer mediaPlayer = new MediaPlayer();
-            string basePath = AppDomain.CurrentDomain.BaseDirectory;
-            mediaPlayer.Open(new Uri("Assets/sound/listscroll.mp3", UriKind.RelativeOrAbsolute));
-            mediaPlayer.Play();
+            AudioManager.PlayEffect("Assets/sound/listscroll.mp3");
         }
 
 

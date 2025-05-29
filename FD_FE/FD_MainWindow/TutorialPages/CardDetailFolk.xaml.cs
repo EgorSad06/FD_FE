@@ -32,10 +32,7 @@ namespace FD_MainWindow.TutorialPages
             {
                 NavigationService.GoBack();
                 //звук
-                MediaPlayer mediaPlayer = new MediaPlayer();
-                string basePath = AppDomain.CurrentDomain.BaseDirectory;
-                mediaPlayer.Open(new Uri("Assets/sound/listscroll.mp3", UriKind.RelativeOrAbsolute));
-                mediaPlayer.Play();
+                AudioManager.PlayEffect("Assets/sound/listscroll.mp3");
             }
         }
     }
