@@ -24,7 +24,7 @@ namespace FD_FE
     }
 
     public delegate void Card_func(BoardCard card);
-    public delegate short GetAV_func(BoardCard card);
+    public delegate short GetV_func(BoardCard card);
     
 
 // эффект
@@ -39,7 +39,7 @@ namespace FD_FE
     {
         public char id { get; set; }
         public string name { get; set; }
-        public GetAV_func GetAV { get; set; }
+        public GetV_func GetAV { get; set; }
 
     }
 
@@ -51,15 +51,18 @@ namespace FD_FE
         public string description { get; set; }
         public CardClass card_class { get; set; }
         public short start_HP { get; set; }
-        public short select_n { get; set; }
+        public GetV_func select_n { get; set; }
         public Card_func function { get; set; }
         public string image { get; set; }
 
-        public Card() { }
+        protected Card() { }
+        public Card(GetV_func sn_func, Card_func func) { select_n = sn_func; function = func; }
         public Card(Card card) // копия имеющейся карты
         {
             id = card.id; name = card.name; description = card.description; card_class = card.card_class;
             start_HP = card.start_HP; function = card.function; image = card.image;
+            select_n = card.select_n;
+            function = card.function;
         }
         public char GetFraction() => GameplayData.StartCards.Keys.ElementAt( (id - GameplayData.StartCards.Values.ElementAt(0)[0].id) / 20 );
         static public char GetFraction(int id) => GameplayData.StartCards.Keys.ElementAt((id - GameplayData.StartCards.Values.ElementAt(0)[0].id) / 20);
@@ -73,6 +76,7 @@ namespace FD_FE
         public char force { get; set; }
         public short HP { get; protected set; }
         public short AV { get; protected set; }
+        public bool card_act { get; set; } = true;
         public void SetBI(int new_board_i) {
             int prev_i = board_i;
             board_i = new_board_i;
@@ -90,12 +94,15 @@ namespace FD_FE
         public event CardMovedEventHandler CardMoved;
 
         public BoardCard() { }
-        public BoardCard(Card card, int board_index = 0) // копия имеющейся карты
+        public BoardCard(Card card, int board_index = 0, char card_force='p') // копия имеющейся карты
         {
             id = card.id; name = card.name; description = card.description; card_class = card.card_class;
             start_HP = card.start_HP; function = card.function; image = card.image; AV = 1;
             source = card;
+            force = card_force;
             board_i = board_index;
+            select_n = card.select_n;
+            function = card.function;
         }
 
         public void Act()
@@ -205,9 +212,9 @@ namespace FD_FE
                 new_bcard.CardMoved += BoardCardMoved;
             }
         }
-        public void SetBoardCard(Card new_card, int i)
+        public void SetBoardCard(Card new_card, int i, char force='p')
         {
-            set_grid(i, (new_card != null) ? new BoardCard(new_card, i) : null);
+            set_grid(i, (new_card != null) ? new BoardCard(new_card, i, force) : null);
         }
         public void SetBoardCard(BoardCard new_card, int i)
         {

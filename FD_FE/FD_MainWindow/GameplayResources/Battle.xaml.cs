@@ -108,23 +108,27 @@ namespace FD_MainWindow
                 {
                     if (card_act_sqnc == null)
                     {
-                        card_act_sqnc = new short[card.select_n + 1];
-                        card_act_sqnc[0] = (short)card.board_i;
-                        card_act_sqnc_i++;
+                        if (card.card_act && card.force == 'p') {
+                            card_act_sqnc = new short[card.select_n(card) + 1];
+                            card_act_sqnc[0] = (short)card.board_i;
+                            card_act_sqnc_i++;
+                        }
                     }
                     else
                     {
                         if (card == Main_board.grid[card_act_sqnc[0]]) // при досрочном завершении выбора действия
-                            card_act_sqnc_i = card.select_n;
+                            card_act_sqnc_i = card.select_n(card);
                         else
                         {
                             card_act_sqnc[card_act_sqnc_i] = (short)card.board_i;
                             card_act_sqnc_i++;
                         }
-                        if (card_act_sqnc_i >= card.select_n) // если выбор действия карты закончен
+                        if (card_act_sqnc_i >= card.select_n(card)) // если выбор действия карты закончен
                         {
-                            for (int i = 0; i <= Main_board.grid[card_act_sqnc[0]].select_n; i++) act_sqnc[act_sqnc_i++] = card_act_sqnc[i];
+                            for (int i = 0; i <= Main_board.grid[card_act_sqnc[0]].select_n(Main_board.grid[card_act_sqnc[0]]); i++)
+                                act_sqnc[act_sqnc_i++] = card_act_sqnc[i];
                             act_sqnc[act_sqnc_i++] = card_act_sqnc[0];
+                            card.card_act = false;
                         }
                     }
                 }
@@ -156,7 +160,7 @@ namespace FD_MainWindow
             act_sqnc_i = 0;
             UCSlot.SlotSelected += OnSlotSelected;
             if (Game.p_deck.hand_cards.Count<7 && Game.p_deck.SqncEnd()) Hand_board.AddBoardCard(Game.p_deck.MoveToHand());
-
+            foreach (UIElement uc_card in MainBoardGrid.Children) { try { ((UCCard)uc_card).BoardCard.card_act = true; } catch { } }
             
 
         }
@@ -171,7 +175,7 @@ namespace FD_MainWindow
             if (Game.o_deck.SqncEnd()) Game.o_deck.MoveToHand();
             for (int i = 0; slct_cards[i]!=-1; i++)
             {
-                Main_board.SetBoardCard(Game.o_deck.hand_cards[slct_cards[i]], Main_board.count-1-slct_cards[++i]);
+                Main_board.SetBoardCard(Game.o_deck.hand_cards[slct_cards[i]], Main_board.count-1-slct_cards[++i], 'o');
             }
 
             act_sqnc = await Game.ReceiveDataS(Game.o_deck.deck_cards.Count * 5);

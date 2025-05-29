@@ -97,46 +97,55 @@ namespace FD_FE
         public static readonly Dictionary<char, List<Card>> StartCards = new Dictionary<char, List<Card>>
         {
             { 't', new List<Card> {
-                new Card()
+                new Card(
+                    (BoardCard card)=>{ return 1; },
+                    (BoardCard card)=>{
+                        
+                    }
+                )
                 {
                     id = 5,
                     name = "Рельсотрон",
                     start_HP = 1,
                     card_class = CardClasses[1],
                     image = "railgun.png",
-                    select_n = 1,
-                    function = (BoardCard card)=> {
+                    select_n = (BoardCard card) => { return 1; },
+                },
+                new Card(
+                    (BoardCard card)=>{ return 1; },
+                    (BoardCard card)=>{
 
                     }
-                },
-                new Card()
+                )
                 {
                     id = 6,
                     name = "Мечтатель",
                     start_HP = 1,
                     card_class = CardClasses[3],
                     image = "dreamer.png",
-                    select_n = 1,
-                    function = (BoardCard card)=>
-                    {
+                    select_n = (BoardCard card) => { return 1; },
+                },
+                new Card(
+                    (BoardCard card)=>{ return card.AV; },
+                    (BoardCard card)=>{
 
                     }
-                },
-                new Card()
+                )
                 {
                     id = 7,
                     name = "Хакер",
                     start_HP = 1,
                     card_class = CardClasses[1],
                     image = "hacker.png",
-                    function = (BoardCard card)=>
-                    {
-                        card.select_n++;
-                    }
                 }
             } },
             { 'm', new List<Card> {
-                new Card()
+                new Card(
+                    (BoardCard card)=>{ return 1; },
+                    (BoardCard card)=>{
+
+                    }
+                )
                 {
                     id = 25,
                     name = "Тест",
@@ -145,71 +154,71 @@ namespace FD_FE
                     image = "transformator.png"
                 }
             } },
-            { 'f', new List<Card>{
-                new Card()
-                {
-                    id = 45,
-                    name = "Рыцарь",
-                    card_class = CardClasses[4],
-                    image = "knight.png"
-                },
-                new Card()
-                {
-                    id = 46,
-                    name = "Ворон",
-                    card_class = CardClasses[0],
-                    image = "crow.png"
-                },
-                new Card()
-                {
-                     id=47,
-                     name = "Ква-Мяу",
-                     card_class = CardClasses[1],
-                     image = "team.png"
-                },
-                new Card()
-                {
-                     id=48,
-                     name = "Болтник",
-                     card_class = CardClasses[1],
-                     image = "frogmaster.png"
-                },
-                new Card()
-                {
-                     id=49,
-                     name = "Маг",
-                     card_class = CardClasses[0],
-                     image = "wizard.png"
-                },
-                new Card()
-                {
-                     id=50,
-                     name = "Рояль",
-                     card_class = CardClasses[1],
-                     image = "piano.png"
-                },
-                new Card()
-                {
-                     id=51,
-                     name = "Жаб",
-                     card_class = CardClasses[1],
-                     image = "ftog.png"
-                },
-                new Card()
-                {
-                     id=52,
-                     name = "Водяной",
-                     card_class = CardClasses[3],
-                     image = "WaterMan.png"
-                },
-                new Card()
-                {
-                     id=53,
-                     name = "Лучник",
-                     card_class = CardClasses[2],
-                     image = "archers.png"
-                }
-            } }
+            //{ 'f', new List<Card>{
+            //    new Card()
+            //    {
+            //        id = 45,
+            //        name = "Рыцарь",
+            //        card_class = CardClasses[4],
+            //        image = "knight.png"
+            //    },
+            //    new Card()
+            //    {
+            //        id = 46,
+            //        name = "Ворон",
+            //        card_class = CardClasses[0],
+            //        image = "crow.png"
+            //    },
+            //    new Card()
+            //    {
+            //         id=47,
+            //         name = "Ква-Мяу",
+            //         card_class = CardClasses[1],
+            //         image = "team.png"
+            //    },
+            //    new Card()
+            //    {
+            //         id=48,
+            //         name = "Болтник",
+            //         card_class = CardClasses[1],
+            //         image = "frogmaster.png"
+            //    },
+            //    new Card()
+            //    {
+            //         id=49,
+            //         name = "Маг",
+            //         card_class = CardClasses[0],
+            //         image = "wizard.png"
+            //    },
+            //    new Card()
+            //    {
+            //         id=50,
+            //         name = "Рояль",
+            //         card_class = CardClasses[1],
+            //         image = "piano.png"
+            //    },
+            //    new Card()
+            //    {
+            //         id=51,
+            //         name = "Жаб",
+            //         card_class = CardClasses[1],
+            //         image = "frog.png"
+            //    },
+            //    new Card()
+            //    {
+            //         id=52,
+            //         name = "Водяной",
+            //         card_class = CardClasses[3],
+            //         image = "WaterMan.png"
+            //    },
+            //    new Card()
+            //    {
+            //         id=53,
+            //         name = "Лучник",
+            //         card_class = CardClasses[2],
+            //         image = "archers.png"
+            //    }
+            //} }
         };
     }
 }
