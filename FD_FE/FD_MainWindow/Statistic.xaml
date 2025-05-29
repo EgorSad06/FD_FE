@@ -63,7 +63,18 @@
                         Width="159"
                         Click="BackButton_Click" 
                         Height="42" 
-                        FontSize="25"/>
+                        FontSize="25">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="10">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
             </StackPanel>
         </StackPanel>
     </Grid>

@@ -107,6 +107,7 @@ namespace FD_MainWindow.GameplayPages
             NavigationService.Navigate(new Uri("MainMenu.xaml", UriKind.Relative));
             // Если нужно закрыть текущую страницу:
             NavigationService.RemoveBackEntry();
+            AudioManager.PlayEffect("Assets/sound/listscroll.mp3");
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

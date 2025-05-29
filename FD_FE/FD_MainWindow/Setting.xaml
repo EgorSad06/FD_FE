@@ -63,20 +63,53 @@
                       Command="{Binding ApplyCommand}"
                       Width="120" Margin="0 0 10 0"
                         Click="ApplyButton_Click"
-                        FontSize="20" />
+                        FontSize="20" >
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="10">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
 
                 <Button Content="Сбросить"
                         Background="White"
                       Command="{Binding ResetCommand}"
                       Width="120" Margin="0 0 10 0"
                         Click="ResetButton_Click"
-                        FontSize="20" />
+                        FontSize="20" >
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="10">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
 
                 <Button Content="Назад" 
                       Command="{Binding BackCommand}"
                       Width="120"
                        Click="BackButton_Click"
-                        FontSize="20" />
+                        FontSize="20" >
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="10">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
             </StackPanel>
             <Image Height="832" Source="/SettingBG.png" Stretch="Fill" Width="1472"/>
         </StackPanel>
