@@ -97,7 +97,7 @@ namespace FD_FE
         public BoardCard(Card card, int board_index = 0, char card_force='p') // копия имеющейся карты
         {
             id = card.id; name = card.name; description = card.description; card_class = card.card_class;
-            start_HP = card.start_HP; function = card.function; image = card.image; AV = 1;
+            HP = start_HP = card.start_HP; function = card.function; image = card.image; AV = 1;
             source = card;
             force = card_force;
             board_i = board_index;
@@ -233,7 +233,10 @@ namespace FD_FE
 
         public void BoardCardChanged(BoardCard sender)
         {
-            if (sender.HP == 0) RemBoardCard(sender.board_i);
+            if (sender.HP < 0) {
+                
+                RemBoardCard(sender.board_i);
+            }
         }
         public void BoardCardMoved(BoardCard sender, int prev_i)
         {

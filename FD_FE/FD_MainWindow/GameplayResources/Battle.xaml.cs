@@ -57,15 +57,15 @@ namespace FD_MainWindow
         {
             if (Game.is_host) // перемешивание колоды
             {
-                Game.p_seed += 4013;
-                Game.o_seed -= 4013;
+                Game.p_seed *= 4013;
+                Game.o_seed /= 4013;
                 Game.p_deck.SetSqnc(Game.p_seed);
                 Game.o_deck.SetSqnc(Game.o_seed);
             }
             else
             {
-                Game.p_seed -= 4013;
-                Game.o_seed += 4013;
+                Game.p_seed /= 4013;
+                Game.o_seed *= 4013;
                 Game.p_deck.SetSqnc(Game.p_seed);
                 Game.o_deck.SetSqnc(Game.o_seed);
             }

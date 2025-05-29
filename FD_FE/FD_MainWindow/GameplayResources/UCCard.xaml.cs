@@ -29,12 +29,20 @@ namespace FD_MainWindow
             BoardCard = card;
             BoardCard.CardChanged += Update;
             BoardCard.CardMoved += Update;
+            
             Width = cardVB.Width *= scale; Height = cardVB.Height *= scale;
             cardB.IsMouseDirectlyOverChanged += (object sender, DependencyPropertyChangedEventArgs e) => Panel.SetZIndex(UCcard, ((Button)sender).IsMouseDirectlyOver ? 1 : -BoardCard.board_i);
             if (BoardCard.GetFraction() == 'f')
             {
                 // Пример: замени фон на "листики"
-                CardImage.Source = (ImageSource)Game.converter.ConvertFromString($"{GameplayData.sprites_path}Cards/{BoardCard.image}");
+                CardBackgound.ImageSource = (ImageSource)Game.converter.ConvertFromString($"{GameplayData.sprites_path}Cards/{BoardCard.image}");
+                CardGrid.Children.Remove(cardName);
+                cardBorderAV.VerticalAlignment = VerticalAlignment.Top;
+                cardAV.VerticalAlignment = VerticalAlignment.Top;
+                cardAV.Foreground = new SolidColorBrush( Colors.WhiteSmoke);
+                cardHP.VerticalAlignment = VerticalAlignment.Top;
+                cardHP.Foreground = new SolidColorBrush(Colors.Black);
+
             }
             else
             {

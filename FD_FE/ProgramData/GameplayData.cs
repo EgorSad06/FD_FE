@@ -228,20 +228,20 @@ namespace FD_FE
                 }
             } },
 
-            //{ 'm', new List<Card> {
-            //    new Card(
-            //        (BoardCard card)=>{ return 1; },
-            //        (BoardCard card, BoardCard[] targets)=>{
+            { 'm', new List<Card> {
+                new Card(
+                    (BoardCard card)=>{ return 1; },
+                    (BoardCard card, BoardCard[] targets)=>{
 
-            //        }
-            //    ) {
-            //        id = 25,
-            //        name = "Тест",
-            //        start_HP = 1,
-            //        card_class = CardClasses[0],
-            //        image = "transformator.png"
-            //    }
-            //} },
+                    }
+                ) {
+                    id = 25,
+                    name = "Тест",
+                    start_HP = 1,
+                    card_class = CardClasses[0],
+                    image = "transformator.png"
+                }
+            } },
 
             { 'f', new List<Card>{
                 new Card(

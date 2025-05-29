@@ -188,11 +188,5 @@
       <Name>ProgramData</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Resource Include="GameplayResources\t_template.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="GameplayResources\f_template.png" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

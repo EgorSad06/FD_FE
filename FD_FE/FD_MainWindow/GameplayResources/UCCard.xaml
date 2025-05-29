@@ -27,7 +27,7 @@
                 <ColumnDefinition Width="29"/>
             </Grid.ColumnDefinitions>
 
-            <Border Width="26" Height="32" HorizontalAlignment="Right" VerticalAlignment="Center">
+            <Border x:Name="cardBorderAV" Width="26" Height="32" HorizontalAlignment="Right" VerticalAlignment="Center">
                 <Border.Background>
                     <ImageBrush x:Name="CardClassFrame" Stretch="UniformToFill"/>
                 </Border.Background>
@@ -37,7 +37,7 @@
             <TextBlock x:Name="cardHP" Style="{StaticResource CardValueT}"  Foreground="WhiteSmoke" Width="26" Height="30" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center"/>
 
             <Image x:Name="CardImage" Height="90" Width="90" Stretch="Uniform" Grid.Row="1" Grid.ColumnSpan="3" HorizontalAlignment="Center"/>
-            <TextBlock Text="{Binding ElementName=UCcard, Path=BoardCard.name}"
+            <TextBlock x:Name="cardName" Text="{Binding ElementName=UCcard, Path=BoardCard.name}"
                     Style="{StaticResource CardNameT}" Grid.Row="2" Grid.ColumnSpan="3"/>
             <Button x:Name="cardB" Width="100" Height="160" Grid.ColumnSpan="3" Grid.RowSpan="3" Click="Button_Click" Background="Transparent" Style="{StaticResource CardButton}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>

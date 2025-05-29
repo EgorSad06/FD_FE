@@ -16,12 +16,12 @@
         <StackPanel x:Name="SP_modes" Orientation="Horizontal" Width="382" Height="300" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,25,0,0" Grid.RowSpan="2">
             <Button Tag="t" Width="180" Height="288" Style="{StaticResource CardButton}" Click="Mode_Click">
                 <Button.Background>
-                    <ImageBrush ImageSource="/GameplayResources/t_template.png" Stretch="UniformToFill"/>
+                    <ImageBrush Stretch="UniformToFill" ImageSource="/ClassLib;component/Assets/Sprites/CardTemplates/t_template.png"/>
                 </Button.Background>
             </Button>
             <Button Tag="f" Width="180" Height="288" Margin="20,0,0,0" Style="{StaticResource CardButton}" Click="Mode_Click">
                 <Button.Background>
-                    <ImageBrush ImageSource="/GameplayResources/f_template.png"  Stretch="UniformToFill"/>
+                    <ImageBrush ImageSource="/ClassLib;component/Assets/Sprites/CardTemplates/f_template.png"  Stretch="UniformToFill"/>
                 </Button.Background>
             </Button>
         </StackPanel>
