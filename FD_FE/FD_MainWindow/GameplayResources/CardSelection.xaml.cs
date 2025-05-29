@@ -23,7 +23,7 @@ namespace FD_MainWindow
     /// </summary>
     public partial class CardSelection : Page
     {
-        public static Board card_slct_board = new Board(Game.Mode.board_width, 1); // поле карт для выбора
+        public static Board card_slct_board = new Board(Game.Mode.start_cards_count, 1); // поле карт для выбора
         private static short[] p_slctd_card_i; // массив индексов выбранных карт для отправки
         private static short p_slctd_card_n;
         public CardSelection()

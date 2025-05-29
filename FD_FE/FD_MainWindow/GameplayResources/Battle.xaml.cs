@@ -89,7 +89,7 @@ namespace FD_MainWindow
             Game.Draw(Hand_board, HandBoardGrid);
             Game.Draw(Main_board, MainBoardGrid, (float) ((Game.Mode.board_height == 3) ? 1.8 : 1.6));
 
-            BoardCard.GlobalCardChanged += (BoardCard card) => { if (card.HP < 0 && card.force != 'p') GameStats.EnemiesKilled++; };
+            BoardCard.GlobalCardChanged += (BoardCard card) => { if (card.HP < 0 && card.force != 'p') App.CurrentStats.EnemiesKilled++; };
             Main_board.BoardChanged += (Board sender, int i) => { Game.Update(sender, i, MainBoardGrid, (float)((Game.Mode.board_height == 3) ? 1.8 : 1.6)); };
             Hand_board.BoardChanged += (Board sender, int i) => { Game.Update(sender, i, HandBoardGrid); };
 
@@ -249,7 +249,7 @@ namespace FD_MainWindow
 
                 if (Game.p_global_score> Game.o_global_score)
                 {
-                    GameStats.Wins++;
+                    App.CurrentStats.Wins++;
                     MessageBox.Show("Вы победили в этой игре!");
                 }
                 else if (Game.p_global_score == Game.o_global_score)
@@ -258,7 +258,7 @@ namespace FD_MainWindow
                 }
                 else
                 {
-                    GameStats.Losses++;
+                    App.CurrentStats.Losses++;
                     MessageBox.Show("Вы проиграли в этой игре");
                 }
 
