@@ -34,13 +34,6 @@
                 </StackPanel>
             </GroupBox>
 
-            <!-- Настройки яркости -->
-            <GroupBox Header="Яркость экрана" Foreground="White" FontSize="20"  Margin="0 0 0 10" Width="681">
-                <Slider Value="{Binding Brightness}" 
-                      Minimum="0" Maximum="100"
-                      TickFrequency="10"
-                      IsSnapToTickEnabled="True" Margin="0,0,-2,0"/>
-            </GroupBox>
 
             <!-- Настройки звука -->
             <GroupBox Header="Настройки звука" Foreground="White" FontSize="20" RenderTransformOrigin="0.5,0.5" Width="686">
@@ -53,12 +46,12 @@
                     </TransformGroup>
                 </GroupBox.RenderTransform>
                 <StackPanel>
-                    <Label Content="Общая громкость:" Foreground="White"/>
-                    <Slider Value="{Binding MasterVolume}" 
+                    <Label Content="Громкость музыки:" Foreground="White"/>
+                    <Slider Value="{Binding MasterVolume, Mode=TwoWay}" 
                           Minimum="0" Maximum="100" Width="672"/>
 
                     <Label Content="Громкость эффектов:" Foreground="White"/>
-                    <Slider Value="{Binding EffectsVolume}" 
+                    <Slider Value="{Binding EffectsVolume,  Mode=TwoWay}" 
                           Minimum="0" Maximum="100" Width="672"/>
                 </StackPanel>
             </GroupBox>

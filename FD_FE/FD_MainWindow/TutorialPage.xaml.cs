@@ -28,39 +28,27 @@ namespace FD_MainWindow
         {
             NavigationService.Navigate(new Uri("TutorialPages/CardDetailFolk.xaml", UriKind.Relative));
             //звук
-            MediaPlayer mediaPlayer = new MediaPlayer();
-            string basePath = AppDomain.CurrentDomain.BaseDirectory;
-            mediaPlayer.Open(new Uri("Assets/sound/listscroll.mp3", UriKind.RelativeOrAbsolute));
-            mediaPlayer.Play();
+            AudioManager.PlayEffect("Assets/sound/listscroll.mp3");
         }
 
         private void Card2_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("TutorialPages/CardDetailTechno.xaml", UriKind.Relative));
             //звук
-            MediaPlayer mediaPlayer = new MediaPlayer();
-            string basePath = AppDomain.CurrentDomain.BaseDirectory;
-            mediaPlayer.Open(new Uri("Assets/sound/listscroll.mp3", UriKind.RelativeOrAbsolute));
-            mediaPlayer.Play();
+            AudioManager.PlayEffect("Assets/sound/listscroll.mp3");
         }
 
         private void Card3_Click(object sender, RoutedEventArgs e)
         {
             //NavigationService.Navigate(new CardDetail2());
             //звук
-            MediaPlayer mediaPlayer = new MediaPlayer();
-            string basePath = AppDomain.CurrentDomain.BaseDirectory;
-            mediaPlayer.Open(new Uri("Assets/sound/listscroll.mp3", UriKind.RelativeOrAbsolute));
-            mediaPlayer.Play();
+            AudioManager.PlayEffect("Assets/sound/listscroll.mp3");
         }
         private void GoToMenu_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new MainMenu());
             //звук
-            MediaPlayer mediaPlayer = new MediaPlayer();
-            string basePath = AppDomain.CurrentDomain.BaseDirectory;
-            mediaPlayer.Open(new Uri("Assets/sound/listscroll.mp3", UriKind.RelativeOrAbsolute));
-            mediaPlayer.Play();
+            AudioManager.PlayEffect("Assets/sound/listscroll.mp3");
         }
         
     }

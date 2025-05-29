@@ -29,11 +29,9 @@ namespace FD_MainWindow
             InitializeComponent();
             MainFrame.Content = new MainMenu();
 
-            // Настройка пути и воспроизведение
-            _mediaPlayer.Open(new Uri("Assets/sound/BGsound.mp3", UriKind.RelativeOrAbsolute)); ;
-            _mediaPlayer.MediaEnded += MediaPlayer_Loop; // Цикличное воспроизведение
-            _mediaPlayer.Volume = 0; // можно настроить громкость
-            _mediaPlayer.Play();
+            //громкость эффектов
+            AudioManager.MusicVolume = 0.0; 
+            AudioManager.InitMusic();
         }
 
         private void MediaPlayer_Loop(object sender, EventArgs e)
