@@ -1,0 +1,73 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Huawei\\Documents\\GitHub\\FD_FE\\FD_FE\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|c:\\users\\huawei\\documents\\github\\fd_fe\\fd_fe\\fd_mainwindow\\gameplayresources\\startgame.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|solutionrelative:fd_mainwindow\\gameplayresources\\startgame.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|C:\\Users\\Huawei\\Documents\\GitHub\\FD_FE\\FD_FE\\fd_mainwindow\\mainmenu.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|solutionrelative:fd_mainwindow\\mainmenu.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainMenu.xaml",
+              "DocumentMoniker": "C:\\Users\\Huawei\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\MainMenu.xaml",
+              "RelativeDocumentMoniker": "FD_MainWindow\\MainMenu.xaml",
+              "ToolTip": "C:\\Users\\Huawei\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\MainMenu.xaml",
+              "RelativeToolTip": "FD_MainWindow\\MainMenu.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-29T22:14:26.981Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "StartGame.xaml",
+              "DocumentMoniker": "C:\\Users\\Huawei\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\GameplayResources\\StartGame.xaml",
+              "RelativeDocumentMoniker": "FD_MainWindow\\GameplayResources\\StartGame.xaml",
+              "ToolTip": "C:\\Users\\Huawei\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\GameplayResources\\StartGame.xaml",
+              "RelativeToolTip": "FD_MainWindow\\GameplayResources\\StartGame.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-29T21:51:02.78Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
