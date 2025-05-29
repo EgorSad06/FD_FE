@@ -100,7 +100,7 @@ namespace FD_FE
                 new Card(
                     (BoardCard card)=>{ return 1; },
                     (BoardCard card, BoardCard[] targets)=>{
-                        card.SetAV((short)(card.AV+1));
+                        targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
                     }
                 ) {
                     id = 5,
@@ -113,7 +113,7 @@ namespace FD_FE
                 new Card(
                     (BoardCard card)=>{ return 1; },
                     (BoardCard card, BoardCard[] targets)=>{
-                        card.SetAV((short)(card.AV+1));
+                        targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
                     }
                 ) {
                     id = 6,
@@ -126,7 +126,7 @@ namespace FD_FE
                 new Card(
                     (BoardCard card)=>{ return 1; },
                     (BoardCard card, BoardCard[] targets)=>{
-                        card.SetAV((short)(card.AV+1));
+                        targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
                     }
                 ) {
                     id = 7,
@@ -139,7 +139,7 @@ namespace FD_FE
                 new Card(
                     (BoardCard card)=>{ return 1; },
                     (BoardCard card, BoardCard[] targets)=>{
-
+                        targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
                     }
                 ) {
                     id = 8,
@@ -152,7 +152,7 @@ namespace FD_FE
                 new Card(
                     (BoardCard card)=>{ return 0; },
                     (BoardCard card, BoardCard[] targets)=>{
-
+                        targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
                     }
                 ) {
                     id = 9,
@@ -165,7 +165,7 @@ namespace FD_FE
                 new Card(
                     (BoardCard card)=>{ return 1; },
                     (BoardCard card, BoardCard[] targets)=>{
-
+                        targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
                     }
                 ) {
                     id = 10,
@@ -178,7 +178,7 @@ namespace FD_FE
                 new Card(
                     (BoardCard card)=>{ return card.AV; },
                     (BoardCard card, BoardCard[] targets)=>{
-
+                        targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
                     }
                 ) {
                     id = 11,
@@ -191,7 +191,7 @@ namespace FD_FE
                 new Card(
                     (BoardCard card)=>{ return 1; },
                     (BoardCard card, BoardCard[] targets)=>{
-
+                        targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
                     }
                 ) {
                     id = 12,
@@ -204,7 +204,7 @@ namespace FD_FE
                 new Card(
                     (BoardCard card)=>{ return card.AV; },
                     (BoardCard card, BoardCard[] targets)=>{
-
+                        targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
                     }
                 ) {
                     id = 13,
@@ -217,7 +217,7 @@ namespace FD_FE
                 new Card(
                     (BoardCard card)=>{ return 1; },
                     (BoardCard card, BoardCard[] targets)=>{
-
+                        targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
                     }
                 ) {
                     id = 14,
@@ -232,7 +232,7 @@ namespace FD_FE
                 new Card(
                     (BoardCard card)=>{ return 1; },
                     (BoardCard card, BoardCard[] targets)=>{
-
+                        targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
                     }
                 ) {
                     id = 25,
@@ -247,7 +247,7 @@ namespace FD_FE
                 new Card(
                     (BoardCard card)=>{ return 1; },
                     (BoardCard card, BoardCard[] targets)=>{
-
+                        targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
                     }
                 ) {
                     id = 45,
@@ -259,7 +259,7 @@ namespace FD_FE
                 new Card(
                     (BoardCard card)=>{ return 1; },
                     (BoardCard card, BoardCard[] targets)=>{
-
+                        targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
                     }
                 ) {
                     id = 46,
@@ -271,7 +271,7 @@ namespace FD_FE
                 new Card(
                     (BoardCard card)=>{ return 1; },
                     (BoardCard card, BoardCard[] targets)=>{
-
+                        targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
                     }
                 ) {
                      id=47,
@@ -283,7 +283,7 @@ namespace FD_FE
                 new Card(
                     (BoardCard card)=>{ return 1; },
                     (BoardCard card, BoardCard[] targets)=>{
-
+                        targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
                     }
                 ) {
                      id=48,
@@ -295,7 +295,7 @@ namespace FD_FE
                 new Card(
                     (BoardCard card)=>{ return 1; },
                     (BoardCard card, BoardCard[] targets)=>{
-
+                        targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
                     }
                 ) {
                      id=49,
@@ -307,7 +307,7 @@ namespace FD_FE
                 new Card(
                     (BoardCard card)=>{ return 1; },
                     (BoardCard card, BoardCard[] targets)=>{
-
+                        targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
                     }
                 ) {
                      id=50,
@@ -319,7 +319,7 @@ namespace FD_FE
                 new Card(
                     (BoardCard card)=>{ return 1; },
                     (BoardCard card, BoardCard[] targets)=>{
-
+                        targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
                     }
                 ) {
                      id=51,
@@ -331,7 +331,7 @@ namespace FD_FE
                 new Card(
                     (BoardCard card)=>{ return 1; },
                     (BoardCard card, BoardCard[] targets)=>{
-
+                        targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
                     }
                 ) {
                      id=52,
@@ -343,7 +343,7 @@ namespace FD_FE
                 new Card(
                     (BoardCard card)=>{ return 1; },
                     (BoardCard card, BoardCard[] targets)=>{
-
+                        targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
                     }
                 ) {
                      id=53,
