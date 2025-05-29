@@ -39,7 +39,7 @@
         
         <Button Content="Сбросить" Width="200" Height="120" FontSize="40" VerticalAlignment="Bottom" Margin="0,0,0,200" Grid.Column="4" Click="Ready_Click"/>
         <Button x:Name="B_ready" Content="Готово" Width="200" Height="120" FontSize="40" VerticalAlignment="Bottom" Margin="0,0,0,50" Grid.Column="4" Click="Ready_Click"/>
-        <TextBlock x:Name="State" Text="Состояние" TextAlignment="Center" FontSize="24" Background="WhiteSmoke" Width="200" Height="180" VerticalAlignment="Top" Margin="10" Grid.Column="4"/>
+        <TextBlock x:Name="State" Text="Состояние" FontSize="24" Background="WhiteSmoke" Width="200" Height="180" VerticalAlignment="Top" Margin="10" Grid.Column="4"/>
         <!--Button Width="100" Height="40" VerticalAlignment="Top" Click="Button_Click" Grid.Column="2"/-->
     </Grid>
 </Page>
