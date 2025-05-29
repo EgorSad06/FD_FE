@@ -9,6 +9,7 @@ namespace FD_MainWindow
     public class GameStats
         //Файл модели статистики
     {
+
         public TimeSpan TotalPlayTime { get; set; } = TimeSpan.Zero;
         public int Wins { get; set; }
         public int Losses { get; set; }
@@ -18,5 +19,6 @@ namespace FD_MainWindow
         {
             TotalPlayTime += sessionTime;
         }
+
     }
 }

@@ -17,8 +17,16 @@ namespace FD_MainWindow
             if (!File.Exists(FilePath))
                 return new GameStats();
 
-            string json = File.ReadAllText(FilePath);
-            return JsonConvert.DeserializeObject<GameStats>(json) ?? new GameStats();
+            try
+            {
+                string json = File.ReadAllText(FilePath);
+                return JsonConvert.DeserializeObject<GameStats>(json) ?? new GameStats();
+            }
+            catch (JsonException)
+            {
+                // Если файл повреждён — возвращаем новый объект
+                return new GameStats();
+            }
         }
 
         public static void SaveStats(GameStats stats)
@@ -28,4 +36,3 @@ namespace FD_MainWindow
         }
     }
 }
-
