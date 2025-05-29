@@ -10,7 +10,7 @@
       >
 
     <Grid Background="Tan">
-        <Image Source="/ClassLib;component/Assets/Sprites/Menu/BGbrown.png" Stretch="UniformToFill"/>
+        <Image Source="/ClassLib;component/Assets/Sprites/Menu/BGtuto.jpg" Stretch="UniformToFill"/>
 
         <!-- Левая часть: карточки -->
         <Viewbox Stretch="Uniform" Grid.Column="0" Margin="20">

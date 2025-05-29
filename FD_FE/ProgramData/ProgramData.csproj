@@ -56,6 +56,7 @@
     <Resource Include="Assets\Sprites\Menu\main_meny_bg.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Assets\Sprites\Menu\BGtuto.jpg" />
     <Resource Include="Assets\Sprites\Menu\BGbrown.png" />
     <Resource Include="Assets\Sprites\CardsForTutor\TurtorCardTechno.png" />
     <Resource Include="Assets\Sprites\CardsForTutor\TurtorCardFolk.png" />

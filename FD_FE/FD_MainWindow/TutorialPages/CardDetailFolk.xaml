@@ -9,7 +9,7 @@
 
     <Viewbox Stretch="Uniform">
         <Grid Width="1600" Height="900" Background="Tan">
-            <Image Source="/ClassLib;component/Assets/Sprites/Menu/BGbrown.png" Stretch="UniformToFill"/>
+            <Image Source="/ClassLib;component/Assets/Sprites/Menu/BGtuto.jpg" Stretch="UniformToFill"/>
             <Button Content="Назад"
                     Click="BackButton_Click"
                     FontSize="40"
