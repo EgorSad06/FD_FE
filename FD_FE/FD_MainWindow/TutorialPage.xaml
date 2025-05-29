@@ -10,7 +10,7 @@
       >
 
     <Grid Background="Tan">
-
+        <Image Source="/ClassLib;component/Assets/Sprites/Menu/BGbrown.png" Stretch="UniformToFill"/>
 
         <!-- Левая часть: карточки -->
         <Viewbox Stretch="Uniform" Grid.Column="0" Margin="20">
@@ -40,7 +40,7 @@
                     </Button>
                 </StackPanel>
 
-        <StackPanel Margin="20" Width="180">
+                <!--<StackPanel Margin="20" Width="180">
             <Button Click="Card3_Click" Height="260">
                 <StackPanel>
                     <Image Height="200"
@@ -49,7 +49,7 @@
                     <TextBlock Text="Name 3" HorizontalAlignment="Center" Margin="5"/>
                 </StackPanel>
             </Button>
-        </StackPanel>
+        </StackPanel> -->
 
 
             </StackPanel>
@@ -61,11 +61,11 @@
         <Button Content="В меню"
                 HorizontalAlignment="Right"
                 VerticalAlignment="Bottom"
-                Margin="20"
-                Width="120"
-                Height="40"
+                Margin="0,0,20,20"
+                Width="190"
+                Height="84"
                 Click="GoToMenu_Click"
-                Grid.ColumnSpan="2">
+                FontSize="35">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border Background="{TemplateBinding Background}"
