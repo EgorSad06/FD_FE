@@ -70,6 +70,8 @@ namespace FD_MainWindow
                 Game.o_deck.SetSqnc(Game.o_seed);
             }
 
+            Game.p_deck.hand_cards.Clear();
+            Game.o_deck.hand_cards.Clear();
             for (int i = 0; i < 3 && Game.p_deck.SqncEnd(); i++) // помещение в колоду 4 стартовых карт
             {
                 Hand_board.SetBoardCard(Game.p_deck.MoveToHand(), i);
@@ -110,7 +112,7 @@ namespace FD_MainWindow
                     if (card_act_sqnc == null)
                     {
                         if (card.card_act && card.force == 'p') {
-                            card_act_sqnc = new short[card.select_n(card) + 1];
+                            card_act_sqnc = new short[card.select_n(card) + 2];
                             card_act_sqnc[0] = (short)card.board_i;
                             card_act_sqnc_i++;
                         }
@@ -129,7 +131,9 @@ namespace FD_MainWindow
                             for (int i = 0; i <= Main_board.grid[card_act_sqnc[0]].select_n(Main_board.grid[card_act_sqnc[0]]); i++)
                                 act_sqnc[act_sqnc_i++] = card_act_sqnc[i];
                             act_sqnc[act_sqnc_i++] = card_act_sqnc[0];
-                            card.card_act = false;
+                            Main_board.grid[card_act_sqnc[0]].card_act = false;
+                            card_act_sqnc = null;
+                            card_act_sqnc_i = 0;
                         }
                     }
                 }
@@ -145,22 +149,29 @@ namespace FD_MainWindow
             if (Hand_board.grid.Contains(slct_card))
             {
                 slct_cards[slct_cards_i++] = (short)slct_card.board_i;
+                int hand_card_id = slct_card.board_i;
                 Main_board.SetBoardCard(Hand_board.RemBoardCard(slct_card.board_i), i);
+                Game.p_deck.MoveFromHand((short)hand_card_id);
                 slct_cards[slct_cards_i++] = i;
             }
         }
 
         private void Act()
         {
-            for (int i=0; act_sqnc[i]!=-1; i++)
+            for (int i = 0, j = 0; act_sqnc[i] != -1; i++)
             {
-
+                short acting_card = act_sqnc[i];
+                for (j = ++i; act_sqnc[j] != acting_card; j++) ;
+                BoardCard[] targets = new BoardCard[j - i];
+                for (int t=0; i < j; t++, i++) targets[t] = Main_board.grid[act_sqnc[i]];
+                Main_board.grid[act_sqnc[j]].Act(targets);
             }
         }
 
 // управление этапами игры
         private void Turn()
         {
+            p_turn = true;
             B_ready.IsEnabled = true;
             if (Check_End()) End_Battle();
             slct_cards = new short[14];
@@ -184,7 +195,7 @@ namespace FD_MainWindow
             if (Game.o_deck.SqncEnd()) Game.o_deck.MoveToHand();
             for (int i = 0; slct_cards[i]!=-1; i++)
             {
-                Main_board.SetBoardCard(Game.o_deck.hand_cards[slct_cards[i]], Main_board.count-1-slct_cards[++i], 'o');
+                Main_board.SetBoardCard(Game.o_deck.MoveFromHand(slct_cards[i]), Main_board.count-1-slct_cards[++i], 'o');
             }
 
             act_sqnc = await Game.ReceiveDataS(Game.o_deck.deck_cards.Count * 5);
@@ -193,7 +204,7 @@ namespace FD_MainWindow
                 act_sqnc[i] = (short)(Main_board.count - act_sqnc[i] - 1);
             }
 
-            // ACT
+            Act();
 
             Dec_turns();
 
@@ -203,12 +214,13 @@ namespace FD_MainWindow
         private void Ready_Click(object sender, RoutedEventArgs e)
         {
             B_ready.IsEnabled = false;
+            p_turn = false;
             slct_cards[slct_cards_i] = -1;
             Game.SendData(slct_cards, 14);
             act_sqnc[act_sqnc_i] = -1;
             Game.SendData(act_sqnc, Game.p_deck.deck_cards.Count * 5);
 
-            // ACT
+            Act();
 
             Dec_turns();
             Wait();

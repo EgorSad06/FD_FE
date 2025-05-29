@@ -35,10 +35,11 @@ namespace FD_MainWindow
 
             if (Game.battle==0)
             { // начало игры (карты не выбираются)
-                Game.slct_cards.SetSqnc();
+                Random random = new Random();
+                Game.slct_cards.SetSqnc(random.Next()+((Game.is_host)?4013:-4013));
                 for (int i = 0; i < Game.Mode.start_cards_count && Game.slct_cards.SqncEnd(); i++) {
                     Card temp = Game.slct_cards.GetCard();
-                    card_slct_board.SetBoardCard(new BoardCard(temp, i), i);
+                    card_slct_board.SetBoardCard(temp, i);
                     Game.p_deck.deck_cards.Add(temp);
                     p_slctd_card_i[p_slctd_card_n++] = (short)temp.id;
                 }
@@ -48,7 +49,7 @@ namespace FD_MainWindow
             else
             { // игра (карты выбираются)
                 UCCard.CardSelected += AddCardToDeck;
-                for (int i = 0; i < Game.Mode.start_cards_count && Game.slct_cards.SqncEnd(); i++) card_slct_board.SetBoardCard(new BoardCard(Game.slct_cards.GetCard()), i);
+                for (int i = 0; i < Game.Mode.start_cards_count && Game.slct_cards.SqncEnd(); i++) card_slct_board.SetBoardCard(Game.slct_cards.GetCard(), i);
                 Game.Draw(card_slct_board, CardSelectionGrid);
             }
         }

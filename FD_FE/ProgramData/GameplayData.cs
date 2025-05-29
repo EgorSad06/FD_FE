@@ -100,7 +100,7 @@ namespace FD_FE
                 new Card(
                     (BoardCard card)=>{ return 1; },
                     (BoardCard card, BoardCard[] targets)=>{
-                        
+                        card.SetAV((short)(card.AV+1));
                     }
                 ) {
                     id = 5,
@@ -113,7 +113,7 @@ namespace FD_FE
                 new Card(
                     (BoardCard card)=>{ return 1; },
                     (BoardCard card, BoardCard[] targets)=>{
-
+                        card.SetAV((short)(card.AV+1));
                     }
                 ) {
                     id = 6,
@@ -126,7 +126,7 @@ namespace FD_FE
                 new Card(
                     (BoardCard card)=>{ return 1; },
                     (BoardCard card, BoardCard[] targets)=>{
-
+                        card.SetAV((short)(card.AV+1));
                     }
                 ) {
                     id = 7,

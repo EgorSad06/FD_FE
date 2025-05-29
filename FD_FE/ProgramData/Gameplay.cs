@@ -117,7 +117,7 @@ namespace FD_FE
     {
         public List<Card> deck_cards = new List<Card>();
         public List<Card> hand_cards = new List<Card>();
-        private List<Card> _sequence = new List<Card>();
+        private List<Card> _sequence;
         private int _slcti = 0;
 
         public Deck() { }
@@ -133,6 +133,12 @@ namespace FD_FE
             hand_cards.Add(card);
             return card;
         }
+        public Card MoveFromHand(short i)
+        {
+            Card card = hand_cards[i];
+            hand_cards[i]=null;
+            return card;
+        }
         public bool SqncEnd() => _slcti < _sequence.Count;
         public int SetSqnc() // установка очереди
         {
@@ -140,6 +146,7 @@ namespace FD_FE
             int seed = rnd.Next();
             rnd = new Random(seed);
             int n = deck_cards.Count;
+            _sequence = new List<Card>();
             _sequence.AddRange(deck_cards);
             while (n > 1)
             {
@@ -162,6 +169,7 @@ namespace FD_FE
             }
             rnd = new Random(seed);
             int n = deck_cards.Count;
+            _sequence = new List<Card>();
             _sequence.AddRange(deck_cards);
             while (n > 1)
             {
