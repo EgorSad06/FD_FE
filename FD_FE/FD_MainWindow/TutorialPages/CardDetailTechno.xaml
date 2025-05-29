@@ -16,7 +16,18 @@
                     Width="200" Height="60"
                     HorizontalAlignment="Right"
                     VerticalAlignment="Bottom"
-                    Margin="0,0,65,40"/>
+                    Margin="0,0,65,40">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
 
             <!-- Урон -->
             <Label Content="Активное значение,&#xD;&#xA;он же урон"
@@ -71,12 +82,12 @@
                    Margin="1237,380,0,0"
                    Width="359" Height="108"/>
 
-            <Label Content="&#xA;#цс - количество союзников&#xA; этого же класса &#xA;в данной цепи&#xA;"
+            <Label Content="#гс - количество &#xD;&#xA;союзников этого же &#xD;&#xA;класса вокруг карты"
                    FontSize="25"
                    HorizontalAlignment="Left"
                    VerticalAlignment="Top"
-                   Margin="1237,561,0,0"
-                   Width="359" Height="108"/>
+                   Margin="1237,543,0,0"
+                   Width="359" Height="126"/>
 
             <Label Content="&#xA;#цс - количество союзников&#xA; этого же класса &#xA;в данной цепи&#xA;"
                    FontSize="25"

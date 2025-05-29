@@ -41,7 +41,7 @@ namespace FD_MainWindow
                 // AV справа сверху
                 cardBorderAV.VerticalAlignment = VerticalAlignment.Top;
                 cardBorderAV.HorizontalAlignment = HorizontalAlignment.Right;
-                cardBorderAV.Margin = new Thickness(0, 10, 10, 0); // сверху и справа
+                cardBorderAV.Margin = new Thickness(13, 2, 0, 3); // сверху и справа
 
                 cardAV.VerticalAlignment = VerticalAlignment.Center;
                 cardAV.Foreground = new SolidColorBrush(Colors.WhiteSmoke);
@@ -49,9 +49,27 @@ namespace FD_MainWindow
                 // HP слева сверху
                 cardHP.VerticalAlignment = VerticalAlignment.Top;
                 cardHP.HorizontalAlignment = HorizontalAlignment.Left;
-                cardHP.Margin = new Thickness(10, 10, 0, 0); // сверху и слева
+                cardHP.Margin = new Thickness(0, 2, 13, 3); // сверху и слева
                 cardHP.Foreground = new SolidColorBrush(Colors.Black);
+             
 
+                /* 
+                1 — нет отступа слева,
+
+                2 — отступ сверху,
+
+                3 — отступ справа,
+
+                4 — нет отступа снизу. 
+                */
+
+                //размер и шрифт 
+                cardHP.FontFamily = new FontFamily("Garamond");
+                cardHP.FontSize = 16;
+                cardHP.FontWeight = FontWeights.Bold;
+                cardAV.FontFamily = new FontFamily("Garamond");
+                cardAV.FontSize = 16;
+                cardAV.FontWeight = FontWeights.Bold;
             }
             else
             {
