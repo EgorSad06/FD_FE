@@ -149,6 +149,14 @@ namespace FD_MainWindow
             }
         }
 
+        private void Act()
+        {
+            for (int i=0; act_sqnc[i]!=-1; i++)
+            {
+
+            }
+        }
+
 // управление этапами игры
         private void Turn()
         {
@@ -190,12 +198,6 @@ namespace FD_MainWindow
 
             Turn();
         }
-
-
-        //private void Button_Click(object sender, RoutedEventArgs e)
-        //{
-
-        //}
 
         private void Ready_Click(object sender, RoutedEventArgs e)
         {

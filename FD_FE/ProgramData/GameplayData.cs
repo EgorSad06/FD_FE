@@ -56,14 +56,14 @@ namespace FD_FE
             new Effect()
             {
                 name = "Заряд",
-                function = delegate(BoardCard card)
+                function = delegate(BoardCard card, BoardCard[] targets)
                 {
                     card.SetAV((short)(card.AV*2));
                 }
             }
         };
 
-        // классы сз=0 гс=1 цс=2 пк=3 самоуничтожающийся=4
+        // классы сз=0 гс=1 цс=2 пк=3
         public static readonly List<CardClass> CardClasses = new List<CardClass>
         {
             new CardClass() {
@@ -84,13 +84,13 @@ namespace FD_FE
                 id = 'e',
                 name = "Пустые клетки",
                 GetAV = delegate(BoardCard card) { return 1; }
-            },
-            new CardClass()
-            {
-                id='d',
-                name= "самоуничтожающийся",
-                GetAV = delegate(BoardCard card) {return 1;  }
             }
+            //new CardClass()
+            //{
+            //    id='d',
+            //    name= "самоуничтожающийся",
+            //    GetAV = delegate(BoardCard card) {return 1;  }
+            //}
         };
 
         // карты 5-24 25-44 45-64 65-84
@@ -99,126 +99,259 @@ namespace FD_FE
             { 't', new List<Card> {
                 new Card(
                     (BoardCard card)=>{ return 1; },
-                    (BoardCard card)=>{
+                    (BoardCard card, BoardCard[] targets)=>{
                         
                     }
-                )
-                {
+                ) {
                     id = 5,
                     name = "Рельсотрон",
-                    start_HP = 1,
-                    card_class = CardClasses[1],
+                    start_HP = 4,
+                    card_class = CardClasses[2],
                     image = "railgun.png",
-                    select_n = (BoardCard card) => { return 1; },
                 },
+
                 new Card(
                     (BoardCard card)=>{ return 1; },
-                    (BoardCard card)=>{
+                    (BoardCard card, BoardCard[] targets)=>{
 
                     }
-                )
-                {
+                ) {
                     id = 6,
                     name = "Мечтатель",
-                    start_HP = 1,
+                    start_HP = 5,
                     card_class = CardClasses[3],
                     image = "dreamer.png",
-                    select_n = (BoardCard card) => { return 1; },
                 },
-                new Card(
-                    (BoardCard card)=>{ return card.AV; },
-                    (BoardCard card)=>{
 
-                    }
-                )
-                {
-                    id = 7,
-                    name = "Хакер",
-                    start_HP = 1,
-                    card_class = CardClasses[1],
-                    image = "hacker.png",
-                }
-            } },
-            { 'm', new List<Card> {
                 new Card(
                     (BoardCard card)=>{ return 1; },
-                    (BoardCard card)=>{
+                    (BoardCard card, BoardCard[] targets)=>{
 
                     }
-                )
-                {
-                    id = 25,
-                    name = "Тест",
-                    start_HP = 1,
+                ) {
+                    id = 7,
+                    name = "Хакер",
+                    start_HP = 3,
+                    card_class = CardClasses[1],
+                    image = "hacker.png",
+                },
+
+                new Card(
+                    (BoardCard card)=>{ return 1; },
+                    (BoardCard card, BoardCard[] targets)=>{
+
+                    }
+                ) {
+                    id = 8,
+                    name = "Дрон",
+                    start_HP = 2,
+                    card_class = CardClasses[1],
+                    image = "drone.png",
+                },
+
+                new Card(
+                    (BoardCard card)=>{ return 0; },
+                    (BoardCard card, BoardCard[] targets)=>{
+
+                    }
+                ) {
+                    id = 9,
+                    name = "Энергощит",
+                    start_HP = 4,
                     card_class = CardClasses[0],
-                    image = "transformator.png"
+                    image = "energy_shield.png",
+                },
+
+                new Card(
+                    (BoardCard card)=>{ return 1; },
+                    (BoardCard card, BoardCard[] targets)=>{
+
+                    }
+                ) {
+                    id = 10,
+                    name = "Заводчанин",
+                    start_HP = 6,
+                    card_class = CardClasses[0],
+                    image = "engeneer.png",
+                },
+
+                new Card(
+                    (BoardCard card)=>{ return card.AV; },
+                    (BoardCard card, BoardCard[] targets)=>{
+
+                    }
+                ) {
+                    id = 11,
+                    name = "Трансоформатор",
+                    start_HP = 4,
+                    card_class = CardClasses[1],
+                    image = "transformator.png",
+                },
+
+                new Card(
+                    (BoardCard card)=>{ return 1; },
+                    (BoardCard card, BoardCard[] targets)=>{
+
+                    }
+                ) {
+                    id = 12,
+                    name = "Биомашина",
+                    start_HP = 5,
+                    card_class = CardClasses[1],
+                    image = "biomachine.png",
+                },
+
+                new Card(
+                    (BoardCard card)=>{ return card.AV; },
+                    (BoardCard card, BoardCard[] targets)=>{
+
+                    }
+                ) {
+                    id = 13,
+                    name = "Кирпичемёт",
+                    start_HP = 3,
+                    card_class = CardClasses[2],
+                    image = "brick_shooter.png",
+                },
+
+                new Card(
+                    (BoardCard card)=>{ return 1; },
+                    (BoardCard card, BoardCard[] targets)=>{
+
+                    }
+                ) {
+                    id = 14,
+                    name = "Вычислитель",
+                    start_HP = 6,
+                    card_class = CardClasses[2],
+                    image = "calculator.png",
                 }
             } },
-            //{ 'f', new List<Card>{
-            //    new Card()
-            //    {
-            //        id = 45,
-            //        name = "Рыцарь",
-            //        card_class = CardClasses[4],
-            //        image = "knight.png"
-            //    },
-            //    new Card()
-            //    {
-            //        id = 46,
-            //        name = "Ворон",
+
+            //{ 'm', new List<Card> {
+            //    new Card(
+            //        (BoardCard card)=>{ return 1; },
+            //        (BoardCard card, BoardCard[] targets)=>{
+
+            //        }
+            //    ) {
+            //        id = 25,
+            //        name = "Тест",
+            //        start_HP = 1,
             //        card_class = CardClasses[0],
-            //        image = "crow.png"
-            //    },
-            //    new Card()
-            //    {
-            //         id=47,
-            //         name = "Ква-Мяу",
-            //         card_class = CardClasses[1],
-            //         image = "team.png"
-            //    },
-            //    new Card()
-            //    {
-            //         id=48,
-            //         name = "Болтник",
-            //         card_class = CardClasses[1],
-            //         image = "frogmaster.png"
-            //    },
-            //    new Card()
-            //    {
-            //         id=49,
-            //         name = "Маг",
-            //         card_class = CardClasses[0],
-            //         image = "wizard.png"
-            //    },
-            //    new Card()
-            //    {
-            //         id=50,
-            //         name = "Рояль",
-            //         card_class = CardClasses[1],
-            //         image = "piano.png"
-            //    },
-            //    new Card()
-            //    {
-            //         id=51,
-            //         name = "Жаб",
-            //         card_class = CardClasses[1],
-            //         image = "frog.png"
-            //    },
-            //    new Card()
-            //    {
-            //         id=52,
-            //         name = "Водяной",
-            //         card_class = CardClasses[3],
-            //         image = "WaterMan.png"
-            //    },
-            //    new Card()
-            //    {
-            //         id=53,
-            //         name = "Лучник",
-            //         card_class = CardClasses[2],
-            //         image = "archers.png"
+            //        image = "transformator.png"
             //    }
-            //} }
+            //} },
+
+            { 'f', new List<Card>{
+                new Card(
+                    (BoardCard card)=>{ return 1; },
+                    (BoardCard card, BoardCard[] targets)=>{
+
+                    }
+                ) {
+                    id = 45,
+                    name = "Рыцарь",
+                    card_class = CardClasses[0],
+                    image = "knight.png"
+                },
+
+                new Card(
+                    (BoardCard card)=>{ return 1; },
+                    (BoardCard card, BoardCard[] targets)=>{
+
+                    }
+                ) {
+                    id = 46,
+                    name = "Ворон",
+                    card_class = CardClasses[0],
+                    image = "crow.png"
+                },
+
+                new Card(
+                    (BoardCard card)=>{ return 1; },
+                    (BoardCard card, BoardCard[] targets)=>{
+
+                    }
+                ) {
+                     id=47,
+                     name = "Ква-Мяу",
+                     card_class = CardClasses[1],
+                     image = "team.png"
+                },
+
+                new Card(
+                    (BoardCard card)=>{ return 1; },
+                    (BoardCard card, BoardCard[] targets)=>{
+
+                    }
+                ) {
+                     id=48,
+                     name = "Болтник",
+                     card_class = CardClasses[1],
+                     image = "frogmaster.png"
+                },
+
+                new Card(
+                    (BoardCard card)=>{ return 1; },
+                    (BoardCard card, BoardCard[] targets)=>{
+
+                    }
+                ) {
+                     id=49,
+                     name = "Маг",
+                     card_class = CardClasses[0],
+                     image = "wizard.png"
+                },
+
+                new Card(
+                    (BoardCard card)=>{ return 1; },
+                    (BoardCard card, BoardCard[] targets)=>{
+
+                    }
+                ) {
+                     id=50,
+                     name = "Рояль",
+                     card_class = CardClasses[1],
+                     image = "piano.png"
+                },
+
+                new Card(
+                    (BoardCard card)=>{ return 1; },
+                    (BoardCard card, BoardCard[] targets)=>{
+
+                    }
+                ) {
+                     id=51,
+                     name = "Жаб",
+                     card_class = CardClasses[1],
+                     image = "frog.png"
+                },
+
+                new Card(
+                    (BoardCard card)=>{ return 1; },
+                    (BoardCard card, BoardCard[] targets)=>{
+
+                    }
+                ) {
+                     id=52,
+                     name = "Водяной",
+                     card_class = CardClasses[3],
+                     image = "WaterMan.png"
+                },
+
+                new Card(
+                    (BoardCard card)=>{ return 1; },
+                    (BoardCard card, BoardCard[] targets)=>{
+
+                    }
+                ) {
+                     id=53,
+                     name = "Лучник",
+                     card_class = CardClasses[2],
+                     image = "archers.png"
+                }
+            } }
         };
     }
 }

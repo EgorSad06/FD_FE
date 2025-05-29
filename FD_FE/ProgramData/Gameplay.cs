@@ -23,7 +23,7 @@ namespace FD_FE
         public short battles { get; set; }
     }
 
-    public delegate void Card_func(BoardCard card);
+    public delegate void Card_func(BoardCard card, BoardCard[] targets);
     public delegate short GetV_func(BoardCard card);
     
 
@@ -105,9 +105,9 @@ namespace FD_FE
             function = card.function;
         }
 
-        public void Act()
+        public void Act(BoardCard[] targets)
         {
-            function(this);
+            function(this, targets);
         }
     }
 

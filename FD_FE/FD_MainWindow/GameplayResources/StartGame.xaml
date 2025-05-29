@@ -19,9 +19,9 @@
                     <ImageBrush ImageSource="/GameplayResources/t_template.png" Stretch="UniformToFill"/>
                 </Button.Background>
             </Button>
-            <Button Tag="m" Width="180" Height="288" Margin="20,0,0,0" Style="{StaticResource CardButton}" Click="Mode_Click">
+            <Button Tag="f" Width="180" Height="288" Margin="20,0,0,0" Style="{StaticResource CardButton}" Click="Mode_Click">
                 <Button.Background>
-                    <ImageBrush ImageSource="/GameplayResources/m_template.png" Stretch="UniformToFill"/>
+                    <ImageBrush ImageSource="/GameplayResources/f_template.png"  Stretch="UniformToFill"/>
                 </Button.Background>
             </Button>
         </StackPanel>
