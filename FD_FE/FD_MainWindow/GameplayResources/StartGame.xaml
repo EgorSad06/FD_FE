@@ -16,7 +16,7 @@
     <Grid Background="Maroon">
         <Image Source="/ClassLib;component/Assets/Sprites/Menu/backgroundstar.png" Stretch="UniformToFill"/>
 
-        <StackPanel x:Name="SP_modes" Orientation="Horizontal" Width="837" Height="788" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="333,0,0,0">
+        <StackPanel x:Name="SP_modes" Orientation="Horizontal" Width="837" Height="788" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Button Tag="t" Width="432" Height="500" Style="{StaticResource CardButton}" Click="Mode_Click">
                 <Button.Background>
                     <ImageBrush Stretch="UniformToFill" ImageSource="/ClassLib;component/Assets/Sprites/CardTemplates/t_template.png"/>
@@ -41,34 +41,16 @@
             <RadioButton x:Name="RB_server" Foreground="White" Width="162" Height="45" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontSize="35" Content="Сервер"/>
             <TextBox x:Name="TB_IP" Width="173" Height="66" VerticalAlignment="Top" HorizontalAlignment="Right"/>
             <Button x:Name="B_connect" Width="178" Height="59" VerticalAlignment="Bottom" HorizontalAlignment="Right" FontSize="20" Content="Подключиться" Click="Connect_Click">
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}"
-                    BorderBrush="{TemplateBinding BorderBrush}"
-                    BorderThickness="{TemplateBinding BorderThickness}"
-                    CornerRadius="10">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
+
             </Button>
         </Grid>
 
         <Button x:Name="B_start" Content="Начать" FontSize="35" Width="170" Height="79"
         VerticalAlignment="Bottom" HorizontalAlignment="Right"
-        Margin="0,0,31,25" IsEnabled="False">
-            <Button.Template>
-                <ControlTemplate TargetType="Button">
-                    <Border Background="{TemplateBinding Background}"
-                    BorderBrush="{TemplateBinding BorderBrush}"
-                    BorderThickness="{TemplateBinding BorderThickness}"
-                    CornerRadius="10">
-                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    </Border>
-                </ControlTemplate>
-            </Button.Template>
+        Margin="0,0,10,10" IsEnabled="False" Click="StartButton_Click">
+            
         </Button>
-        <Button Content="Выход" FontSize="35" Width="170" Height="79" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Exit_Click" Margin="10,791,0,0">
+        <Button Content="Выход" FontSize="35" Width="170" Height="79" HorizontalAlignment="Left" VerticalAlignment="Bottom" Click="Exit_Click" Margin="10,0,0,10">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border Background="{TemplateBinding Background}"

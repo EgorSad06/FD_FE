@@ -115,6 +115,7 @@ namespace FD_MainWindow
                             card_act_sqnc = new short[card.select_n(card) + 2];
                             card_act_sqnc[0] = (short)card.board_i;
                             card_act_sqnc_i++;
+                            State.Text = "Назначение\nдействия";
                         }
                     }
                     else
@@ -134,6 +135,7 @@ namespace FD_MainWindow
                             Main_board.grid[card_act_sqnc[0]].card_act = false;
                             card_act_sqnc = null;
                             card_act_sqnc_i = 0;
+                            State.Text = "Ход";
                         }
                     }
                 }
@@ -141,6 +143,7 @@ namespace FD_MainWindow
                 {
                     card_act_sqnc = null;
                     card_act_sqnc_i = 0;
+                    State.Text = "Ход";
                 }
             }
         }
@@ -171,6 +174,7 @@ namespace FD_MainWindow
 // управление этапами игры
         private void Turn()
         {
+            State.Text = "Ход";
             p_turn = true;
             B_ready.IsEnabled = true;
             if (Check_End()) End_Battle();
@@ -186,6 +190,7 @@ namespace FD_MainWindow
         }
         private async void Wait()
         {
+            State.Text = "Ход\nпротивника";
             if (Check_End()) End_Battle();
             UCSlot.SlotSelected -= OnSlotSelected;
             if (Game.o_deck.hand_cards.Count < 7 && Game.o_deck.SqncEnd()) Game.o_deck.MoveToHand();
