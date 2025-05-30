@@ -40,11 +40,12 @@
             <Button x:Name="B_receive" Content="Получить" Width="100" Height="30" HorizontalAlignment="Right" VerticalAlignment="Bottom" IsEnabled="False" Click="Receive_Click"/>
         </Grid-->
 
-        <StackPanel Width="200" Height="320" Margin="0,0,10,0" HorizontalAlignment="Right" VerticalAlignment="Center">
-            <RadioButton  Foreground="White" Width="144" Height="49" FontSize="35" HorizontalAlignment="Left" Content="Клиент" Margin="10"/>
-            <RadioButton x:Name="RB_server" Foreground="White" Width="162" Height="45" FontSize="35" HorizontalAlignment="Left" Content="Сервер" Margin="10"/>
-            <TextBox x:Name="TB_IP" Foreground="White" Background="Black" FontSize="24" Width="180" Height="80" Margin="10"/>
-            <Button x:Name="B_connect" Width="180" Height="56" FontSize="24" Content="Подключиться" Click="Connect_Click" Margin="10">
+        <StackPanel Width="230" Height="400" Margin="0,0,10,0" HorizontalAlignment="Right" VerticalAlignment="Center">
+            <TextBox Text="Подключение" FontWeight="Bold" TextAlignment="Center" Foreground="White" Background="Transparent" BorderBrush="Transparent" FontSize="32" Width="230" Height="80" />
+            <RadioButton  Foreground="White" Width="162" Height="49" FontSize="35" HorizontalAlignment="Center" Content="Клиент" Margin="10"/>
+            <RadioButton x:Name="RB_server" Foreground="White" Width="162" Height="45" FontSize="35" HorizontalAlignment="Center" Content="Сервер" Margin="10"/>
+            <TextBox x:Name="TB_IP" Foreground="White" Background="Black" FontSize="24" Width="180" Height="50" Margin="10" ToolTip="IP-адрес"/>
+            <Button x:Name="B_connect" Width="210" Height="64" FontSize="28" Content="Подключиться" Click="Connect_Click" Margin="10">
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Border x:Name="border"
