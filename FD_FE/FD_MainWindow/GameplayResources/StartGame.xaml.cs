@@ -22,8 +22,11 @@ namespace FD_MainWindow.GameplayPages
     /// <summary>
     /// Логика взаимодействия для StartGame.xaml
     /// </summary>
+    
     public partial class StartGame : Page
     {
+        //Для музыка
+        private MediaPlayer _mediaPlayer = new MediaPlayer();
         public StartGame()
         {
             InitializeComponent();
@@ -70,6 +73,8 @@ namespace FD_MainWindow.GameplayPages
         private async void StartButton_Click(object sender, RoutedEventArgs e)
         {
             short i = 0;
+            //Отключение музыки
+            AudioManager.MusicVolume = 0.0;
             for (int j=0; j< GameplayData.StartCards.Count; j++) if (slct_f[j]) i++;
             if (i != 0)
             {
