@@ -39,7 +39,7 @@
         <TextBlock x:Name="TB_turns" Text="0" Width="80" FontWeight="Black" Style="{StaticResource CardValueT}" FontSize="100" VerticalAlignment="Center" Grid.Column="1"/>
         <TextBlock x:Name="TB_p_score" Text="0" Width="80" Foreground="DarkBlue" Style="{StaticResource CardValueT}" FontSize="80" VerticalAlignment="Center" Margin="0,0,0,-350" Grid.Column="1"/>
 
-        <Border x:Name="MainBoardBorder" Width="840" Height="1040" BorderBrush="White" BorderThickness="4" CornerRadius="20" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2">
+        <Border x:Name="MainBoardBorder" Width="840" Height="1000" BorderBrush="White" BorderThickness="4" CornerRadius="20" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2">
             <Border.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0.509"/>
@@ -47,17 +47,17 @@
                     <GradientStop Color="#FF220A23" Offset="0.004"/>
                 </LinearGradientBrush>
             </Border.Background>
-            <Grid x:Name="MainBoardGrid" Width="800" Height="1000" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Grid x:Name="MainBoardGrid" Width="800" Height="960" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Border>
 
-        <Border x:Name="HandBoardBorder" Width="240" Height="1040" BorderBrush="White" BorderThickness="2" CornerRadius="10" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="3">
+        <Border x:Name="HandBoardBorder" Width="240" Height="1000" BorderBrush="White" BorderThickness="2" CornerRadius="10" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="3">
             <Border.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black"/>
                     <GradientStop Color="#FF091B51" Offset="1"/>
                 </LinearGradientBrush>
             </Border.Background>
-            <Grid x:Name="HandBoardGrid" Width="200" Height="920" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Grid x:Name="HandBoardGrid" Width="200" Height="880" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Border>
 
         <Border BorderBrush="DimGray" BorderThickness="2" Grid.Column="4">

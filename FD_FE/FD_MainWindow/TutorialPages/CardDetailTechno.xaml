@@ -31,19 +31,13 @@
             </Button>
 
             <!-- Урон -->
-            <Label Content="Активное значение,&#xD;&#xA;он же урон"
-                   FontSize="25"
-                   HorizontalAlignment="Left"
-                   VerticalAlignment="Top"
-                   Margin="40,34,0,0"
-                   Width="410" Height="100"/>
 
             <!-- Основное описание -->
-            <Label Content="Класс карточки - обводка вокруг АЗ,&#xD;&#xA;от него зависит АЗ :&#xA;#гс - количество союзников этого&#xA; же класса вокруг карты&#xA;#цс - количество союзников этого&#xA; же класса в данной цепи&#xA;#пк - количество пустых клеток&#xA; вокруг карты&#xA;#сз - статическое значение"
+            <Label Content="Класс карточки - обводка вокруг АЗ, это&#xD;&#xA;класс карточки, от класса зависит&#xD;&#xA;АЗ и при каких условиях он &#xD;&#xA;действует"
                    FontSize="25"
                    HorizontalAlignment="Left"
                    VerticalAlignment="Top"
-                   Margin="23,294,0,0"
+                   Margin="39,85,0,0"
                    Width="654" Height="452"/>
 
             <!-- Основная карта -->
@@ -76,21 +70,21 @@
                    Stretch="Fill"/>
 
             <!-- Подписи к фреймам -->
-            <Label Content="&#xA;#цс - количество союзников&#xD;&#xA; этого же класса &#xD;&#xA;в данной цепи&#xA;"
+            <Label Content="ПК - группа союзников&#xD;&#xA;АЗ зависит &#xD;&#xA;от количества&#xD;&#xA; пустых клеток вокруг карты"
                    FontSize="25"
                    HorizontalAlignment="Left"
-                   VerticalAlignment="Top"
-                   Margin="1237,380,0,0"
-                   Width="359" Height="108"/>
+                   VerticalAlignment="Center"
+                   Margin="1237,0,0,0"
+                   Width="359" Height="140"/>
 
-            <Label Content="#гс - количество &#xD;&#xA;союзников этого же &#xD;&#xA;класса вокруг карты"
+            <Label Content="ГС группа союзников&#xD;&#xA; -  АЗ зависит  &#xD;&#xA;от количество &#xA;союзников этого же &#xA;класса вокруг карты"
                    FontSize="25"
                    HorizontalAlignment="Left"
                    VerticalAlignment="Top"
                    Margin="1237,543,0,0"
-                   Width="359" Height="126"/>
+                   Width="359" Height="203"/>
 
-            <Label Content="&#xA;#цс - количество союзников&#xA; этого же класса &#xA;в данной цепи&#xA;"
+            <Label Content="ЦС -цепь союзников&#xD;&#xA;АЗ зависит от &#xD;&#xA;количества карт в цепи"
                    FontSize="25"
                    HorizontalAlignment="Left"
                    VerticalAlignment="Top"
