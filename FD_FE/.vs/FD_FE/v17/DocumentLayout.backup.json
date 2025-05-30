@@ -1,17 +1,17 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\",
+  "WorkspaceRootPath": "C:\\Users\\Huawei\\Documents\\GitHub\\FD_FE\\FD_FE\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|c:\\users\\alekz\\documents\\github\\fd_fe\\fd_fe\\fd_mainwindow\\gameplayresources\\battle.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|c:\\users\\huawei\\documents\\github\\fd_fe\\fd_fe\\fd_mainwindow\\gameplayresources\\battle.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|solutionrelative:fd_mainwindow\\gameplayresources\\battle.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|c:\\users\\alekz\\documents\\github\\fd_fe\\fd_fe\\fd_mainwindow\\mainmenu.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|C:\\Users\\Huawei\\Documents\\GitHub\\FD_FE\\FD_FE\\fd_mainwindow\\mainmenu.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|solutionrelative:fd_mainwindow\\mainmenu.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|c:\\users\\alekz\\documents\\github\\fd_fe\\fd_fe\\fd_mainwindow\\mainmenu.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|C:\\Users\\Huawei\\Documents\\GitHub\\FD_FE\\FD_FE\\fd_mainwindow\\mainmenu.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{E4A7BEF8-4194-41D3-BFC5-2122725D38E6}|FD_MainWindow\\FD_MainWindow.csproj|solutionrelative:fd_mainwindow\\mainmenu.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
@@ -22,17 +22,25 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Battle.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\GameplayResources\\Battle.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Huawei\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\GameplayResources\\Battle.xaml.cs",
               "RelativeDocumentMoniker": "FD_MainWindow\\GameplayResources\\Battle.xaml.cs",
-              "ToolTip": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\GameplayResources\\Battle.xaml.cs",
+              "ToolTip": "C:\\Users\\Huawei\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\GameplayResources\\Battle.xaml.cs",
               "RelativeToolTip": "FD_MainWindow\\GameplayResources\\Battle.xaml.cs",
-              "ViewState": "AgIAABEBAAAAAAAAAAAAACoBAAARAAAAAAAAAA==",
+              "ViewState": "AgIAALoAAAAAAAAAAAASwMEAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-30T07:03:37.927Z",
               "EditorCaption": ""
@@ -41,26 +49,24 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "MainMenu.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\MainMenu.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Huawei\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\MainMenu.xaml.cs",
               "RelativeDocumentMoniker": "FD_MainWindow\\MainMenu.xaml.cs",
-              "ToolTip": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\MainMenu.xaml.cs",
+              "ToolTip": "C:\\Users\\Huawei\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\MainMenu.xaml.cs",
               "RelativeToolTip": "FD_MainWindow\\MainMenu.xaml.cs",
               "ViewState": "AgIAACQAAAAAAAAAAAAowDAAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T07:03:00.896Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-30T07:03:00.896Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "MainMenu.xaml",
-              "DocumentMoniker": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\MainMenu.xaml",
+              "DocumentMoniker": "C:\\Users\\Huawei\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\MainMenu.xaml",
               "RelativeDocumentMoniker": "FD_MainWindow\\MainMenu.xaml",
-              "ToolTip": "C:\\Users\\alekz\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\MainMenu.xaml",
+              "ToolTip": "C:\\Users\\Huawei\\Documents\\GitHub\\FD_FE\\FD_FE\\FD_MainWindow\\MainMenu.xaml",
               "RelativeToolTip": "FD_MainWindow\\MainMenu.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-05-30T07:02:59.555Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-30T07:02:59.555Z"
             }
           ]
         },

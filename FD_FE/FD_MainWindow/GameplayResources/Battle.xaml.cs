@@ -191,7 +191,7 @@ namespace FD_MainWindow
             State.Text = "Ход";
             p_turn = true;
             B_ready.IsEnabled = true;
-            if (Check_End()) End_Battle();
+            if (Check_End()) { End_Battle(); return; };
             slct_cards = new short[14];
             slct_cards_i = 0;
             act_sqnc = new short[Game.p_deck.deck_cards.Count * 5] ;
