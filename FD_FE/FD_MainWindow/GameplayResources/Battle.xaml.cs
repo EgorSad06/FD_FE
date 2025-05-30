@@ -298,7 +298,7 @@ namespace FD_MainWindow
                     MessageBox.Show("Вы проиграли в этой игре");
                 }
 
-                NavigationService.Navigate(new Uri("GameplayResources/GameStart.xaml", UriKind.Relative));
+                NavigationService.Navigate(new Uri("GameplayResources/StartGame.xaml", UriKind.Relative));
                 NavigationService.RemoveBackEntry();
             }
         }
