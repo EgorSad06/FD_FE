@@ -82,7 +82,7 @@ namespace FD_FE
             board_i = new_board_i;
             CardMoved?.Invoke(this, prev_i);
         }
-        public void SetHP(short new_HP) { HP = new_HP; CardChanged?.Invoke(this); }
+        public void SetHP(short new_HP) { HP = new_HP; CardChanged?.Invoke(this);  GlobalCardChanged?.Invoke(this); }
         public void SetAV() { AV = card_class.GetAV(this); CardChanged?.Invoke(this); }
         public void SetAV(short new_AV) { AV = new_AV; CardChanged?.Invoke(this); }
 
@@ -194,7 +194,12 @@ namespace FD_FE
         public readonly short count;
         public void set_grid(int i, BoardCard new_card) {
             grid[i] = new_card;
-            grid[i]?.SetBI(i);
+            if (grid[i] != null)
+            {
+                grid[i].SetBI(i);
+                grid[i].CardChanged += BoardCardChanged;
+                grid[i].CardMoved += BoardCardMoved;
+            }
             BoardChanged?.Invoke(this, i);
         }
 
@@ -217,8 +222,6 @@ namespace FD_FE
             while (i < count && grid[i] != null) i++;
             if (new_card != null && i != count) {
                 set_grid(i, new_bcard = new BoardCard(new_card, i));
-                new_bcard.CardChanged += BoardCardChanged;
-                new_bcard.CardMoved += BoardCardMoved;
             }
         }
         public void SetBoardCard(Card new_card, int i, char force='p')
@@ -242,7 +245,7 @@ namespace FD_FE
 
         public void BoardCardChanged(BoardCard sender)
         {
-            if (sender.HP < 0) {
+            if (sender.HP <= 0) {
                 
                 RemBoardCard(sender.board_i);
             }

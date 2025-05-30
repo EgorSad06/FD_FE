@@ -100,7 +100,7 @@ namespace FD_FE
                 new Card(
                     (BoardCard card)=>{ return 1; },
                     (BoardCard card, BoardCard[] targets)=>{
-                        targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
+                        if (targets.Length>0) targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
                     }
                 ) {
                     id = 5,
@@ -113,7 +113,7 @@ namespace FD_FE
                 new Card(
                     (BoardCard card)=>{ return 1; },
                     (BoardCard card, BoardCard[] targets)=>{
-                        targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
+                        if (targets.Length>0) targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
                     }
                 ) {
                     id = 6,
@@ -126,7 +126,7 @@ namespace FD_FE
                 new Card(
                     (BoardCard card)=>{ return 1; },
                     (BoardCard card, BoardCard[] targets)=>{
-                        targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
+                        if (targets.Length>0) targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
                     }
                 ) {
                     id = 7,
@@ -139,7 +139,7 @@ namespace FD_FE
                 new Card(
                     (BoardCard card)=>{ return 1; },
                     (BoardCard card, BoardCard[] targets)=>{
-                        targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
+                        if (targets.Length>0) targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
                     }
                 ) {
                     id = 8,
@@ -152,7 +152,7 @@ namespace FD_FE
                 new Card(
                     (BoardCard card)=>{ return 0; },
                     (BoardCard card, BoardCard[] targets)=>{
-                        targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
+                        if (targets.Length>0) targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
                     }
                 ) {
                     id = 9,
@@ -165,7 +165,7 @@ namespace FD_FE
                 new Card(
                     (BoardCard card)=>{ return 1; },
                     (BoardCard card, BoardCard[] targets)=>{
-                        targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
+                        if (targets.Length>0) targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
                     }
                 ) {
                     id = 10,
@@ -178,7 +178,7 @@ namespace FD_FE
                 new Card(
                     (BoardCard card)=>{ return card.AV; },
                     (BoardCard card, BoardCard[] targets)=>{
-                        targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
+                        if (targets.Length>0) targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
                     }
                 ) {
                     id = 11,
@@ -191,7 +191,7 @@ namespace FD_FE
                 new Card(
                     (BoardCard card)=>{ return 1; },
                     (BoardCard card, BoardCard[] targets)=>{
-                        targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
+                        if (targets.Length>0) targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
                     }
                 ) {
                     id = 12,
@@ -204,7 +204,7 @@ namespace FD_FE
                 new Card(
                     (BoardCard card)=>{ return card.AV; },
                     (BoardCard card, BoardCard[] targets)=>{
-                        targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
+                        if (targets.Length>0) targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
                     }
                 ) {
                     id = 13,
@@ -217,7 +217,7 @@ namespace FD_FE
                 new Card(
                     (BoardCard card)=>{ return 1; },
                     (BoardCard card, BoardCard[] targets)=>{
-                        targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
+                        if (targets.Length>0) targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
                     }
                 ) {
                     id = 14,
@@ -232,7 +232,7 @@ namespace FD_FE
                 new Card(
                     (BoardCard card)=>{ return 1; },
                     (BoardCard card, BoardCard[] targets)=>{
-                        targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
+                        if (targets.Length>0) targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
                     }
                 ) {
                     id = 25,
@@ -247,11 +247,12 @@ namespace FD_FE
                 new Card(
                     (BoardCard card)=>{ return 1; },
                     (BoardCard card, BoardCard[] targets)=>{
-                        targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
+                        if (targets.Length>0) targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
                     }
                 ) {
                     id = 45,
                     name = "Рыцарь",
+                    start_HP = 6,
                     card_class = CardClasses[0],
                     image = "knight.png"
                 },
@@ -259,11 +260,12 @@ namespace FD_FE
                 new Card(
                     (BoardCard card)=>{ return 1; },
                     (BoardCard card, BoardCard[] targets)=>{
-                        targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
+                        if (targets.Length>0) targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
                     }
                 ) {
                     id = 46,
                     name = "Ворон",
+                    start_HP = 4,
                     card_class = CardClasses[0],
                     image = "crow.png"
                 },
@@ -271,11 +273,12 @@ namespace FD_FE
                 new Card(
                     (BoardCard card)=>{ return 1; },
                     (BoardCard card, BoardCard[] targets)=>{
-                        targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
+                        if (targets.Length>0) targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
                     }
                 ) {
                      id=47,
                      name = "Ква-Мяу",
+                     start_HP = 5,
                      card_class = CardClasses[1],
                      image = "team.png"
                 },
@@ -283,11 +286,12 @@ namespace FD_FE
                 new Card(
                     (BoardCard card)=>{ return 1; },
                     (BoardCard card, BoardCard[] targets)=>{
-                        targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
+                        if (targets.Length>0) targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
                     }
                 ) {
                      id=48,
                      name = "Болтник",
+                     start_HP = 6,
                      card_class = CardClasses[1],
                      image = "frogmaster.png"
                 },
@@ -295,11 +299,12 @@ namespace FD_FE
                 new Card(
                     (BoardCard card)=>{ return 1; },
                     (BoardCard card, BoardCard[] targets)=>{
-                        targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
+                        if (targets.Length>0) targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
                     }
                 ) {
                      id=49,
                      name = "Маг",
+                     start_HP = 4,
                      card_class = CardClasses[0],
                      image = "wizard.png"
                 },
@@ -307,11 +312,12 @@ namespace FD_FE
                 new Card(
                     (BoardCard card)=>{ return 1; },
                     (BoardCard card, BoardCard[] targets)=>{
-                        targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
+                        if (targets.Length>0) targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
                     }
                 ) {
                      id=50,
                      name = "Рояль",
+                     start_HP = 4,
                      card_class = CardClasses[1],
                      image = "piano.png"
                 },
@@ -319,11 +325,12 @@ namespace FD_FE
                 new Card(
                     (BoardCard card)=>{ return 1; },
                     (BoardCard card, BoardCard[] targets)=>{
-                        targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
+                        if (targets.Length>0) targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
                     }
                 ) {
                      id=51,
                      name = "Жаб",
+                     start_HP = 2,
                      card_class = CardClasses[1],
                      image = "frog.png"
                 },
@@ -331,11 +338,12 @@ namespace FD_FE
                 new Card(
                     (BoardCard card)=>{ return 1; },
                     (BoardCard card, BoardCard[] targets)=>{
-                        targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
+                        if (targets.Length>0) targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
                     }
                 ) {
                      id=52,
                      name = "Водяной",
+                     start_HP = 5,
                      card_class = CardClasses[3],
                      image = "WaterMan.png"
                 },
@@ -343,11 +351,12 @@ namespace FD_FE
                 new Card(
                     (BoardCard card)=>{ return 1; },
                     (BoardCard card, BoardCard[] targets)=>{
-                        targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
+                        if (targets.Length>0) targets[0]?.SetHP((short)(targets[0]?.HP-card.AV));
                     }
                 ) {
                      id=53,
                      name = "Лучник",
+                     start_HP = 4,
                      card_class = CardClasses[2],
                      image = "archers.png"
                 }

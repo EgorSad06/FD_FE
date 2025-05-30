@@ -70,6 +70,9 @@ namespace FD_MainWindow
                 Game.o_deck.SetSqnc(Game.o_seed);
             }
 
+            Main_board = new Board(Game.Mode.board_width, Game.Mode.board_height);
+            Hand_board = new Board(1, 7);
+
             Game.p_deck.hand_cards.Clear();
             Game.o_deck.hand_cards.Clear();
             for (int i = 0; i < 3 && Game.p_deck.SqncEnd(); i++) // помещение в колоду 4 стартовых карт
@@ -91,7 +94,18 @@ namespace FD_MainWindow
             Game.Draw(Hand_board, HandBoardGrid);
             Game.Draw(Main_board, MainBoardGrid, (float) ((Game.Mode.board_height == 3) ? 1.8 : 1.6));
 
-            BoardCard.GlobalCardChanged += (BoardCard card) => { if (card.HP < 0 && card.force != 'p') App.CurrentStats.EnemiesKilled++; };
+            BoardCard.GlobalCardChanged += (BoardCard card) => {
+                if (card.HP <= 0)
+                {
+                    if (card.force != 'p')
+                    {
+                        p_score++;
+                        App.CurrentStats.EnemiesKilled++;
+                    }
+                    else o_score++;
+                    ScoreChanged.Invoke();
+                }
+            };
             Main_board.BoardChanged += (Board sender, int i) => { Game.Update(sender, i, MainBoardGrid, (float)((Game.Mode.board_height == 3) ? 1.8 : 1.6)); };
             Hand_board.BoardChanged += (Board sender, int i) => { Game.Update(sender, i, HandBoardGrid); };
 
@@ -191,14 +205,14 @@ namespace FD_MainWindow
         private async void Wait()
         {
             State.Text = "Ход\nпротивника";
-            if (Check_End()) End_Battle();
+            if (Check_End()) { End_Battle(); return; };
             UCSlot.SlotSelected -= OnSlotSelected;
             if (Game.o_deck.hand_cards.Count < 7 && Game.o_deck.SqncEnd()) Game.o_deck.MoveToHand();
 
             slct_cards = await Game.ReceiveDataS(14);
 
             if (Game.o_deck.SqncEnd()) Game.o_deck.MoveToHand();
-            for (int i = 0; slct_cards[i]!=-1; i++)
+            for (int i = 0; slct_cards?[i]!=-1; i++)
             {
                 Main_board.SetBoardCard(Game.o_deck.MoveFromHand(slct_cards[i]), Main_board.count-1-slct_cards[++i], 'o');
             }
@@ -229,6 +243,11 @@ namespace FD_MainWindow
 
             Dec_turns();
             Wait();
+        }
+        private void Clear_Click(object sender, RoutedEventArgs e)
+        {
+            act_sqnc = new short[Game.p_deck.deck_cards.Count * 5];
+            act_sqnc_i = 0;
         }
 
         private void End_Battle()

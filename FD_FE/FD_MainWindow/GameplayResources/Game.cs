@@ -107,7 +107,7 @@ namespace FD_MainWindow
                     {
                         if (board.grid[i]==null)
                         {
-                            grid.Children.Remove((UCCard)e);
+                            grid.Children.Remove(e);
                             Draw((short)i, grid,
                                 grid.Width / board.width * (i % board.width + 0.5),
                                 grid.Height / board.height * (i / board.width + 0.5),

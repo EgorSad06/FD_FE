@@ -7,12 +7,38 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="1000"
       Title="CardSelection">
-    <Grid Background="Maroon">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/ClassLib;component/Assets/Sprites/Menu/backgroundstar.png" Stretch="UniformToFill"/>
+        </Grid.Background>
         <Border Width="1230" Height="318" BorderBrush="White" BorderThickness="2" CornerRadius="10">
             <Grid x:Name="CardSelectionGrid" Width="1200" Height="288">
 
             </Grid>
         </Border>
-        <Button Content="Готов" Width="100" Height="50" Click="Start_Click" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,10"/>
+        <Button Content="Готово" Width="160" Height="56" Click="Start_Click" FontSize="24" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,10">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="border"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="LightGray"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="DeepSkyBlue"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="border" Property="Opacity" Value="0.5"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
     </Grid>
 </Page>
