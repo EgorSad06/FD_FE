@@ -84,6 +84,7 @@ namespace FD_MainWindow
                 Game.o_deck.MoveToHand();
             }
 
+            o_score = p_score = 0;
             ScoreChanged += () => {
                 TB_o_score.Text = o_score.ToString();
                 TB_p_score.Text = p_score.ToString();
@@ -190,8 +191,8 @@ namespace FD_MainWindow
         {
             State.Text = "Ход";
             p_turn = true;
-            B_ready.IsEnabled = true;
             if (Check_End()) { End_Battle(); return; };
+            B_ready.IsEnabled = true;
             slct_cards = new short[14];
             slct_cards_i = 0;
             act_sqnc = new short[Game.p_deck.deck_cards.Count * 5] ;
