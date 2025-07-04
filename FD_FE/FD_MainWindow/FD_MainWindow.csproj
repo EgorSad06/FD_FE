@@ -59,38 +59,37 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="AudioManager.cs" />
+    <Compile Include="GameplayResources\Game.cs" />
     <Compile Include="StatsManager.cs" />
-    <Compile Include="GameStats.cs" />
     <Compile Include="GameplayResources\UCSlot.xaml.cs">
       <DependentUpon>UCSlot.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TutorialPage.xaml.cs">
+    <Compile Include="Pages\TutorialPage.xaml.cs">
       <DependentUpon>TutorialPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="GameplayResources\Game.cs" />
     <Compile Include="GameplayResources\StartGame.xaml.cs">
       <DependentUpon>StartGame.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Setting.xaml.cs">
+    <Compile Include="Pages\Setting.xaml.cs">
       <DependentUpon>Setting.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Statistic.xaml.cs">
+    <Compile Include="Pages\Statistic.xaml.cs">
       <DependentUpon>Statistic.xaml</DependentUpon>
     </Compile>
     <Compile Include="GameplayResources\UCCard.xaml.cs">
       <DependentUpon>UCCard.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TutorialPages\CardDetailTechno.xaml.cs">
+    <Compile Include="Pages\TutorialPages\CardDetailTechno.xaml.cs">
       <DependentUpon>CardDetailTechno.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TutorialPages\CardDetailFolk.xaml.cs">
+    <Compile Include="Pages\TutorialPages\CardDetailFolk.xaml.cs">
       <DependentUpon>CardDetailFolk.xaml</DependentUpon>
     </Compile>
     <Page Include="GameplayResources\UCSlot.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="TutorialPage.xaml">
+    <Page Include="Pages\TutorialPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -102,7 +101,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="GameplayResources\CardStyles.xaml">
+    <Page Include="ResDict.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -110,7 +109,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="MainMenu.xaml">
+    <Page Include="Pages\MainMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -128,18 +127,18 @@
     <Compile Include="GameplayResources\CardSelection.xaml.cs">
       <DependentUpon>CardSelection.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainMenu.xaml.cs">
+    <Compile Include="Pages\MainMenu.xaml.cs">
       <DependentUpon>MainMenu.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Setting.xaml">
+    <Page Include="Pages\Setting.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Statistic.xaml">
+    <Page Include="Pages\Statistic.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -147,11 +146,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="TutorialPages\CardDetailTechno.xaml">
+    <Page Include="Pages\TutorialPages\CardDetailTechno.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="TutorialPages\CardDetailFolk.xaml">
+    <Page Include="Pages\TutorialPages\CardDetailFolk.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -189,5 +188,6 @@
       <Name>ProgramData</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

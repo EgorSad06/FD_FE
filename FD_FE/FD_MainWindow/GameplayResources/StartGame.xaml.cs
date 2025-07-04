@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Net;
 using System.Net.Sockets;
+using System.Globalization;
 using FD_FE;
 
 namespace FD_MainWindow.GameplayPages
@@ -30,6 +31,16 @@ namespace FD_MainWindow.GameplayPages
         public StartGame()
         {
             InitializeComponent();
+
+            foreach (char frac in GameplayData.StartCards.Keys)
+            {
+                var new_but = new Button();
+                new_but.Style = (Style) Resources["S_frct_but"];
+                new_but.Tag = frac;
+                new_but.Background = new ImageBrush(Game.ToImg(@"CardTemplates\" + frac + "_template.png")) { Stretch = Stretch.UniformToFill };
+                new_but.Click += Mode_Click;
+                SP_modes.Children.Add(new_but);
+            }
         }
 
         // подключение
@@ -64,7 +75,7 @@ namespace FD_MainWindow.GameplayPages
             {
                 if (GameplayData.StartCards.Keys.ElementAt(i) == ((Button)sender).Tag.ToString()[0]) {
                     slct_f[i] = ! slct_f[i];
-                    ((Button)sender).BorderThickness = new Thickness( slct_f[i] ? 2 : 4 );
+                    ((Button)sender).BorderThickness = new Thickness( slct_f[i] ? 4 : 8 );
                 }
             }
         }
@@ -109,7 +120,7 @@ namespace FD_MainWindow.GameplayPages
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
             Game.Disconnect();
-            NavigationService.Navigate(new Uri("MainMenu.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("Pages/MainMenu.xaml", UriKind.Relative));
             // Если нужно закрыть текущую страницу:
             NavigationService.RemoveBackEntry();
             AudioManager.PlayEffect("Assets/sound/listscroll.mp3");

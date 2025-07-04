@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:FD_MainWindow"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary Source="/ResDict.xaml"/>
     </Application.Resources>
 </Application>

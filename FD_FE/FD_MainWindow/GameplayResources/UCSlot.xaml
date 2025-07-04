@@ -5,12 +5,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:FD_MainWindow"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <UserControl.Resources>
-        <ResourceDictionary Source="/GameplayResources/CardStyles.xaml"/>
-    </UserControl.Resources>
-    <Viewbox x:Name="slotVB" Width="100" Height="160" Stretch="UniformToFill">
-        <Button Width="100" Height="160" Grid.ColumnSpan="3" Grid.RowSpan="3" Click="Button_Click" Background="Transparent" Style="{StaticResource CardButton}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-    </Viewbox>
+             mc:Ignorable="d"
+             d:DesignHeight="240" d:DesignWidth="240">
+        <Button x:Name="slotVB" Width="100" Height="160"
+                Grid.ColumnSpan="3" Grid.RowSpan="3"
+                Click="Button_Click"
+                Background="Transparent"
+                BorderBrush="Transparent"
+                BorderThickness="4"
+                Template="{StaticResource T_card_but}"
+                HorizontalAlignment="Center" VerticalAlignment="Center"/>
 </UserControl>

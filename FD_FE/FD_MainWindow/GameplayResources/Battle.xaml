@@ -9,12 +9,16 @@
       d:DesignHeight="1080" d:DesignWidth="1960"
       Title="Battle">
     <Page.Resources>
-        <ResourceDictionary Source="/GameplayResources/CardStyles.xaml"/>
+        <Style x:Key="S_but" BasedOn="{StaticResource S_std_but}" TargetType="Button">
+            <Setter Property="Width" Value="200"/>
+            <Setter Property="Height" Value="120"/>
+            <Setter Property="FontSize" Value="40"/>
+        </Style>
     </Page.Resources>
 
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="/ClassLib;component/Assets/Sprites/Menu/backgroundstar.png" Stretch="UniformToFill"/>
+            <ImageBrush ImageSource="/ProgramData;component/Assets/Sprites/Menu/backgroundstar.png" Stretch="UniformToFill"/>
         </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
@@ -71,55 +75,8 @@
             </Border.Background>
         </Border>
 
-        <Button Content="Сбросить" Width="200" Height="120" FontSize="40" VerticalAlignment="Bottom" Margin="0,0,0,200" Grid.Column="4" Click="Clear_Click">
-            <Button.Template>
-                <ControlTemplate TargetType="Button">
-                    <Border x:Name="border"
-                    Background="{TemplateBinding Background}"
-                    BorderBrush="{TemplateBinding BorderBrush}"
-                    BorderThickness="{TemplateBinding BorderThickness}"
-                    CornerRadius="10">
-                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    </Border>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="border" Property="Background" Value="LightGray"/>
-                        </Trigger>
-                        <Trigger Property="IsPressed" Value="True">
-                            <Setter TargetName="border" Property="Background" Value="DeepSkyBlue"/>
-                        </Trigger>
-                        <Trigger Property="IsEnabled" Value="False">
-                            <Setter TargetName="border" Property="Opacity" Value="0.5"/>
-                        </Trigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>
-        <Button x:Name="B_ready" Content="Готово" Width="200" Height="120" FontSize="40" VerticalAlignment="Bottom" Margin="0,0,0,50" Grid.Column="4" Click="Ready_Click">
-            <Button.Template>
-                <ControlTemplate TargetType="Button">
-                    <Border x:Name="border"
-                    Background="{TemplateBinding Background}"
-                    BorderBrush="{TemplateBinding BorderBrush}"
-                    BorderThickness="{TemplateBinding BorderThickness}"
-                    CornerRadius="10">
-                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    </Border>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="border" Property="Background" Value="LightGray"/>
-                        </Trigger>
-                        <Trigger Property="IsPressed" Value="True">
-                            <Setter TargetName="border" Property="Background" Value="DeepSkyBlue"/>
-                        </Trigger>
-                        <Trigger Property="IsEnabled" Value="False">
-                            <Setter TargetName="border" Property="Opacity" Value="0.5"/>
-                        </Trigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>
-        <TextBlock x:Name="State" Text="Состояние" TextAlignment="Center" FontSize="32" Background="WhiteSmoke" Width="200" Height="80" VerticalAlignment="Top" Margin="20,20,20,0" Grid.Column="4"/>
-        <!--Button Width="100" Height="40" VerticalAlignment="Top" Click="Button_Click" Grid.Column="2"/-->
+        <Button Content="Сбросить" VerticalAlignment="Bottom" Margin="0,0,0,200" Grid.Column="4" Click="Clear_Click" Style="{StaticResource S_but}"/>
+        <Button x:Name="B_ready" Content="Готово" VerticalAlignment="Bottom" Margin="0,0,0,40" Grid.Column="4" Click="Ready_Click" Style="{StaticResource S_but}"/>
+        <TextBlock x:Name="State" Text="Состояние" TextAlignment="Center" FontSize="32" Background="WhiteSmoke" Width="200" Height="80" VerticalAlignment="Top" Margin="20" Grid.Column="4"/>
     </Grid>
 </Page>

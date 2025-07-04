@@ -12,8 +12,6 @@ namespace FD_FE
 {
     public static class GameplayData
     {
-        static public string sprites_path = "../../../ProgramData/Assets/Sprites/";
-
         // режимы
         public static readonly List<GameMode> GameModes = new List<GameMode> {
             new GameMode()

@@ -1,10 +1,5 @@
-C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\ProgramData\bin\Debug\ClassLib.dll
-C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\ProgramData\bin\Debug\ClassLib.pdb
 C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\ProgramData\obj\Debug\ProgramData.csproj.AssemblyReference.cache
-C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\ProgramData\obj\Debug\ClassLib.g.resources
 C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\ProgramData\obj\Debug\ProgramData.csproj.CoreCompileInputs.cache
-C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\ProgramData\obj\Debug\ClassLib.dll
-C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\ProgramData\obj\Debug\ClassLib.pdb
 C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\ProgramData\bin\Debug\Assets\sound\BGsound.mp3
 C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\ProgramData\bin\Debug\Assets\sound\listscroll.mp3
 C:\Users\Huawei\Documents\GitHub\FD_FE\FD_FE\ProgramData\bin\Debug\Assets\sound\BGsound.mp3
@@ -16,3 +11,8 @@ C:\Users\Huawei\Documents\GitHub\FD_FE\FD_FE\ProgramData\obj\Debug\ClassLib.g.re
 C:\Users\Huawei\Documents\GitHub\FD_FE\FD_FE\ProgramData\obj\Debug\ProgramData.csproj.CoreCompileInputs.cache
 C:\Users\Huawei\Documents\GitHub\FD_FE\FD_FE\ProgramData\obj\Debug\ClassLib.dll
 C:\Users\Huawei\Documents\GitHub\FD_FE\FD_FE\ProgramData\obj\Debug\ClassLib.pdb
+C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\ProgramData\bin\Debug\ProgramData.dll
+C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\ProgramData\bin\Debug\ProgramData.pdb
+C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\ProgramData\obj\Debug\ProgramData.g.resources
+C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\ProgramData\obj\Debug\ProgramData.dll
+C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\ProgramData\obj\Debug\ProgramData.pdb

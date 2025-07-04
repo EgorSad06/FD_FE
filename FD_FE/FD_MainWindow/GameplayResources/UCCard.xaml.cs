@@ -35,7 +35,7 @@ namespace FD_MainWindow
             if (BoardCard.GetFraction() == 'f')
             {
                 // Изменить фон и удалить имя
-                CardBackgound.ImageSource = (ImageSource)Game.converter.ConvertFromString($"{GameplayData.sprites_path}Cards/{BoardCard.image}");
+                CardBackgound.ImageSource = Game.ToImg("Cards\\"+BoardCard.image);
                 CardGrid.Children.Remove(cardName);
 
                 // AV справа сверху
@@ -73,9 +73,9 @@ namespace FD_MainWindow
             }
             else
             {
-                CardBackgound.ImageSource = (ImageSource)Game.converter.ConvertFromString($"{GameplayData.sprites_path}CardTemplates/{BoardCard.GetFraction()}_template.png");
-                CardClassFrame.ImageSource = (ImageSource)Game.converter.ConvertFromString($"{GameplayData.sprites_path}CardTemplates/{BoardCard.card_class.id}_frame.png");
-                CardImage.Source = (ImageSource)Game.converter.ConvertFromString($"{GameplayData.sprites_path}Cards/{BoardCard.image}");
+                CardBackgound.ImageSource = Game.ToImg($"CardTemplates/{BoardCard.GetFraction()}_template.png");
+                CardClassFrame.ImageSource = Game.ToImg($"CardTemplates/{BoardCard.card_class.id}_frame.png");
+                CardImage.Source = Game.ToImg($"Cards/{BoardCard.image}");
             }
         }
 

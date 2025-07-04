@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,6 +33,24 @@ namespace FD_MainWindow
             //громкость эффектов
             AudioManager.MusicVolume = 0.0; 
             AudioManager.InitMusic();
+
+            // бинд F11 на фулл скрин
+            KeyDown += (object sender, KeyEventArgs e) =>
+            {
+                if (e.Key != Key.F11) return;
+                if (FD_window.WindowStyle == WindowStyle.None)
+                {
+                    FD_window.WindowState = WindowState.Normal;
+                    FD_window.WindowStyle = WindowStyle.SingleBorderWindow;
+                    FD_window.ResizeMode = ResizeMode.CanResize;
+                }
+                else
+                {
+                    FD_window.WindowState = WindowState.Maximized;
+                    FD_window.WindowStyle = WindowStyle.None;
+                    FD_window.ResizeMode = ResizeMode.NoResize;
+                }
+            };
         }
 
         private void MediaPlayer_Loop(object sender, EventArgs e)

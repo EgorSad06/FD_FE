@@ -39,7 +39,9 @@ namespace FD_MainWindow
         }
 
         // отрисовка
-        static public ImageSourceConverter converter = new ImageSourceConverter();
+        private static ImageSourceConverter converter = new ImageSourceConverter();
+        public static ImageSource ToImg(string path) => (ImageSource) converter.ConvertFrom(@"..\..\..\ProgramData\Assets\Sprites\" + path);
+
         static public void Draw(Board board, Grid grid) // для поля
         {
             double dx = grid.Width / board.width, dy = grid.Height / board.height;
