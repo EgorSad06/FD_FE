@@ -14,8 +14,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using FD_Tools.Audio;
 
-namespace FD_MainWindow
+namespace FD_MainWindow.Pages
 {
     public partial class Setting : Page
     {
@@ -79,8 +80,8 @@ namespace FD_MainWindow
             }
             else
             {
-                curWindow.WindowState = WindowState.Maximized;
                 curWindow.WindowStyle = WindowStyle.None;
+                curWindow.WindowState = WindowState.Maximized;
                 curWindow.ResizeMode = ResizeMode.NoResize;
             }
 
@@ -121,7 +122,5 @@ namespace FD_MainWindow
                 Height = height;
             }
         }
-
-
     }
 }

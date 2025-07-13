@@ -42,17 +42,17 @@
                    Width="400" Height="100"/>
 
             <!-- Фреймы -->
-            <Image Margin="1128,223,365,551"
+            <Image Margin="1106,223,374,550"
                    Source="/ProgramData;component/Assets/Sprites/CardTemplates/c_frame.png"
-                   Stretch="Fill"/>
+                   Stretch="UniformToFill"/>
 
-            <Image Margin="1106,385,360,389"
+            <Image Margin="1106,380,376,393"
                    Source="/ProgramData;component/Assets/Sprites/CardTemplates/e_frame.png"
-                   Stretch="Fill"/>
+                   Stretch="UniformToFill"/>
 
-            <Image Margin="1128,543,365,231"
+            <Image Margin="1106,543,382,230"
                    Source="/ProgramData;component/Assets/Sprites/CardTemplates/g_frame.png"
-                   Stretch="Fill"/>
+                   Stretch="UniformToFill"/>
 
             <!-- Подписи к фреймам -->
             <Label Content="ПК - группа союзников&#xD;&#xA;АЗ зависит &#xD;&#xA;от количества&#xD;&#xA; пустых клеток вокруг карты"

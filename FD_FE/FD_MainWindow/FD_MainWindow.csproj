@@ -24,6 +24,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -35,9 +36,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -58,16 +56,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AudioManager.cs" />
-    <Compile Include="GameplayResources\Game.cs" />
-    <Compile Include="StatsManager.cs" />
-    <Compile Include="GameplayResources\UCSlot.xaml.cs">
-      <DependentUpon>UCSlot.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\TutorialPage.xaml.cs">
       <DependentUpon>TutorialPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="GameplayResources\StartGame.xaml.cs">
+    <Compile Include="Pages\StartGame.xaml.cs">
       <DependentUpon>StartGame.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Setting.xaml.cs">
@@ -76,28 +68,21 @@
     <Compile Include="Pages\Statistic.xaml.cs">
       <DependentUpon>Statistic.xaml</DependentUpon>
     </Compile>
-    <Compile Include="GameplayResources\UCCard.xaml.cs">
-      <DependentUpon>UCCard.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\TutorialPages\CardDetailTechno.xaml.cs">
       <DependentUpon>CardDetailTechno.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\TutorialPages\CardDetailFolk.xaml.cs">
       <DependentUpon>CardDetailFolk.xaml</DependentUpon>
     </Compile>
-    <Page Include="GameplayResources\UCSlot.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Pages\TutorialPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="GameplayResources\Battle.xaml">
+    <Page Include="Pages\Battle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="GameplayResources\CardSelection.xaml">
+    <Page Include="Pages\CardSelection.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -105,7 +90,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="GameplayResources\StartGame.xaml">
+    <Page Include="Pages\StartGame.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -121,10 +106,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="GameplayResources\Battle.xaml.cs">
+    <Compile Include="Pages\Battle.xaml.cs">
       <DependentUpon>Battle.xaml</DependentUpon>
     </Compile>
-    <Compile Include="GameplayResources\CardSelection.xaml.cs">
+    <Compile Include="Pages\CardSelection.xaml.cs">
       <DependentUpon>CardSelection.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\MainMenu.xaml.cs">
@@ -141,10 +126,6 @@
     <Page Include="Pages\Statistic.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="GameplayResources\UCCard.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\TutorialPages\CardDetailTechno.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -173,7 +154,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -2,8 +2,10 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using FD_Tools.Stats;
+using FD_Tools.Audio;
 
-namespace FD_MainWindow
+namespace FD_MainWindow.Pages
 {
     /// <summary>
     /// Логика взаимодействия для Statistic.xaml

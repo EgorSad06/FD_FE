@@ -1,0 +1,23 @@
+﻿<Page x:Class="FD_MainWindow.Pages.CardSelection"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FD_MainWindow.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="1080" d:DesignWidth="1920"
+      Title="CardSelection">
+    <Page.Background>
+        <ImageBrush ImageSource="/ProgramData;component/Assets/Sprites/Menu/backgroundstar.png" Stretch="UniformToFill"/>
+    </Page.Background>
+    <Grid>
+        <Viewbox MaxWidth="1628">
+            <Border Width="1628" Height="432" BorderBrush="White" BorderThickness="2" CornerRadius="10">
+                <Grid x:Name="CardSelectionGrid" Width="1596" Height="400">
+
+                </Grid>
+            </Border>
+        </Viewbox>
+        <Button Content="Готово" Style="{StaticResource S_std_but}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="24" Click="Start_Click"/>
+    </Grid>
+</Page>

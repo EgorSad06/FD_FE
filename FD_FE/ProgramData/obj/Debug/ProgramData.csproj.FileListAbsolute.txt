@@ -16,3 +16,12 @@ C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\ProgramData\bin\Debug\ProgramData.pd
 C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\ProgramData\obj\Debug\ProgramData.g.resources
 C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\ProgramData\obj\Debug\ProgramData.dll
 C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\ProgramData\obj\Debug\ProgramData.pdb
+C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\ProgramData\obj\Debug\ProgramData_MarkupCompile.cache
+C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\ProgramData\obj\Debug\ProgramData_MarkupCompile.lref
+C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\ProgramData\bin\Debug\Newtonsoft.Json.dll
+C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\ProgramData\obj\Debug\UserControls.xaml\ResDict.baml
+C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\ProgramData\obj\Debug\UserControls.xaml\UCCard.g.cs
+C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\ProgramData\obj\Debug\UserControls.xaml\UCSlot.g.cs
+C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\ProgramData\obj\Debug\UserControls.xaml\UCCard.baml
+C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\ProgramData\obj\Debug\UserControls.xaml\UCSlot.baml
+C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\ProgramData\obj\Debug\ProgramD.9B064F2D.Up2Date

@@ -4,6 +4,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Threading;
+using FD_Tools.Stats;
 
 namespace FD_MainWindow
 {

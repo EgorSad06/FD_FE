@@ -12,16 +12,15 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using FD_Tools.Audio;
 
-namespace FD_MainWindow
+namespace FD_MainWindow.Pages
 {
     public partial class TutorialPage : Page
     {
-
         public TutorialPage()
         {
             InitializeComponent();
-
         }
 
         private void Card1_Click(object sender, RoutedEventArgs e)
@@ -46,7 +45,7 @@ namespace FD_MainWindow
         }
         private void GoToMenu_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new MainMenu());
+            NavigationService.Navigate(new Uri("Pages/MainMenu.xaml", UriKind.Relative));
             //звук
             AudioManager.PlayEffect("Assets/sound/listscroll.mp3");
         }

@@ -1,0 +1,87 @@
+﻿<UserControl x:Class="FD_FE.UCCard"
+             x:Name="UCcard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FD_FE"
+             mc:Ignorable="d"
+             d:DesignHeight="400" d:DesignWidth="300">
+    <UserControl.Background>
+        <SolidColorBrush Color="White" Opacity="0"/>
+    </UserControl.Background>
+    <UserControl.Resources>
+        <Style x:Key="S_cardhp_t" TargetType="TextBlock">
+            <Setter Property="Width" Value="24"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Margin" Value="0,5.25,4.25,0"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="FontFamily" Value="Bahnschrift"/>
+            <Setter Property="FontSize" Value="28"/>
+        </Style>
+        <Style x:Key="S_cardav_t" TargetType="TextBlock" BasedOn="{StaticResource S_cardhp_t}">
+            <Setter Property="Margin" Value="4.25,5.25,0,0"/>
+            <Setter Property="Foreground" Value="Cyan"/>
+        </Style>
+        <Style x:Key="S_cardn_t" TargetType="TextBlock">
+            <Setter Property="Width" Value="94"/>
+            <Setter Property="Height" Value="18"/>
+            <Setter Property="Margin" Value="0,0,0,2"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="FontFamily" Value="Corbel"/>
+            <Setter Property="Foreground" Value="WhiteSmoke"/>
+        </Style>
+
+        <Style x:Key="S_cardhp_f" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="FontFamily" Value="Garamond"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+        <Style x:Key="S_cardav_f" TargetType="TextBlock" BasedOn="{StaticResource S_cardhp_f}">
+            <Setter Property="Foreground" Value="WhiteSmoke"/>
+        </Style>
+    </UserControl.Resources>
+
+    <Viewbox x:Name="cardVB" Width="100" Height="160" Stretch="UniformToFill">
+        <Grid x:Name="cardG" Width="100" Height="160">
+            <Grid.Background >
+                <ImageBrush x:Name="cardBG" Stretch="UniformToFill"/>
+            </Grid.Background>
+
+            <Image x:Name="cardCF" Width="24" Height="30"
+                   HorizontalAlignment="Left" VerticalAlignment="Top"
+                   Margin="4.25,5.25,0,0"
+                   Stretch="Uniform"/>
+            <TextBlock x:Name="cardAV" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <StackPanel x:Name="cardEP" Width="42" Height="30" Margin="0,5.25,0,0" VerticalAlignment="Top"/>
+            <TextBlock x:Name="cardHP" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+
+            <Image x:Name="cardI" Height="96" Width="96" Margin="0,10,0,0" Stretch="Uniform"/>
+            <TextBlock x:Name="cardN" Text="{Binding BoardCard.name, ElementName=UCcard}" VerticalAlignment="Bottom"/>
+            <Button x:Name="cardB"
+                    Width="100" Height="160"
+                    Click="Button_Click"
+                    BorderThickness="2"
+                    Background="Transparent" BorderBrush="Transparent"
+                    Focusable="False">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border"
+            Background="{TemplateBinding Background}"
+            BorderBrush="{TemplateBinding BorderBrush}"
+            BorderThickness="{TemplateBinding BorderThickness}">
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="White"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Grid>
+    </Viewbox>
+</UserControl>

@@ -6,10 +6,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FD_MainWindow"
         mc:Ignorable="d"
-        WindowState="Maximized"
         WindowStyle="None"
+        WindowState="Maximized"
         ResizeMode="NoResize"
         Icon="/ProgramData;component/Assets/Sprites/Menu/FDFE.png"
-        Title="Fraction Destruction" MinHeight="450" Height="600" MinWidth="800" Width="800">
-    <Frame x:Name="MainFrame" MinHeight="450" MinWidth="800" Background="Black" NavigationUIVisibility="Hidden"/>
+        Title="Fraction Destruction" MinWidth="800" MinHeight="480">
+        <Frame x:Name="MainFrame" Background="Black" NavigationUIVisibility="Hidden"/>
 </Window>

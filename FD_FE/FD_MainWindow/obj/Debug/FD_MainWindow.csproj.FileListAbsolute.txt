@@ -2,19 +2,11 @@ C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\bin\Debug\FD_MainWindo
 C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\bin\Debug\FD_MainWindow.exe
 C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\bin\Debug\FD_MainWindow.pdb
 C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\FD_MainWindow.csproj.AssemblyReference.cache
-C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\GameplayResources\Battle.g.cs
-C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\GameplayResources\CardSelection.g.cs
-C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\GameplayResources\StartGame.g.cs
 C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\MainWindow.g.cs
-C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\GameplayResources\UCCard.g.cs
 C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\App.g.cs
 C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\FD_MainWindow_MarkupCompile.cache
 C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\FD_MainWindow_MarkupCompile.lref
-C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\GameplayResources\Battle.baml
-C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\GameplayResources\CardSelection.baml
-C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\GameplayResources\StartGame.baml
 C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\MainWindow.baml
-C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\GameplayResources\UCCard.baml
 C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\FD_MainWindow.g.resources
 C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\FD_MainWindow.Properties.Resources.resources
 C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\FD_MainWindow.csproj.GenerateResource.cache
@@ -24,8 +16,6 @@ C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\FD_MainWindo
 C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\FD_MainWindow.pdb
 C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\bin\Debug\Assets\sound\BGsound.mp3
 C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\bin\Debug\Assets\sound\listscroll.mp3
-C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\GameplayResources\UCSlot.g.cs
-C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\GameplayResources\UCSlot.baml
 C:\Users\Huawei\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\FD_MainWindow.csproj.AssemblyReference.cache
 C:\Users\Huawei\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\GameplayResources\CardStyles.baml
 C:\Users\Huawei\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\GameplayResources\UCSlot.g.cs
@@ -72,7 +62,6 @@ C:\Users\Huawei\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\FD_MainW.6D
 C:\Users\Huawei\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\FD_MainWindow.exe
 C:\Users\Huawei\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\FD_MainWindow.pdb
 C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\bin\Debug\Newtonsoft.Json.dll
-C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Huawei\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\FD_MainWindow.exe.config
 C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\bin\Debug\ProgramData.dll
 C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\bin\Debug\ProgramData.pdb
@@ -90,3 +79,9 @@ C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\Pages\Settin
 C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\Pages\Statistic.baml
 C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\Pages\TutorialPages\CardDetailTechno.baml
 C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\Pages\TutorialPages\CardDetailFolk.baml
+C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\Pages\Battle.g.cs
+C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\Pages\CardSelection.g.cs
+C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\Pages\StartGame.g.cs
+C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\Pages\Battle.baml
+C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\Pages\CardSelection.baml
+C:\Users\alekz\Documents\GitHub\FD_FE\FD_FE\FD_MainWindow\obj\Debug\Pages\StartGame.baml

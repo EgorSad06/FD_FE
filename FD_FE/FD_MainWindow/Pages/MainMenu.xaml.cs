@@ -1,5 +1,4 @@
-﻿using FD_FE;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,12 +14,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Xml.Linq;
+using FD_Tools.Audio;
 
-
-
-namespace FD_MainWindow
+namespace FD_MainWindow.Pages
 {
-
     /// <summary>
     /// Логика взаимодействия для MainMenu.xaml
     /// файл настройки кнопок и функций Меню.
@@ -32,7 +29,7 @@ namespace FD_MainWindow
             InitializeComponent();
         }
         //старт
-        private void PlayButtonSelection_Click(object sender, RoutedEventArgs e)
+        private void PlayButton_Click(object sender, RoutedEventArgs e)
         {
             // Анимация исчезновения текущей страницы (0.5 секунд)
             DoubleAnimation fadeOut = new DoubleAnimation
@@ -46,7 +43,7 @@ namespace FD_MainWindow
             {
                 NavigationService.RemoveBackEntry();
                 // Переход на новую страницу через URI
-                NavigationService.Navigate(new Uri("GameplayResources/StartGame.xaml", UriKind.Relative));
+                NavigationService.Navigate(new Uri("Pages/StartGame.xaml", UriKind.Relative));
             };
 
             // Запуск анимации
@@ -57,7 +54,7 @@ namespace FD_MainWindow
 
         }
         //обучение
-        private void EducationButtonSelection_Click(object sender, RoutedEventArgs e)
+        private void EducationButton_Click(object sender, RoutedEventArgs e)
         {
             // Анимация исчезновения текущей страницы (0.5 секунд)
             DoubleAnimation fadeOut = new DoubleAnimation
@@ -80,7 +77,7 @@ namespace FD_MainWindow
             AudioManager.PlayEffect("Assets/sound/listscroll.mp3");
         }
         //статистика
-        private void StatisticsButtonSelection_Click(object sender, RoutedEventArgs e)
+        private void StatisticsButton_Click(object sender, RoutedEventArgs e)
         {
             // Анимация исчезновения текущей страницы (0.5 секунд)
             DoubleAnimation fadeOut = new DoubleAnimation
@@ -103,7 +100,7 @@ namespace FD_MainWindow
             AudioManager.PlayEffect("Assets/sound/listscroll.mp3");
         }
         //Настройки
-        private void SettingsButtonSelection_Click(object sender, RoutedEventArgs e)
+        private void SettingsButton_Click(object sender, RoutedEventArgs e)
         {
             // Анимация исчезновения текущей страницы (0.5 секунд)
             DoubleAnimation fadeOut = new DoubleAnimation
@@ -128,7 +125,7 @@ namespace FD_MainWindow
 
 
         //выход из игры
-        private void ExitButtonSelection_Click(object sender, RoutedEventArgs e)
+        private void ExitButton_Click(object sender, RoutedEventArgs e)
         {
             // предупреждение о выходе
             MessageBoxResult result = MessageBox.Show("Вы уверены, что хотите выйти?", "Подтверждение",

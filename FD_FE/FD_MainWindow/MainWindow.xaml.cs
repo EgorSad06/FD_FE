@@ -14,6 +14,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using FD_FE;
+using FD_Tools.Audio;
+using FD_Tools.Stats;
 
 
 namespace FD_MainWindow
@@ -24,30 +26,29 @@ namespace FD_MainWindow
     public partial class MainWindow : Window
     {
         private MediaPlayer _mediaPlayer = new MediaPlayer();
-
         public MainWindow()
         {
             InitializeComponent();
-            MainFrame.Content = new MainMenu();
+            MainFrame.Content = new Pages.MainMenu();
 
             //громкость эффектов
             AudioManager.MusicVolume = 0.0; 
             AudioManager.InitMusic();
 
             // бинд F11 на фулл скрин
-            KeyDown += (object sender, KeyEventArgs e) =>
+            KeyDown += (s, e) =>
             {
                 if (e.Key != Key.F11) return;
                 if (FD_window.WindowStyle == WindowStyle.None)
                 {
-                    FD_window.WindowState = WindowState.Normal;
                     FD_window.WindowStyle = WindowStyle.SingleBorderWindow;
+                    FD_window.WindowState = WindowState.Normal;
                     FD_window.ResizeMode = ResizeMode.CanResize;
                 }
                 else
                 {
-                    FD_window.WindowState = WindowState.Maximized;
                     FD_window.WindowStyle = WindowStyle.None;
+                    FD_window.WindowState = WindowState.Maximized;
                     FD_window.ResizeMode = ResizeMode.NoResize;
                 }
             };
@@ -62,7 +63,7 @@ namespace FD_MainWindow
         private void FD_window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             _mediaPlayer.Stop();
-            Game.Disconnect();
+            Game.Cnct.Disconnect();
         }
 
         //сбор статистики
