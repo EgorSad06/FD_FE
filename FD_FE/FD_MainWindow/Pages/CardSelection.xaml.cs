@@ -23,60 +23,17 @@ namespace FD_MainWindow.Pages
     /// </summary>
     public partial class CardSelection : Page
     {
-        public Board card_slct_board = new Board(Game.Mode.start_cards_count, 1); // поле карт для выбора
-        private short[] p_slctd_card_i; // массив индексов выбранных карт для отправки
-        private short p_slctd_card_n;
+        private readonly FD_FE.Stages.CardSelection _card_selection;
         public CardSelection()
         {
             InitializeComponent();
-
-            p_slctd_card_i = new short[Game.Mode.start_cards_count];
-            p_slctd_card_n = 0;
-
-            if (Game.battle==0)
-            { // начало игры (карты не выбираются)
-                Random random = new Random();
-                Game.slct_cards.SetSqnc(random.Next()+((Game.Cnct.is_host)?4013:-4013));
-                for (int i = 0; i < Game.Mode.start_cards_count && Game.slct_cards.SqncEnd(); i++) {
-                    Card temp = Game.slct_cards.GetCard();
-                    card_slct_board.SetBoardCard(temp, i);
-                    Game.p_deck.deck_cards.Add(temp);
-                    p_slctd_card_i[p_slctd_card_n++] = (short)temp.id;
-                }
-                Game.Draw(card_slct_board, CardSelectionGrid, (float)2.5);
-                foreach (UCCard uc_card in CardSelectionGrid.Children) uc_card.IsEnabled = false;
-            }
-            else
-            { // игра (карты выбираются)
-                UCCard.CardSelected += AddCardToDeck;
-                for (int i = 0; i < Game.Mode.start_cards_count && Game.slct_cards.SqncEnd(); i++) card_slct_board.SetBoardCard(Game.slct_cards.GetCard(), i);
-                Game.Draw(card_slct_board, CardSelectionGrid, (float)2.5);
-            }
-        }
-        private void AddCardToDeck(UCCard sender, BoardCard card)
-        {
-            Game.p_deck.deck_cards.Add(card.source);
-            p_slctd_card_i[p_slctd_card_n++] = (short)card.id;
-            sender.IsEnabled = false;
+            _card_selection = new FD_FE.Stages.CardSelection(CardSelectionGrid, (float)2.5);
         }
 
         private async void Start_Click(object sender, RoutedEventArgs e)
         {
-            if (Game.Cnct.is_host)
-            {
-                ((Button)sender).IsEnabled = false;
-                short[] shorts = await Game.Cnct.ReceiveDataS(Game.Mode.start_cards_count);
-                for (int i=0; i< Game.Mode.start_cards_count; i++) if (shorts[i]!=0) Game.o_deck.deck_cards.Add(Game.StartCardByID(shorts[i]));
-                Game.Cnct.SendData(p_slctd_card_i, Game.Mode.start_cards_count);
-            }
-            else
-            {
-                ((Button)sender).IsEnabled = false;
-                Game.Cnct.SendData(p_slctd_card_i, Game.Mode.start_cards_count);
-                short[] shorts = await Game.Cnct.ReceiveDataS(Game.Mode.start_cards_count);
-                for (int i = 0; i < Game.Mode.start_cards_count; i++) if (shorts[i] != 0) Game.o_deck.deck_cards.Add(Game.StartCardByID(shorts[i]));
-            }
-            UCCard.CardSelected -= AddCardToDeck;
+            ((Button)sender).IsEnabled = false;
+            await _card_selection.Start();
             NavigationService.Navigate(new Uri("Pages/Battle.xaml", UriKind.Relative));
             NavigationService.RemoveBackEntry();
         }

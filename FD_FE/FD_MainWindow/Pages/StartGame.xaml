@@ -46,7 +46,7 @@
         </Grid-->
         
         <Viewbox MaxWidth="230" Grid.Column="1" Margin="0,64,0,64">
-            <StackPanel Width="230" Height="400" Margin="16" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1">
+            <StackPanel x:Name="SP_connect" Width="230" Height="400" Margin="16" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1">
                 <TextBlock Text="Подключение" Width="230" Height="64" FontWeight="Bold" Foreground="White" FontSize="36" Style="{StaticResource S_std_tblk}"/>
                 <RadioButton Content="Клиент" IsChecked="True" Style="{StaticResource S_sc_rbut}"/>
                 <RadioButton x:Name="RB_server" Content="Сервер" Style="{StaticResource S_sc_rbut}"/>
@@ -58,7 +58,7 @@
             </StackPanel>
         </Viewbox>
 
-        <Button x:Name="B_start" Content="Начать"  Style="{StaticResource S_std_but}" Margin="24" HorizontalAlignment="Right" VerticalAlignment="Bottom"  IsEnabled="False" Click="StartButton_Click" Grid.Column="1"/>
+        <Button x:Name="B_start" Content="Начать"  Style="{StaticResource S_std_but}" Margin="24" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="StartButton_Click" Grid.Column="1"/>
         <Button Content="Выход" Style="{StaticResource S_std_but}" Margin="24" HorizontalAlignment="Left" VerticalAlignment="Bottom" Click="Exit_Click"/>
 
     </Grid>

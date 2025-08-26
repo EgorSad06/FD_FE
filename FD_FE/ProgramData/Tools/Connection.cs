@@ -6,8 +6,9 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using FD_FE;
 
-namespace FD_Tools.Connect
+namespace FD_Tools.Connection
 {
     public class Connection
     {
@@ -24,6 +25,10 @@ namespace FD_Tools.Connect
         public TcpListener server = null;
         public TcpClient client = null;
         public Socket socket = null;
+
+        public delegate void InterruptionEventHandler(string message);
+        public event InterruptionEventHandler ConnectionInterrupted;
+        public event InterruptionEventHandler SendRecieveInterrupted;
         public async Task<byte[]> ReceiveData(int n, Socket skt = null) => await Task<byte[]>.Run(() =>
         {
             if (skt == null) skt = socket;
@@ -35,7 +40,7 @@ namespace FD_Tools.Connect
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                SendRecieveInterrupted?.Invoke(ex.Message);
                 return null;
             }
         });
@@ -55,7 +60,7 @@ namespace FD_Tools.Connect
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                SendRecieveInterrupted?.Invoke(ex.Message);
                 return null;
             }
         });
@@ -102,7 +107,10 @@ namespace FD_Tools.Connect
         {
             if (skt == null) skt = socket;
             try { skt.Send(data); }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            catch (Exception ex)
+            {
+                SendRecieveInterrupted?.Invoke(ex.Message);
+            }
         }
         public void SendData(short[] data, int n, Socket skt = null)
         {
@@ -114,7 +122,9 @@ namespace FD_Tools.Connect
                 res[i * 2 + 1] = (byte)(data[i] >> 8);
             }
             try { skt.Send(res); }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            catch (Exception ex) {
+                SendRecieveInterrupted?.Invoke(ex.Message);
+            }
         }
 
         public async Task<bool> Connect()
@@ -131,8 +141,8 @@ namespace FD_Tools.Connect
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message);
                         server?.Stop();
+                        ConnectionInterrupted?.Invoke(ex.Message);
                         return false;
                     }
                 });
@@ -149,8 +159,8 @@ namespace FD_Tools.Connect
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message);
                         client?.Close();
+                        ConnectionInterrupted?.Invoke(ex.Message);
                         return false;
                     }
                 });

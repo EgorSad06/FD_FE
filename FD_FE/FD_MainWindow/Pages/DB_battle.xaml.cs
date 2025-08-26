@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -18,23 +17,22 @@ using FD_FE;
 namespace FD_MainWindow.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для Battle.xaml
+    /// Логика взаимодействия для DB_battle.xaml
     /// </summary>
-    public partial class Battle : Page
+    public partial class DB_battle : Page
     {
-        private readonly FD_FE.Stages.Battle _cur_battle;
-        private readonly Dictionary<int, string> State_names = new Dictionary<int, string>() {
-            { 1, "Ход" },
-            //{ 1, "Расположенте\nкарты" },
-            { 2, "Назначение\nдействия" },
-            { 3, "Ход\nсоперника" },
-            { -1, "Победа" },
-            { -2, "Ничья" },
-            { -3, "Поражение" }
-        };
-        public Battle()
+        public DB_battle()
         {
             InitializeComponent();
+
+            Game.Cnct = new FD_Tools.Connection.Connection();
+            Game.Cnct.is_host = true;
+            Game.SetMode(1);
+            Game.start_turn = true;
+            Game.p_deck = new Deck(GameplayData.StartCards['t'].FindAll((card) => card.card_class.id == 'c'));
+            Game.o_deck = new Deck();
+            Game.p_deck.SetSqnc();
+
             _cur_battle = new FD_FE.Stages.Battle(MainBoardGrid, HandBoardGrid);
 
             B_ready.IsEnabled = Game.start_turn;
@@ -54,11 +52,21 @@ namespace FD_MainWindow.Pages
             _cur_battle.BattleEnded += EndBattle;
             _cur_battle.Start();
         }
+        private readonly FD_FE.Stages.Battle _cur_battle;
+        private readonly Dictionary<int, string> State_names = new Dictionary<int, string>() {
+            { 1, "Ход" },
+            //{ 1, "Расположенте\nкарты" },
+            { 2, "Назначение\nдействия" },
+            { 3, "Ход\nсоперника" },
+            { -1, "Победа" },
+            { -2, "Ничья" },
+            { -3, "Поражение" }
+        };
 
         private void Ready_Click(object sender, RoutedEventArgs e)
         {
-            B_ready.IsEnabled = false;
-            _cur_battle.Ready();
+            //B_ready.IsEnabled = false;
+            //_cur_battle.Ready();
         }
 
         private void Clear_Click(object sender, RoutedEventArgs e)

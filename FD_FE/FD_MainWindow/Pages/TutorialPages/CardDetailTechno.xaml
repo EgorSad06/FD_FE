@@ -9,72 +9,69 @@
     <Page.Background>
         <ImageBrush ImageSource="/ProgramData;component/Assets/Sprites/Menu/BGtuto.jpg" Stretch="UniformToFill"/>        
     </Page.Background>
-
-    <Viewbox Stretch="Uniform">
-        <Grid Width="1600" Height="900">
-            <!-- Назад -->
-            <Button Content="Назад" Style="{StaticResource S_std_but}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="24" Click="BackButton_Click"/>
-
-            <!-- Урон -->
-
-            <!-- Основное описание -->
-            <Label Content="Класс карточки - обводка вокруг АЗ, это&#xD;&#xA;класс карточки, от класса зависит&#xD;&#xA;АЗ и при каких условиях он &#xD;&#xA;действует"
+    <Grid>
+        <Viewbox Stretch="Uniform">
+            <Grid Width="1600" Height="900">
+                <!-- Основное описание -->
+                <Label Content="Класс карточки - обводка вокруг АЗ, это&#xD;&#xA;класс карточки, от класса зависит&#xD;&#xA;АЗ и при каких условиях он &#xD;&#xA;действует"
                    FontSize="25"
                    HorizontalAlignment="Left"
                    VerticalAlignment="Top"
                    Margin="39,85,0,0"
                    Width="654" Height="452"/>
 
-            <!-- Основная карта -->
-            <Image Source="/ProgramData;component/Assets/Sprites/CardsForTutor/TurtorCardTechno.png"
+                <!-- Основная карта -->
+                <Image Source="/ProgramData;component/Assets/Sprites/CardsForTutor/TurtorCardTechno.png"
                    Stretch="Uniform"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Top"
                    Margin="0,10,0,0"
                    Width="612" Height="820"/>
 
-            <!-- ОЗ -->
-            <Label Content="ОЗ - очки здоровья"
+                <!-- ОЗ -->
+                <Label Content="ОЗ - очки здоровья"
                    FontSize="25"
                    HorizontalAlignment="Right"
                    VerticalAlignment="Top"
                    Margin="0,34,50,0"
                    Width="400" Height="100"/>
 
-            <!-- Фреймы -->
-            <Image Margin="1106,223,374,550"
+                <!-- Фреймы -->
+                <Image Margin="1106,223,374,550"
                    Source="/ProgramData;component/Assets/Sprites/CardTemplates/c_frame.png"
-                   Stretch="UniformToFill"/>
+                   Stretch="Uniform"/>
 
-            <Image Margin="1106,380,376,393"
+                <Image Margin="1106,380,376,393"
                    Source="/ProgramData;component/Assets/Sprites/CardTemplates/e_frame.png"
-                   Stretch="UniformToFill"/>
+                   Stretch="Uniform"/>
 
-            <Image Margin="1106,543,382,230"
+                <Image Margin="1106,543,382,230"
                    Source="/ProgramData;component/Assets/Sprites/CardTemplates/g_frame.png"
-                   Stretch="UniformToFill"/>
+                   Stretch="Uniform"/>
 
-            <!-- Подписи к фреймам -->
-            <Label Content="ПК - группа союзников&#xD;&#xA;АЗ зависит &#xD;&#xA;от количества&#xD;&#xA; пустых клеток вокруг карты"
+                <!-- Подписи к фреймам -->
+                <Label Content="ПК - группа союзников&#xD;&#xA;АЗ зависит &#xD;&#xA;от количества&#xD;&#xA; пустых клеток вокруг карты"
                    FontSize="25"
                    HorizontalAlignment="Left"
                    VerticalAlignment="Center"
                    Margin="1237,0,0,0"
                    Width="359" Height="140"/>
 
-            <Label Content="ГС группа союзников&#xD;&#xA; -  АЗ зависит  &#xD;&#xA;от количество &#xA;союзников этого же &#xA;класса вокруг карты"
+                <Label Content="ГС группа союзников&#xD;&#xA; -  АЗ зависит  &#xD;&#xA;от количество &#xA;союзников этого же &#xA;класса вокруг карты"
                    FontSize="25"
                    HorizontalAlignment="Left"
                    VerticalAlignment="Top"
                    Margin="1237,543,0,0"
                    Width="359" Height="203"/>
 
-            <Label Content="ЦС -цепь союзников&#xD;&#xA;АЗ зависит от &#xD;&#xA;количества карт в цепи"
+                <Label Content="ЦС -цепь союзников&#xD;&#xA;АЗ зависит от &#xD;&#xA;количества карт в цепи"
                    FontSize="25"
                    HorizontalAlignment="Left"
                    VerticalAlignment="Top"
                    Margin="1231,217,0,0"
                    Width="359" Height="108"/>
-        </Grid>
-    </Viewbox>
+            </Grid>
+        </Viewbox>
+        <Button Content="Назад" Style="{StaticResource S_std_but}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="24" Click="BackButton_Click"/>
+    </Grid>
 </Page>

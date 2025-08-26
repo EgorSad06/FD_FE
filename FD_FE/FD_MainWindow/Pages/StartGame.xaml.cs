@@ -1,24 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Net;
-using System.Net.Sockets;
 using System.Globalization;
 using FD_FE;
-
-using FD_Tools.Connect;
 using FD_Tools.Audio;
 
 namespace FD_MainWindow.Pages
@@ -29,38 +19,40 @@ namespace FD_MainWindow.Pages
     
     public partial class StartGame : Page
     {
+        private readonly FD_FE.Stages.StartGame _start_game = new FD_FE.Stages.StartGame();
+        private readonly List<char> slct_f = new List<char>(GameplayData.StartCards.Count);
         //Для музыка
         private readonly MediaPlayer _mediaPlayer = new MediaPlayer();
+
         public StartGame()
         {
             InitializeComponent();
-            
-            Game.Cnct = new Connection();
 
-            foreach (char frac in GameplayData.StartCards.Keys)
+            B_start.IsEnabled = !(B_connect.IsEnabled = Game.Cnct.socket == null);
+            foreach (char frct in GameplayData.StartCards.Keys)
             {
                 var new_but = new Button
                 {
                     Style = (Style)Resources["S_frct_but"],
-                    Tag = frac,
-                    Background = new ImageBrush(Game.ToImg(@"CardTemplates\" + frac + "_template.png")) { Stretch = Stretch.UniformToFill }
+                    Tag = frct,
+                    Background = new ImageBrush(Game.ToImg(@"CardTemplates\" + frct + "_template.png")) { Stretch = Stretch.UniformToFill }
                 };
                 new_but.Click += Mode_Click;
                 SP_modes.Children.Add(new_but);
             }
         }
 
-        // подключение
-        private async Task Connect()
+        private async void Connect_Click(object sender, RoutedEventArgs e)
         {
-            Game.Cnct.is_host = (bool)(RB_server.IsChecked);
-            if (Game.Cnct.SetIP(TB_IP.Text))
+            B_connect.IsEnabled = false;
+            if (await _start_game.Connect((bool)RB_server.IsChecked, TB_IP.Text))
             {
-                B_connect.IsEnabled = false;
-                B_connect.IsEnabled = !(B_start.IsEnabled = /*B_receive.IsEnabled = B_send.IsEnabled =*/ await Game.Cnct.Connect());
+                Game.Cnct.ConnectionInterrupted += (message) => MessageBox.Show("Ошибка передачи данных\n(" + message  + ')');
+                Game.Cnct.SendRecieveInterrupted += (message) => MessageBox.Show("Подключение прервано\n(" + message  + ')');
+                B_start.IsEnabled = true;
             }
+            else B_connect.IsEnabled = true;
         }
-        private void Connect_Click(object sender, RoutedEventArgs e) => Connect();
 
         // чат - требует переработки (мб вообще не нужен)
         //private async void Receive_Click(object sender, RoutedEventArgs e)
@@ -74,47 +66,29 @@ namespace FD_MainWindow.Pages
         //    Game.SendData(Encoding.Unicode.GetBytes(Message.Text + '\n'));
         //}
 
-        // режим игры
-        private readonly bool[] slct_f = new bool[GameplayData.StartCards.Count];
         private void Mode_Click(object sender, RoutedEventArgs e)
         {
-            for (int i=0; i<GameplayData.StartCards.Count; i++)
+            char f = ((Button)sender).Tag.ToString()[0];
+            if (slct_f.Remove(f))
             {
-                if (GameplayData.StartCards.Keys.ElementAt(i) == ((Button)sender).Tag.ToString()[0]) {
-                    slct_f[i] = ! slct_f[i];
-                    ((Button)sender).BorderThickness = new Thickness( slct_f[i] ? 4 : 8 );
-                }
+                ((Button)sender).BorderThickness = new Thickness(8);
+            }
+            else
+            {
+                slct_f.Add(f);
+                ((Button)sender).BorderThickness = new Thickness(4);
             }
         }
 
-        // игра
         private async void StartButton_Click(object sender, RoutedEventArgs e)
         {
-            short i = 0;
             //Отключение музыки
             AudioManager.MusicVolume = 0.0;
-            for (int j=0; j< GameplayData.StartCards.Count; j++) if (slct_f[j]) i++;
-            if (i != 0)
+            if (slct_f.Count != 0)
             {
                 B_start.IsEnabled = false;
-                if (Game.Cnct.is_host)
+                if (await _start_game.TryStart(slct_f))
                 {
-                    i = ((await Game.Cnct.ReceiveDataS(1))[0] == i ? i : (short)0);
-                    Game.Cnct.SendData(new byte[1] { (byte)i });
-                }
-                else
-                {
-                    Game.Cnct.SendData( new byte[1] { (byte)i });
-                    i = ((await Game.Cnct.ReceiveDataS(1))[0] == i ? i : (short)0);
-                }
-                
-                if (i != 0)
-                {
-                    if (Game.Cnct.is_host) Game.p_seed = Game.o_seed = BitConverter.ToInt32(await Game.Cnct.ReceiveData(4),0);
-                    else Game.Cnct.SendData(BitConverter.GetBytes( Game.p_seed = Game.o_seed = Game.p_deck.SetSqnc() ));
-                    for (int j = 0; j < GameplayData.StartCards.Count; j++) if (slct_f[j]) Game.slct_cards.deck_cards.AddRange(GameplayData.StartCards.ElementAt(j).Value);
-                    Game.start_turn = Game.Cnct.is_host;
-                    Game.SetMode(i);
                     NavigationService.Navigate(new Uri("Pages/CardSelection.xaml", UriKind.Relative));
                     NavigationService.RemoveBackEntry();
                 }
@@ -122,10 +96,9 @@ namespace FD_MainWindow.Pages
             }
         }
 
-        // выход
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
-            Game.Cnct.Disconnect();
+            _start_game.Disconnect();
             NavigationService.Navigate(new Uri("Pages/MainMenu.xaml", UriKind.Relative));
             NavigationService.RemoveBackEntry();
             AudioManager.PlayEffect("Assets/sound/listscroll.mp3");
@@ -133,9 +106,7 @@ namespace FD_MainWindow.Pages
 
         private async void DB_Click(object sender, RoutedEventArgs e)
         {
-            if ( !(bool) (RB_server.IsChecked = (string)((Button)sender).Tag == "t") )
-                TB_IP.Text = "127.0.0.1";
-            await Connect();
+            await _start_game.Connect( (bool)(RB_server.IsChecked = (string)((Button)sender).Tag == "t"), TB_IP.Text = "127.0.0.1");
             Mode_Click(sender, e);
             StartButton_Click(sender, e);
         }

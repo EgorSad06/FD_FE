@@ -19,7 +19,7 @@
         </ControlTemplate.Triggers>
     </ControlTemplate>
     
-    <!-- Стандартные стили (рекомендуемо в BasedOn для др стилей) -->
+    <!-- Стандартные стили (рекомендованно в BasedOn для др стилей) -->
     <FontFamily x:Key="FF_main">Bahnschrift</FontFamily>
 
     <Style x:Key="S_std_tblk" TargetType="TextBlock">
@@ -55,7 +55,7 @@
         <Setter Property="Focusable" Value="False"/>
     </Style>
 
-    <!-- Стили для карт -->
+    
     <ControlTemplate x:Key="T_card_but" TargetType="Button">
         <Border x:Name="border"
             Background="{TemplateBinding Background}"

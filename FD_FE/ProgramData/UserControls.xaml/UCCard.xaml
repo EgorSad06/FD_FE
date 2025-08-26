@@ -11,43 +11,87 @@
         <SolidColorBrush Color="White" Opacity="0"/>
     </UserControl.Background>
     <UserControl.Resources>
-        <Style x:Key="S_cardhp_t" TargetType="TextBlock">
+        <!-- T HP -->
+        <Style x:Key="S_hp_t" TargetType="TextBlock">
             <Setter Property="Width" Value="24"/>
             <Setter Property="Height" Value="30"/>
-            <Setter Property="Margin" Value="0,5.25,4.25,0"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="Margin" Value="0,5.5,4.25,0"/>
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="TextAlignment" Value="Center"/>
             <Setter Property="FontFamily" Value="Bahnschrift"/>
-            <Setter Property="FontSize" Value="28"/>
+            <Setter Property="FontSize" Value="27"/>
         </Style>
-        <Style x:Key="S_cardav_t" TargetType="TextBlock" BasedOn="{StaticResource S_cardhp_t}">
-            <Setter Property="Margin" Value="4.25,5.25,0,0"/>
+        
+        <Style x:Key="S_hp_t_r" TargetType="TextBlock" BasedOn="{StaticResource S_hp_t}">
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Bottom"/>
+            <Setter Property="Margin" Value="4.25,0,0,5.5"/>
+        </Style>
+        <!-- T AV -->
+        <Style x:Key="S_av_t" TargetType="TextBlock" BasedOn="{StaticResource S_hp_t}">
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Margin" Value="4.25,5.5,0,0"/>
             <Setter Property="Foreground" Value="Cyan"/>
         </Style>
-        <Style x:Key="S_cardn_t" TargetType="TextBlock">
+        <Style x:Key="S_av_t_r" TargetType="TextBlock" BasedOn="{StaticResource S_av_t}">
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="VerticalAlignment" Value="Bottom"/>
+            <Setter Property="Margin" Value="0,0,4.25,5.5"/>
+        </Style>
+        <!-- T NAME -->
+        <Style x:Key="S_n_t" TargetType="TextBlock">
+            <Setter Property="Text" Value="{Binding BoardCard.name, ElementName=UCcard}"/>
             <Setter Property="Width" Value="94"/>
-            <Setter Property="Height" Value="18"/>
-            <Setter Property="Margin" Value="0,0,0,2"/>
+            <Setter Property="Height" Value="15"/>
+            <Setter Property="VerticalAlignment" Value="Bottom"/>
+            <Setter Property="Margin" Value="0,0,0,3.75"/>
             <Setter Property="TextAlignment" Value="Center"/>
-            <Setter Property="FontFamily" Value="Corbel"/>
+            <Setter Property="FontFamily" Value="Bahnschrift"/>
+            <Setter Property="FontSize" Value="12"/>
             <Setter Property="Foreground" Value="WhiteSmoke"/>
         </Style>
-
-        <Style x:Key="S_cardhp_f" TargetType="TextBlock">
+        <Style x:Key="S_n_t_r" TargetType="TextBlock" BasedOn="{StaticResource S_n_t}">
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="Margin" Value="0,3.75,0,0"/>
+        </Style>
+        
+        <!-- F HP -->
+        <Style x:Key="S_hp_f" TargetType="TextBlock">
+            <Setter Property="Width" Value="24"/>
+            <Setter Property="Height" Value="20"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="Margin" Value="0,1,8,0"/>
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="TextAlignment" Value="Center"/>
             <Setter Property="FontFamily" Value="Garamond"/>
-            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontSize" Value="22"/>
             <Setter Property="FontWeight" Value="Bold"/>
         </Style>
-        <Style x:Key="S_cardav_f" TargetType="TextBlock" BasedOn="{StaticResource S_cardhp_f}">
+        <Style x:Key="S_hp_f_r" TargetType="TextBlock" BasedOn="{StaticResource S_hp_f}">
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Bottom"/>
+            <Setter Property="Margin" Value="8,0,0,3"/>
+        </Style>
+        <!-- F AV -->
+        <Style x:Key="S_av_f" TargetType="TextBlock" BasedOn="{StaticResource S_hp_f}">
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Margin" Value="8,1,0,0"/>
             <Setter Property="Foreground" Value="WhiteSmoke"/>
         </Style>
+        <Style x:Key="S_av_f_r" TargetType="TextBlock" BasedOn="{StaticResource S_av_f}">
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="VerticalAlignment" Value="Bottom"/>
+            <Setter Property="Margin" Value="0,0,8,3"/>
+        </Style>
+
     </UserControl.Resources>
 
     <Viewbox x:Name="cardVB" Width="100" Height="160" Stretch="UniformToFill">
         <Grid x:Name="cardG" Width="100" Height="160">
-            <Grid.Background >
+            <Grid.Background>
                 <ImageBrush x:Name="cardBG" Stretch="UniformToFill"/>
             </Grid.Background>
 
@@ -55,16 +99,15 @@
                    HorizontalAlignment="Left" VerticalAlignment="Top"
                    Margin="4.25,5.25,0,0"
                    Stretch="Uniform"/>
-            <TextBlock x:Name="cardAV" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <TextBlock x:Name="cardAV"/>
             <StackPanel x:Name="cardEP" Width="42" Height="30" Margin="0,5.25,0,0" VerticalAlignment="Top"/>
-            <TextBlock x:Name="cardHP" HorizontalAlignment="Right" VerticalAlignment="Top"/>
-
+            <TextBlock x:Name="cardHP"/>
             <Image x:Name="cardI" Height="96" Width="96" Margin="0,10,0,0" Stretch="Uniform"/>
-            <TextBlock x:Name="cardN" Text="{Binding BoardCard.name, ElementName=UCcard}" VerticalAlignment="Bottom"/>
+            <TextBlock x:Name="cardN"/>
             <Button x:Name="cardB"
                     Width="100" Height="160"
                     Click="Button_Click"
-                    BorderThickness="2"
+                    BorderThickness="1.5"
                     Background="Transparent" BorderBrush="Transparent"
                     Focusable="False">
                 <Button.Template>

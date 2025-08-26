@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Xml.Linq;
+using FD_FE;
 using FD_Tools.Audio;
 
 namespace FD_MainWindow.Pages
@@ -24,10 +25,7 @@ namespace FD_MainWindow.Pages
     /// </summary>
     public partial class MainMenu : Page
     {
-        public MainMenu()
-        {
-            InitializeComponent();
-        }
+        public MainMenu() => InitializeComponent();
         //старт
         private void PlayButton_Click(object sender, RoutedEventArgs e)
         {

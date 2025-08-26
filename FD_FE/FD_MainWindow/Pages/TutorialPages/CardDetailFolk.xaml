@@ -9,53 +9,54 @@
     <Page.Background>
         <ImageBrush ImageSource="/ProgramData;component/Assets/Sprites/Menu/BGtuto.jpg" Stretch="UniformToFill"/>
     </Page.Background>
-
-    <Viewbox Stretch="Uniform">
-        <Grid Width="1600" Height="900">
-            <Button Content="Назад" Style="{StaticResource S_std_but}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="24" Click="BackButton_Click"/>
+    <Grid>
+        <Viewbox Stretch="Uniform">
+            <Grid Width="1600" Height="900">
                 <Label Content="Активное значение,&#xD;&#xA;он же урон"
                    FontSize="25"
                    HorizontalAlignment="Left"
                    VerticalAlignment="Top"
                    Margin="169,52,0,0"/>
 
-            <Label Content="Класс карточки - Сокращение в левом&#xD;&#xA;нижнем углу, это&#xD;&#xA;класс карточки, от класса зависит&#xD;&#xA;АЗ и при каких условиях он &#xD;&#xA;действует"
+                <Label Content="Класс карточки - Сокращение в левом&#xD;&#xA;нижнем углу, это&#xD;&#xA;класс карточки, от класса зависит&#xD;&#xA;АЗ и при каких условиях он &#xD;&#xA;действует"
                    FontSize="25"
                    HorizontalAlignment="Left"
                    VerticalAlignment="Top"
                    Margin="31,480,0,0"
                    Width="490" Height="452"/>
 
-            <Image Source="/ProgramData;component/Assets/Sprites/CardsForTutor/TurtorCardFolk.png"
+                <Image Source="/ProgramData;component/Assets/Sprites/CardsForTutor/TurtorCardFolk.png"
                    Stretch="Uniform"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
                    Width="612" Height="820"/>
 
-            <Label Content="ОЗ - очки здоровья"
+                <Label Content="ОЗ - очки здоровья"
                    FontSize="25"
                    HorizontalAlignment="Right"
                    VerticalAlignment="Top"
                    Margin="0,52,112,0"
                    Width="400"/>
-            <Label Content="ПК - группа союзников&#xA;АЗ зависит &#xA;от количества&#xA; пустых клеток вокруг карты"
+                <Label Content="ПК - группа союзников&#xA;АЗ зависит &#xA;от количества&#xA; пустых клеток вокруг карты"
                 FontSize="25"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Margin="1182,382,0,0"
                 Width="359" Height="140"/>
-            <Label Content="ГС группа союзников&#xA; -  АЗ зависит  &#xA;от количество &#xA;союзников этого же &#xA;класса вокруг карты"
+                <Label Content="ГС группа союзников&#xA; -  АЗ зависит  &#xA;от количество &#xA;союзников этого же &#xA;класса вокруг карты"
                 FontSize="25"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Margin="1182,545,0,0"
                 Width="359" Height="203"/>
-            <Label Content="ЦС -цепь союзников&#xA;АЗ зависит от &#xA;количества карт в цепи"
+                <Label Content="ЦС -цепь союзников&#xA;АЗ зависит от &#xA;количества карт в цепи"
                 FontSize="25"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Margin="1176,219,0,0"
                 Width="359" Height="108"/>
-        </Grid>
-    </Viewbox>
+            </Grid>
+        </Viewbox>
+        <Button Content="Назад" Style="{StaticResource S_std_but}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="24" Click="BackButton_Click"/>
+    </Grid>
 </Page>

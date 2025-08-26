@@ -1,18 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Dynamic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 using FD_FE;
 using FD_Tools.Audio;
 using FD_Tools.Stats;
@@ -29,28 +23,32 @@ namespace FD_MainWindow
         public MainWindow()
         {
             InitializeComponent();
+            //MainFrame.Content = new Pages.MainMenu();
             MainFrame.Content = new Pages.MainMenu();
 
             //громкость эффектов
             AudioManager.MusicVolume = 0.0; 
             AudioManager.InitMusic();
 
-            // бинд F11 на фулл скрин
+            // бинд F11 на фулл скрин, F12 на дебаг поединок
             KeyDown += (s, e) =>
             {
-                if (e.Key != Key.F11) return;
-                if (FD_window.WindowStyle == WindowStyle.None)
+                if (e.Key == Key.F11)
                 {
-                    FD_window.WindowStyle = WindowStyle.SingleBorderWindow;
-                    FD_window.WindowState = WindowState.Normal;
-                    FD_window.ResizeMode = ResizeMode.CanResize;
+                    if (FD_window.WindowStyle == WindowStyle.None)
+                    {
+                        FD_window.WindowStyle = WindowStyle.SingleBorderWindow;
+                        FD_window.ResizeMode = ResizeMode.CanResize;
+                        FD_window.WindowState = WindowState.Normal;
+                    }
+                    else
+                    {
+                        FD_window.WindowStyle = WindowStyle.None;
+                        FD_window.ResizeMode = ResizeMode.NoResize;
+                        FD_window.WindowState = WindowState.Maximized;
+                    }
                 }
-                else
-                {
-                    FD_window.WindowStyle = WindowStyle.None;
-                    FD_window.WindowState = WindowState.Maximized;
-                    FD_window.ResizeMode = ResizeMode.NoResize;
-                }
+                else if (e.Key == Key.F12) MainFrame.Content = new Pages.DB_battle();
             };
         }
 

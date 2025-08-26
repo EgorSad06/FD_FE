@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows;
-using FD_Tools.Connect;
+using System.Linq;
 
 namespace FD_FE
 {
@@ -12,22 +12,24 @@ namespace FD_FE
         // данные игры
         public static GameMode Mode { get; private set; }
         public static void SetMode(short mode) { Mode = GameplayData.GameModes[mode - 1]; }
-        public static Connection Cnct;
-        public static short battle = 0;
+        public static FD_Tools.Connection.Connection Cnct;
+        public static short battle;
 
-        public static Deck slct_cards = new Deck();
-        public static Deck p_deck = new Deck();
-        public static Deck o_deck = new Deck();
+        public static Deck slct_cards;
+        public static Deck p_deck;
+        public static Deck o_deck;
 
         public static bool start_turn = false;
         public static int p_seed;
         public static int o_seed;
-        public static short p_global_score = 0;
-        public static short o_global_score = 0;
+        public static short p_global_score;
+        public static short o_global_score;
 
+        public static char GetFraction(int id) =>
+            GameplayData.StartCards.Keys.ElementAt((id - GameplayData.StartCards.Values.ElementAt(0)[0].id) / GameplayData.CardsPerFraction);
         public static Card StartCardByID(int card_id)
         {
-            foreach (List<Card> f_list in GameplayData.StartCards.Values) foreach (Card card in f_list) if (card.id == card_id) return card;
+            foreach (Card card in GameplayData.StartCards[GetFraction(card_id)]) if (card.id == card_id) return card;
             return null;
         }
 

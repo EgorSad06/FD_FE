@@ -12,7 +12,7 @@
     </Page.Background>
     <Grid>
         <Viewbox MaxWidth="1628">
-            <Border Width="1628" Height="432" BorderBrush="White" BorderThickness="2" CornerRadius="10">
+            <Border Width="1628" Height="432" BorderBrush="White" BorderThickness="4" CornerRadius="10">
                 <Grid x:Name="CardSelectionGrid" Width="1596" Height="400">
 
                 </Grid>

@@ -23,7 +23,7 @@ namespace FD_FE
         {
             InitializeComponent();
             board_i = board_grid_i;
-            Width = slotVB.Width *= scale; Height = slotVB.Height *= scale;
+            Width = slotB.Width *= scale; Height = slotB.Height *= scale;
         }
 
         public short board_i;

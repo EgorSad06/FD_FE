@@ -56,6 +56,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Pages\DB_battle.xaml.cs">
+      <DependentUpon>DB_battle.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\TutorialPage.xaml.cs">
       <DependentUpon>TutorialPage.xaml</DependentUpon>
     </Compile>
@@ -74,6 +77,10 @@
     <Compile Include="Pages\TutorialPages\CardDetailFolk.xaml.cs">
       <DependentUpon>CardDetailFolk.xaml</DependentUpon>
     </Compile>
+    <Page Include="Pages\DB_battle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\TutorialPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

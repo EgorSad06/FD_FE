@@ -56,6 +56,7 @@
             <Button x:Name="StatisticsButton" Content="Достижения" Style="{StaticResource S_mn_but}" Click="StatisticsButton_Click"/>
             <Button x:Name="SettingsButton" Content="Настройки" Style="{StaticResource S_mn_but}" Click="SettingsButton_Click"/>
             <Button x:Name="ExitButton" Content="Выйти" Style="{StaticResource S_mn_but}" Click="ExitButton_Click"/>
+            <!--Button Content="DB_battle" Style="{StaticResource S_mn_but}" Click="DB_Click"/-->
         </StackPanel>
     </Viewbox>
 </Page>

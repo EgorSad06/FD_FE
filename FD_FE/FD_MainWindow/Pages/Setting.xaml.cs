@@ -74,19 +74,17 @@ namespace FD_MainWindow.Pages
             // Режим окна
             if (WindowedRadioButton.IsChecked == true)
             {
-                curWindow.WindowState = WindowState.Normal;
                 curWindow.WindowStyle = WindowStyle.SingleBorderWindow;
                 curWindow.ResizeMode = ResizeMode.CanResize;
+                curWindow.WindowState = WindowState.Normal;
             }
             else
             {
                 curWindow.WindowStyle = WindowStyle.None;
-                curWindow.WindowState = WindowState.Maximized;
                 curWindow.ResizeMode = ResizeMode.NoResize;
+                curWindow.WindowState = WindowState.Maximized;
             }
-
         }
-
 
         private void ResetButton_Click(object sender, RoutedEventArgs e)
         {

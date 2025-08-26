@@ -7,19 +7,15 @@
              xmlns:local="clr-namespace:FD_FE"
              mc:Ignorable="d"
              d:DesignHeight="240" d:DesignWidth="240">
-    <Button x:Name="slotVB" Width="100" Height="160"
+    <Button x:Name="slotB" Width="100" Height="160"
         Grid.ColumnSpan="3" Grid.RowSpan="3"
         Click="Button_Click"
-        Background="Transparent"
-        BorderBrush="Transparent"
-        BorderThickness="4"
         Focusable="False">
         <Button.Template>
             <ControlTemplate TargetType="Button">
                 <Border x:Name="border"
-            Background="{TemplateBinding Background}"
-            BorderBrush="{TemplateBinding BorderBrush}"
-            BorderThickness="{TemplateBinding BorderThickness}">
+                    Background="Transparent" BorderBrush="Transparent"
+                    BorderThickness="4">
                 </Border>
                 <ControlTemplate.Triggers>
                     <Trigger Property="IsMouseOver" Value="True">
